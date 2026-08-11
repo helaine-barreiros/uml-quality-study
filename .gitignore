@@ -1,0 +1,37 @@
+# System and editor temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Caches and virtual environments
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.venv/
+venv/
+env/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Copyrighted article/full-text PDFs in working directories
+**/fulltext/**/*.pdf
+**/papers/**/*.pdf
+**/articles/**/*.pdf
+**/literature/**/*.pdf
+
+# Credentials and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets.json
+*token*
