@@ -20,8 +20,11 @@ env/
 *.temp
 *.bak
 
-# Article PDFs in working directories
-**/*.pdf
+# Copyrighted article/full-text PDFs in working directories
+**/fulltext/**/*.pdf
+**/papers/**/*.pdf
+**/articles/**/*.pdf
+**/literature/**/*.pdf
 
 # Credentials and secrets
 .env
