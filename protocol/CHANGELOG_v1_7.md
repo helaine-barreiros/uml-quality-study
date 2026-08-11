@@ -16,6 +16,7 @@ Date: 2026-08-11
 - Strengthened `COMPLETE` so unresolved material inventory conflicts prevent unit completion.
 - Expanded manual-search audit outputs to include source manifests, raw inventories, normalized inventories, discovery logs, candidate sets, and coverage comparisons.
 - Strengthened licensing guidance for snapshots, licensed database exports, publisher pages, and copyrighted full text.
+- Clarified the distinction between controlled preservation of licensed raw search exports and their conditional redistribution in the public replication package.
 - Corrected the protocol-validation checklist numbering and added a dedicated provenance-chain validation item.
 - No change was made to research questions, eligibility criteria, analytical layers, or the final review interval.
 

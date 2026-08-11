@@ -853,9 +853,12 @@ TITLE-ABS-KEY (\\
 \end{minipage}
 \end{quote}
 
-The complete RIS exports for S1--S4, the comparison table, and the
-record-level differential classifications are retained in the replication
-package. Source-specific validation of ACM Digital Library, IEEE Xplore,
+The complete RIS exports for S1--S4 are preserved in controlled project storage
+for audit. Their redistribution in the public replication package occurs only
+when the source terms permit it. Independently of that redistribution, the
+public replication package preserves the query, validation log, counts,
+permitted audit metadata, and reproduction information. Source-specific
+validation of ACM Digital Library, IEEE Xplore,
 Scopus-independent indexing services, and the complementary sources remains
 subject to the same protocol before the complete multi-source strategy is frozen.
 
@@ -1010,9 +1013,11 @@ the Scopus sensitivity analysis.
 \end{minipage}
 \end{quote}
 
-The complete I0 implementation record and the I1--I3 CSV exports are retained in
-the replication package together with the differential-record classifications.
-The production IEEE Xplore retrieval will apply the protocol's temporal and
+The I0 implementation record and the I1--I3 raw CSV exports are preserved in
+controlled project storage. Raw exports are redistributed publicly only when
+permitted. The public replication package preserves the validation log, query,
+counts, decisions, and permitted audit metadata. The production IEEE Xplore
+retrieval will apply the protocol's temporal and
 other explicitly approved eligibility restrictions only after this field-level
 query validation, thereby preserving the separation between lexical/field
 validation and production filtering.
@@ -1194,10 +1199,12 @@ scenario OR scenarios OR ``problem statement'' OR ``problem statements'' OR\\
 
 No temporal, language, publication-type, or venue filter was used during A1--A3
 field validation. Such restrictions are applied and documented separately
-during production retrieval. The complete A2 and A3 EndNote exports, the
-partial A1 diagnostic export, the seed-indexing check, the field-prefix
-equivalence check, the differential classifications, and the diagnostic
-false-negative evidence are retained in the replication package.
+during production retrieval. The complete A2 and A3 EndNote exports and the
+partial A1 diagnostic export are preserved in controlled project storage.
+\texttt{.enw} files are redistributed in the public replication package only when the
+applicable terms permit it. The seed-indexing check, field-prefix equivalence
+check, validation log, counts, diagnostic decisions, and permitted audit
+metadata remain documented in the replication package.
 
 
 \subsection{Complementary search}
@@ -1712,4 +1719,3 @@ V17 & The manual-search provenance chain has been operationally tested from PRIM
 V18 & The validated version has been registered and assigned a persistent identifier. & \protocolfield{Pending} \\
 \bottomrule
 \end{longtable}
-
