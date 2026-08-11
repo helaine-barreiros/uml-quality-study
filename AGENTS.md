@@ -1,0 +1,20 @@
+# Regras para agentes
+
+- Nunca inventar metadados bibliográficos.
+- Nunca inferir DOI, abstract, autores, venue, páginas ou ano sem registrar a fonte.
+- Nunca substituir silenciosamente um valor observado por um valor corrigido ou normalizado.
+- Preservar separadamente valores raw e normalized quando houver transformação.
+- Dados em diretórios raw são imutáveis após registro.
+- Toda transformação de raw para normalized deve ser reproduzível.
+- Toda fonte usada para construir um inventário manual deve ter URL, data/hora de recuperação e, quando houver snapshot local, SHA-256.
+- Publisher/proceedings TOC define membership documental da unidade de busca manual.
+- Crossref e outras fontes de metadados podem enriquecer registros, mas não devem definir sozinhas o universo documental de um venue-year.
+- Busca manual não deve reproduzir mecanicamente a string da busca automatizada.
+- Discovery e formal screening são processos separados.
+- Nunca promover CLEAR-CANDIDATE ou POSSIBLE-CANDIDATE para inclusão definitiva sem aplicar o screening formal definido no protocolo.
+- Preservar todas as proveniências quando o mesmo estudo for encontrado por mais de uma fonte.
+- Nunca remover duplicatas de forma destrutiva antes de preservar as identidades e fontes originais.
+- Não adicionar PDFs protegidos por copyright ou conteúdo obtido por acesso institucional ao repositório público.
+- Não publicar exports proprietários de Scopus, Web of Science, IEEE, ACM ou outras bases sem verificar previamente as condições de redistribuição.
+- Quando uma fonte licenciada não puder ser publicada, preservar no repositório apenas metadados de auditoria permitidos, query, data de execução, contagens, checksums locais quando aplicável e instruções de reprodução.
+- Toda decisão metodológica substantiva deve ser definida fora desta automação e registrada no protocolo antes de ser implementada.
