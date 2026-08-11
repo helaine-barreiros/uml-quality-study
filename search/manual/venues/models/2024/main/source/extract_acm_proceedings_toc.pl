@@ -93,9 +93,23 @@ for my $node (@toc_nodes) {
             my ($candidate) = @_;
             return $candidate->tag eq 'ul' && has_class($candidate, 'loa');
         });
-        $authors = visible_text($authors_list) if $authors_list;
-        if ($authors =~ /\+\s*(\d+)/) {
-            $notes = "HTML author list truncated; interface indicated $1 additional author(s).";
+        if ($authors_list) {
+            my @author_names;
+            for my $item ($authors_list->look_down(sub { $_[0]->tag eq 'li' })) {
+                next if has_class($item, 'count-list');
+                my $author_link = $item->look_down(sub { $_[0]->tag eq 'a' });
+                next unless $author_link;
+                my $author_name = visible_text($author_link);
+                push @author_names, $author_name if length $author_name;
+            }
+            $authors = join(',', @author_names);
+
+            my $count_item = $authors_list->look_down(sub {
+                $_[0]->tag eq 'li' && has_class($_[0], 'count-list');
+            });
+            if ($count_item && visible_text($count_item) =~ /\+\s*(\d+)/) {
+                $notes = "HTML author list truncated; interface indicated $1 additional author(s).";
+            }
         }
 
         my $doi_input = $node->look_down(sub {

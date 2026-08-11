@@ -38,12 +38,15 @@ This integrity check validates the publisher metadata export against the 26 HTML
 - LiteralTitleMatchCount: 22
 - NormalizedTitleMatchCount: 1
 - TitleVersionDriftCount: 3
+- AuthorListDriftCount: 12
 - AmbiguousMatchCount: 0
 - PrimaryOnlyResearchArticleCount: 0
 - VenueCrosscheckOnlyPaperCount: 0
 - MaterialInventoryConflictCount: 0
 
 The diagnostic categories overlap: each DOI exact match in this comparison also has a literal-title match. `NormalizedTitleMatch` uses only Unicode-dash, punctuation, whitespace, and case diagnostics; it does not overwrite either observed title. The three title-version drifts have independent official author and lexical evidence described below, so they do not raise a material documentary-membership conflict.
+
+`AuthorListDrift` is a metadata-presentation diagnostic only. It records a truncation, ordering, or name-form difference among the three official representations; it does not define membership and does not, by itself, imply `MaterialInventoryConflict`.
 
 ## Record-level reconciliation
 
@@ -76,13 +79,32 @@ The diagnostic categories overlap: each DOI exact match in this comparison also 
 | MS-MODELS-2024-MAIN-0026 | Requirement-Driven Generation of Distributed Ledger Architectures | 10.1145/3640310.3674097 | Requirement-Driven Generation of Distributed Ledger Architectures |  | literal title | LiteralTitleMatch | No |  |
 | MS-MODELS-2024-MAIN-0027 | Meta-Modelling Kindness | 10.1145/3640310.3674095 | Meta-Modelling Kindness |  | literal title | LiteralTitleMatch | No |  |
 
+## Author-list drift details
+
+| ManualSearchID | ACM HTML visible authors | ACM HTML additional-author indicator | ACM BibTeX complete authors | Researchr authors | Interpretation |
+| --- | --- | --- | --- | --- | --- |
+| MS-MODELS-2024-MAIN-0004 | Jean-Christophe Bach; Antoine Beugnard; Joël Champeau; Fabien Dagnat | 2 | Jean-Christophe Bach; Antoine Beugnard; Joël Champeau; Fabien Dagnat; Sylvain Guérin; Salvador Martínez | Jean-Christophe Bach; Antoine Beugnard; Joel Champeau; Fabien Dagnat; Sylvain Guérin; Salvador Martínez | HTML truncation; BibTeX and Researchr present the same complete ordered list, apart from diacritic rendering. |
+| MS-MODELS-2024-MAIN-0009 | Ionut Predoaia; James Harbin; Simos Gerasimou; Christina Vasiliou | 2 | Ionut Predoaia; James Harbin; Simos Gerasimou; Christina Vasiliou; Dimitris Kolovos; Antonio García-Domínguez | Ionut Predoaia; James Harbin; Simos Gerasimou; Christina Vasiliou; Dimitris Kolovos; Antonio Garcia-Dominguez | HTML truncation; BibTeX and Researchr present the same complete ordered list, apart from diacritic rendering. |
+| MS-MODELS-2024-MAIN-0010 | Jérôme Pfeiffer; Dominik Fuchß; Thomas Kühn; Robin Liebhart; Dirk Neumann | 4 | Jérôme Pfeiffer; Dominik Fuchß; Thomas Kühn; Robin Liebhart; Dirk Neumann; Christer Neimöck; Christian Seiler; Anne Koziolek; Andreas Wortmann | Jérôme Pfeiffer; Dominik Fuchß; Thomas Kühn; Robin Liebhart; Dirk Neumann; Christer Neimöck; Christian Seiler | HTML truncation; the first five visible HTML authors align with the first five BibTeX and Researchr authors. BibTeX contains nine authors, whereas Researchr presents seven; this is recorded as metadata-presentation drift and does not make paper identity ambiguous. |
+| MS-MODELS-2024-MAIN-0011 | Qurat ul ain Ali; Dimitris Kolovos; Antonio Garcia-Dominguez; Michael Bennett | 2 | Qurat ul ain Ali; Dimitris Kolovos; Antonio Garcia-Dominguez; Michael Bennett; Joe Newton; Piotr Zacharzewski | Qurat Ul Ain Ali; Dimitris Kolovos; Antonio Garcia-Dominguez; Michael Bennett; Joe Newton; Piotr Zacharzewski | HTML truncation; BibTeX and Researchr present the same complete ordered list, with capitalization variation. |
+| MS-MODELS-2024-MAIN-0012 | Javier Verón; Carlos Pérez; Coral Calero; MaÂngeles Moraga; Francisca Pérez | 1 | Javier Verón; Carlos Pérez; Coral Calero; MaÂngeles Moraga; Francisca Pérez; Carlos Cetina | Javier Verón Mérida; Carlos Pérez; Coral Calero; Mª Angeles Moraga; Francisca Pérez; Carlos Cetina | HTML truncation plus name-form differences in Researchr; the ordered documentary correspondence remains clear. |
+| MS-MODELS-2024-MAIN-0014 | Munima Jahan; Mohammad Mahdi Hassan; Reza Golpayegani; Golshid Ranjbaran | 3 | Munima Jahan; Mohammad Mahdi Hassan; Reza Golpayegani; Golshid Ranjbaran; Chanchal Roy; Banani Roy; Kevin Schneider | Munima Jahan; Mohammad Mahdi Hassan; Reza Golpayegani; Golshid Ranjbaran; Chanchal K. Roy; Banani Roy; Kevin Schneider | HTML truncation; BibTeX omits the middle initial shown by Researchr for Chanchal K. Roy. |
+| MS-MODELS-2024-MAIN-0015 | Bastien Sultan; Ludovic Apvrille | none | Bastien Sultan; Ludovic Apvrille | Ludovic Apvrille; Bastien Sultan | Researchr reverses the displayed order; author membership is otherwise the same. |
+| MS-MODELS-2024-MAIN-0016 | Meriem Ben Chaaben; Oussama Ben Sghaier; Mouna Dhaouadi; Nafisa Elrasheed | 5 | Meriem Ben Chaaben; Oussama Ben Sghaier; Mouna Dhaouadi; Nafisa Elrasheed; Ikram Darif; Imen Jaoua; Bentley Oakes; Eugene Syriani; Mohammad Hamdaqa | Meriem Ben Chaaben; Oussama Ben Sghaier; Mouna Dhaouadi; Nafisa Elrasheed; Ikram Darif; Imen Jaoua; Bentley Oakes; Eugene Syriani; Mohammad Hamdaqa | HTML truncation; BibTeX and Researchr present the same complete ordered list. |
+| MS-MODELS-2024-MAIN-0018 | Carlos Durá Costa; José Antonio Hernández López; Jesús Sánchez Cuadrado | none | Carlos Durá Costa; José Antonio Hernández López; Jesús Sánchez Cuadrado | Carlos Durá; José Antonio Hernández López; Jesús Sánchez Cuadrado | Researchr presents a shortened form of the first author's name. |
+| MS-MODELS-2024-MAIN-0022 | Bruno Curzi-Laliberté; Marios Fokaefs; Michalis Famelis; Mohammad Hamdaqa | none | Bruno Curzi-Laliberté; Marios Fokaefs; Michalis Famelis; Mohammad Hamdaqa | Bruno Curzi-Laliberté; Marios-Eleftherios Fokaefs; Michalis Famelis; Mohammad Hamdaqa | Researchr presents an expanded form of Marios Fokaefs's name. |
+| MS-MODELS-2024-MAIN-0025 | Asha Rajbhoj; Ajim Pathan; Tanay Sant; Vinay Kulkarni; Padmalata Nistala | 3 | Asha Rajbhoj; Ajim Pathan; Tanay Sant; Vinay Kulkarni; Padmalata Nistala; Rajesh Pandey; Sabarinathan Narasimhan; Geetha Thiagarajan | Asha Rajbhoj; Ajim Pathan; Tanay Sant; Vinay Kulkarni; Padmalata Nistala; Rajesh Pandey; Sabarinathan Narasimhan; Geetha Thiagarajan | HTML truncation; BibTeX and Researchr present the same complete ordered list. |
+| MS-MODELS-2024-MAIN-0026 | Noor Mohammed Sabr Al-Gburi; András Földvári; Kristóf Marussy; Oszkár Semeráth | 1 | Noor Mohammed Sabr Al-Gburi; András Földvári; Kristóf Marussy; Oszkár Semeráth; Imre Kocsis | Noor Mohammed Sabr Al-Gburi; András Földvári; Kristóf Marussy; Oszkár Semeráth; Imre Kocsis | HTML truncation; BibTeX and Researchr present the same complete ordered list. |
+
 ## Title-version drift details
 
 ### MS-MODELS-2024-MAIN-0010
 
 - ACM final title: `Modeling Languages for Automotive Digital Twins: A Survey Among the German Automotive Industry`
 - Researchr accepted-paper title: `Modeling Languages for Digital Twins: A Survey Among the German Automotive Industry`
-- Authors observed: ACM materializes Jérôme Pfeiffer, Dominik Fuchß, Thomas Kühn, Robin Liebhart, and Dirk Neumann, then indicates four further authors; Researchr lists the same five authors first, followed by Christer Neimöck and Christian Seiler.
+- ACM HTML visible authors: Jérôme Pfeiffer; Dominik Fuchß; Thomas Kühn; Robin Liebhart; Dirk Neumann; additional-author indicator: `+ 4`.
+- ACM BibTeX complete authors: Jérôme Pfeiffer; Dominik Fuchß; Thomas Kühn; Robin Liebhart; Dirk Neumann; Christer Neimöck; Christian Seiler; Anne Koziolek; Andreas Wortmann.
+- Researchr accepted-paper authors: Jérôme Pfeiffer; Dominik Fuchß; Thomas Kühn; Robin Liebhart; Dirk Neumann; Christer Neimöck; Christian Seiler.
 - DOI: ACM `10.1145/3640310.3674100`; no DOI is displayed in the Researchr Accepted Papers record.
 - Evidence: shared ordered visible authors and the same lexical title frame identify one paper.
 - Interpretation: the added `Automotive` qualifier is treated as final-title evolution, not a change in documentary membership.
@@ -91,7 +113,9 @@ The diagnostic categories overlap: each DOI exact match in this comparison also 
 
 - ACM final title: `Automated Derivation of UML Sequence Diagrams from User Stories: Unleashing the Power of Generative AI vs. a Rule-Based Approach`
 - Researchr accepted-paper title: `Automated Derivation of UML Sequence Diagrams from User Stories: Unleashing the Power of Generative AI vs. Rule-Based Approach`
-- Authors observed: both official sources show Munima Jahan, Mohammad Mahdi Hassan, Reza Golpayegani, Golshid Ranjbaran, Chanchal K. Roy, Banani Roy, and Kevin Schneider in the same order.
+- ACM HTML visible authors: Munima Jahan; Mohammad Mahdi Hassan; Reza Golpayegani; Golshid Ranjbaran; additional-author indicator: `+ 3`.
+- ACM BibTeX complete authors: Munima Jahan; Mohammad Mahdi Hassan; Reza Golpayegani; Golshid Ranjbaran; Chanchal Roy; Banani Roy; Kevin Schneider.
+- Researchr accepted-paper authors: Munima Jahan; Mohammad Mahdi Hassan; Reza Golpayegani; Golshid Ranjbaran; Chanchal K. Roy; Banani Roy; Kevin Schneider.
 - DOI: ACM `10.1145/3640310.3674081`; no DOI is displayed in the Researchr Accepted Papers record.
 - Evidence: identical ordered author list and title differing only by the article `a`.
 - Interpretation: the wording difference is treated as final-title evolution, not a change in documentary membership.
@@ -100,7 +124,9 @@ The diagnostic categories overlap: each DOI exact match in this comparison also 
 
 - ACM final title: `EpiMDE: A-Model Driven Engineering Platform for Epidemiological Modeling`
 - Researchr accepted-paper title: `EpiMDE: A Model Driven Engineering Platform for Epidemiological Modeling`
-- Authors observed: both official sources show Bruno Curzi-Laliberté, Marios Fokaefs, Michalis Famelis, and Mohammad Hamdaqa in the same order.
+- ACM HTML visible authors: Bruno Curzi-Laliberté; Marios Fokaefs; Michalis Famelis; Mohammad Hamdaqa; additional-author indicator: none.
+- ACM BibTeX complete authors: Bruno Curzi-Laliberté; Marios Fokaefs; Michalis Famelis; Mohammad Hamdaqa.
+- Researchr accepted-paper authors: Bruno Curzi-Laliberté; Marios-Eleftherios Fokaefs; Michalis Famelis; Mohammad Hamdaqa.
 - DOI: ACM `10.1145/3640310.3674104`; no DOI is displayed in the Researchr Accepted Papers record.
 - Evidence: identical ordered author list and title differing by the publisher-side hyphenation after `A`.
 - Interpretation: the wording difference is treated as final-title evolution, not a change in documentary membership.

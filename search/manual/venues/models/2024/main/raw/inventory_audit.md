@@ -19,4 +19,4 @@
 - PrimaryHTMLSHA256: 7efdf33b0bb911988956d08f45f902c693ac046949ea570a049e116055702f8e
 - BibTeXMetadataSHA256: 950537197d9a5d4313ec49b8b1f71a8d5b1175a5b87f4d0117b4f364f56ea86f
 - ExtractionMethod: `extract_acm_proceedings_toc.pl` (Perl `HTML::TreeBuilder`)
-- ExtractionTimestamp: 2026-08-11T21:36:00Z
+- ExtractionTimestamp: 2026-08-11T21:59:37Z
