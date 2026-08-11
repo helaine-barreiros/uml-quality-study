@@ -1,0 +1,1721 @@
+% Appendix ready to be included in the thesis.
+% Required packages in the thesis preamble:
+% booktabs, longtable, tabularx, array, enumitem, amsmath, amssymb,
+% graphicx, xurl, hyperref, natbib (or an equivalent citation package).
+%
+% Replace the fields marked [TO BE COMPLETED] before protocol registration.
+% Version 1.7 formalizes manual-search provenance, raw documentary inventory, and auditability controls.
+% This protocol is written for the complete study interval. Operational batching
+% does not alter the methodological scope, questions, eligibility rules, or synthesis.
+
+\providecommand{\protocolfield}[1]{\textbf{[#1]}}
+\providecommand{\yes}{\textit{Yes}}
+\providecommand{\partial}{\textit{Partially}}
+\providecommand{\no}{\textit{No}}
+\newcommand{\reviewtitle}{Large Language Models for UML Diagram Generation}
+
+\chapter{Protocol for the Two Layer Systematic Mapping Study}
+\label{app:two_layer_mapping_protocol}
+
+\section{Protocol Identification and Status}
+\label{sec:protocol_identification}
+
+This appendix specifies the protocol for a systematic mapping study with an embedded qualitative synthesis. The first analytical layer maps the research landscape concerned with the generation of Unified Modeling Language diagrams by Large Language Models from textual software requirements and explicit domain descriptions. The second analytical layer examines, in greater depth, the subset of studies that provides extractable evidence about diagram quality, inadequacies, evaluation references, measurement procedures, pragmatic adequacy, or correction effort.
+
+The protocol follows the planning, search, selection, extraction, and synthesis principles established for secondary studies in Software Engineering \cite{Kitchenham2007Guidelines,Brereton2007Lessons,Petersen2015Mapping,Zhang2011Identifying}. Reporting will be checked against the Software Engineering Guidelines for Reporting Secondary Studies, PRISMA 2020, and PRISMA-S \cite{Kitchenham2023SEGRESS,Page2021PRISMA,Rethlefsen2021PRISMAS}. Protocol amendments will be versioned and documented according to the transparency principles of PRISMA-P \cite{Shamseer2015PRISMAP}.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Protocol identification}
+\label{tab:protocol_identification}
+\begin{tabularx}{\textwidth}{p{0.28\textwidth} X}
+\toprule
+\textbf{Field} & \textbf{Specification} \\
+\midrule
+Review title & \reviewtitle: A Two Layer Systematic Mapping Study with an Embedded Qualitative Synthesis of Quality Assessment \\
+Review type & Systematic mapping study with two analytical layers \\
+Protocol version & 1.7, provenance and auditability draft \\
+Protocol date & 2026-08-11 \\
+Review team & \protocolfield{Names, affiliations, and ORCID identifiers} \\
+Methodological supervisor & \protocolfield{Name and affiliation} \\
+Domain adjudicator & \protocolfield{Name and affiliation} \\
+Registration repository & \protocolfield{OSF, Zenodo, or institutional repository identifier} \\
+Planned search interval & January 2022 to the final search date \\
+Language of eligible reports & English \\
+Primary disciplinary domains & Software Engineering, Requirements Engineering, Software Modeling, Model Driven Engineering, and Large Language Models \\
+Protocol status & Prospective protocol. Selection, extraction, and synthesis must not begin before protocol validation and registration, except for explicitly designated pilot activities. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{Rationale and Need for the Secondary Study}
+\label{sec:protocol_rationale}
+
+Recent primary studies indicate that LLMs can generate UML diagrams that satisfy at least some criteria of textual validity or syntactic conformity while presenting problems of semantic correctness or completeness relative to source requirements and domain information \cite{DeBari2024UML,Ferrari2024Sequence,Garaccione2025Class,Garaccione2025UseCase,Xiao2025Sequence}. These studies use different diagram types, source specifications, model families, prompting strategies, evaluation references, units of analysis, metrics, and terminology. Consequently, apparently similar labels such as syntactic correctness, semantic correctness, completeness, consistency, hallucination, or understandability may denote non equivalent constructs and procedures.
+
+The conceptual background on model quality distinguishes the relation between a model and its language, the relation between a model and the relevant domain, and the relation between a model and its interpreters or uses \cite{Lindland1994Quality,Krogstie2006Process}. The UML specification also distinguishes concrete representations from the abstract syntax and well formedness constraints of the modeling language \cite{OMG2017UML}. These distinctions are necessary for evaluating generated diagrams, but the manner in which recent LLM studies operationalize them remains to be systematically reconstructed.
+
+Related secondary studies provide important but different forms of coverage. Reviews of UML model quality predate the current LLM based generation setting \cite{Genero2011UMLQuality}. Reviews of transformations from natural language to UML mainly cover rule based and earlier machine learning approaches \cite{Ahmed2022NaturalUML}. Recent studies map LLM applications across Model Driven Engineering or review UML and entity relationship diagram generation at a broad level \cite{Zhang2027LLMMDE,Rahmanian2026Diagrams}. The present study has a narrower and more analytically intensive objective. It maps the complete UML generation landscape within the defined scope and synthesizes how the evaluative subset defines, classifies, measures, and validates diagram quality and inadequacies.
+
+The review is necessary because the subsequent thesis stages depend on construct clarity. Before the incidence of inadequacies can be estimated, their categories and units must be defined. Before contextual determinants can be investigated, the dependent quality constructs must be operationalized. Before pragmatic effects or rework can be evaluated, the literature must be examined for existing tasks, measures, and procedures. The secondary study therefore has both descriptive and constitutive functions. It maps the field and establishes the evidence base required to formulate later empirical questions and instruments.
+
+\section{Study Design and Analytical Layers}
+\label{sec:protocol_design}
+
+Systematic maps are primarily designed to structure a research area through classification and counting, whereas systematic reviews place greater emphasis on focused evidence synthesis \cite{Petersen2015Mapping}. This study combines both functions through two explicitly separated analytical layers.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Analytical layers of the secondary study}
+\label{tab:protocol_layers}
+\begin{tabularx}{\textwidth}{p{0.16\textwidth} p{0.25\textwidth} X p{0.22\textwidth}}
+\toprule
+\textbf{Layer} & \textbf{Primary function} & \textbf{Eligible evidence} & \textbf{Principal products} \\
+\midrule
+Layer 1 & Systematic mapping of the research landscape & Primary reports in which one or more LLMs generate, transform, complete, repair, or iteratively revise UML diagrams from textual software requirements or explicit textual domain descriptions & Publication map, diagram and task map, input and output map, technical configuration map, evaluation practice map, and open science map \\
+Layer 2 & Embedded qualitative and metrological synthesis & Layer 1 reports that provide extractable evaluation of syntactic, semantic, pragmatic, consistency, inadequacy, or correction related properties & Construct matrix, normalized taxonomy of reported inadequacies, evaluation reference map, metric catalogue, coding and reliability map, and evidence gap analysis \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Membership in Layer 2 does not create a second independent review. It denotes an additional analytical status assigned to a subset of the Layer 1 corpus. The search strategy is designed for Layer 1 and therefore does not include quality terms that could reduce recall. Layer 2 eligibility is determined during full text screening and confirmed during extraction.
+
+\section{Objective and Expected Contribution}
+\label{sec:protocol_objective}
+
+The general objective is to map the scientific literature on LLM based generation of UML diagrams from textual software requirements and to synthesize, in depth, how the evaluative subset conceptualizes, operationalizes, detects, classifies, and measures the quality and inadequacies of the generated diagrams.
+
+The study is expected to produce six integrated contributions.
+
+\begin{enumerate}[label=\roman*)]
+    \item a structured map of publication, study, diagram, task, input, model, context, output, and evaluation characteristics;
+    \item a traceable matrix connecting quality terms to definitions, theoretical references, evaluation references, units, indicators, metrics, and procedures;
+    \item a normalized taxonomy of inadequacies reported in the literature, while preserving the original terminology used by each primary study;
+    \item a catalogue of semantic references, model oracles, human evaluation procedures, automated checks, and reliability practices;
+    \item a synthesis of reported contextual conditions, pragmatic effects, and correction or rework measures;
+    \item a set of evidence grounded implications for the formulation of subsequent empirical studies in the thesis.
+\end{enumerate}
+
+The review does not claim that the resulting taxonomy exhausts every possible inadequacy of every UML diagram type. It synthesizes inadequacies that are reported, operationalized, or inferable from eligible primary studies under an explicit coding procedure.
+
+\section{Research Questions}
+\label{sec:protocol_questions}
+
+The overarching question is the following.
+
+\begin{quote}
+\textbf{ORQ.} How has the literature investigated the generation of UML diagrams by LLMs from textual software requirements, and how does the evaluative subset conceptualize, operationalize, and assess the quality and inadequacies of the generated diagrams?
+\end{quote}
+
+The question is decomposed into mapping questions and synthesis questions.
+
+\subsection{Layer 1 mapping questions}
+
+\begin{description}[style=nextline,leftmargin=2.0cm,labelwidth=1.5cm]
+    \item[MQ1.] How is the research landscape distributed by publication year, venue, publication type, research method, contribution type, author affiliation, and availability of replication material?
+    \item[MQ2.] Which UML diagram types, generation tasks, source specification formats, application domains, datasets, and output representations are investigated?
+    \item[MQ3.] Which LLM families, model versions, access modes, prompting strategies, demonstrations, retrieval mechanisms, fine tuning procedures, agent structures, tool integrations, and inference configurations are reported?
+    \item[MQ4.] Which evaluation dimensions, baselines, human roles, automated procedures, and open science practices are reported across the mapped studies?
+    \item[MQ5.] How do diagram types, generation configurations, and evaluation practices co occur across the literature, and which combinations remain under investigated?
+\end{description}
+
+\subsection{Layer 2 synthesis questions}
+
+\begin{description}[style=nextline,leftmargin=2.0cm,labelwidth=1.5cm]
+    \item[SQ1.] How are textual validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, and related quality constructs defined and operationalized?
+    \item[SQ2.] Which inadequacies are reported, how are they defined, which UML elements or relations carry them, and how can the original categories be normalized without erasing diagram specific distinctions?
+    \item[SQ3.] Which evaluation references, oracles, units of assessment, metrics, scales, thresholds, aggregation rules, automated checks, and human judgment procedures are used?
+    \item[SQ4.] How do the studies establish the reliability and validity of quality assessments, including evaluator training, independent coding, agreement measurement, adjudication, repeated generation, sensitivity analysis, and reporting of uncertainty?
+    \item[SQ5.] Which characteristics of the generation context are manipulated, controlled, or associated with quality outcomes, and how are pragmatic adequacy, inspection, correction, rework, or productivity effects defined and measured?
+\end{description}
+
+\subsection{Traceability between questions, data, and synthesis}
+
+\begin{longtable}{@{}p{0.06\textwidth} p{0.25\textwidth} p{0.24\textwidth} p{0.25\textwidth}@{}}
+\caption{Traceability from research questions to extracted data and synthesis products}
+\label{tab:protocol_rq_traceability}\\
+\toprule
+\textbf{RQ} & \textbf{Required data} & \textbf{Synthesis procedure} & \textbf{Primary product} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{RQ} & \textbf{Required data} & \textbf{Synthesis procedure} & \textbf{Primary product} \\
+\midrule
+\endhead
+MQ1 & Bibliographic metadata, study design, contribution type, affiliation, artifact availability & Frequencies, temporal trends, venue classification, and cross tabulation & Publication and evidence landscape \\
+MQ2 & Diagram type, task, input, domain, dataset, output representation & Classification and co occurrence analysis & Diagram, task, and data map \\
+MQ3 & Model, version, access, context, prompt, retrieval, adaptation, tools, parameters & Frequency distributions and configuration profiles & Technical configuration map \\
+MQ4 & Evaluation dimensions, baselines, evaluators, automation, artifacts & Descriptive classification and cross tabulation & Evaluation and reproducibility map \\
+MQ5 & Combined categories from MQ2 to MQ4 & Co occurrence matrices and gap analysis & Research concentration and gap map \\
+SQ1 & Original terms, definitions, citations, operational definitions, examples & Conceptual comparison and normalized construct matrix & Quality construct matrix \\
+SQ2 & Original inadequacy labels, textual definitions, examples, affected UML carrier, reference violated & Hybrid deductive and inductive coding, constant comparison, and negative case analysis & Taxonomy of reported inadequacies \\
+SQ3 & Reference, oracle, unit, formula, denominator, scale, threshold, aggregation, procedure & Metrological comparison and traceability analysis & Evaluation reference and metric catalogue \\
+SQ4 & Reviewer roles, training, independence, agreement, adjudication, repetitions, uncertainty & Methodological appraisal and reliability profile & Assessment credibility matrix \\
+SQ5 & Context variables, treatment or contrast, outcome relation, task, effort measure & Narrative synthesis stratified by inferential strength & Context, pragmatic, and rework evidence map \\
+\bottomrule
+\end{longtable}
+
+\section{Conceptual and Operational Scope}
+\label{sec:protocol_scope}
+
+\subsection{Population and units}
+
+The documentary population comprises scientific reports published within the defined time interval that investigate LLM based generation of UML diagrams from textual software requirements or explicit textual domain descriptions. Three units are distinguished.
+
+\begin{enumerate}[label=\alph*)]
+    \item the \textbf{report}, which is the document screened for eligibility;
+    \item the \textbf{primary study}, which is the empirical or technical investigation that may be reported in one or more publications;
+    \item the \textbf{evaluation instance}, which is an extractable combination of diagram type, input corpus, model configuration, generation condition, and evaluation procedure.
+\end{enumerate}
+
+The report is the unit of selection. The primary study is the unit used to prevent double counting. The evaluation instance is the preferred unit for analytical extraction when a report contains multiple diagram types, models, treatments, datasets, or evaluation procedures.
+
+\subsection{Operational definitions}
+
+\begin{longtable}{p{0.22\textwidth} p{0.70\textwidth}}
+\caption{Operational definitions used in the protocol}
+\label{tab:protocol_definitions}\\
+\toprule
+\textbf{Term} & \textbf{Operational definition} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Term} & \textbf{Operational definition} \\
+\midrule
+\endhead
+Large Language Model & A neural language model identified by the study as a large, foundation, generative, instruction following, or conversational language model and used as a substantial component of the generation process. Rule based NLP and conventional machine learning without an LLM are outside scope. \\
+UML diagram & A model or diagram explicitly identified as UML or as one of the UML diagram types. PlantUML output is eligible only when it is intended to encode UML. Generic Mermaid, C4, ER, BPMN, or architectural diagrams are outside scope unless the UML component is separable. \\
+Textual software requirements & Natural language or structured textual descriptions of intended software behavior, structure, goals, actors, rules, constraints, scenarios, or domain information. Examples include requirements documents, use case narratives, user stories, problem statements, feature descriptions, and domain descriptions. \\
+Generation task & Production, completion, transformation, repair, refinement, or iterative revision of a UML diagram in which the LLM materially determines the resulting model content. \\
+Generation context & The complete information made available to the model for an evaluation instance, including instructions, requirements, domain information, UML knowledge, examples, retrieved material, tools, prior turns, and ordering. \\
+Textual validity & Conformance of the concrete output string to the grammar accepted by the selected representation or rendering tool. It does not by itself establish UML conformity. \\
+UML syntactic conformity & Conformance of the represented model to the applicable UML abstract syntax, admissible constructs, relations, and well formedness constraints. \\
+Semantic correctness & Degree to which represented propositions, elements, relations, constraints, states, events, or behaviors are supported by the relevant requirements and domain reference. \\
+Semantic completeness & Degree to which relevant units in the defined semantic reference are adequately represented in the diagram. \\
+Pragmatic adequacy & Degree to which the diagram supports a defined engineering activity for a specified actor and context. Comprehensibility may be one component but is not treated as a sufficient synonym. \\
+Inadequacy & A reported or inferable discrepancy between the generated diagram and an explicit language, semantic, or task reference. The review preserves the source term and separately assigns a normalized code. \\
+Semantic reference & The source against which correctness or completeness is assessed, such as requirements, explicit domain knowledge, an annotated reference model, a validated model, a gold standard, a rubric, or expert judgment. \\
+Correction or rework & Human or automated activity required after initial generation to inspect, change, validate, or regenerate a diagram so that it satisfies a defined acceptance criterion. \\
+Publication family & Two or more reports that describe the same or substantially overlapping primary study, dataset, experiment, or artifact. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Temporal, language, and publication scope}
+
+The planned publication interval begins in January 2022 and ends on the final search date. The start year reflects the emergence of current instruction following and conversational LLM use in Software Engineering and will be checked during search validation. If the seed set identifies an eligible study before 2022, the interval will be extended and the amendment documented.
+
+Reports written in English are eligible. Journal articles, conference papers, and workshop papers are eligible when they provide a complete scientific report. Preprints are eligible because of the rapid evolution of the research area, but publication status is coded explicitly and peer reviewed and preprint evidence are analyzed separately when the distinction affects interpretation. Abstracts, posters, slide decks, editorials, prefaces, tutorials, theses, books, patents, and non scientific web content are excluded from the primary corpus. Secondary and tertiary studies are excluded from the primary corpus but retained for background, search validation, and snowballing.
+
+\section{Information Sources}
+\label{sec:protocol_sources}
+
+The identification strategy combines broad bibliographic indexes, direct publisher or professional society libraries, a preprint repository, citation searching, and manual venue inspection. These source types perform complementary functions and are not interchangeable. Broad indexes reduce dependence on a predefined venue list, direct libraries improve access to conference and workshop proceedings, arXiv captures rapidly disseminated preprints, and manual venue inspection verifies coverage gaps rather than defining the documentary population.
+
+The source set is informed by methodological guidance on complementary search routes in Software Engineering secondary studies \cite{Brereton2007Lessons,Zhang2011Identifying,Wohlin2014Snowballing} and by recent secondary studies showing that LLM based modeling research is distributed across main conferences, companion and workshop tracks, and journals \cite{Zhang2027LLMMDE,Rahmanian2026Diagrams}. These prior studies provide empirical input to the initial source configuration, but the final configuration remains subject to seed set retrieval and source contribution analysis during protocol validation.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Planned information sources, decision status, and functions}
+\label{tab:protocol_sources}
+\begin{tabularx}{\textwidth}{p{0.18\textwidth} p{0.13\textwidth} p{0.23\textwidth} X}
+\toprule
+\textbf{Source} & \textbf{Status} & \textbf{Function} & \textbf{Search treatment} \\
+\midrule
+Scopus & Core & Broad multidisciplinary index & Title, abstract, and keyword search with complete export and source provenance preservation \\
+Web of Science Core Collection & Core & Independent multidisciplinary index and citation data & Topic search with complete export; also used for forward citation discovery when available \\
+IEEE Xplore & Core & Direct coverage of IEEE and IEEE/ACM venues & Metadata search adapted to platform syntax, with complete export of the available bibliographic fields \\
+ACM Digital Library & Core & Direct coverage of ACM venues & ACM Full-Text Collection; validated source-specific query restricts the LLM block to title, abstract, or author keywords while retaining UML and generation/input in the platform's broad Anywhere field; complete candidate export and proceedings/workshop coverage inspection \\
+ScienceDirect & Provisional complementary & Direct Elsevier publisher coverage & Retained when the validation pilot identifies unique eligible or seed records, or a documented coverage gap not resolved by Scopus or Web of Science; otherwise its exclusion is justified before protocol registration \\
+arXiv & Complementary & Recent preprints and early dissemination & Search with the same conceptual blocks; preprint and subsequently published versions are linked as one publication family \\
+Google Scholar & Citation discovery only & Broad forward citation discovery & Used during snowballing, not as a principal automated database because ranking, result limits, and export behavior reduce reproducibility \\
+Manual venue search & Coverage validation & Recent indexing gaps and direct inspection of recurrent specialist outlets & Proceedings and journal tables of contents are inspected only for venues validated by the criteria below; this route does not replace the automated database search \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Role of automated sources and manual venue inspection}
+
+The automated database search is the primary mechanism for defining the candidate documentary corpus. The manual venue search is a complementary coverage validation mechanism. Consequently, the conclusions of the review are not restricted to a predetermined set of conferences or journals, and a study remains eligible regardless of publication venue when it satisfies the review criteria.
+
+The initial core for manual inspection is shown in Table~\ref{tab:protocol_manual_venues}. The list reflects the intersection of Software Modeling and Model Driven Engineering, Requirements Engineering, LLM based Software Engineering, and empirical evaluation. It also incorporates outlets recurrently identified in recent secondary studies and venues that contain known seed studies on UML diagram generation by LLMs \cite{Zhang2027LLMMDE,Rahmanian2026Diagrams,DeBari2024UML,Ferrari2024Sequence,Garaccione2025Class,Garaccione2025UseCase,Xiao2025Sequence}.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\caption{Initial manual venue inspection set}
+\label{tab:protocol_manual_venues}
+\begin{tabularx}{\textwidth}{p{0.18\textwidth} p{0.37\textwidth} X}
+\toprule
+\textbf{Status} & \textbf{Venues} & \textbf{Rationale and treatment} \\
+\midrule
+Core & MODELS main conference; MODELS Companion; MODELSWARD; \emph{Software and Systems Modeling} & Central outlets for software modeling, UML, and Model Driven Engineering. Their proceedings or tables of contents are inspected for every year in the review interval. \\
+Core & IEEE International Requirements Engineering Conference and directly related workshops; REFSQ & Relevant to transformation from textual requirements and domain descriptions into software models. \\
+Core & ICSE main conference; ICSE Software Engineering in Practice; directly relevant ICSE tracks or workshops; NLBSE & Relevant to LLM based Software Engineering, industrial evaluation, natural language, and generation tasks. \\
+Core & ESEM & Relevant to empirical evaluation, measurement, comparison, and quality assessment. \\
+Conditional & EASE and \emph{Empirical Software Engineering} & Added to manual inspection when the seed set or automated results demonstrate recurrent eligible studies or an indexing gap. \\
+Conditional & ECMFA and associated STAF events; SLE & Added when model transformation, language engineering, or formal modeling studies are recurrent in the candidate corpus. \\
+Conditional & ASE; FSE; \emph{Automated Software Engineering}; \emph{Journal of Systems and Software}; \emph{Requirements Engineering}; IEEE TSE; ACM TOSEM & Added when at least two eligible studies are identified in the outlet, or when a known eligible seed study is not retrieved by the automated sources. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+A venue is promoted from the conditional set to manual inspection when at least one of the following conditions holds.
+
+\begin{enumerate}[label=\alph*)]
+    \item the validated seed set contains a relevant study from the venue that is not retrieved by any core automated source;
+    \item at least two eligible candidate studies are identified in the venue during automated searching, pilot screening, or snowballing;
+    \item methodological and domain reviewers jointly determine that excluding the venue creates a documented coverage risk.
+\end{enumerate}
+
+The venue decision log records the evidence for inclusion, the years inspected, the search route, and the number of unique eligible records contributed. Manual inspection is not expanded solely because a venue is prestigious or generally relevant to Software Engineering.
+
+
+\subsection{Manual venue inspection procedure}
+\label{sec:protocol_manual_search_procedure}
+
+Manual venue inspection is conducted as a census-like inspection of predefined documentary
+units rather than as a repetition of the automated Boolean query inside each venue. Its purpose
+is to identify potentially relevant reports that may be missed because of terminology variation,
+indexing delay, incomplete database coverage, or publication in companion and satellite tracks.
+The manual route therefore prioritizes sensitivity during discovery and applies the formal
+eligibility criteria only after records have been merged into the master corpus.
+
+\subsubsection{Operational unit and source hierarchy}
+
+The operational unit of manual inspection is defined as
+\[
+U_m=\langle venue,year,volume/track\rangle .
+\]
+For conference families, main proceedings and companion proceedings are treated as distinct
+inspection units when published separately. Workshops, doctoral symposia, tools and demonstration
+tracks, educator tracks, industry tracks, and other satellite events are not excluded a priori
+when their reports form part of the inspected proceedings. Journal inspection is performed by
+volume and issue within the review interval.
+
+For every unit, the documentary source is selected according to the following order of preference.
+
+\begin{enumerate}[label=\arabic*)]
+    \item official publisher proceedings or journal table of contents;
+    \item official conference or journal table of contents that links to the definitive records;
+    \item official program pages used only as navigation support when the publisher table of contents
+    is incomplete or difficult to traverse.
+\end{enumerate}
+
+Aggregator pages, unofficial bibliographies, and general web search results are not used as the
+sole evidence that a manual-search unit has been completely inspected.
+
+
+\subsubsection{Source roles, documentary membership, and provenance chain}
+
+The manual-search evidence model distinguishes documentary membership from metadata enrichment.
+For each unit \(U_m\), every source is assigned one of four operational roles.
+
+\begin{itemize}
+    \item \texttt{PRIMARY\_TOC}: the authoritative publisher proceedings, journal table of contents,
+    or equivalent official publication inventory that establishes the initial documentary
+    membership of the unit;
+    \item \texttt{VENUE\_CROSSCHECK}: an independent official venue or journal source used to verify
+    completeness and identify discrepancies in the primary inventory;
+    \item \texttt{METADATA\_SOURCE}: an authoritative bibliographic source, publisher record, Crossref,
+    or equivalent service used to enrich records already identified in the documentary universe;
+    \item \texttt{AUXILIARY\_NAVIGATION}: an official navigation aid that facilitates traversal but
+    does not independently establish documentary membership.
+\end{itemize}
+
+Only the \texttt{PRIMARY\_TOC} establishes initial membership. A cross-check or metadata source may
+reveal an omitted, duplicated, withdrawn, reclassified, or otherwise discrepant record, but that
+record is not silently incorporated into the final documentary universe. The discrepancy is first
+recorded as an \texttt{InventoryConflict} and explicitly reconciled against the authoritative
+publication evidence. This rule prevents metadata services or search engines from redefining the
+population being manually inspected.
+
+The provenance chain for each manual-search unit is operationalized as follows.
+
+\begin{quote}
+\begin{minipage}{0.94\textwidth}
+\small\ttfamily\raggedright
+PRIMARY\_TOC / permissible source snapshot\\
+\(\rightarrow\) source/source\_manifest.csv\\
+\(\rightarrow\) raw/inventory\_raw.csv\\
+\(\rightarrow\) normalized/inventory.csv\\
+\(\rightarrow\) screening/discovery.csv
+\end{minipage}
+\end{quote}
+
+This chain is retained in the replication package so that an external auditor can determine
+which source established the unit, which documentary items were observed, how bibliographic
+values were normalized or enriched, and whether every documentary item was subsequently inspected.
+This implementation follows the transparency and reproducibility objectives of systematic-search
+reporting \cite{Rethlefsen2021PRISMAS} and the traceability requirements expected of systematic
+mapping studies in Software Engineering \cite{Petersen2015Mapping}.
+
+\paragraph{Source manifest.}
+Each unit maintains a \texttt{source\_manifest.csv} containing, at minimum,
+\texttt{SourceID}, \texttt{ManualSearchUnitID}, \texttt{SourceRole}, \texttt{URL},
+\texttt{RetrievedAt}, \texttt{LocalSnapshot}, \texttt{SHA256}, \texttt{ContentType}, and
+\texttt{Notes}. A local snapshot is preserved only when access conditions and redistribution
+rights permit it. When a snapshot cannot be redistributed, the replication package preserves the
+source URL, retrieval timestamp, permitted audit metadata, and a locally computed checksum when
+applicable without redistributing restricted source content.
+
+\paragraph{Raw documentary inventory.}
+The file \texttt{raw/inventory\_raw.csv} materializes every item observed in the documentary
+universe established by the \texttt{PRIMARY\_TOC}, irrespective of relevance. Its minimum schema is
+\texttt{ManualSearchID}, \texttt{ManualSearchUnitID}, \texttt{SourceOrdinal},
+\texttt{InventorySourceID}, \texttt{SourceRecordLocator}, \texttt{TitleRaw},
+\texttt{AuthorsRaw}, \texttt{DOIRaw}, \texttt{VenueRaw}, \texttt{YearRaw},
+\texttt{VolumeTrackIssueRaw}, \texttt{PublisherRecordURLRaw}, \texttt{RetrievedAt},
+\texttt{ExtractionMethod}, and \texttt{Notes}. Values are retained as observed in the source.
+\texttt{ManualSearchID} is assigned when the documentary item is materialized in this raw inventory
+and remains stable across all subsequent layers.
+
+\paragraph{Normalized inventory.}
+The file \texttt{normalized/inventory.csv} preserves the raw values while adding normalized or
+enriched representations such as normalized title, authors, DOI, publisher metadata, abstract,
+author keywords, and full-text location. Every normalized record must be traceable to an existing
+\texttt{ManualSearchID} in the raw inventory. Metadata enrichment may repair formatting, resolve an
+identifier, or add bibliographic fields, but it does not silently create documentary membership.
+A temporary reconciliation record may be retained while a discrepancy is investigated, but it
+remains explicitly conflict-marked and cannot contribute to the final unit membership until the
+conflict has been resolved.
+
+\paragraph{Immutability and normalization.}
+Once the raw inventory for a documented extraction event has been committed to the replication
+package, observed values are not silently overwritten. Corrections, canonicalization, and metadata
+augmentation occur in the normalized layer, preserving the raw evidence that motivated the
+transformation. When the authoritative source itself changes after retrieval, the later state is
+captured as a new source retrieval event rather than replacing the previously recorded evidence.
+
+\subsubsection{Inventory and inspection sequence}
+
+Before any relevance decision is made, the reviewers materialize the complete documentary
+inventory in \texttt{raw/inventory\_raw.csv}. The raw inventory contains every item belonging to
+the universe established by the \texttt{PRIMARY\_TOC}, including records that will later be
+classified as clearly irrelevant or as non-research items. No candidate filtering is permitted
+during this stage. The inventory preserves the observed order and source locator whenever
+available, and assigns the stable \texttt{ManualSearchID} used by the normalized and screening
+layers. Inspection then proceeds in the following order.
+
+\begin{enumerate}[label=\arabic*)]
+    \item Inspect the title of every record in the unit.
+    \item When the title does not permit unequivocal exclusion from the discovery scope, inspect the
+    abstract and author keywords when available.
+    \item Mark as a manual-search candidate any report for which there is a reasonable possibility
+    that an LLM plays a substantive role in generating, transforming, completing, repairing, or
+    iteratively revising UML or an explicitly identified UML diagram type from textual software
+    requirements or explicit textual domain information.
+    \item Defer ambiguous Layer~1 eligibility judgments to the formal screening stage rather than
+    resolving them during manual discovery.
+    \item Preserve the provenance of every candidate even when the same report is later found in an
+    automated source.
+\end{enumerate}
+
+The automated search string is not reapplied as a mandatory manual-search filter. Terms such as
+LLM, ChatGPT, UML, class diagram, sequence diagram, requirements, model generation, and related
+expressions are used as attention cues during inspection, but the absence of those literal terms
+from the title does not justify exclusion when the abstract suggests potential relevance. This
+decision is intended to reduce dependence on terminology already encoded in the automated query.
+
+\subsubsection{Manual-search discovery statuses}
+
+Manual discovery uses the provisional statuses in Table~\ref{tab:manual_discovery_status}.
+These statuses are discovery annotations and do not replace the Layer~1 inclusion and exclusion
+criteria.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Manual-search discovery statuses}
+\label{tab:manual_discovery_status}
+\begin{tabularx}{\textwidth}{p{0.22\textwidth} X}
+\toprule
+\textbf{Status} & \textbf{Operational meaning} \\
+\midrule
+CLEAR-CANDIDATE & LLM use, UML or an explicitly identified UML diagram type, and a generation, transformation, completion, repair, or revision task are sufficiently explicit to justify candidate registration. \\
+POSSIBLE-CANDIDATE & Relevance is plausible, but one or more elements such as the UML status of the notation, textual input, or substantive role of the LLM require full-text screening. The report is retained as a candidate. \\
+CLEAR-NON-CANDIDATE & Title and, when required, abstract provide sufficient evidence that the report is incompatible with the discovery scope. The record contributes to the inspected-item count but is not promoted to the candidate set. \\
+NON-RESEARCH-ITEM & The item is a keynote, editorial, index, slide deck, poster-only item, front matter, or another publication form that does not constitute a primary scientific report. The item is counted for auditability but is not treated as a candidate primary study. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Manual-search record}
+
+After the complete raw inventory has been established, every report promoted to the manual-search
+candidate set receives the following discovery and screening fields before cross-source
+deduplication. These fields supplement rather than replace the raw and normalized inventories.
+
+\begin{longtable}{p{0.23\textwidth} p{0.69\textwidth}}
+\caption{Minimum manual-search record}
+\label{tab:manual_search_fields}\\
+\toprule
+\textbf{Field} & \textbf{Content} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Field} & \textbf{Content} \\
+\midrule
+\endhead
+ManualSearchID & Stable identifier assigned when the item is materialized in the raw documentary inventory and preserved across normalized, discovery, and screening layers. \\
+VenueFamily & Conference or journal family, for example MODELS or Software and Systems Modeling. \\
+VenueOrJournal & Exact publication outlet. \\
+Year & Publication year associated with the inspected unit. \\
+VolumeTrackIssue & Main proceedings, companion proceedings, workshop, track, journal volume, or journal issue when applicable. \\
+SourceURL & Official publisher or official venue table-of-contents URL used for inspection. \\
+InspectionDate & Date on which the unit was inspected. \\
+Title & Report title as published. \\
+Authors & Authors as published. \\
+DOIorPID & DOI or other persistent identifier when available. \\
+DiscoveryStatus & CLEAR-CANDIDATE or POSSIBLE-CANDIDATE for records promoted to the candidate set. \\
+CandidateRationale & Short statement explaining why the report may satisfy the review scope. \\
+LLMEvidence & Title, abstract, or keyword evidence indicating substantive LLM use. \\
+ModelingEvidence & Evidence indicating UML, a UML diagram type, or potentially relevant software modeling. \\
+InputEvidence & Evidence indicating textual requirements, user stories, specifications, scenarios, or explicit domain descriptions when visible at discovery. \\
+AutomatedSourceMatch & Populated after merge to indicate Scopus, IEEE Xplore, ACM Digital Library, Web of Science, or other automated-source matches. \\
+Layer1Decision & Populated only during the formal screening process. \\
+\bottomrule
+\end{longtable}
+
+\subsubsection{Positive coverage controls}
+
+Known relevant studies that belong to an inspected venue are used as positive coverage controls
+for the manual-search procedure. Their role is diagnostic rather than preferential: they remain
+subject to the same eligibility criteria as other reports. Failure to recover a known control
+during complete inspection of its venue-year unit triggers reinspection of that unit and review
+of the inspection procedure. Examples include the known seed studies already used in automated
+search validation when their publication outlet belongs to the manual-search core.
+
+\subsubsection{Merge with automated sources and incremental yield}
+
+Manual candidates are merged with the master bibliographic corpus only after their original
+manual provenance has been preserved. Deduplication uses DOI, normalized title, author and year
+information, and publication-family reconciliation according to Section~\ref{sec:protocol_records}.
+A manual candidate that is also retrieved from an automated source remains tagged as having been
+found manually.
+
+The incremental contribution of manual searching is reported using at least the following
+quantities.
+
+\[
+N_{\mathrm{manual,cand}}
+=
+\text{number of manual-search candidates},
+\]
+
+\[
+N_{\mathrm{manual,eligible}}
+=
+\text{number of those candidates subsequently satisfying Layer~1},
+\]
+
+and
+
+\[
+N_{\mathrm{manual,exclusive}}
+=
+\text{number of Layer~1 studies not retrieved by any retained automated source}.
+\]
+
+The incremental manual-search yield is calculated as
+
+\[
+Yield_{\mathrm{manual}}
+=
+\frac{N_{\mathrm{manual,exclusive}}}
+{N_{\mathrm{manual,eligible}}}
+\]
+when \(N_{\mathrm{manual,eligible}}>0\). The raw number of records inspected is also reported so
+that manual-search effort and yield can be interpreted together.
+
+\subsubsection{Completion rule for a manual-search unit}
+
+A unit \(U_m\) progresses through the operational states \texttt{PENDING},
+\texttt{IN\_PROGRESS}, \texttt{COMPLETE}, and \texttt{BLOCKED}. \texttt{PENDING} denotes a planned
+unit whose inventory has not yet begun. \texttt{IN\_PROGRESS} denotes an active inventory,
+reconciliation, or inspection process. \texttt{BLOCKED} denotes a unit whose completion is prevented
+by an unresolved access limitation or documentary-membership conflict.
+
+A unit is marked \texttt{COMPLETE} only when all of the following conditions hold:
+
+\begin{enumerate}[label=\alph*)]
+    \item the \texttt{PRIMARY\_TOC} and any cross-check sources used have been recorded in the source
+    manifest with retrieval dates and reproducibility metadata;
+    \item the raw documentary inventory materializes every item in the reconciled documentary universe;
+    \item every raw item has been traversed during manual discovery, including clearly irrelevant
+    records and non-research items;
+    \item every normalized record is traceable to a raw \texttt{ManualSearchID};
+    \item all material \texttt{InventoryConflict} instances have been reconciled rather than merely
+    documented;
+    \item the total item count, candidate count, discovery-status counts, inspection date, access
+    limitations, and candidate identifiers have been recorded in the manual venue search log; and
+    \item the audit artifacts required for the unit are preserved in the replication package subject
+    to licensing and redistribution constraints.
+\end{enumerate}
+
+An unresolved documentary-membership conflict prevents \texttt{COMPLETE}. A documented but
+unresolved conflict therefore leaves the unit \texttt{IN\_PROGRESS} while reconciliation is active,
+or \texttt{BLOCKED} when reconciliation cannot proceed. Units whose proceedings are not yet
+available remain \texttt{PENDING} and are revisited during the final search update before synthesis.
+
+Manual searching may be operationalized in temporal batches without changing the review interval
+or eligibility criteria. The initial operational batch prioritizes recent years and high-yield
+core venues, but a venue family is considered completely searched only after every required year
+in the protocol interval has reached \texttt{COMPLETE}. Interim analyses therefore do not redefine
+the final documentary scope.
+
+\subsubsection{Initial operational order}
+
+To maximize early coverage of the communities most directly related to the phenomenon while
+preserving the complete core venue set, manual inspection is initially conducted in the following
+order:
+
+\begin{enumerate}[label=\arabic*)]
+    \item MODELS main conference and MODELS Companion;
+    \item IEEE International Requirements Engineering Conference and directly related workshops;
+    \item NLBSE;
+    \item ICSE main conference and Software Engineering in Practice;
+    \item ESEM;
+    \item MODELSWARD;
+    \item \emph{Software and Systems Modeling};
+    \item REFSQ.
+\end{enumerate}
+
+This order is an operational prioritization and is not interpreted as a ranking of scientific
+importance. Conditional venues are activated only by the criteria specified in
+Table~\ref{tab:protocol_manual_venues} and the associated venue decision rules.
+
+\subsubsection{Manual-search audit outputs}
+
+For every venue family, the replication package contains linked audit artifacts:
+
+\begin{enumerate}[label=\arabic*)]
+    \item a \emph{source manifest}, identifying the primary documentary source, cross-check sources,
+    metadata sources, retrieval times, and permissible snapshots or checksums;
+    \item a \emph{raw documentary inventory}, materializing every item in the reconciled documentary
+    universe before relevance classification;
+    \item a \emph{normalized inventory}, preserving traceability to raw identifiers while recording
+    normalized and enriched bibliographic metadata;
+    \item a \emph{venue search and discovery log}, demonstrating which venue-year-volume units were
+    inspected, the status assigned to every raw item, and whether each unit is complete;
+    \item a \emph{manual candidate set}, preserving candidate records and discovery rationales before
+    destructive deduplication; and
+    \item a \emph{coverage comparison}, identifying which manual candidates were also found by each
+    automated source and which eligible studies were contributed exclusively by manual inspection.
+\end{enumerate}
+
+The final report summarizes the number of completed manual-search units, total records inspected,
+candidate reports, eligible reports, and eligible studies contributed exclusively by manual
+inspection. This evidence is used to evaluate the incremental value of manual venue inspection
+rather than merely stating that handsearching was performed.
+
+
+\subsection{Source contribution and retention analysis}
+
+Before protocol registration, the validation pilot will compare the contribution of each planned source. For every seed and pilot record, the review team records which sources retrieve it and whether the source contributes a unique eligible record. Core sources are retained because they represent distinct indexing or publisher functions. ScienceDirect remains provisional and is retained in the production search only when it retrieves at least one unique eligible or seed study, or when its removal leaves a documented publisher coverage gap. A decision to omit ScienceDirect is made before protocol registration and is reported with the validation results. Any source change after registration requires a formal protocol amendment.
+
+\section{Search Strategy}
+\label{sec:protocol_search}
+
+\subsection{Conceptual search blocks}
+
+The search strategy is intentionally broad enough to identify Layer 1 studies. It is organized into three conceptual blocks.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Conceptual blocks of the search strategy}
+\label{tab:protocol_search_blocks}
+\begin{tabularx}{\textwidth}{p{0.18\textwidth} X}
+\toprule
+\textbf{Block} & \textbf{Candidate terms} \\
+\midrule
+LLM & ``large language model*'', LLM*, ``generative AI'', ``generative artificial intelligence'', ChatGPT, GPT, Claude, Gemini, Llama, Qwen, DeepSeek \\
+UML and diagrams & UML, ``Unified Modeling Language'', PlantUML, ``class diagram*'', ``use case diagram*'', ``sequence diagram*'', ``activity diagram*'', ``state machine diagram*'', ``state diagram*'', ``component diagram*'', ``deployment diagram*'', ``object diagram*'', ``communication diagram*'', ``package diagram*'', ``composite structure diagram*'', ``timing diagram*'', ``interaction overview diagram*'' \\
+Generation and source & generat*, creat*, construct*, synthes*, produc*, transform*, complet*, repair*, refine*, ``natural language'', requirement*, specification*, ``user stor*'', scenario*, ``problem statement*'', ``domain description*'' \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The baseline logical form is the following.
+
+\begin{quote}
+\begin{minipage}{0.92\textwidth}
+\small\ttfamily\raggedright
+(LLM terms)\\
+AND (UML and diagram terms)\\
+AND (generation and source terms)
+\end{minipage}
+\end{quote}
+
+The search does not require quality terms. Requiring terms such as semantic, correctness, or hallucination at retrieval time could exclude generation studies that evaluate quality under different terminology. Layer 2 is therefore identified after retrieval.
+
+\subsection{Generic baseline search string}
+
+\begin{quote}
+\begin{minipage}{0.94\textwidth}
+\footnotesize\ttfamily\raggedright
+(``large language model*'' OR LLM* OR ``generative AI'' OR\\
+``generative artificial intelligence'' OR\\
+ChatGPT OR GPT OR Claude OR Gemini OR Llama OR Qwen OR DeepSeek)\\[0.4em]
+AND\\[0.4em]
+(UML OR ``Unified Modeling Language'' OR PlantUML OR\\
+``class diagram*'' OR ``use case diagram*'' OR ``sequence diagram*'' OR\\
+``activity diagram*'' OR ``state machine diagram*'' OR ``state diagram*'' OR\\
+``component diagram*'' OR ``deployment diagram*'' OR ``object diagram*'' OR\\
+``communication diagram*'' OR ``package diagram*'' OR\\
+``composite structure diagram*'' OR ``timing diagram*'' OR\\
+``interaction overview diagram*'')\\[0.4em]
+AND\\[0.4em]
+(generat* OR creat* OR construct* OR synthes* OR produc* OR transform* OR\\
+complet* OR repair* OR refine* OR ``natural language'' OR requirement* OR\\
+specification* OR ``user stor*'' OR scenario* OR ``problem statement*'' OR\\
+``domain description*'')
+\end{minipage}
+\end{quote}
+
+The exact string executed in each source will preserve this conceptual logic while adapting field identifiers, wildcards, phrase syntax, query length restrictions, and filters. Every executed string, date, filter, and result count will be preserved verbatim in the replication package in accordance with PRISMA-S \cite{Rethlefsen2021PRISMAS}.
+
+
+\subsection{Search validation}
+\label{sec:protocol_search_validation}
+
+Search validation is performed before the production search in each source
+\cite{Zhang2011Identifying}. Validation is treated as an auditable sequence of
+controlled modifications rather than as an informal refinement of the query.
+Whenever possible, a single lexical or field decision is changed per round so
+that differences in retrieval can be attributed to the modified component.
+
+The general validation procedure comprises the following steps.
+
+\begin{enumerate}[label=\arabic*)]
+    \item Construct a prespecified seed set of known relevant primary studies
+    covering different UML diagram types and publication venues.
+    \item Execute the baseline search and verify the recovery of every seed study.
+    \item Diagnose retrieval noise and potential false negatives by inspecting
+    differential records, including title, abstract, author keywords, database
+    indexing terms, and publication metadata.
+    \item Modify terms or fields only when the modification has a conceptual
+    justification and its effect can be evaluated against the preceding round.
+    \item Preserve the complete result export from every validation round.
+    \item Record the database-reported result count, the number of unique record
+    identities used for diagnostic comparison, seed recovery, the records added
+    or removed, the interpretation of those differences, and the resulting decision.
+    \item Re-execute the validation until the source-specific strategy preserves
+    the prespecified seeds and no tested modification provides a better
+    recall--precision trade-off for the scope of the study.
+    \item Compare source contribution after the source-specific strategies have
+    been validated, recording seed retrieval, unique eligible records, and
+    documented coverage gaps.
+    \item Validate the core and conditional manual venue sets using the predefined
+    promotion criteria and record the years inspected.
+    \item Submit the final multi-source strategy to one reviewer with expertise
+    in secondary studies and one reviewer with expertise in UML or LLM-based modeling.
+\end{enumerate}
+
+\subsubsection{Prespecified Scopus seed set}
+
+The first source-specific validation was conducted in Scopus on 10 August 2026.
+Five primary studies were prespecified as the core seed set. The seed set is a
+validation instrument and not a privileged inclusion list; every seed study is
+subject to the same eligibility criteria as every other retrieved report.
+
+\begin{longtable}{p{0.05\textwidth} p{0.64\textwidth} p{0.23\textwidth}}
+\caption{Prespecified seed studies used in the Scopus validation}
+\label{tab:scopus_seed_set}\\
+\toprule
+\textbf{ID} & \textbf{Study} & \textbf{DOI} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Study} & \textbf{DOI} \\
+\midrule
+\endhead
+SE1 & De Bari et al., \emph{Evaluating Large Language Models in Exercises of UML Class Diagram Modeling} \cite{DeBari2024UML} & \url{https://doi.org/10.1145/3674805.3690741} \\
+SE2 & Ferrari et al., \emph{Model Generation with LLMs: From Requirements to UML Sequence Diagrams} \cite{Ferrari2024Sequence} & \url{https://doi.org/10.1109/REW61692.2024.00044} \\
+SE3 & Garaccione et al., \emph{A Comparison of Different Large Language Models for the Generation of UML Class Diagrams} \cite{Garaccione2025Class} & \url{https://doi.org/10.1109/MODELS-C68889.2025.00078} \\
+SE4 & Garaccione et al., \emph{Evaluating Large Language Models in Exercises of UML Use Case Diagrams Modeling} \cite{Garaccione2025UseCase} & \url{https://doi.org/10.1109/NLBSE66842.2025.00015} \\
+SE5 & Xiao et al., \emph{UML Sequence Diagram Generation: A Multi-Model, Multi-Domain Evaluation} \cite{Xiao2025Sequence} & \url{https://doi.org/10.1109/ICSE-SEIP66354.2025.00030} \\
+\bottomrule
+\end{longtable}
+
+All five prespecified seed studies were retrieved in every Scopus validation
+round. Consequently, seed recovery was \(5/5=100\%\) for S1, S2, S3, and S4.
+Because the five seeds use comparatively explicit UML terminology, seed
+recovery was not treated as sufficient evidence by itself. Differential-record
+inspection was additionally used to evaluate whether a query modification
+removed substantively relevant studies whose UML relationship was expressed
+only in author keywords or less explicit metadata.
+
+\subsubsection{Scopus validation rounds}
+
+The initial Scopus query searched all three conceptual blocks in
+\texttt{TITLE-ABS-KEY}. Four controlled rounds were executed. The raw counts in
+Table~\ref{tab:scopus_validation_rounds} are the counts reported by Scopus and
+preserved in the exported RIS files. For diagnostic set comparison, records were
+also matched by DOI when available and otherwise by normalized title. Four
+duplicate record identities were present in each export; these duplicates do
+not affect the between-round differences and remain subject to the production
+deduplication procedure specified in Section~\ref{sec:protocol_records}.
+
+\begin{longtable}{p{0.06\textwidth} p{0.32\textwidth} p{0.09\textwidth} p{0.10\textwidth} p{0.31\textwidth}}
+\caption{Scopus search-strategy validation log}
+\label{tab:scopus_validation_rounds}\\
+\toprule
+\textbf{Round} & \textbf{Controlled modification} & \textbf{Scopus N} & \textbf{Seeds} & \textbf{Interpretation and decision} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Round} & \textbf{Controlled modification} & \textbf{Scopus N} & \textbf{Seeds} & \textbf{Interpretation and decision} \\
+\midrule
+\endhead
+S1 & Baseline. All three conceptual blocks searched in \texttt{TITLE-ABS-KEY}; the LLM block included ``foundation model*''. & 376 & 5/5 & High seed recovery, but differential inspection identified precision loss from the polysemy of ``foundation model*'' and from UML matches attributable only to Scopus indexing terms. The baseline was not frozen. \\
+S2 & Removed only ``foundation model*''; all fields otherwise identical to S1. & 371 & 5/5 & Five records were removed. Inspection of all five showed that none was eligible for the present scope, including pre-LLM literature in which ``foundation model'' had a different meaning. The lexical modification was accepted. \\
+S3 & Restored ``foundation model*'' and changed only the UML block from \texttt{TITLE-ABS-KEY} to \texttt{TITLE-ABS OR AUTHKEY}. & 250 & 5/5 & The field modification removed 126 baseline records while preserving all seeds. Differential inspection showed substantial removal of records whose UML association originated only from database index terms, while relevant or potentially eligible studies whose UML relationship appeared in author keywords were preserved. The field modification was accepted. \\
+S4 & Combined the two independently accepted modifications: removed ``foundation model*'' and searched the UML block in \texttt{TITLE-ABS OR AUTHKEY}. & 249 & 5/5 & S4 contained exactly the intersection of the unique-record sets retrieved by S2 and S3. Relative to S3, only the 2002 FMCO proceedings record was removed. No prespecified seed was lost. S4 was accepted as Scopus search-string version 1.0 for subsequent source validation and production searching. \\
+\bottomrule
+\end{longtable}
+
+The diagnostic unique-record counts were 372 for S1, 367 for S2, 246 for S3,
+and 245 for S4. S4 therefore removed 127 unique identities relative to the S1
+baseline while preserving the complete prespecified seed set. These values are
+reported as validation diagnostics rather than as study-selection results.
+
+\subsubsection{Rationale for the accepted Scopus modifications}
+
+The S2 comparison showed that the generic term ``foundation model*'' was not
+sufficiently specific to the LLM construct in this review. Its exclusive
+retrieval contribution consisted of records outside the intended scope;
+therefore, the term was removed rather than retained solely to increase
+nominal recall.
+
+The S3 comparison demonstrated that using the composite Scopus keyword field
+for the UML block introduced substantial retrieval through database-assigned
+index terms. Restricting this block to title, abstract, or author keywords
+preserves documents in which UML is explicitly part of the authors'
+description of the study while reducing retrieval caused only by controlled
+indexing terms. A title-and-abstract-only restriction was not adopted because
+differential inspection identified potentially eligible records whose UML
+relationship was expressed in author keywords.
+
+These decisions are specific to the Scopus field model. They will not be
+mechanically transferred to other databases. Each source-specific query will
+preserve the same conceptual blocks while using the source's documented field
+semantics and will undergo its own seed and differential-record validation.
+
+\subsubsection{Validated Scopus search string v1.0}
+
+The following query was accepted after S4. No temporal, subject-area, language,
+or document-type filter was applied during the lexical and field validation so
+that field effects could be evaluated independently. Such restrictions, when
+required by the protocol, are applied and recorded separately during production
+searching.
+
+\begin{quote}
+\begin{minipage}{0.96\textwidth}
+\scriptsize\ttfamily\raggedright
+TITLE-ABS-KEY (\\
+\quad ( ``large language model*'' OR LLM* OR ``generative AI'' OR\\
+\quad ``generative artificial intelligence'' OR ChatGPT OR GPT OR Claude OR\\
+\quad Gemini OR Llama OR Qwen OR DeepSeek )\\
+)\\
+AND\\
+(\\
+\quad TITLE-ABS (\\
+\qquad UML OR ``Unified Modeling Language'' OR PlantUML OR\\
+\qquad ``class diagram*'' OR ``use case diagram*'' OR ``sequence diagram*'' OR\\
+\qquad ``activity diagram*'' OR ``state machine diagram*'' OR ``state diagram*'' OR\\
+\qquad ``component diagram*'' OR ``deployment diagram*'' OR ``object diagram*'' OR\\
+\qquad ``communication diagram*'' OR ``package diagram*'' OR\\
+\qquad ``composite structure diagram*'' OR ``timing diagram*'' OR\\
+\qquad ``interaction overview diagram*''\\
+\quad )\\
+\quad OR\\
+\quad AUTHKEY (\\
+\qquad UML OR ``Unified Modeling Language'' OR PlantUML OR\\
+\qquad ``class diagram*'' OR ``use case diagram*'' OR ``sequence diagram*'' OR\\
+\qquad ``activity diagram*'' OR ``state machine diagram*'' OR ``state diagram*'' OR\\
+\qquad ``component diagram*'' OR ``deployment diagram*'' OR ``object diagram*'' OR\\
+\qquad ``communication diagram*'' OR ``package diagram*'' OR\\
+\qquad ``composite structure diagram*'' OR ``timing diagram*'' OR\\
+\qquad ``interaction overview diagram*''\\
+\quad )\\
+)\\
+AND\\
+TITLE-ABS-KEY (\\
+\quad ( generat* OR creat* OR construct* OR synthes* OR produc* OR transform* OR\\
+\quad complet* OR repair* OR refine* OR ``natural language'' OR requirement* OR\\
+\quad specification* OR ``user stor*'' OR scenario* OR ``problem statement*'' OR\\
+\quad ``domain description*'' )\\
+)
+\end{minipage}
+\end{quote}
+
+The complete RIS exports for S1--S4 are preserved in controlled project storage
+for audit. Their redistribution in the public replication package occurs only
+when the source terms permit it. Independently of that redistribution, the
+public replication package preserves the query, validation log, counts,
+permitted audit metadata, and reproduction information. Source-specific
+validation of ACM Digital Library, IEEE Xplore,
+Scopus-independent indexing services, and the complementary sources remains
+subject to the same protocol before the complete multi-source strategy is frozen.
+
+
+\subsubsection{IEEE Xplore source-specific validation}
+\label{sec:ieee_validation}
+
+IEEE Xplore was validated independently rather than receiving a mechanical
+translation of the Scopus field configuration. This decision follows the
+protocol principle that the conceptual search architecture must remain stable
+across sources while field semantics, indexing practices, syntax, and interface
+behavior are validated within each information source.
+
+\paragraph{Invalid implementation test I0.}
+An initial implementation using the IEEE Xplore Structured Advanced Search
+interface split the UML concept block across two boxes joined by \texttt{OR},
+followed by the LLM and generation blocks joined by \texttt{AND}. Inspection
+of the Boolean expression generated by the interface showed that the intended
+grouping
+\[
+(UML_A \lor UML_B) \land LLM \land GEN
+\]
+was not preserved. Instead, the generated expression was equivalent to
+\[
+UML_A \lor (UML_B \land LLM \land GEN),
+\]
+which returned 33,888 records. Because the implementation did not represent the
+intended conceptual query, I0 was invalidated and is not treated as a
+content-sensitivity round. Subsequent IEEE Xplore validation used Command Search
+with explicit parentheses so that operator grouping remained auditable.
+
+\paragraph{IEEE-specific seed denominator.}
+The five prespecified cross-source seeds were individually searched by DOI in
+IEEE Xplore before query validation. De Bari et al. \cite{DeBari2024UML}
+(DOI \url{https://doi.org/10.1145/3674805.3690741}) was empirically confirmed
+as not indexed in IEEE Xplore. The remaining four seeds were indexed and
+therefore constitute the IEEE-specific validation denominator
+\[
+|S_{\mathrm{IEEE}}|=4.
+\]
+They are Ferrari et al. \cite{Ferrari2024Sequence}, Garaccione et al.
+\cite{Garaccione2025Class}, Garaccione et al. \cite{Garaccione2025UseCase},
+and Xiao et al. \cite{Xiao2025Sequence}. All four were retrieved in I1, I2,
+and I3, corresponding to \(4/4=100\%\) seed recovery in every valid IEEE round.
+
+\paragraph{IEEE Xplore validation rounds.}
+I1 used a Command Search representation of the three conceptual blocks and
+searched every block in \emph{All Metadata}. I2 changed only the UML block,
+restricting it to \emph{Document Title}, \emph{Abstract}, or \emph{Author
+Keywords}. I3 restored the UML block to \emph{All Metadata} and restricted only
+the LLM block to \emph{Document Title}, \emph{Abstract}, or \emph{Author
+Keywords}. No temporal, language, subject-area, publication-title, or document-type
+filters were applied during these rounds.
+
+\begin{longtable}{p{0.06\textwidth} p{0.31\textwidth} p{0.09\textwidth} p{0.10\textwidth} p{0.32\textwidth}}
+\caption{IEEE Xplore search-strategy validation log}
+\label{tab:ieee_validation_rounds}\\
+\toprule
+\textbf{Round} & \textbf{Controlled implementation or modification} & \textbf{IEEE N} & \textbf{Seeds} & \textbf{Interpretation and decision} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Round} & \textbf{Controlled implementation or modification} & \textbf{IEEE N} & \textbf{Seeds} & \textbf{Interpretation and decision} \\
+\midrule
+\endhead
+I0 & Structured Advanced Search implementation with the UML block split across two boxes joined by \texttt{OR}, followed by the remaining concept blocks. & 33,888 & n/a & Invalid implementation. The interface-generated Boolean expression did not preserve the intended grouping because \texttt{AND} bound more strongly than \texttt{OR}. The result was discarded as a query-implementation failure rather than evaluated as a search-strategy variant. \\
+I1 & Valid Command Search baseline. LLM, UML, and generation/input blocks searched in \emph{All Metadata}. & 327 & 4/4 & Accepted as the valid baseline. Inspection showed precision loss from ambiguous LLM model names occurring in affiliations or unrelated metadata and substantial retrieval through broad UML metadata/indexing. \\
+I2 & Changed only the UML block from \emph{All Metadata} to \emph{Document Title OR Abstract OR Author Keywords}. & 104 & 4/4 & Rejected. Although all four indexed seeds were retained, differential inspection identified potentially relevant records removed by the restriction, including studies explicitly discussing class, sequence, activity, or other diagrams. The change also exposed lexical sensitivity to singular/plural diagram expressions once IEEE indexing fields were removed. I2 therefore did not preserve recall adequately. \\
+I3 & Restored the UML block to \emph{All Metadata} and changed only the LLM block to \emph{Document Title OR Abstract OR Author Keywords}. & 283 & 4/4 & Accepted as IEEE Xplore search-string version 1.0. I3 removed 44 I1 records while retaining all indexed seeds. Differential inspection indicated that the removed records predominantly reflected ambiguous occurrences of model names such as Claude or Gemini in affiliations or unrelated metadata. No clearly eligible recent study was identified among the removed set. \\
+\bottomrule
+\end{longtable}
+
+\paragraph{Interpretation of the IEEE field tests.}
+The I2 and I3 results demonstrate that source-specific field behavior cannot be
+assumed to reproduce the Scopus behavior. In Scopus, restricting the UML block
+to title, abstract, or author keywords reduced index-term noise without observed
+loss of relevant studies in the differential set. In IEEE Xplore, the analogous
+restriction produced potential false negatives and was therefore rejected.
+Conversely, restricting the LLM block was beneficial in IEEE Xplore because
+terms such as \emph{Claude} and \emph{Gemini} can occur in affiliations,
+organization names, historical technology names, or other peripheral metadata.
+The accepted IEEE configuration therefore deliberately prioritizes sensitivity
+for the UML concept while increasing specificity for the LLM concept.
+
+\subsubsection{Validated IEEE Xplore search string v1.0}
+
+The accepted IEEE Xplore strategy uses Command Search with explicit Boolean
+grouping. The LLM block is restricted to \emph{Document Title}, \emph{Abstract},
+or \emph{Author Keywords}; the UML and generation/input blocks remain in
+\emph{All Metadata}. The generic ``foundation model*'' term remains excluded
+from the LLM concept block according to the lexical decision established during
+the Scopus sensitivity analysis.
+
+\begin{quote}
+\begin{minipage}{0.96\textwidth}
+\scriptsize\ttfamily\raggedright
+(\\
+\quad (\\
+\qquad ``Document Title'':``large language model*'' OR\\
+\qquad ``Document Title'':LLM OR ``Document Title'':LLMs OR\\
+\qquad ``Document Title'':``generative AI'' OR\\
+\qquad ``Document Title'':``generative artificial intelligence'' OR\\
+\qquad ``Document Title'':ChatGPT OR ``Document Title'':GPT OR\\
+\qquad ``Document Title'':Claude OR ``Document Title'':Gemini OR\\
+\qquad ``Document Title'':Llama OR ``Document Title'':Qwen OR\\
+\qquad ``Document Title'':DeepSeek OR\\
+\qquad ``Abstract'':``large language model*'' OR ``Abstract'':LLM OR\\
+\qquad ``Abstract'':LLMs OR ``Abstract'':``generative AI'' OR\\
+\qquad ``Abstract'':``generative artificial intelligence'' OR\\
+\qquad ``Abstract'':ChatGPT OR ``Abstract'':GPT OR ``Abstract'':Claude OR\\
+\qquad ``Abstract'':Gemini OR ``Abstract'':Llama OR ``Abstract'':Qwen OR\\
+\qquad ``Abstract'':DeepSeek OR\\
+\qquad ``Author Keywords'':``large language model*'' OR\\
+\qquad ``Author Keywords'':LLM OR ``Author Keywords'':LLMs OR\\
+\qquad ``Author Keywords'':``generative AI'' OR\\
+\qquad ``Author Keywords'':``generative artificial intelligence'' OR\\
+\qquad ``Author Keywords'':ChatGPT OR ``Author Keywords'':GPT OR\\
+\qquad ``Author Keywords'':Claude OR ``Author Keywords'':Gemini OR\\
+\qquad ``Author Keywords'':Llama OR ``Author Keywords'':Qwen OR\\
+\qquad ``Author Keywords'':DeepSeek\\
+\quad )\\
+\quad AND\\
+\quad (\\
+\qquad ``All Metadata'':UML OR ``All Metadata'':``Unified Modeling Language'' OR\\
+\qquad ``All Metadata'':PlantUML OR ``All Metadata'':``class diagram'' OR\\
+\qquad ``All Metadata'':``use case diagram'' OR ``All Metadata'':``sequence diagram'' OR\\
+\qquad ``All Metadata'':``activity diagram'' OR\\
+\qquad ``All Metadata'':``state machine diagram'' OR ``All Metadata'':``state diagram'' OR\\
+\qquad ``All Metadata'':``component diagram'' OR ``All Metadata'':``deployment diagram'' OR\\
+\qquad ``All Metadata'':``object diagram'' OR ``All Metadata'':``communication diagram'' OR\\
+\qquad ``All Metadata'':``package diagram'' OR\\
+\qquad ``All Metadata'':``composite structure diagram'' OR\\
+\qquad ``All Metadata'':``timing diagram'' OR\\
+\qquad ``All Metadata'':``interaction overview diagram''\\
+\quad )\\
+\quad AND\\
+\quad (\\
+\qquad ``All Metadata'':generate OR ``All Metadata'':generation OR\\
+\qquad ``All Metadata'':create OR ``All Metadata'':creation OR\\
+\qquad ``All Metadata'':construct OR ``All Metadata'':construction OR\\
+\qquad ``All Metadata'':synthesis OR ``All Metadata'':produce OR\\
+\qquad ``All Metadata'':transform OR ``All Metadata'':transformation OR\\
+\qquad ``All Metadata'':complete OR ``All Metadata'':completion OR\\
+\qquad ``All Metadata'':repair OR ``All Metadata'':refine OR\\
+\qquad ``All Metadata'':refinement OR ``All Metadata'':``natural language'' OR\\
+\qquad ``All Metadata'':requirement OR ``All Metadata'':specification OR\\
+\qquad ``All Metadata'':``user story'' OR ``All Metadata'':scenario OR\\
+\qquad ``All Metadata'':``problem statement'' OR\\
+\qquad ``All Metadata'':``domain description''\\
+\quad )\\
+)
+\end{minipage}
+\end{quote}
+
+The I0 implementation record and the I1--I3 raw CSV exports are preserved in
+controlled project storage. Raw exports are redistributed publicly only when
+permitted. The public replication package preserves the validation log, query,
+counts, decisions, and permitted audit metadata. The production IEEE Xplore
+retrieval will apply the protocol's temporal and
+other explicitly approved eligibility restrictions only after this field-level
+query validation, thereby preserving the separation between lexical/field
+validation and production filtering.
+
+
+
+\subsubsection{ACM Digital Library source-specific validation}
+\label{sec:acm_validation}
+
+The ACM Digital Library was validated using the \emph{ACM Full-Text Collection}
+rather than the broader ACM Guide to Computing Literature. The Full-Text
+Collection was selected so that ACM Digital Library acts in the review as a
+direct source of ACM-published literature rather than as a second
+multidisciplinary bibliographic index overlapping extensively with Scopus and
+Web of Science.
+
+\paragraph{Interface implementation checks.}
+Validation used the Advanced Search interface available through the institutional
+CAPES proxy. The interface exposes \emph{Anywhere}, \emph{Title},
+\emph{Abstract}, \emph{Full Text}, \emph{Author Affiliation},
+\emph{Author Keyword}, DOI, and additional bibliographic fields. Empirical
+interface testing established three implementation properties that affect
+reproducibility.
+
+\begin{enumerate}[label=\arabic*)]
+    \item Distinct \emph{Search Within} rows are combined by \texttt{AND} and
+    the interface does not expose a raw Boolean editor that permits changing
+    the operator between rows.
+    \item Field prefixes typed manually inside one \emph{Anywhere} row are
+    parsed and preserve explicit \texttt{OR} relations across fields.
+    \item The manually typed prefix \texttt{Keyword:} was operationally
+    equivalent to selecting the visual \emph{Author Keyword} field in the
+    interface during a dedicated equivalence check.
+\end{enumerate}
+
+Consequently, field-restricted disjunctions were implemented inside a single
+\emph{Anywhere} row, for example
+\[
+Title(LLM)\lor Abstract(LLM)\lor AuthorKeyword(LLM),
+\]
+while the three conceptual blocks remained connected by the interface-generated
+\texttt{AND} relation between rows.
+
+\paragraph{ACM-specific seed denominator.}
+The five prespecified cross-source seeds were searched individually by DOI in
+the ACM Full-Text Collection. Only De Bari et al.
+\cite{DeBari2024UML} was indexed in this collection. Ferrari et al.,
+Garaccione et al. (class diagrams), Garaccione et al. (use case diagrams), and
+Xiao et al. were not retrieved by DOI from the ACM Full-Text Collection and
+therefore do not belong to the source-specific validation denominator. The ACM
+denominator is consequently
+\[
+|S_{\mathrm{ACM}}|=1.
+\]
+De Bari et al. was retrieved by A1, A2, and A3, corresponding to
+\(1/1=100\%\) seed recovery in every executed ACM validation round. Because
+this denominator contains only one seed, source validation relied primarily on
+differential-record inspection and diagnostic sensitivity cases rather than
+seed recovery alone.
+
+\paragraph{ACM validation rounds.}
+A1 used three \emph{Anywhere} rows representing the LLM, UML, and
+generation/input concept blocks. A2 changed only the LLM block, requiring an
+LLM term to occur in the title, abstract, or author keywords, while UML and
+generation/input remained in \emph{Anywhere}. A3 restored the LLM block to
+\emph{Anywhere} and changed only the UML block to title, abstract, or author
+keywords. A4, which would have combined the A2 and A3 modifications, was not
+executed because A3 demonstrated a relevant false-negative risk that A4 would
+necessarily inherit.
+
+\begin{longtable}{p{0.06\textwidth} p{0.31\textwidth} p{0.09\textwidth} p{0.10\textwidth} p{0.32\textwidth}}
+\caption{ACM Full-Text Collection search-strategy validation log}
+\label{tab:acm_validation_rounds}\\
+\toprule
+\textbf{Round} & \textbf{Controlled modification} & \textbf{ACM N} & \textbf{Seed} & \textbf{Interpretation and decision} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Round} & \textbf{Controlled modification} & \textbf{ACM N} & \textbf{Seed} & \textbf{Interpretation and decision} \\
+\midrule
+\endhead
+A1 & Baseline. LLM, UML, and generation/input blocks searched through three \emph{Anywhere} rows in the ACM Full-Text Collection. & 1,854 & 1/1 & Valid broad baseline but rejected as a production configuration because inspection showed substantial retrieval of pre-LLM and topically unrelated literature attributable to broad-field matching. The available EndNote export contained 1,000 records and was retained as a partial diagnostic export rather than represented as the complete A1 retrieval set. \\
+A2 & Changed only the LLM block to \(Title\lor Abstract\lor AuthorKeyword\); UML and generation/input remained in \emph{Anywhere}. & 454 & 1/1 & Accepted. The modification reduced the broad baseline substantially, concentrated retrieval in contemporary LLM literature, preserved the indexed seed, and did not reveal a clearly eligible false negative in the observable differential evidence available from A1. \\
+A3 & Restored LLM to \emph{Anywhere} and changed only the UML block to \(Title\lor Abstract\lor AuthorKeyword\). & 104 & 1/1 & Rejected. Differential inspection identified relevant or potentially eligible model-generation studies that did not expose UML terminology in title, abstract, or author keywords. A diagnostic false-negative case was \emph{Multi-step Iterative Automated Domain Modeling with Large Language Models} \cite{Yang2024MultiStepDomainModeling}, which uses natural-language problem descriptions to generate and evaluate class diagrams but would be lost under the A3 field restriction. \\
+A4 & Planned combination of the independently tested A2 and A3 field restrictions. & not executed & n/a & Cancelled. Because A3 had already demonstrated a relevant false-negative risk, any intersection inheriting the A3 UML-field restriction would preserve that loss and would not provide a defensible recall-preserving refinement. \\
+\bottomrule
+\end{longtable}
+
+\paragraph{Interpretation of the ACM field tests.}
+The ACM validation demonstrates a field behavior different from both Scopus and
+IEEE Xplore. Restricting the LLM block to title, abstract, or author keywords
+was beneficial because it reduced matches in which LLM terminology was only
+incidental in the full text or other broad searchable content. Restricting the
+UML block, however, was not acceptable because substantively relevant MDE
+papers may use broader expressions such as \emph{domain modeling},
+\emph{model generation}, classes, attributes, and relationships in their title
+or abstract while specifying UML class diagrams only in the body of the report.
+The accepted ACM configuration therefore increases specificity for the LLM
+construct while deliberately preserving a broad UML search field.
+
+The A3 false-negative evidence is retained as a diagnostic sensitivity case and
+is not retroactively added to the prespecified seed set. This distinction
+preserves the prospective role of the formal seed set while allowing studies
+discovered during validation to inform field-sensitivity decisions.
+
+\subsubsection{Validated ACM Full-Text Collection search strategy v1.0}
+
+The accepted ACM configuration is A2:
+\[
+LLM_{Title\lor Abstract\lor AuthorKeyword}
+\land
+UML_{Anywhere}
+\land
+Generation_{Anywhere}.
+\]
+The query is implemented using three \emph{Search Within} rows. The first row is
+set to \emph{Anywhere} but contains explicit field prefixes so that the LLM
+block is evaluated across title, abstract, or author keywords. The second and
+third rows use \emph{Anywhere}; the interface combines the three rows using
+\texttt{AND}.
+
+\paragraph{Row 1: field-restricted LLM block.}
+
+\begin{quote}
+\begin{minipage}{0.96\textwidth}
+\scriptsize\ttfamily\raggedright
+Title:(\\
+\quad ``large language model'' OR ``large language models'' OR LLM OR LLMs OR\\
+\quad ``generative AI'' OR ``generative artificial intelligence'' OR ChatGPT OR GPT OR\\
+\quad Claude OR Gemini OR Llama OR Qwen OR DeepSeek\\
+)\\
+OR Abstract:(\\
+\quad ``large language model'' OR ``large language models'' OR LLM OR LLMs OR\\
+\quad ``generative AI'' OR ``generative artificial intelligence'' OR ChatGPT OR GPT OR\\
+\quad Claude OR Gemini OR Llama OR Qwen OR DeepSeek\\
+)\\
+OR Keyword:(\\
+\quad ``large language model'' OR ``large language models'' OR LLM OR LLMs OR\\
+\quad ``generative AI'' OR ``generative artificial intelligence'' OR ChatGPT OR GPT OR\\
+\quad Claude OR Gemini OR Llama OR Qwen OR DeepSeek\\
+)
+\end{minipage}
+\end{quote}
+
+\paragraph{Row 2: broad UML block.}
+
+\begin{quote}
+\begin{minipage}{0.96\textwidth}
+\scriptsize\ttfamily\raggedright
+UML OR ``Unified Modeling Language'' OR PlantUML OR\\
+``class diagram'' OR ``class diagrams'' OR ``use case diagram'' OR ``use case diagrams'' OR\\
+``sequence diagram'' OR ``sequence diagrams'' OR ``activity diagram'' OR ``activity diagrams'' OR\\
+``state machine diagram'' OR ``state machine diagrams'' OR ``state diagram'' OR ``state diagrams'' OR\\
+``component diagram'' OR ``component diagrams'' OR ``deployment diagram'' OR ``deployment diagrams'' OR\\
+``object diagram'' OR ``object diagrams'' OR ``communication diagram'' OR ``communication diagrams'' OR\\
+``package diagram'' OR ``package diagrams'' OR\\
+``composite structure diagram'' OR ``composite structure diagrams'' OR\\
+``timing diagram'' OR ``timing diagrams'' OR\\
+``interaction overview diagram'' OR ``interaction overview diagrams''
+\end{minipage}
+\end{quote}
+
+\paragraph{Row 3: broad generation/input block.}
+
+\begin{quote}
+\begin{minipage}{0.96\textwidth}
+\scriptsize\ttfamily\raggedright
+generate OR generated OR generating OR generation OR\\
+create OR created OR creating OR creation OR\\
+construct OR constructed OR construction OR\\
+synthesize OR synthesized OR synthesis OR produce OR produced OR\\
+transform OR transformed OR transformation OR complete OR completion OR repair OR\\
+refine OR refinement OR ``natural language'' OR requirement OR requirements OR\\
+specification OR specifications OR ``user story'' OR ``user stories'' OR\\
+scenario OR scenarios OR ``problem statement'' OR ``problem statements'' OR\\
+``domain description'' OR ``domain descriptions''
+\end{minipage}
+\end{quote}
+
+No temporal, language, publication-type, or venue filter was used during A1--A3
+field validation. Such restrictions are applied and documented separately
+during production retrieval. The complete A2 and A3 EndNote exports and the
+partial A1 diagnostic export are preserved in controlled project storage.
+\texttt{.enw} files are redistributed in the public replication package only when the
+applicable terms permit it. The seed-indexing check, field-prefix equivalence
+check, validation log, counts, diagnostic decisions, and permitted audit
+metadata remain documented in the replication package.
+
+
+\subsection{Complementary search}
+
+Backward and forward snowballing will be conducted according to a predefined and recorded procedure \cite{Wohlin2014Snowballing}. The start set comprises all included Layer 1 studies and relevant secondary studies. Backward snowballing inspects references. Forward snowballing uses Google Scholar and, when available, Scopus or Web of Science citation links. Newly identified records are deduplicated and screened with the same criteria used for database results. Iterations continue until one complete iteration produces no new eligible primary study.
+
+The automated search will be updated immediately before the final synthesis and reporting. The update will use the same sources, concepts, and eligibility criteria. Changes caused by database syntax or platform evolution will be documented.
+
+\section{Eligibility Criteria}
+\label{sec:protocol_eligibility}
+
+\subsection{Layer 1 inclusion criteria}
+
+\begin{longtable}{p{0.10\textwidth} p{0.82\textwidth}}
+\caption{Layer 1 inclusion criteria}
+\label{tab:protocol_inclusion_layer1}\\
+\toprule
+\textbf{Code} & \textbf{Criterion} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Code} & \textbf{Criterion} \\
+\midrule
+\endhead
+I1 & The report describes a primary scientific study. \\
+I2 & One or more LLMs play a substantial role in generating, transforming, completing, repairing, or iteratively revising a UML diagram. \\
+I3 & The source includes textual software requirements or explicit textual domain descriptions. A study with multiple input types is eligible when the textual requirement component is substantive. \\
+I4 & The output is explicitly UML or an explicitly identified UML diagram type. \\
+I5 & The report provides sufficient information to characterize at least the generation task, diagram type, model or system, and study contribution. \\
+I6 & The full text is available in English. \\
+I7 & The report falls within the defined publication interval. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Layer 2 inclusion criteria}
+
+A Layer 1 study is assigned to Layer 2 when it satisfies at least criterion S1 and provides enough information for one or more of S2 to S5.
+
+\begin{longtable}{p{0.10\textwidth} p{0.82\textwidth}}
+\caption{Layer 2 inclusion criteria}
+\label{tab:protocol_inclusion_layer2}\\
+\toprule
+\textbf{Code} & \textbf{Criterion} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Code} & \textbf{Criterion} \\
+\midrule
+\endhead
+S1 & The report evaluates at least one property of the generated diagram related to textual validity, UML conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, inadequacy, inspection, correction, or rework. \\
+S2 & The report identifies or permits reconstruction of the reference, oracle, criterion, or judgment process used for evaluation. \\
+S3 & The report defines or exemplifies one or more inadequacy categories or provides element level results from which categories can be coded. \\
+S4 & The report provides extractable metrics, scales, judgments, or comparative outcomes. \\
+S5 & The report provides extractable information about evaluator reliability, contextual determinants, pragmatic use, or correction effort. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Exclusion criteria}
+
+\begin{longtable}{p{0.10\textwidth} p{0.82\textwidth}}
+\caption{Exclusion criteria}
+\label{tab:protocol_exclusion}\\
+\toprule
+\textbf{Code} & \textbf{Criterion} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Code} & \textbf{Criterion} \\
+\midrule
+\endhead
+E1 & The item is not a complete scientific report, such as an editorial, preface, keynote summary, poster, slide deck, table of contents, or extended abstract without sufficient methods and results. \\
+E2 & The study does not use an LLM or uses an LLM only for a peripheral activity that does not materially determine UML diagram content. \\
+E3 & The output is not UML and no separable UML result is reported. \\
+E4 & The task evaluates, explains, or summarizes an existing diagram without generating, transforming, completing, repairing, or revising it. \\
+E5 & The source is code, an image, or an existing model without a substantive textual requirements or domain description component. \\
+E6 & The report concerns generic diagram generation, C4, ER, BPMN, SysML, architecture sketches, or Mermaid diagrams without a separable UML contribution. \\
+E7 & The report is a secondary or tertiary study. Such reports are retained separately for background and snowballing. \\
+E8 & The report is a duplicate or a less complete member of a publication family. \\
+E9 & The report falls outside the time or language scope. \\
+E10 & The full text cannot be obtained after reasonable retrieval attempts. \\
+E11 & UML generation results cannot be separated from other artifacts or tasks. \\
+\bottomrule
+\end{longtable}
+
+\subsection{Ambiguity rules}
+
+At title and abstract screening, uncertainty favors retention. A record is excluded only when an exclusion criterion is clearly satisfied. At full text screening, each decision must cite the relevant criterion and a brief justification. Multi artifact and multi task studies are included when UML specific data can be extracted. Educational studies are eligible because they provide empirical evidence about generation and assessment, but educational context is coded explicitly and considered during interpretation.
+
+\subsection{Publication families}
+
+Reports are grouped into publication families when they share a dataset, artifact, experimental design, tool, or substantial body of results. The most complete report serves as the primary extraction source. Complementary reports are used to fill missing details but are not counted as independent primary studies. Differences between family members are recorded, including changes in models, datasets, methods, or results.
+
+\section{Record Management and Deduplication}
+\label{sec:protocol_records}
+
+All database exports are preserved in their original formats before transformation. Each record receives a stable review identifier. Automated deduplication uses DOI, title, authors, year, and source identifiers, followed by manual inspection of probable duplicates. Preprint and published versions are linked rather than deleted before publication family assessment. The master record set preserves source provenance so that retrieval coverage by database can be analyzed.
+
+The record management log will contain the following fields.
+
+\begin{itemize}
+    \item stable record identifier;
+    \item database or discovery source;
+    \item database specific identifier;
+    \item title, authors, year, venue, DOI, and URL;
+    \item duplicate group and publication family identifier;
+    \item screening decisions by reviewer and stage;
+    \item exclusion criterion and justification;
+    \item Layer 1 and Layer 2 status;
+    \item extraction and appraisal status;
+    \item amendment or recoding flags.
+\end{itemize}
+
+\section{Study Selection Process}
+\label{sec:protocol_selection}
+
+Selection comprises calibration, title and abstract screening, full text screening, Layer 2 assignment, and publication family reconciliation.
+
+\subsection{Reviewer calibration}
+
+Before production screening, two reviewers independently evaluate a purposive sample containing clearly eligible, clearly ineligible, and ambiguous records. The sample must represent different UML diagram types and publication formats. Disagreements are discussed and the eligibility manual is revised. Calibration continues until the reviewers achieve at least 80 percent agreement and a Cohen kappa of at least 0.70 for the pilot set \cite{Cohen1960Kappa}. The threshold is a procedural target rather than a claim that kappa alone demonstrates validity.
+
+\subsection{Title and abstract screening}
+
+The primary reviewer screens all deduplicated records. A second reviewer independently screens a stratified random sample of at least 20 percent and every record marked uncertain by the primary reviewer. If disagreement exceeds 10 percent or kappa is below 0.70, an additional 20 percent sample is independently screened. This expansion continues until the predefined threshold is met or all records have been dual screened.
+
+\subsection{Full text screening}
+
+Every record retained after title and abstract screening is assessed independently by two reviewers. Each reviewer records one of three decisions, include in Layer 1, exclude, or unclear. Excluded reports receive one primary exclusion criterion and a textual justification. Disagreements are resolved through discussion. Unresolved cases are decided by an adjudicator with expertise in Software Engineering and UML or LLM based modeling.
+
+\subsection{Layer 2 assignment}
+
+Layer 2 eligibility is assessed independently during full text screening and verified during extraction. A report may initially be marked as potentially Layer 2 when evaluation is mentioned but not sufficiently described. Final assignment occurs after the evaluation related fields are inspected. Reasons for non assignment to Layer 2 are coded, for example no quality evaluation, no extractable reference, no extractable metric, or only anecdotal examples.
+
+\subsection{Selection reporting}
+
+The final report will present a PRISMA flow diagram and a table of full text exclusions. Counts will distinguish database search, manual search, citation searching, duplicates, non research items, Layer 1 studies, Layer 2 studies, and unique primary studies after publication family merging \cite{Page2021PRISMA}.
+
+\section{Data Extraction}
+\label{sec:protocol_extraction}
+
+Data extraction is guided directly by the research questions. Two linked forms are used. The Layer 1 form is applied to every included primary study. The Layer 2 form is applied only to the evaluative subset. Each field has a definition, allowed values, examples, missing data code, and relationship to one or more research questions.
+
+\subsection{Layer 1 extraction form}
+
+\begin{longtable}{p{0.17\textwidth} p{0.27\textwidth} p{0.48\textwidth}}
+\caption{Layer 1 extraction framework}
+\label{tab:protocol_layer1_extraction}\\
+\toprule
+\textbf{Facet} & \textbf{Field} & \textbf{Extraction rule} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Facet} & \textbf{Field} & \textbf{Extraction rule} \\
+\midrule
+\endhead
+Bibliographic & Year, venue, publication type, status & Preserve published and online first dates; code peer review and preprint status separately \\
+Bibliographic & Authors and affiliations & Extract organizations, countries, and academic or industrial participation \\
+Study & Goal and research questions & Preserve verbatim formulation and code study purpose \\
+Study & Research method & Classify experiment, quasi experiment, benchmark, case study, user study, demonstration, design and evaluation, qualitative study, or other \\
+Study & Contribution type & Tool, method, model, framework, dataset, benchmark, empirical findings, taxonomy, or other \\
+Artifact & UML diagram type & Use the explicit UML type; allow multiple values \\
+Artifact & Generation task & Generation, completion, transformation, repair, refinement, or iterative revision \\
+Input & Source artifact type & Requirements document, user story, use case narrative, scenario, problem statement, domain description, mixed input, or other \\
+Input & Input structure and quality & Free text, template, semi structured, structured; reported ambiguity, inconsistency, incompleteness, or preprocessing \\
+Domain and data & Application domain and dataset & Domain, public or private status, size, provenance, reference availability \\
+LLM & Model family, model name, provider, version & Preserve exact reported names and dates; code missing version explicitly \\
+LLM & Access and deployment & Web interface, remote API, local inference, open weights, closed model, or mixed \\
+Context & Prompting and context configuration & Zero shot, one shot, few shot, role instruction, constraints, examples, domain knowledge, UML knowledge, retrieval, multi turn, or other \\
+Context & Adaptation and orchestration & Fine tuning, preference optimization, agents, tools, self correction, iterative feedback, or none \\
+Inference & Sampling and repetition & Temperature, top p, top k, seed, number of generations, selection policy \\
+Output & Representation & PlantUML, Mermaid intended as UML, XMI, JSON, XML, graphical output, prose, or other \\
+Evaluation & Dimensions and baselines & Reported quality dimensions, comparison conditions, human baseline, rule based baseline, or no baseline \\
+Evaluation & Human involvement & Author inspection, domain expert, UML expert, student, practitioner, independent evaluator, or participant \\
+Open science & Data, prompts, code, models, and replication package & Record availability, persistent identifier, access restrictions, and completeness \\
+\bottomrule
+\end{longtable}
+
+\subsection{Layer 2 extraction form}
+
+\begin{longtable}{p{0.17\textwidth} p{0.27\textwidth} p{0.48\textwidth}}
+\caption{Layer 2 extraction framework}
+\label{tab:protocol_layer2_extraction}\\
+\toprule
+\textbf{Facet} & \textbf{Field} & \textbf{Extraction rule} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Facet} & \textbf{Field} & \textbf{Extraction rule} \\
+\midrule
+\endhead
+Construct & Original quality term & Preserve the term exactly as reported \\
+Construct & Definition and theoretical source & Extract verbatim or near verbatim definition within copyright limits; record cited framework \\
+Construct & Normalized construct & Textual validity, UML conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, readability, clarity, or other \\
+Reference & Evaluation reference type & Requirements, domain description, gold model, reference model, UML specification, parser, metamodel, rubric, experts, LLM judge, or composite reference \\
+Reference & Reference construction and validation & Who created it, from which sources, through which process, and whether disagreement or alternative valid models were handled \\
+Unit & Unit of assessment & Diagram, requirement, proposition, actor, use case, class, attribute, relation, message, state, transition, or other \\
+Inadequacy & Original label and definition & Preserve the source label and its operational meaning \\
+Inadequacy & Normalized discrepancy operation & Omission, unsupported addition, incorrect representation, incorrect classification, inconsistency, duplication, redundancy, or other \\
+Inadequacy & Violated reference & Concrete syntax, UML abstract syntax, UML construct semantics, domain or requirements semantics, cross model consistency, or intended task \\
+Inadequacy & UML carrier & Affected diagram element, relation, constraint, sequence, state, behavior, or diagram level property \\
+Metric & Metric name and formula & Extract formula, numerator, denominator, scale, direction, threshold, and aggregation rule \\
+Metric & Automation level & Fully automated, tool assisted, human coded, LLM assessed, or mixed \\
+Evaluation & Evaluator profile and independence & Number, expertise, training, blinding, independence, adjudication \\
+Reliability & Agreement and uncertainty & Agreement measure, value, confidence interval, repeated generation, variance, effect size, significance, or qualitative confidence \\
+Context relation & Context factor & Factor manipulated, controlled, observed, or merely reported \\
+Context relation & Inferential status & Descriptive, comparative, relational, causal, mechanistic, or unsupported claim \\
+Pragmatic use & Task, actor, and outcome & Engineering activity, participant profile, success criterion, time, accuracy, decision quality, or comprehension \\
+Rework & Correction measure & Time, edit count, changed elements, distance, severity, number of iterations, subjective effort, or other \\
+Limitations & Construct and evaluation threats & Author reported and reviewer inferred limitations, kept in separate fields \\
+\bottomrule
+\end{longtable}
+
+\subsection{Missing and ambiguous data}
+
+The extraction database distinguishes \textit{not reported}, \textit{not applicable}, \textit{unclear}, and \textit{not accessible}. Reviewers must not infer missing model versions, prompts, parameters, metrics, or evaluator qualifications from external assumptions. Supplementary material and replication packages may be used when explicitly linked to the report. Authors may be contacted once for clarification when the missing information is essential to Layer 2 interpretation, and every contact attempt is logged.
+
+\subsection{Extraction pilot and verification}
+
+The forms will be piloted on a temporally and methodologically diverse sample of at least ten studies. The sample must include different UML diagram types and evaluation references. The pilot assesses field clarity, extraction time, category overlap, missing data frequency, and the feasibility of unit level extraction. All interpretive Layer 2 fields are independently extracted by two reviewers. Objective Layer 1 metadata may be extracted by one reviewer and verified through an independent audit of at least 20 percent. Any material revision to the form or codebook triggers retrospective review of studies already extracted.
+
+\section{Methodological and Reporting Appraisal}
+\label{sec:protocol_appraisal}
+
+Layer 1 studies are not excluded solely because of methodological weakness. Exclusion based on a quality score could distort the map of an emerging area. Layer 2 studies are appraised to qualify the credibility and comparability of the evidence. Appraisal distinguishes methodological adequacy, reporting completeness, and availability of replication material. No single total score will be used as a substitute for domain specific judgment.
+
+\begin{longtable}{p{0.10\textwidth} p{0.58\textwidth} p{0.24\textwidth}}
+\caption{Methodological and reporting appraisal domains}
+\label{tab:protocol_appraisal}\\
+\toprule
+\textbf{Code} & \textbf{Appraisal question} & \textbf{Judgment} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Code} & \textbf{Appraisal question} & \textbf{Judgment} \\
+\midrule
+\endhead
+A1 & Are the study objective and research questions explicit and consistent with the evaluation? & Yes, Partially, No, Not applicable \\
+A2 & Are the requirements, domain material, dataset provenance, sample size, and selection procedure described? & Yes, Partially, No, Not applicable \\
+A3 & Are the LLM identity, version, access mode, instructions, context, tools, parameters, and execution date sufficiently reported? & Yes, Partially, No, Not applicable \\
+A4 & Is the UML diagram type and output representation clearly specified? & Yes, Partially, No, Not applicable \\
+A5 & Are the quality constructs defined and operationalized? & Yes, Partially, No, Not applicable \\
+A6 & Is the evaluation reference explicit, inspectable, and justified? & Yes, Partially, No, Not applicable \\
+A7 & Are metrics, rubrics, units, thresholds, and aggregation rules sufficiently defined? & Yes, Partially, No, Not applicable \\
+A8 & Are evaluator qualifications, training, independence, and disagreement procedures reported when human judgment is used? & Yes, Partially, No, Not applicable \\
+A9 & Is stochastic variation addressed through repeated generation, sampling control, or uncertainty reporting? & Yes, Partially, No, Not applicable \\
+A10 & Are baselines and comparison conditions appropriate to the claim? & Yes, Partially, No, Not applicable \\
+A11 & Are quantitative or qualitative analyses appropriate and traceable to the data? & Yes, Partially, No, Not applicable \\
+A12 & Are threats, limitations, missing data, and failed cases reported? & Yes, Partially, No, Not applicable \\
+A13 & Are prompts, outputs, datasets, code, rubrics, or replication materials available? & Yes, Partially, No, Not applicable \\
+\bottomrule
+\end{longtable}
+
+Four domains are treated as critical for interpreting Layer 2 findings: A3, A5, A6, and A7. Sensitivity analyses compare conclusions derived from all Layer 2 studies with conclusions derived from studies that have no \textit{No} judgment in the critical domains. The appraisal is not used to manufacture a universal quality rank among heterogeneous study designs.
+
+\section{Coding and Taxonomy Construction}
+\label{sec:protocol_coding}
+
+The taxonomy is constructed through a hybrid deductive and inductive process. The upper level structure is deductively informed by conceptual modeling quality and the UML specification \cite{Lindland1994Quality,Krogstie2006Process,OMG2017UML}. Diagram specific categories and terminology are developed inductively from primary studies through thematic synthesis and constant comparison \cite{Cruzes2011Thematic,Krippendorff2018Content}.
+
+\subsection{Coding dimensions}
+
+Every extractable inadequacy is represented, where evidence permits, as a tuple
+
+\begin{equation}
+I = \langle R_v, O_d, C_u, S_e, E_x \rangle,
+\label{eq:protocol_inadequacy_tuple}
+\end{equation}
+
+where $R_v$ is the violated reference, $O_d$ is the discrepancy operation, $C_u$ is the UML carrier, $S_e$ is the reported or inferred severity, and $E_x$ is the example or evidence excerpt.
+
+The initial dimensions are the following.
+
+\begin{enumerate}[label=\roman*)]
+    \item \textbf{violated reference}, comprising concrete representation, UML abstract syntax, UML construct semantics, domain or requirements semantics, cross diagram consistency, or intended use;
+    \item \textbf{discrepancy operation}, comprising omission, unsupported addition, incorrect representation, incorrect classification, inconsistency, duplication, redundancy, or emergent category;
+    \item \textbf{UML carrier}, comprising the affected diagram, element, relation, property, constraint, sequence, state, transition, message, behavior, or other type specific unit;
+    \item \textbf{severity or consequence}, preserved when the study reports a severity scale or task effect;
+    \item \textbf{provenance}, comprising the original term, definition, page, table, figure, metric, or example supporting the code.
+\end{enumerate}
+
+\subsection{Coding procedure}
+
+\begin{enumerate}[label=\arabic*)]
+    \item Extract original terminology and definitions without immediately replacing them with normalized labels.
+    \item Apply the initial deductive dimensions to a pilot subset.
+    \item Create open codes for categories that cannot be represented without loss.
+    \item Compare codes across studies and diagram types, merge synonymous codes, separate overloaded codes, and document boundaries with positive and negative examples.
+    \item Construct diagram specific subcategories under shared transversal dimensions.
+    \item Search for negative cases that challenge category definitions.
+    \item Independently recode the pilot subset with the revised codebook.
+    \item Apply the stable codebook to the remaining Layer 2 corpus.
+    \item Retrospectively recode earlier studies whenever a material category or boundary changes.
+\end{enumerate}
+
+The codebook is versioned. Each code contains a definition, inclusion rule, exclusion rule, positive example, negative example, parent category, allowed UML carriers, and revision history. Original study labels remain available in a separate field so that normalization is fully auditable.
+
+\subsection{Coding reliability}
+
+Two reviewers independently code all Layer 2 inadequacy data. Agreement is assessed at the normalized category level and at the principal dimensions of the tuple in Equation~\ref{eq:protocol_inadequacy_tuple}. Cohen kappa is used for binary and mutually exclusive nominal decisions \cite{Cohen1960Kappa}. Krippendorff alpha is preferred when categories are multiple, data are missing, or more than two coders are involved \cite{Krippendorff2018Content}. Reliability values are interpreted together with confusion matrices, category prevalence, and documented disagreement patterns. Disagreements are resolved by discussion and adjudication, and the consensus code is stored separately from the original reviewer codes.
+
+\section{Synthesis Plan}
+\label{sec:protocol_synthesis}
+
+\subsection{Layer 1 descriptive mapping}
+
+Layer 1 is synthesized through frequencies, proportions, temporal distributions, cross tabulations, and co occurrence matrices. Planned analyses include the following.
+
+\begin{itemize}
+    \item publication year by venue and publication type;
+    \item diagram type by generation task;
+    \item diagram type by input source and output representation;
+    \item model family and version by year;
+    \item context strategy by diagram type and task;
+    \item study design by contribution type;
+    \item evaluation dimension by diagram type;
+    \item baseline and human involvement by study design;
+    \item replication material availability by year and venue;
+    \item publication status and methodological characteristics.
+\end{itemize}
+
+Counts are reported using both reports and unique primary studies where relevant. Categories with multiple values are explicitly identified as non exclusive. No meta analysis is planned because heterogeneous tasks, units, references, and metrics are expected. Any later quantitative aggregation requires a protocol amendment and a demonstrated basis for commensurability.
+
+\subsection{Layer 2 conceptual synthesis}
+
+Definitions are synthesized through a construct matrix containing the original term, reported definition, theoretical source, normalized construct, evaluation reference, unit, indicator, metric, and study context. The synthesis will identify convergent definitions, overloaded terms, unnamed operationalizations, and cases in which identical labels denote different procedures.
+
+\subsection{Layer 2 taxonomic synthesis}
+
+The taxonomy is presented at two levels. The transversal level organizes discrepancy operations and violated references that recur across diagram types. The specific level records how these operations manifest in actors, use cases, classes, relations, attributes, messages, lifelines, states, transitions, activities, and other UML elements. Frequencies are presented as frequencies of reporting and coding within the reviewed corpus, not as estimates of real world defect prevalence unless the primary data support that inference.
+
+\subsection{Layer 2 metrological synthesis}
+
+Metrics and procedures are organized by the chain
+
+\begin{equation}
+\text{construct} \rightarrow \text{reference} \rightarrow \text{unit} \rightarrow \text{indicator} \rightarrow \text{procedure} \rightarrow \text{aggregation}.
+\label{eq:protocol_metrology_chain}
+\end{equation}
+
+The synthesis compares parsability, compilation, UML rule checks, precision, recall, F scores, coverage, edit distance, graph similarity, expert ratings, LLM judge scores, task performance, time, and other measures only after reconstructing their definitions and denominators. Measures with the same name but different operationalizations are not pooled.
+
+\subsection{Context, pragmatic adequacy, and rework synthesis}
+
+Reported context factors are classified as merely described, experimentally manipulated, statistically associated, or proposed without empirical evaluation. Causal language is used only when the original design supports it. Pragmatic and rework evidence is synthesized by task, actor, diagram type, outcome, and measure. A study that reports comprehensibility without an engineering task is not automatically coded as evidence of pragmatic adequacy.
+
+\subsection{Heterogeneity and sensitivity analysis}
+
+Heterogeneity is examined across diagram type, educational or professional context, input type, dataset provenance, model access, model family, publication status, evaluation reference, and appraisal domains. Sensitivity analyses will compare, where the corpus permits, peer reviewed versus preprint studies, expert reference versus LLM judge evaluation, repeated versus single generation studies, and stronger versus weaker reporting in critical appraisal domains.
+
+\section{Reviewer Roles, Conflict Resolution, and Audit}
+\label{sec:protocol_reviewers}
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Reviewer roles}
+\label{tab:protocol_reviewers}
+\begin{tabularx}{\textwidth}{p{0.22\textwidth} p{0.24\textwidth} X}
+\toprule
+\textbf{Role} & \textbf{Responsible researcher} & \textbf{Responsibilities} \\
+\midrule
+Primary reviewer & \protocolfield{Name} & Search execution, record management, complete screening, extraction coordination, synthesis, and audit log \\
+Second reviewer & \protocolfield{Name} & Independent calibration, sampled title and abstract screening, complete full text screening, Layer 2 extraction and coding \\
+Adjudicator & \protocolfield{Name} & Resolution of unresolved eligibility, extraction, appraisal, and coding disagreements \\
+Methodological validator & \protocolfield{Name} & Review of protocol, search strategy, selection process, synthesis, and reporting alignment \\
+UML domain validator & \protocolfield{Name} & Review of diagram terminology, codebook boundaries, UML carrier categories, and reference distinctions \\
+LLM domain validator & \protocolfield{Name} & Review of LLM terminology, model configuration fields, and context categories \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Every decision remains attributable to an individual reviewer and date. Consensus decisions do not overwrite original independent decisions. The audit trail preserves both. Reviewers declare prior authorship or close collaboration with any candidate primary report. A reviewer does not make the final eligibility or appraisal decision for their own work.
+
+\section{Protocol Validation}
+\label{sec:protocol_validation}
+
+The protocol will be validated before registration and production screening through five complementary procedures.
+
+\begin{enumerate}[label=\arabic*)]
+    \item \textbf{Conceptual validation}. Experts in UML, LLMs, and empirical Software Engineering review the scope, definitions, questions, and extraction fields.
+    \item \textbf{Search validation}. The search strategy is tested against the seed set, inspected by a methodological reviewer, and revised when failures reveal avoidable retrieval gaps.
+    \item \textbf{Selection pilot}. Reviewers apply the criteria to a heterogeneous sample and revise ambiguous criteria and examples.
+    \item \textbf{Extraction pilot}. Both forms are applied to at least ten studies and revised for clarity, feasibility, and coverage.
+    \item \textbf{Synthesis pilot}. The initial coding architecture is applied to a subset covering multiple diagram types and evaluation methods. Categories are revised before full coding.
+\end{enumerate}
+
+Validation results, reviewer comments, decisions, and protocol changes are stored in a validation report. The final validated protocol will receive a new stable version and a persistent identifier before production selection begins.
+
+\section{Threats to Validity and Mitigation}
+\label{sec:protocol_validity}
+
+\begin{longtable}{p{0.18\textwidth} p{0.34\textwidth} p{0.40\textwidth}}
+\caption{Principal threats and mitigation strategies}
+\label{tab:protocol_threats}\\
+\toprule
+\textbf{Threat} & \textbf{Potential consequence} & \textbf{Mitigation} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Threat} & \textbf{Potential consequence} & \textbf{Mitigation} \\
+\midrule
+\endhead
+Search terminology & Relevant studies may omit LLM, UML, generation, or requirements terminology used in the query & Broad synonym blocks, model names, diagram type names, seed validation, manual venue search, and snowballing \\
+Database coverage & Recent workshop or preprint studies may be missing from major indexes & Multiple indexes, direct digital libraries, arXiv, manual venue search, and final search update \\
+Venue selection bias & A predefined manual list may overrepresent expected Software Engineering communities and omit interdisciplinary outlets & Automated sources define the principal candidate corpus; manual venues are complementary; tiered activation criteria, venue decision logs, and incremental yield reporting are used \\
+Source redundancy or premature removal & Overlap may increase workload, whereas unsupported source removal may reduce recall & Provenance preserving deduplication, seed recovery analysis, source contribution matrices, prespecified retention rules, and amendment controlled source changes \\
+Scope ambiguity & Generic diagrams or non requirements inputs may be inconsistently included & Operational definitions, examples, calibration, dual full text screening, and adjudication \\
+Publication family duplication & Conference, preprint, and journal versions may be counted as independent evidence & Family identification, primary report selection, complementary extraction, and unique study counts \\
+Construct heterogeneity & Identical labels may denote different quality constructs or metrics & Original term preservation, construct matrix, reference and unit extraction, and no pooling without commensurability \\
+Taxonomic normalization & Reviewer categories may overwrite source meanings & Separate original and normalized fields, codebook provenance, negative cases, double coding, and retrospective recoding \\
+Reviewer subjectivity & Eligibility, extraction, appraisal, or coding may vary by reviewer & Training, calibration, independent decisions, agreement analysis, adjudication, and retained audit trail \\
+Reporting bias & Studies may omit unsuccessful generations, defects, parameters, or evaluator disagreement & Appraisal of reporting, missing data coding, artifact inspection, author contact when essential, and cautious inference \\
+Rapid model evolution & Findings may become technologically dated & Exact model and version extraction, execution date coding, temporal analysis, and search update \\
+Preprint inclusion & Non peer reviewed evidence may distort conclusions & Explicit status coding, separate analysis, and sensitivity analysis \\
+LLM assisted review work & Automated assistance may introduce untraceable or fabricated decisions & Human responsibility for every inclusion, extraction, and code; logging of tools, prompts, outputs, and verification \\
+Selective protocol change & Criteria or outcomes may be changed after observing results & Prospective registration, versioned amendments, reasons and dates, and impact assessment \\
+\bottomrule
+\end{longtable}
+
+\section{Data Management, Transparency, and Use of Artificial Intelligence}
+\label{sec:protocol_data}
+
+The replication package will contain the registered protocol, search strings, search dates, raw exports when licensing permits, manual-search source manifests, permissible source snapshots or reproducibility hashes, raw documentary inventories, normalized metadata, inventory-conflict records, screening decisions, full text exclusion reasons, publication family links, extraction forms, codebook versions, appraisal judgments, analysis scripts, figures, tables, and amendment log. Licensed database exports, publisher pages, and copyrighted full texts are redistributed only when their terms permit it; otherwise the package preserves the query, source URL, retrieval date, permitted audit metadata, and checksums or reproduction instructions sufficient to document the retrieval without republishing restricted content \cite{Rethlefsen2021PRISMAS}.
+
+LLM or automation tools may be used for clerical support such as formatting, candidate duplicate detection, translation of search syntax, or consistency checking. They will not make autonomous eligibility, extraction, appraisal, or taxonomy decisions. Every substantive decision remains attributable to a human reviewer. Tool name, version, purpose, prompt or rule, output, and verification procedure are logged. Model generated bibliographic data are verified against authoritative records before use.
+
+The review uses published literature and does not initially involve human participants. If authors are contacted for clarification, correspondence is limited to study information and stored according to institutional data governance requirements. Reviewer conflicts of interest are documented.
+
+\section{Protocol Version History and Amendments}
+\label{sec:protocol_amendments}
+
+Pre registration revisions are recorded as version history. After protocol registration, every change is recorded as a formal amendment rather than silently incorporated as if it had been prespecified \cite{Shamseer2015PRISMAP}. Changes include research questions, scope, sources, search terms, criteria, reviewer procedures, extraction fields, appraisal, coding, or synthesis.
+
+\begin{longtable}{@{}p{0.17\textwidth} p{0.22\textwidth} p{0.26\textwidth} p{0.25\textwidth}@{}}
+\caption{Protocol version history and amendment log}
+\label{tab:protocol_amendments}\\
+\toprule
+\textbf{Version and date} & \textbf{Changed element} & \textbf{Rationale} & \textbf{Expected impact} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Version and date} & \textbf{Changed element} & \textbf{Rationale} & \textbf{Expected impact} \\
+\midrule
+\endhead
+1.0, \protocolfield{Date} & Initial two layer protocol draft & Establish the complete methodological architecture before validation & Baseline draft; not registered \\
+1.1, 2026-08-10 & Information source strategy, manual venue sets, and source retention rules & Separate automated corpus identification from manual coverage validation and make source decisions auditable & Improved coverage rationale and reproducibility; no change to review questions or analytical layers \\
+1.2, 2026-08-10 & Source contribution controls, validity threats, completion criteria, and validation checklist & Register the operational evidence required to retain, remove, or expand sources and venues & Makes venue selection bias, database redundancy, manual yield, and source decisions explicitly auditable \\
+1.3, 2026-08-10 & Scopus search validation and source-specific query specification & Register controlled S1--S4 sensitivity tests, preserve the five prespecified seeds, remove the ambiguous ``foundation model*'' term, and restrict the UML block to title, abstract, or author keywords in Scopus & Establishes Scopus search-string version 1.0 with a documented record-level rationale; no change to review questions, analytical layers, or eligibility criteria \\
+1.4, 2026-08-10 & IEEE Xplore search validation and source-specific query specification & Register the invalid Structured Advanced Search implementation I0 and the controlled Command Search rounds I1--I3; establish the IEEE-specific seed denominator; reject the over-restrictive UML-field modification and accept the LLM-field restriction & Establishes IEEE Xplore search-string version 1.0 while preserving source-specific field semantics and the review's conceptual search architecture \\
+1.5, 2026-08-11 & Manual venue inspection procedure & Specify the handsearching unit, source hierarchy, census-like title and abstract inspection, candidate statuses, required record fields, positive coverage controls, cross-source merge, incremental yield, completion rules, initial operational order, and audit outputs & Makes manual coverage validation reproducible and separates discovery from formal eligibility screening; no change to review questions, eligibility criteria, or final review interval \\
+1.6, 2026-08-11 & ACM Full-Text Collection search validation & Register the ACM-specific seed denominator, interface field-prefix tests, A1--A3 controlled validation rounds, rejection of the UML-field restriction because of diagnostic false negatives, acceptance of the LLM-field restriction, cancellation of A4, and the exact ACM production query implementation & Establishes ACM Full-Text Collection search-strategy version 1.0 while preserving source-specific field behavior and the review's conceptual search architecture \\
+1.7, 2026-08-11 & Manual-search provenance and documentary-inventory controls & Formalize source roles, PRIMARY\_TOC membership, source manifests, permissible snapshots and hashes, immutable raw documentary inventories, raw-to-normalized identifier traceability, InventoryConflict reconciliation, operational unit states, and strengthened COMPLETE criteria & Makes the manual-search population and every transformation from documentary source to screening decision independently auditable; no change to research questions, eligibility criteria, analytical layers, or review interval \\
+\protocolfield{Validated version and date} & Initial registered protocol & Prospective registration after completion of the validation checklist & Baseline for post registration amendments \\
+\bottomrule
+\end{longtable}
+
+When a codebook change occurs during qualitative synthesis, the codebook version and retrospective recoding action are recorded in the analytical log. Such refinements do not automatically constitute changes to the review questions or eligibility criteria, but their effect on interpretation must remain auditable.
+
+\section{Reporting and Completion Criteria}
+\label{sec:protocol_reporting}
+
+The secondary study will be considered methodologically complete when the following conditions are satisfied.
+
+\begin{enumerate}[label=\arabic*)]
+    \item The validated search has been executed in all retained automated sources and updated before final reporting.
+    \item The complete core manual venue set has been inspected, every conditional venue trigger has been resolved, and the incremental yield of manual searching has been reported.
+    \item Every required manual-search unit has a documented operational state; before final synthesis, every available unit has reached \texttt{COMPLETE}, while genuinely unavailable future proceedings remain explicitly \texttt{PENDING}. Source manifests, raw and normalized inventories, discovery logs, candidate sets, and coverage comparisons are preserved in the replication package.
+    \item Source contribution, redundancy, seed recovery, and any source retention or removal decision are documented.
+    \item Deduplication, selection, and publication family reconciliation are complete and auditable.
+    \item Every Layer 1 study has a verified general extraction record.
+    \item Every Layer 2 study has independently verified interpretive extraction and appraisal.
+    \item The codebook has reached a stable version and all Layer 2 studies have been coded under that version.
+    \item Research question specific syntheses have been completed and checked against the extracted data.
+    \item Sensitivity analyses and negative case checks have been performed where applicable.
+    \item The PRISMA flow, SEGRESS checklist, PRISMA-S search record, exclusion table, replication package, and amendment log are complete.
+    \item Conclusions distinguish the mapped corpus, the evaluative subset, publication reports, unique primary studies, and evaluation instances.
+\end{enumerate}
+
+The final report will avoid causal or prevalence claims that exceed the designs and units represented in the primary studies. Frequencies in the map describe the literature, not necessarily the real frequency of inadequacies in LLM generated UML diagrams. The taxonomy describes reported and operationalized inadequacies, not a complete ontology of every defect that can occur.
+
+\section{Protocol Validation Checklist}
+\label{sec:protocol_checklist}
+
+\begin{longtable}{p{0.06\textwidth} p{0.70\textwidth} p{0.16\textwidth}}
+\caption{Checklist for protocol validation before registration}
+\label{tab:protocol_checklist}\\
+\toprule
+\textbf{ID} & \textbf{Validation item} & \textbf{Status} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Validation item} & \textbf{Status} \\
+\midrule
+\endhead
+V01 & Review type and two layer design are explicitly justified. & \protocolfield{Pending} \\
+V02 & The general objective and every research question are approved by the review team. & \protocolfield{Pending} \\
+V03 & Operational definitions resolve the principal scope ambiguities. & \protocolfield{Pending} \\
+V04 & Layer 1 and Layer 2 eligibility criteria have positive and negative examples. & \protocolfield{Pending} \\
+V05 & Core and provisional information sources, source retention decisions, and the core and conditional manual venue sets have been validated and documented. & \protocolfield{Pending} \\
+V06 & The baseline string retrieves the complete seed set or every failure has a documented complementary route, and a source contribution matrix has been produced. & \protocolfield{Pending} \\
+V07 & Search strings for every source have been peer reviewed and preserved verbatim. & \protocolfield{Pending} \\
+V08 & Reviewer roles, independence, conflict resolution, and availability are confirmed. & \protocolfield{Pending} \\
+V09 & Selection calibration has met the predefined agreement target. & \protocolfield{Pending} \\
+V10 & Layer 1 and Layer 2 extraction forms have been piloted and revised. & \protocolfield{Pending} \\
+V11 & The appraisal instrument has been piloted across heterogeneous study designs. & \protocolfield{Pending} \\
+V12 & The taxonomy codebook has been piloted across multiple UML diagram types. & \protocolfield{Pending} \\
+V13 & Data management, backup, licensing, and replication package procedures are operational. & \protocolfield{Pending} \\
+V14 & The protocol has been checked against SEGRESS, PRISMA-P, PRISMA 2020, and PRISMA-S. & \protocolfield{Pending} \\
+V15 & Manual venue incremental yield and every conditional venue activation decision are documented. & \protocolfield{Pending} \\
+V16 & Manual-search units, discovery statuses, candidate rationales, cross-source matches, and completion states are represented in the manual-search audit log and tested on at least one core venue-year unit. & \protocolfield{Pending} \\
+V17 & The manual-search provenance chain has been operationally tested from PRIMARY\_TOC through source manifest, raw inventory, normalized inventory, discovery status, and conflict reconciliation on at least one core venue-year unit. & \protocolfield{Pending} \\
+V18 & The validated version has been registered and assigned a persistent identifier. & \protocolfield{Pending} \\
+\bottomrule
+\end{longtable}

@@ -1,0 +1,5 @@
+round,controlled_modification,ieee_count,seed_recovery,decision,interpretation
+I0,Invalid Structured Advanced Search implementation; UML disjunction split across boxes without enclosing grouping,33888,n/a,Invalid,Boolean precedence changed intended query; discarded as implementation failure
+I1,"Valid Command Search baseline; LLM, UML, and generation blocks in All Metadata",327,4/4,Baseline,Valid baseline; broad retrieval and metadata/indexing noise observed
+I2,Only UML block restricted to Document Title OR Abstract OR Author Keywords,104,4/4,Rejected,Potentially relevant diagram-generation studies removed; singular/plural lexical sensitivity exposed
+I3,Only LLM block restricted to Document Title OR Abstract OR Author Keywords,283,4/4,Accepted as IEEE Xplore v1.0,"Removed 44 baseline records, predominantly ambiguous model-name matches in affiliations/unrelated metadata; no clearly eligible recent study identified among removed set"
