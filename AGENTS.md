@@ -6,6 +6,8 @@
 - Preservar separadamente valores raw e normalized quando houver transformação.
 - Dados em diretórios raw são imutáveis após registro.
 - Toda transformação de raw para normalized deve ser reproduzível.
+- Nunca criar uma linha em `normalized/inventory.csv` sem um `ManualSearchID` correspondente em `raw/inventory_raw.csv`, exceto durante uma reconciliação explicitamente documentada e ainda não concluída.
+- O raw inventory deve representar todos os itens do universo documental da unidade, e não somente candidatos ou artigos considerados relevantes.
 - Toda fonte usada para construir um inventário manual deve ter URL, data/hora de recuperação e, quando houver snapshot local, SHA-256.
 - Publisher/proceedings TOC define membership documental da unidade de busca manual.
 - Crossref e outras fontes de metadados podem enriquecer registros, mas não devem definir sozinhas o universo documental de um venue-year.
