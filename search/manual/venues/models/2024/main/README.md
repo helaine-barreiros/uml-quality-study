@@ -1,13 +1,18 @@
 # MODELS 2024 Main
 
-Esta é uma das duas primeiras unidades planejadas da busca manual.
-
 - ManualSearchUnitID: `MSU-MODELS-2024-MAIN`
-- Status operacional: `BLOCKED`
-- PRIMARY_TOC: <https://dl.acm.org/doi/proceedings/10.1145/3640310>
-- VENUE_CROSSCHECK: <https://conf.researchr.org/track/models-2024/models-2024-technical-track>
-- Data da tentativa de extração: `2026-08-11T20:03:29Z`
-- Inventário bruto: não estabelecido; o acesso ao PRIMARY_TOC retornou HTTP 403 Forbidden.
-- Relatório de reconciliação: não produzido, pois não houve inventário PRIMARY_TOC para comparar.
+- Status: `IN_PROGRESS`
+- PRIMARY_TOC: ACM proceedings obtained through controlled human-authenticated access.
+- VENUE_CROSSCHECK: MODELS 2024 Technical Track Accepted Papers.
+- METADATA_SOURCE: ACM publisher-generated BibTeX.
+- TotalRawItems: `27`
+- ResearchArticleItems: `26`
+- FrontMatterItems: `1`
 
-Nenhuma extração documental, screening ou metadata enrichment foi realizada.
+The documentary inventory was established and reconciliation was executed.
+Relevance screening has not started, and the unit is intentionally not `COMPLETE`.
+
+- [Source manifest](source/source_manifest.csv)
+- [Reconciliation report](source/reconciliation_report.md)
+- [Raw inventory](raw/inventory_raw.csv)
+- [Raw inventory audit](raw/inventory_audit.md)
