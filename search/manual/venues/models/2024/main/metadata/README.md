@@ -6,4 +6,6 @@ O normalized inventory usa o schema versão 1. O raw inventory é imutável e a 
 
 Para `Series`, o normalizador usa `field()` seguido de normalização NFC e whitespace. Esta exceção técnica preserva a aspa ASCII literalmente fornecida pelo publisher (`MODELS '24`): nesta biblioteca, `cleaned_field('series')` a converteria para uma aspa tipográfica, sem decodificação TeX necessária.
 
+Itens como `Ma{\^A}ngeles` são registrados como **metadata representation review**, pois representam a fonte BibTeX e sua interpretação determinística pelo parser. Eles não são automaticamente classificados como falhas de encoding nem autorizam correção externa ou inferência de identidade.
+
 O resultado da execução é documentado em [normalization_audit.md](normalization_audit.md).

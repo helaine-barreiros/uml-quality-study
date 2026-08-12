@@ -2,16 +2,16 @@
 
 - AmendmentID: A001
 - NormalizationSchemaVersion: 1
-- NormalizationRunReason: Audit-hardening rerun before PR #4 merge
-- PreviousNormalizationTimestamp: 2026-08-12T15:07:15Z
-- NormalizationTimestamp: 2026-08-12T15:40:04Z
+- NormalizationRunReason: Atomic-publication and invariant-enforcement rerun before PR #4 merge
+- PreviousNormalizationTimestamp: 2026-08-12T15:40:04Z
+- NormalizationTimestamp: 2026-08-12T20:33:51Z
 - RawInventorySHA256Before: 65460f907e55e18b043836511b78307b5e63a60eb66233980b3fa61703003a69
 - RawInventorySHA256After: 65460f907e55e18b043836511b78307b5e63a60eb66233980b3fa61703003a69
 - RawInventoryByteIdentical: true
 - ManifestBibTeXSHA256: 950537197d9a5d4313ec49b8b1f71a8d5b1175a5b87f4d0117b4f364f56ea86f
 - ActualBibTeXSHA256: 950537197d9a5d4313ec49b8b1f71a8d5b1175a5b87f4d0117b4f364f56ea86f
 - BibTeXSHA256Match: true
-- NormalizedInventorySHA256: ef4a889877bbea6d02c8400708ff73112f2facba5b58d88a14749fa50220d80a
+- NormalizedInventorySHA256: a3755e0a0aae0e3e858a6d584d0222d260f7a185a0255c9d5ed9f882e237c8d2
 - BibTeXParserVersion: 1.05
 - TextCSVVersion: 2.06
 - UnicodeNormalizeVersion: 1.32
@@ -31,8 +31,6 @@
 - BibTeXOnlyDOICount: 0
 - DuplicateRawDOICount: 0
 - DuplicateBibTeXDOICount: 0
-- UnexpectedTitleMismatchCount: 0
-- UnexpectedDOIMismatchCount: 0
 - ManualSearchIDSetEqual: true
 - ManualSearchIDSequenceEqual: true
 - SourceOrdinalSequenceEqual: true
@@ -46,7 +44,7 @@
 - UniqueNormalizedDOICount: 26
 - RawAuthorTruncationCount: 9
 - AuthorsCompletedFromMetadataCount: 9
-- MetadataEncodingAnomalyCount: 1
+- MetadataRepresentationReviewCount: 1
 - AbstractAvailableControlledCount: 26
 - AbstractPersistedPublicCount: 0
 - AbstractRawPopulatedCount: 0
@@ -58,15 +56,18 @@
 - CrossrefSnapshotPathPopulatedCount: 0
 - PDFSHA256PopulatedCount: 0
 - InventoryConflictTrueCount: 0
+- DiscoveryDataRows: 0
+- CompanionNormalizedDataRows: 0
 - CrossrefUsed: false
 - FullTextRetrieved: false
 - InventoryConflictCount: 0
-- PrimaryInventorySourceID: SRC-MODELS-2024-MAIN-ACM-TOC-HUMAN-20260811
-- MetadataSourceID: SRC-MODELS-2024-MAIN-ACM-BIBTEX-HUMAN-20260811
-- NormalizationScript: normalize_acm_bibtex.pl
+- AtomicOutputPublication: true
+- TemporaryOutputValidated: true
+- FinalOutputSHA256Verified: true
+- AllRequiredInvariantsEnforced: true
 
 ## Metadata representation review
 
-| ManualSearchID | Field | RawValue | MetadataNormalizedValue | SourceBibTeXFragment | Action |
+| ManualSearchID | DOI | Field | SourceBibTeXFragment | MetadataNormalizedValue | ReviewReason | Action |
 | --- | --- | --- | --- | --- | --- |
-| MS-MODELS-2024-MAIN-0012 | AuthorsNormalized | MaÂngeles Moraga | Javier Verón; Carlos Pérez; Coral Calero; MaÂngeles Moraga; Francisca Pérez; Carlos Cetina | Ma{\^A}ngeles Moraga | Preserved deterministic publisher representation; queued for metadata review, not an identity correction. |
+| MS-MODELS-2024-MAIN-0012 | 10.1145/3640310.3674099 | AuthorsNormalized | Ma{\^A}ngeles Moraga | MaÂngeles Moraga | Publisher-source author representation requires manual metadata review. | Preserved without external correction or identity inference. |

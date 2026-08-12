@@ -5,6 +5,7 @@
 - RecordedAt: `2026-08-12T15:05:32Z`
 - Stage: Before first normalized inventory population
 - Status: `Applied`
+- RecordedCommit: `d85e6dfd93ac43e015d128377bd970017baadbe4`
 - FirstDataCommit: `5f66001b77a697be7e92029d4a70a95decfc719a`
 
 ## Decision
@@ -31,6 +32,6 @@ A001 does not change:
 
 A001 applies prospectively to metadata normalization and does not reinterpret or modify the raw inventory generated under protocol v1.7.
 
-The amendment was recorded in the commit immediately preceding the first population of the normalized inventory (`5f66001b77a697be7e92029d4a70a95decfc719a`).
+`RecordedCommit` is the commit that introduced this amendment and the normalized-inventory schema (`d85e6dfd93ac43e015d128377bd970017baadbe4`). `FirstDataCommit` is the subsequent commit that performed the first population of the normalized inventory (`5f66001b77a697be7e92029d4a70a95decfc719a`).
 
 Raw records remain immutable. Every normalized record must reference an existing `ManualSearchID`, and metadata sources cannot create membership. Controlled or licensed textual content is not automatically redistributed in the public repository.
