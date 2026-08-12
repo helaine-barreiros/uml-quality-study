@@ -20,3 +20,11 @@
 - Não publicar exports proprietários de Scopus, Web of Science, IEEE, ACM ou outras bases sem verificar previamente as condições de redistribuição.
 - Quando uma fonte licenciada não puder ser publicada, preservar no repositório apenas metadados de auditoria permitidos, query, data de execução, contagens, checksums locais quando aplicável e instruções de reprodução.
 - Toda decisão metodológica substantiva deve ser definida fora desta automação e registrada no protocolo antes de ser implementada.
+- Nenhum agente pode preencher `DiscoveryStatus` enquanto o gate A002 estiver fechado.
+- Nenhum agente pode preencher contagens de candidatos antes da execução de discovery.
+- `DocumentaryCollectionStatus=COMPLETE` nunca deve ser convertido automaticamente em `UnitStatus=COMPLETE`.
+- Novas unidades somente podem ser registradas depois que venue, ano e volume/track forem documentalmente verificados.
+- Nenhum DOI, ISBN, volume, issue ou URL pode ser inferido para uma unidade planejada.
+- O status `VALIDATED` de uma string não significa que a busca de produção foi executada.
+- Snowballing não deve ser antecipado nem receber start set diferente daquele definido no protocolo.
+- A002 não autoriza classificação automatizada de artigos.
