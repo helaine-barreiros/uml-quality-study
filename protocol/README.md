@@ -11,3 +11,5 @@ PRIMARY_TOC / source evidence
 ```
 
 A versão 1.7 não altera as research questions, eligibility criteria, analytical layers ou review interval. Futuras alterações após eventual registro formal devem ser tratadas como amendments, conforme o próprio protocolo.
+
+O [Amendment A001](amendments/A001-normalized-inventory-schema.md) define prospectivamente o schema da camada normalized, sem alterar a versão metodológica corrente 1.7.
