@@ -5,7 +5,7 @@
 - RecordedAt: `2026-08-12T22:16:05Z`
 - Stage: Before continuation of manual documentary collection and before any manual discovery classification
 - Status: `Applied`
-- RecordedCommit:
+- RecordedCommit: `e4807d849623a9648e1d10993ca3d4b34c1ea4a9`
 - NextPlannedCollectionUnit: `MSU-MODELS-2024-COMPANION`
 
 ## Methodological decision
@@ -88,3 +88,7 @@ The documentary universe, raw inventory, reconciliation, and normalized inventor
 - DiscoveryPhaseStatus: `DEFERRED_BY_A002`
 
 Proceedings identity and authoritative sources will be established only during the unit-specific execution.
+
+## Provenance
+
+`RecordedCommit` identifies the commit that introduced this amendment before continuation of manual documentary collection and before any manual discovery classification.
