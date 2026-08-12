@@ -1,0 +1,33 @@
+# MODELS 2024 Main normalization audit
+
+- NormalizationSchemaVersion: 1
+- RawRows: 27
+- RawResearchArticleRows: 26
+- RawFrontMatterRows: 1
+- NormalizedRows: 27
+- NormalizedResearchArticleRows: 26
+- NormalizedFrontMatterRows: 1
+- BibTeXEntryCount: 26
+- MatchedByDOI: 26
+- RawOnlyDOICount: 0
+- BibTeXOnlyDOICount: 0
+- DuplicateRawDOICount: 0
+- DuplicateBibTeXDOICount: 0
+- UnexpectedTitleMismatchCount: 0
+- UnexpectedDOIMismatchCount: 0
+- RawAuthorTruncationCount: 9
+- AuthorsCompletedFromMetadataCount: 9
+- MetadataEncodingAnomalyCount: 1
+- AbstractAvailableControlledCount: 26
+- AbstractPersistedPublicCount: 0
+- KeywordsAvailableControlledCount: 24
+- KeywordsNotReportedCount: 2
+- KeywordsPersistedPublicCount: 0
+- CrossrefUsed: false
+- FullTextRetrieved: false
+- InventoryConflictCount: 0
+- PrimaryInventorySourceID: SRC-MODELS-2024-MAIN-ACM-TOC-HUMAN-20260811
+- MetadataSourceID: SRC-MODELS-2024-MAIN-ACM-BIBTEX-HUMAN-20260811
+- BibTeXSHA256: 950537197d9a5d4313ec49b8b1f71a8d5b1175a5b87f4d0117b4f364f56ea86f
+- NormalizationScript: normalize_acm_bibtex.pl (BibTeX::Parser 1.05)
+- NormalizationTimestamp: 2026-08-12T15:07:15Z
