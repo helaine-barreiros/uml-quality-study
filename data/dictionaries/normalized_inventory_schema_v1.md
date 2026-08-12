@@ -14,7 +14,7 @@ The normalized inventory preserves raw documentary evidence alongside determinis
 | TitleRaw | Title exactly as observed in raw inventory. |
 | TitleNormalized | Deterministically decoded and whitespace-normalized publisher title, or deterministic normalization of `TitleRaw` where metadata does not apply. |
 | AuthorsRaw | Authors exactly as observed in raw inventory. |
-| AuthorsNormalized | Deterministically decoded, structurally parsed metadata-source author list. |
+| AuthorsNormalized | Complete ordered author list from `MetadataSourceID`; source order is preserved, individual authors are separated by the literal delimiter `; `, and no external identity correction is performed. |
 | DOIRaw | DOI exactly as observed in raw inventory. |
 | DOINormalized | DOI after deterministic prefix removal, trimming, and lowercasing. |
 | VenueRaw | Venue exactly as observed in raw inventory. |
@@ -56,3 +56,10 @@ The present schema permits exactly these values for `AbstractAvailability` and `
 | NOT_APPLICABLE | The field does not apply to the documentary item, for example front matter. |
 
 New values require explicit reporting before use.
+
+## Null representation
+
+- An empty CSV cell represents a value that was not populated.
+- An empty cell must not be interpreted as evidence that the source explicitly reported an empty string.
+- For `AbstractAvailability` and `AuthorKeywordsAvailability`, the enum explains why the textual field is empty.
+- `NOT_APPLICABLE` and `NOT_REPORTED_BY_SOURCE` remain semantically distinct.
