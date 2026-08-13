@@ -11,7 +11,7 @@
 - RevisionDecisionDate: `2026-08-13`
 - RevisionRecordedAt: `2026-08-13T14:36:41Z`
 - RevisionStatus: `Applied`
-- RevisionRecordedCommit:
+- RevisionRecordedCommit: `8183e161db59a66e53837be290b1836a89834888`
 - RevisionRationale: Resolve the circular dependency between conditional-venue activation and the deferral of discovery and snowballing.
 
 ## Revised methodological sequence
@@ -181,4 +181,4 @@ Proceedings identity and authoritative sources will be established only during t
 
 ## Provenance
 
-`RecordedCommit` identifies the commit that introduced A002 before continuation of manual documentary collection and before any manual discovery classification. `RevisionRecordedCommit` will identify the commit that introduced the two-wave A002-R1 architecture before continuation of manual collection and before any discovery.
+`RecordedCommit` identifies the commit that introduced A002 before continuation of manual documentary collection and before any manual discovery classification. `RevisionRecordedCommit` identifies the commit that introduced the two-wave A002-R1 architecture before continuation of manual collection and before any discovery.
