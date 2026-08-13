@@ -1,10 +1,10 @@
 # MODELS 2024 Companion
 
-Esta é uma das duas primeiras unidades planejadas da busca manual.
-
 - ManualSearchUnitID: `MSU-MODELS-2024-COMPANION`
-- Status inicial: `PENDING`
-- DocumentaryCollectionStatus: `NOT_STARTED`
+- Status: `BLOCKED`
+- DocumentaryCollectionStatus: `BLOCKED`
 - DiscoveryPhaseStatus: `DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`
+- PRIMARY_TOC: `https://dl.acm.org/doi/proceedings/10.1145/3652620`
+- VENUE_CROSSCHECK: `https://conf.researchr.org/program/models-2024/program-models-2024/`
 
-Não há coleta de dados nesta inicialização.
+The publisher proceedings locator is verified, but public automated access returned HTTP 403. Membership remains unmaterialized and no discovery or screening has started. See [source/controlled_evidence_request.md](source/controlled_evidence_request.md).
