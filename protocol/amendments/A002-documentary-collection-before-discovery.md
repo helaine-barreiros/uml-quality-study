@@ -24,7 +24,7 @@
 - RevisionDecisionDate: `2026-08-13`
 - RevisionRecordedAt: `2026-08-13T17:46:58Z`
 - RevisionStatus: `Applied`
-- RevisionRecordedCommit:
+- RevisionRecordedCommit: `cfce1eb1699f3319886e45ce2745b28ba26aa01c`
 - RevisionRationale: Correct the temporal ordering of snowballing and conditional-venue trigger review, and formalize fixed-point closure of the final search update.
 
 ## Revised methodological sequence
@@ -244,4 +244,4 @@ Proceedings identity and authoritative sources will be established only during t
 
 ## Provenance
 
-`RecordedCommit` identifies the commit that introduced A002 before continuation of manual documentary collection and before any manual discovery classification. The A002-R1 `RevisionRecordedCommit` identifies the commit that introduced the two-wave architecture. The A002-R2 `RevisionRecordedCommit` will identify the commit that corrects the ordering of snowballing and trigger review and introduces fixed-point closure before any execution of those stages.
+`RecordedCommit` identifies the commit that introduced A002 before continuation of manual documentary collection and before any manual discovery classification. The A002-R1 `RevisionRecordedCommit` identifies the commit that introduced the two-wave architecture. The A002-R2 `RevisionRecordedCommit` identifies the commit that corrects the ordering of snowballing and trigger review and introduces fixed-point closure before any execution of those stages.
