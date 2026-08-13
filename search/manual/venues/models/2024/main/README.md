@@ -2,6 +2,8 @@
 
 - ManualSearchUnitID: `MSU-MODELS-2024-MAIN`
 - Status: `IN_PROGRESS`
+- DocumentaryCollectionStatus: `COMPLETE`
+- DiscoveryPhaseStatus: `DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`
 - PRIMARY_TOC: ACM proceedings obtained through controlled human-authenticated access.
 - VENUE_CROSSCHECK: MODELS 2024 Technical Track Accepted Papers.
 - METADATA_SOURCE: ACM publisher-generated BibTeX.
