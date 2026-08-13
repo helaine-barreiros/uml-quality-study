@@ -9,6 +9,10 @@ Futuramente, uma unidade só poderá ser `COMPLETE` quando o universo documental
 
 `DocumentaryCollectionStatus` representa separadamente o progresso desde o estabelecimento do `PRIMARY_TOC` até a materialização e auditoria do normalized inventory. Seus valores são `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE` e `BLOCKED`.
 
-`DiscoveryPhaseStatus` representa o progresso da classificação de discovery. Seus valores são `NOT_STARTED`, `DEFERRED_BY_A002`, `IN_PROGRESS`, `COMPLETE` e `BLOCKED`; `DEFERRED_BY_A002` proíbe intencionalmente discovery enquanto o gate de coleta documental estiver fechado.
+`DiscoveryPhaseStatus` representa o progresso da classificação de discovery. Seus valores são `NOT_STARTED`, `DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`, `IN_PROGRESS`, `COMPLETE` e `BLOCKED`; o estado deferido proíbe discovery até uma decisão auditável de fechamento da primeira onda.
 
 A unit with `DocumentaryCollectionStatus=COMPLETE` remains `IN_PROGRESS` until discovery, candidate counts, and all completion criteria defined by protocol v1.7 are satisfied.
+
+Os estados globais distinguem `PRE_DISCOVERY_DOCUMENTARY_COLLECTION`, `DISCOVERY_AND_SCREENING`, `FINAL_SEARCH_UPDATE` e `CLOSED`. `PRE_DISCOVERY_COLLECTION_CLOSED` encerra apenas a primeira onda necessária para iniciar discovery; `FINAL_SEARCH_UPDATE_COMPLETE` encerra as rotas de identificação antes da síntese.
+
+A coleta documental pode ser reaberta de forma controlada durante a atualização final quando a revisão pós-screening de triggers ativar um venue. Todo novo registro deve percorrer o mesmo pipeline raw, normalized, discovery e screening. Uma unidade nunca pode ser marcada `COMPLETE` apenas porque sua coleta documental terminou.

@@ -4,7 +4,7 @@
 
 ## UnitStatus
 
-The existing global states are `PENDING`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`. `COMPLETE` continues to require every protocol v1.7 completion condition, including discovery, candidate and discovery-status counts, source preservation, conflict reconciliation, and full auditability.
+The existing global unit states are `PENDING`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`. `COMPLETE` continues to require every protocol v1.7 completion condition, including discovery, candidate and discovery-status counts, source preservation, conflict reconciliation, and full auditability.
 
 ## DocumentaryCollectionStatus
 
@@ -18,9 +18,49 @@ Allowed values are `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
 
 ## DiscoveryPhaseStatus
 
-Allowed values are `NOT_STARTED`, `DEFERRED_BY_A002`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
+Allowed values are `NOT_STARTED`, `DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
 
-`DEFERRED_BY_A002` means: Discovery is intentionally prohibited while the documentary-collection gate remains closed.
+`DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED` means: Discovery is intentionally prohibited until the pre-discovery documentary collection wave has been formally closed by an auditable decision.
+
+## GlobalCollectionPhase
+
+Allowed values are `PRE_DISCOVERY_DOCUMENTARY_COLLECTION`, `DISCOVERY_AND_SCREENING`, `FINAL_SEARCH_UPDATE`, and `CLOSED`.
+
+## PreDiscoveryCollectionStatus
+
+Allowed values are `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
+
+## PreDiscoveryClosureStatus
+
+Allowed values are `NOT_READY`, `READY_FOR_DECISION`, `CLOSED`, and `BLOCKED`.
+
+## PostScreeningTriggerReviewStatus
+
+Allowed values are `DEFERRED_PROTOCOL_SEQUENCE`, `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
+
+## FinalSearchUpdateStatus
+
+Allowed values are `DEFERRED_PROTOCOL_SEQUENCE`, `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
+
+## FinalSearchClosureStatus
+
+Allowed values are `NOT_READY`, `READY_FOR_DECISION`, `CLOSED`, and `BLOCKED`.
+
+## RequirementStatus
+
+Allowed values are `REQUIRED`, `DECISION_REQUIRED`, `CONDITIONAL_IF_RETAINED`, `REQUIRED_FOR_SNOWBALLING`, and `NOT_APPLICABLE`.
+
+## DecisionStatus
+
+The values used by `information_source_execution_log.csv` are `RETAINED_CORE`, `RETAINED_COMPLEMENTARY`, `PROVISIONAL_DECISION_PENDING`, `CITATION_DISCOVERY_ONLY`, `COVERAGE_VALIDATION`, and `COMPLEMENTARY_SEARCH`.
+
+## TriggerReviewStatus
+
+Allowed values are `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE`, `BLOCKED`, and `DEFERRED_PROTOCOL_SEQUENCE`.
+
+## ConditionalActivationDecision
+
+Allowed values are `PENDING_TRIGGER_REVIEW`, `ACTIVATED`, and `NOT_ACTIVATED`.
 
 ## ActivationStatus
 

@@ -28,4 +28,22 @@ Crossref e outras APIs são usadas apenas para metadata enrichment de registros 
 
 Divergências entre fontes devem gerar `InventoryConflict` e impedem que a unidade seja marcada `COMPLETE` até a reconciliação. A estrutura permite auditar: (1) por que um artigo foi considerado; (2) de onde vieram seus metadados; e (3) se todos os itens do proceedings foram efetivamente inspecionados.
 
-O `DOCUMENTARY COLLECTION GATE` é um controle operacional introduzido pelo Amendment A002 e não altera a membership documental. `DocumentaryCollectionStatus=COMPLETE` não promove uma unidade a `UnitStatus=COMPLETE`: discovery somente começa após uma decisão formal e auditável de encerramento da coleta manual. As camadas raw e normalized permanecem separadas, e nenhum registro pode ser classificado enquanto `DiscoveryPhaseStatus=DEFERRED_BY_A002`.
+O gate é um controle operacional introduzido pelo Amendment A002 e revisado por A002-R1; ele não altera a membership documental. `DocumentaryCollectionStatus=COMPLETE` não promove uma unidade a `UnitStatus=COMPLETE`. As camadas raw e normalized permanecem separadas, e nenhum registro pode ser classificado enquanto `DiscoveryPhaseStatus=DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`.
+
+A cadeia global é:
+
+```text
+PRE-DISCOVERY DOCUMENTARY COLLECTION WAVE
+-> PRE_DISCOVERY_COLLECTION_CLOSED
+-> manual discovery classification
+-> candidate consolidation and deduplication
+-> formal Layer 1 screening
+-> post-screening conditional trigger review
+-> snowballing
+-> FINAL SEARCH UPDATE WAVE
+-> discovery and screening of newly identified records
+-> FINAL_SEARCH_UPDATE_COMPLETE
+-> final synthesis
+```
+
+A primeira onda estabelece o conjunto documental necessário para iniciar discovery, mas seu fechamento não encerra definitivamente todas as rotas de identificação. A segunda onda é obrigatória para a atualização final. Venues ativados nessa segunda onda seguem o mesmo pipeline de proveniência, inventário raw, reconciliação, normalização, discovery e screening. Nenhuma síntese final ocorre antes de `FINAL_SEARCH_UPDATE_COMPLETE`.

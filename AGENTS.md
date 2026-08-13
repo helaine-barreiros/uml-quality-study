@@ -20,7 +20,7 @@
 - Não publicar exports proprietários de Scopus, Web of Science, IEEE, ACM ou outras bases sem verificar previamente as condições de redistribuição.
 - Quando uma fonte licenciada não puder ser publicada, preservar no repositório apenas metadados de auditoria permitidos, query, data de execução, contagens, checksums locais quando aplicável e instruções de reprodução.
 - Toda decisão metodológica substantiva deve ser definida fora desta automação e registrada no protocolo antes de ser implementada.
-- Nenhum agente pode preencher `DiscoveryStatus` enquanto o gate A002 estiver fechado.
+- Nenhum agente pode preencher `DiscoveryStatus` enquanto `PreDiscoveryClosureStatus` não for `CLOSED`.
 - Nenhum agente pode preencher contagens de candidatos antes da execução de discovery.
 - `DocumentaryCollectionStatus=COMPLETE` nunca deve ser convertido automaticamente em `UnitStatus=COMPLETE`.
 - Novas unidades somente podem ser registradas depois que venue, ano e volume/track forem documentalmente verificados.
@@ -28,3 +28,12 @@
 - O status `VALIDATED` de uma string não significa que a busca de produção foi executada.
 - Snowballing não deve ser antecipado nem receber start set diferente daquele definido no protocolo.
 - A002 não autoriza classificação automatizada de artigos.
+- Nenhum agente pode declarar `PRE_DISCOVERY_COLLECTION_CLOSED`.
+- Nenhum agente pode declarar `FINAL_SEARCH_UPDATE_COMPLETE`.
+- Fechamentos globais exigem decisão humana e artefato auditável.
+- Venues condicionais devem ser revisados nas fases pré discovery e pós screening.
+- Trigger pós screening pode reabrir a coleta documental.
+- Registros da segunda onda devem passar pelo mesmo pipeline raw, normalized, discovery e screening.
+- Nenhum agente pode iniciar síntese final antes de `FinalSearchClosureStatus=CLOSED`.
+- A validação de uma string não equivale à busca de produção.
+- Nenhum trigger pode ser considerado satisfeito sem evidência registrada.

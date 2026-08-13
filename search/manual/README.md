@@ -9,5 +9,9 @@ Os três registros globais têm funções distintas:
 - [manual_venue_plan.csv](manual_venue_plan.csv) representa o plano global de venues core e condicionais;
 - [manual_search_unit_registry.csv](manual_search_unit_registry.csv) representa somente unidades concretamente instanciadas;
 - [manual_venue_search_log.csv](manual_venue_search_log.csv) preserva resultados e contagens de execução quando produzidos.
+- [manual_collection_phase_log.csv](manual_collection_phase_log.csv) registra a fase global e os marcos de fechamento das duas ondas;
+- [manual_conditional_venue_trigger_log.csv](manual_conditional_venue_trigger_log.csv) preserva separadamente as revisões pré-discovery e pós-screening dos triggers condicionais.
 
 Os critérios gerais de promoção de venues condicionais permanecem os do protocolo v1.7: (1) seed relevante não recuperado por fonte automatizada core; (2) pelo menos dois candidatos elegíveis identificados durante busca automatizada, pilot screening ou snowballing; ou (3) decisão conjunta baseada em risco documentado de cobertura. Nenhum trigger é avaliado neste registro.
+
+A002-R1 organiza a coleta em uma onda pré-discovery, encerrada por decisão auditável, e uma atualização final obrigatória após screening, revisão de triggers e snowballing. Venues ativados na segunda onda percorrem o mesmo pipeline documental e seletivo antes da síntese.

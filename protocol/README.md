@@ -14,4 +14,4 @@ A versão 1.7 não altera as research questions, eligibility criteria, analytica
 
 O [Amendment A001](amendments/A001-normalized-inventory-schema.md) define prospectivamente o schema da camada normalized, sem alterar a versão metodológica corrente 1.7.
 
-O [Amendment A002](amendments/A002-documentary-collection-before-discovery.md) formaliza o gate entre coleta documental e discovery, sem alterar a versão metodológica corrente 1.7.
+O [Amendment A002](amendments/A002-documentary-collection-before-discovery.md), revisado por A002-R1, formaliza uma arquitetura de coleta documental em duas ondas, com fechamento pré-discovery auditável e atualização final obrigatória, sem alterar a versão metodológica corrente 1.7.
