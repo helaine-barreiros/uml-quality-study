@@ -37,3 +37,11 @@
 - Nenhum agente pode iniciar síntese final antes de `FinalSearchClosureStatus=CLOSED`.
 - A validação de uma string não equivale à busca de produção.
 - Nenhum trigger pode ser considerado satisfeito sem evidência registrada.
+- Nenhum agente pode atribuir `FinalUpdateIterationStatus=STABLE`.
+- Nenhum agente pode atribuir `FinalSearchClosureStatus=CLOSED`.
+- Estabilidade e fechamento final exigem decisão humana auditável.
+- Novo estudo incluído em Layer 1 deve reabrir snowballing quando suas referências ou citações ainda não tiverem sido inspecionadas.
+- Nova evidência pode reabrir a revisão de triggers condicionais.
+- Venue recém-ativado deve percorrer coleta documental, discovery e screening.
+- Nenhum agente pode encerrar a atualização final enquanto qualquer métrica do ponto fixo for maior que zero.
+- `FinalSearchUpdateStatus=COMPLETE` não implica `FinalSearchClosureStatus=CLOSED`.

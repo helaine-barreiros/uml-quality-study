@@ -38,13 +38,25 @@ Allowed values are `NOT_READY`, `READY_FOR_DECISION`, `CLOSED`, and `BLOCKED`.
 
 Allowed values are `DEFERRED_PROTOCOL_SEQUENCE`, `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
 
+Review starts only after initial screening and the first snowballing cycle. It may be reopened during `FINAL_SEARCH_UPDATE`. `COMPLETE` means only that all evidence available in the current iteration was evaluated; new evidence may return it to `IN_PROGRESS`.
+
 ## FinalSearchUpdateStatus
 
 Allowed values are `DEFERRED_PROTOCOL_SEQUENCE`, `NOT_STARTED`, `IN_PROGRESS`, `COMPLETE`, and `BLOCKED`.
 
+## FinalUpdateIterationStatus
+
+Allowed values are `NOT_STARTED`, `IN_PROGRESS`, `STABLE`, `REOPENED`, and `BLOCKED`.
+
+`STABLE` means: A complete final-update iteration produced no new eligible primary study, no new conditional-venue activation, no pending conditional trigger, no pending citation record, and no unresolved material documentary conflict.
+
+`REOPENED` means: A previously completed iteration was reopened because new evidence, a newly included Layer 1 study, a new citation record, or a newly activated conditional venue required further identification work.
+
 ## FinalSearchClosureStatus
 
 Allowed values are `NOT_READY`, `READY_FOR_DECISION`, `CLOSED`, and `BLOCKED`.
+
+`CLOSED` may be assigned only by an auditable human decision after a `STABLE` iteration.
 
 ## RequirementStatus
 

@@ -7,12 +7,25 @@
 - Status: `Applied`
 - RecordedCommit: `e4807d849623a9648e1d10993ca3d4b34c1ea4a9`
 - NextPlannedCollectionUnit: `MSU-MODELS-2024-COMPANION`
+## Revision history
+
+### A002-R1
+
 - RevisionID: `A002-R1`
 - RevisionDecisionDate: `2026-08-13`
 - RevisionRecordedAt: `2026-08-13T14:36:41Z`
 - RevisionStatus: `Applied`
 - RevisionRecordedCommit: `8183e161db59a66e53837be290b1836a89834888`
 - RevisionRationale: Resolve the circular dependency between conditional-venue activation and the deferral of discovery and snowballing.
+
+### A002-R2
+
+- RevisionID: `A002-R2`
+- RevisionDecisionDate: `2026-08-13`
+- RevisionRecordedAt: `2026-08-13T17:46:58Z`
+- RevisionStatus: `Applied`
+- RevisionRecordedCommit:
+- RevisionRationale: Correct the temporal ordering of snowballing and conditional-venue trigger review, and formalize fixed-point closure of the final search update.
 
 ## Revised methodological sequence
 
@@ -23,11 +36,14 @@ PRE-DISCOVERY DOCUMENTARY COLLECTION WAVE
 -> PRE_DISCOVERY_COLLECTION_CLOSED
 -> manual discovery classification
 -> candidate consolidation and deduplication
--> formal Layer 1 screening
--> post-screening conditional-venue trigger review
+-> formal Layer 1 screening of the initial corpus
 -> backward and forward snowballing
--> FINAL SEARCH UPDATE WAVE
--> discovery and screening of newly identified records
+-> discovery and formal screening of records identified by snowballing
+-> post-screening and snowballing conditional-venue trigger review
+-> documentary collection of newly activated venues
+-> discovery and formal screening of records from newly activated venues
+-> iterative final search update
+-> FIXED_POINT_SEARCH_CLOSURE
 -> FINAL_SEARCH_UPDATE_COMPLETE
 -> final synthesis
 ```
@@ -76,9 +92,11 @@ The decision date becomes the operational cutoff for the first wave. No closure 
 
 Only after `PRE_DISCOVERY_COLLECTION_CLOSED` may manual discovery classification, candidate consolidation, deduplication, and formal Layer 1 screening begin. Manual discovery remains separate from formal screening.
 
-## Final search update wave
+## Iterative final search update wave
 
-After screening and snowballing, all conditional venues are reviewed again using, when available:
+Post-screening trigger review starts after initial Layer 1 screening and backward and forward snowballing. Snowballing may provide evidence that activates conditional venues. A newly activated venue may add Layer 1 studies, and each new Layer 1 study may expose additional references or citations. Snowballing and conditional-trigger review may therefore be reopened. The second wave is an iterative cycle rather than a sequence executed only once.
+
+All conditional venues are reviewed using, when available:
 
 - pilot-screening evidence;
 - production-screening evidence;
@@ -109,21 +127,66 @@ source provenance
 
 before synthesis.
 
+### Final search update iteration
+
+Each iteration performs:
+
+1. execute the final or incremental update of retained automated sources;
+2. identify and normalize new records;
+3. apply discovery and formal screening to new records;
+4. update the Layer 1 corpus;
+5. execute backward and forward snowballing from newly included Layer 1 studies;
+6. apply discovery and formal screening to records identified by snowballing;
+7. review conditional-venue triggers using all currently available evidence;
+8. collect documentary units for newly activated venues;
+9. apply discovery and formal screening to records from newly activated venues;
+10. update the Layer 1 corpus again;
+11. determine whether another iteration is required.
+
+Another iteration is mandatory whenever at least one condition holds:
+
+```text
+NewEligiblePrimaryStudyCount > 0
+NewConditionalVenueActivationCount > 0
+PendingConditionalTriggerCount > 0
+PendingCitationRecordCount > 0
+UnresolvedMaterialInventoryConflictCount > 0
+```
+
+### Fixed-point search closure
+
+`FIXED_POINT_SEARCH_CLOSURE` is reached only when one complete iteration simultaneously produces:
+
+```text
+NewEligiblePrimaryStudyCount = 0
+NewConditionalVenueActivationCount = 0
+PendingConditionalTriggerCount = 0
+PendingCitationRecordCount = 0
+UnresolvedMaterialInventoryConflictCount = 0
+```
+
+An iteration without a new study is not stable while a trigger remains pending. An iteration without a new trigger is not stable while citation records remain pending. An iteration without new records is not stable while a material documentary conflict remains unresolved. Final closure requires the conjunction of all conditions. This fixed point is an operational closure criterion, not a claim of absolute exhaustiveness of the literature.
+
 ## Final closure criteria
 
 `FINAL_SEARCH_UPDATE_COMPLETE` may be declared only when:
 
-- the final automated-search update has been executed;
-- snowballing has reached saturation as defined in protocol v1.7;
-- every post-screening conditional trigger has been evaluated;
-- every venue activated in the second wave has been collected;
-- every new record has passed through discovery and screening;
-- no conditional trigger remains pending;
-- every material documentary conflict has been resolved;
+- every retained automated source has received its final update;
+- snowballing has reached a stable iteration under protocol v1.7;
+- every identified record has been screened;
+- every conditional trigger has been evaluated;
+- every activated venue has been collected;
+- every record from those venues has passed through discovery and screening;
+- snowballing has been reexecuted whenever new Layer 1 studies were incorporated;
+- `PendingConditionalTriggerCount = 0`;
+- `PendingCitationRecordCount = 0`;
+- `UnresolvedMaterialInventoryConflictCount = 0`;
+- a complete iteration has produced `NewEligiblePrimaryStudyCount = 0` and `NewConditionalVenueActivationCount = 0`;
+- the global registers have been updated;
 - the final search date has been recorded;
 - the candidate corpus and included corpus have been consolidated and deduplicated.
 
-Final synthesis cannot begin before this milestone.
+Final synthesis cannot begin before `FinalSearchClosureStatus=CLOSED`.
 
 ## Preserved operational consequences
 
@@ -138,7 +201,7 @@ Final synthesis cannot begin before this milestone.
 
 ## Scope not changed
 
-A002-R1 does not change:
+A002-R2 does not change:
 
 - research questions;
 - review objective;
@@ -181,4 +244,4 @@ Proceedings identity and authoritative sources will be established only during t
 
 ## Provenance
 
-`RecordedCommit` identifies the commit that introduced A002 before continuation of manual documentary collection and before any manual discovery classification. `RevisionRecordedCommit` identifies the commit that introduced the two-wave A002-R1 architecture before continuation of manual collection and before any discovery.
+`RecordedCommit` identifies the commit that introduced A002 before continuation of manual documentary collection and before any manual discovery classification. The A002-R1 `RevisionRecordedCommit` identifies the commit that introduced the two-wave architecture. The A002-R2 `RevisionRecordedCommit` will identify the commit that corrects the ordering of snowballing and trigger review and introduces fixed-point closure before any execution of those stages.

@@ -37,13 +37,15 @@ PRE-DISCOVERY DOCUMENTARY COLLECTION WAVE
 -> PRE_DISCOVERY_COLLECTION_CLOSED
 -> manual discovery classification
 -> candidate consolidation and deduplication
--> formal Layer 1 screening
--> post-screening conditional trigger review
--> snowballing
--> FINAL SEARCH UPDATE WAVE
--> discovery and screening of newly identified records
--> FINAL_SEARCH_UPDATE_COMPLETE
+-> formal Layer 1 screening of the initial corpus
+-> backward and forward snowballing
+-> discovery and screening of snowballing records
+-> conditional-venue trigger review
+-> documentary collection of newly activated venues
+-> discovery and screening of venue records
+-> iterative final search update
+-> fixed-point search closure
 -> final synthesis
 ```
 
-A primeira onda estabelece o conjunto documental necessário para iniciar discovery, mas seu fechamento não encerra definitivamente todas as rotas de identificação. A segunda onda é obrigatória para a atualização final. Venues ativados nessa segunda onda seguem o mesmo pipeline de proveniência, inventário raw, reconciliação, normalização, discovery e screening. Nenhuma síntese final ocorre antes de `FINAL_SEARCH_UPDATE_COMPLETE`.
+A primeira onda estabelece o conjunto documental necessário para iniciar discovery, mas seu fechamento não encerra definitivamente todas as rotas de identificação. A segunda onda é obrigatória para a atualização final. Um novo estudo incluído pode reabrir snowballing; nova evidência pode reabrir trigger review; e um venue recém-ativado pode acrescentar estudos que criam novas rotas de citação. O ciclo termina somente no ponto fixo operacional. Todos os novos registros preservam a cadeia `source -> raw -> normalized -> discovery -> screening`, e nenhuma síntese final ocorre antes do fechamento auditável.
