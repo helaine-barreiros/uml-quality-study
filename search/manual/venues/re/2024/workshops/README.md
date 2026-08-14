@@ -7,10 +7,11 @@
 - RawInventoryStatus: `COMPLETE`
 - ReconciliationStatus: `BLOCKED`
 - NormalizationStatus: `COMPLETE`
+- VenueCrosscheckStatus: `PARTIAL`
 - DiscoveryPhaseStatus: `DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`
-- CurrentBlocker: `OFFICIAL_VENUE_CROSSCHECK_REQUIRED`
+- CurrentBlocker: `ITEM_LEVEL_VENUE_CROSSCHECK_REQUIRED`
 
-The complete official publisher `PRIMARY_TOC` establishes documentary membership and has been materialized as 62 raw rows. The validated publisher BibTeX enriches the same 62 securely matched records in the normalized inventory; it does not create membership. Documentary completion and the overall reconciliation remain blocked until an independent official `VENUE_CROSSCHECK` is acquired and reconciled. No discovery or screening was performed.
+The complete publisher TOC defines the 62-item documentary inventory, and publisher BibTeX supplies matched normalized metadata without defining membership. The official page confirms the event track or sessions but does not enumerate every publisher research item. It is retained as a partial venue crosscheck and does not complete documentary reconciliation. No discovery or screening was performed.
 
 - [source manifest](source/source_manifest.csv)
 - [controlled evidence request](source/controlled_evidence_request.md)
