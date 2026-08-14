@@ -30,6 +30,14 @@ Materializes raw and normalized inventories from previously audited local IEEE T
 
 Renders the public per-unit README, raw audit, normalization audit, and three-level reconciliation report from safe aggregate audit JSON. Research/editorial counts and all unit context are passed as arguments; the renderer does not inspect or redistribute controlled textual fields. Output files are published atomically.
 
+## `audit_researchr_crosscheck.pl`
+
+Audits a locally saved official Researchr conference page without network access. It recognizes item-level accepted-paper lists and session/program track pages, extracts titles, author displays, track labels, and local record locators into controlled CSV, and emits only aggregate structural metrics in JSON. The tool does not treat a session or track page as complete by itself; coverage is decided by reconciliation with the publisher-defined raw inventory. Dependencies: Perl, `HTML::TreeBuilder 5.07`, `Text::CSV 2.06`, `Unicode::Normalize`, `Encode`, `Digest::SHA`, `Getopt::Long`, and `JSON::PP`.
+
+## `reconcile_venue_crosscheck.py`
+
+Compares controlled official-event entries with an already materialized publisher raw inventory. Matching uses literal title, transparent normalization, explicit presentation-suffix normalization, or combined ordered-author and lexical evidence. The tool reports aggregate coverage and keeps record-level mappings in controlled storage. A session page is sufficient only when every publisher research item is accounted for without ambiguity; editorial-only primary records and clearly out-of-scope program events are reported separately. Python standard library only; no network access.
+
 ## `audit_pdf_zip.py`
 
 Tests ZIP integrity with Python's standard `zipfile`, hashes every member in-stream, detects duplicate names, and invokes `pdfinfo` on temporary PDF bytes to collect only technical metadata. It never invokes `pdftotext`, OCR, or a network service. The complete member-level report is controlled evidence and must not be committed.

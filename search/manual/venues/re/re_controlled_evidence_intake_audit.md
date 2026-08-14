@@ -3,19 +3,19 @@
 - IntakeDate: `2026-08-14T20:06:12Z`
 - DownloadsPath: `$HOME/Downloads`
 - FamilyBatchID: `MSB-RE-PREDISCOVERY-001`
-- HTMLFilesFound: `9`
+- HTMLFilesFound: `18`
 - BibTeXFilesFound: `8`
 - RISFilesFound: `0`
 - ZipFilesFound: `0`
 - CompletePrimaryTOCHTMLCount: `8`
 - PartialOrDynamicHTMLCount: `0`
-- VenueCrosscheckHTMLCount: `0`
+- VenueCrosscheckHTMLCount: `8`
 - VerifiedMetadataExportFiles: `8`
 - ExpectationMismatchCount: `0`
 - CorruptedZipCount: `0`
-- DuplicateFileCount: `1`
+- DuplicateFileCount: `2`
 - AmbiguousFileCount: `0`
-- InScopeEvidenceFiles: `17`
+- InScopeEvidenceFiles: `26`
 - ControlledEvidenceCommittedCount: `0`
 - AbstractTextCommittedCount: `0`
 - KeywordTextCommittedCount: `0`
@@ -54,6 +54,36 @@ All eight official publisher TOCs expose a complete local cardinality marker mat
 
 The IEEE CSDL 2025 Main page presents abbreviated visible authors for 71 authored records; the complete publisher BibTeX author lists differ diagnostically. This `AUTHOR_LIST_DRIFT` does not challenge membership. No external correction was applied.
 
-No official independent event program, accepted-papers page, or track page was found among the controlled files. Accordingly, all eight verified units remain blocked at documentary reconciliation, and no raw or normalized data rows are materialized.
+The initial intake contained no independent official event page. Raw and normalized inventories were subsequently materialized from the complete publisher TOCs and reconciled publisher metadata exports under the corrected operational policy; those inventories were not regenerated during the crosscheck intake below.
 
 No abstract text, keyword text, protected HTML, BibTeX export, RIS export, ZIP, PDF, or full text is committed.
+
+## Incremental official venue-crosscheck intake
+
+- HTMLUpdateTimestamp: `2026-08-14T22:42:09Z`
+- NewHTMLFilesFound: `9`
+- NewHTMLFilesProcessed: `9`
+- DuplicateHTMLFiles: `1`
+- AssignedCanonicalCrosscheckFiles: `8`
+- AmbiguousHTMLFiles: `0`
+- ItemLevelCrosscheckFiles: `1`
+- PartialTrackOrSessionCrosscheckFiles: `7`
+- RE2026HTMLFilesFound: `0`
+- ControlledEvidenceCommittedCount: `0`
+- AbstractTextCommittedCount: `0`
+- KeywordTextCommittedCount: `0`
+- PDFCommittedCount: `0`
+
+| Original file | Year/track | Role | Observed records | Effective granularity | Assignment | Result |
+|---|---|---|---:|---|---|---|
+| `re_2022_main_crosscheck_accepted.html` | 2022 MAIN | VENUE_CROSSCHECK | 47 | ITEM_LEVEL | assigned | Covers all 41 publisher research items; eight publisher editorial items are legitimately primary-only and six broader-event accepted records are crosscheck-only. |
+| `re_2022_main_crosscheck_accepted.html.html` | 2022 MAIN | VENUE_CROSSCHECK | 47 | ITEM_LEVEL | duplicate | Byte-different save of the same official accepted-paper page and item sequence; retained only as duplicate controlled evidence. |
+| `rew_2022_workshops_crosscheck.html` | 2022 WORKSHOPS | VENUE_CROSSCHECK | 7 | TRACK_LEVEL | assigned | Workshop sessions do not enumerate complete proceedings papers. |
+| `re_2023_main_crosscheck_research.html` | 2023 MAIN | VENUE_CROSSCHECK | 56 | TRACK_LEVEL | assigned | Session/program capture leaves 16 publisher research items unmatched. |
+| `rew_2023_workshops_crosscheck.html` | 2023 WORKSHOPS | VENUE_CROSSCHECK | 14 | TRACK_LEVEL | assigned | Workshop sessions do not enumerate complete proceedings papers. |
+| `re_2024_main_crosscheck_research.html` | 2024 MAIN | VENUE_CROSSCHECK | 55 | TRACK_LEVEL | assigned | Session/program capture leaves 17 publisher research items unmatched. |
+| `rew_2024_workshops_crosscheck.html` | 2024 WORKSHOPS | VENUE_CROSSCHECK | 10 | TRACK_LEVEL | assigned | Workshop and catering events do not enumerate complete proceedings papers. |
+| `re_2025_main_crosscheck_research.html` | 2025 MAIN | VENUE_CROSSCHECK | 76 | TRACK_LEVEL | assigned | Session/program capture leaves 20 publisher research items unmatched and includes broader event records. |
+| `rew_2025_workshops_crosscheck.html` | 2025 WORKSHOPS | VENUE_CROSSCHECK | 12 | TRACK_LEVEL | assigned | Repeated workshop schedule events do not enumerate complete proceedings papers. |
+
+Only `MSU-RE-2022-MAIN` has sufficient independent item-level coverage to complete its documentary reconciliation. The other seven units remain blocked for an item-level official venue crosscheck. No new RE/REW 2026 HTML was found, so neither 2026 proceedings unit is instantiated or advanced.
