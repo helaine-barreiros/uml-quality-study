@@ -6,6 +6,18 @@ These tools operate only on local files and contain no titles, DOIs, years, card
 
 Parses a local BibTeX export with `BibTeX::Parser 1.05`, requires `parse_ok` for every entry, emits a controlled metadata CSV without abstract or keyword text, and reports hashes, missing fields, duplicates, availability counts, entry types, and grouped publisher values. Dependencies: Perl, `BibTeX::Parser 1.05`, `Text::CSV`, `Unicode::Normalize`, `Digest::SHA`, `Getopt::Long`, and `JSON::PP`.
 
+The parser also supports IEEE bulk BibTeX files that concatenate otherwise valid entries as `}@TYPE`. It inserts only the missing lexical line boundary in memory, records the insertion count, preserves the source bytes, and still delegates integral parsing to `BibTeX::Parser 1.05`.
+
+## `audit_ieee_toc_html.pl`
+
+Audits local saved IEEE Xplore and IEEE Computer Society Digital Library proceedings pages. It extracts only bibliographic display fields needed for documentary auditing, compares the locally materialized item count with the page's `Showing … of …` marker, and emits controlled item-level CSV plus a JSON summary. It never executes JavaScript or accesses the network. Dependencies: Perl, `HTML::TreeBuilder 5.07`, `Text::CSV`, `Unicode::Normalize`, `Encode`, `Digest::SHA`, `Getopt::Long`, and `JSON::PP`.
+
+Supported saved-page structures are the IEEE Xplore `List-results-items` proceedings view and the IEEE CSDL `article-list-item` proceedings view. A page without a matching complete cardinality marker is reported as partial and must not define membership.
+
+## `reconcile_ieee_toc_metadata.py`
+
+Reconciles controlled item CSVs produced by the IEEE TOC auditor and BibTeX auditor. Matching uses an IEEE record locator/BibTeX key when available, then literal title, then a transparent diagnostic title normalization. The script reports title-set, order, author-list drift, ambiguity, and material-conflict counts. It uses Python's standard library only and never uses metadata-export order to define documentary order.
+
 ## `audit_pdf_zip.py`
 
 Tests ZIP integrity with Python's standard `zipfile`, hashes every member in-stream, detects duplicate names, and invokes `pdfinfo` on temporary PDF bytes to collect only technical metadata. It never invokes `pdftotext`, OCR, or a network service. The complete member-level report is controlled evidence and must not be committed.
