@@ -1,1 +1,2 @@
 SourceID,ManualSearchUnitID,SourceRole,URL,RetrievedAt,LocalSnapshot,SHA256,ContentType,Notes
+SRC-MODELS-2024-COMPANION-ACM-BIBTEX-CAPES-20260813,MSU-MODELS-2024-COMPANION,METADATA_SOURCE,,2026-08-13T22:55:07Z,controlled://models/2024/companion/publisher_export.bib,c82b6488559f24e446a932e53f99f1f85a53fa8e82596cac1ef628e0e03c5f15,application/x-bibtex,Publisher-generated BibTeX acquired through institutional CAPES access; contains 156 parsed records; does not define membership; canonical export URL was not captured and is requested separately.
