@@ -51,7 +51,7 @@ sub grouped_values {
 }
 
 my @columns = qw(
-    SourceFilename EntryOrdinal BibTeXType DOI Title Authors Year Booktitle
+    SourceFilename EntryOrdinal BibTeXKey BibTeXType DOI Title Authors Year Booktitle
     Series ISBN Publisher Location Pages NumPages URL AbstractAvailability
     KeywordsAvailability ParseStatus Notes
 );
@@ -61,7 +61,16 @@ open my $out, '>:encoding(UTF-8)', $entries_output
     or die "Cannot write $entries_output: $!\n";
 $csv->print($out, \@columns) or die "Cannot write CSV header\n";
 
-open my $bib, '<:encoding(UTF-8)', $input or die "Cannot read $input: $!\n";
+open my $bib_raw, '<:raw', $input or die "Cannot read $input: $!\n";
+my $bib_bytes = do { local $/; <$bib_raw> };
+close $bib_raw or die "Cannot close $input: $!\n";
+# Some publisher bulk exports concatenate otherwise valid entries as `}@TYPE`
+# without a separating line break.  BibTeX::Parser 1.05 stops after the first
+# such entry.  Insert only the missing lexical boundary, then still require the
+# proper parser to parse and validate every entry.
+my $entry_boundary_insertions = 0 + ($bib_bytes =~ s/\}\@(?=[A-Za-z])/\}\n\@/g);
+open my $bib, '<:encoding(UTF-8)', \$bib_bytes
+    or die "Cannot open in-memory BibTeX: $!\n";
 my $parser = BibTeX::Parser->new($bib);
 my (%types, %dois, %titles, %years, %booktitles, %series, %isbns, %publishers, %locations);
 my ($entries, $parse_failures, $missing_doi, $missing_title, $missing_authors) = (0, 0, 0, 0, 0);
@@ -72,19 +81,27 @@ while (my $entry = $parser->next) {
     my $parse_ok = $entry->parse_ok ? 1 : 0;
     $parse_failures++ unless $parse_ok;
     my $type = lc clean($entry->type);
+    my $key = clean($entry->key);
     $types{$type}++;
     my $doi = normalized_doi($entry->field('doi'));
-    my $title = clean($entry->cleaned_field('title'));
-    my @authors = map { clean(join ' ', grep { defined && length } @$_) } $entry->cleaned_author;
+    my $title = defined($entry->field('title'))
+        ? clean($entry->cleaned_field('title')) : '';
+    my @authors = defined($entry->field('author'))
+        ? map { clean(join ' ', grep { defined && length } @$_) } $entry->cleaned_author
+        : ();
     @authors = grep { length } @authors;
     my $authors = join '; ', @authors;
     my %fields = (
         Year => clean($entry->field('year')),
-        Booktitle => clean($entry->cleaned_field('booktitle')),
-        Series => clean($entry->cleaned_field('series')),
+        Booktitle => defined($entry->field('booktitle'))
+            ? clean($entry->cleaned_field('booktitle')) : '',
+        Series => defined($entry->field('series'))
+            ? clean($entry->cleaned_field('series')) : '',
         ISBN => clean($entry->field('isbn')),
-        Publisher => clean($entry->cleaned_field('publisher')),
-        Location => clean($entry->cleaned_field('location')),
+        Publisher => defined($entry->field('publisher'))
+            ? clean($entry->cleaned_field('publisher')) : '',
+        Location => defined($entry->field('location'))
+            ? clean($entry->cleaned_field('location')) : '',
         Pages => clean($entry->field('pages')),
         NumPages => clean($entry->field('numpages')),
         URL => clean($entry->field('url')),
@@ -106,10 +123,10 @@ while (my $entry = $parser->next) {
     $locations{$fields{Location}}++ if length $fields{Location};
     my @row = (
         $input =~ m{([^/]+)$} ? $1 : $input,
-        $entries, $type, $doi, $title, $authors,
+        $entries, $key, $type, $doi, $title, $authors,
         @fields{qw(Year Booktitle Series ISBN Publisher Location Pages NumPages URL)},
-        $has_abstract ? 'AVAILABLE_CONTROLLED' : 'NOT_REPORTED_BY_SOURCE',
-        $has_keywords ? 'AVAILABLE_CONTROLLED' : 'NOT_REPORTED_BY_SOURCE',
+        $has_abstract ? 'AVAILABLE_CONTROLLED_NOT_REDISTRIBUTED' : 'NOT_REPORTED_BY_SOURCE',
+        $has_keywords ? 'AVAILABLE_CONTROLLED_NOT_REDISTRIBUTED' : 'NOT_REPORTED_BY_SOURCE',
         $parse_ok ? 'PARSE_OK' : 'PARSE_FAILED', '',
     );
     $csv->print($out, \@row) or die "Cannot write CSV row $entries\n";
@@ -120,6 +137,7 @@ my $summary = {
     SourceFilename => ($input =~ m{([^/]+)$} ? $1 : $input),
     SHA256 => sha256_file($input), BibTeXParserVersion => $BibTeX::Parser::VERSION,
     EntryCount => $entries, ParseFailureCount => $parse_failures,
+    LexicalEntryBoundaryInsertions => $entry_boundary_insertions,
     BibTeXTypeCounts => grouped_values(\%types),
     DOICount => scalar(keys %dois),
     DuplicateDOICount => scalar(grep { $dois{$_} > 1 } keys %dois),
