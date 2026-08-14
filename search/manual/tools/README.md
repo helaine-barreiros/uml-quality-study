@@ -38,6 +38,10 @@ Audits a locally saved official Researchr conference page without network access
 
 Compares controlled official-event entries with an already materialized publisher raw inventory. Matching uses literal title, transparent normalization, explicit presentation-suffix normalization, or combined ordered-author and lexical evidence. The tool reports aggregate coverage and keeps record-level mappings in controlled storage. A session page is sufficient only when every publisher research item is accounted for without ambiguity; editorial-only primary records and clearly out-of-scope program events are reported separately. Python standard library only; no network access.
 
+## `render_ieee_crosscheck_documents.py`
+
+Renders unit status, raw audit, normalization audit, reconciliation report, and the remaining controlled-evidence request from the aggregate publisher and venue-crosscheck audit JSON. It never opens licensed source HTML or textual metadata and does not alter raw or normalized CSVs. Output documentation is published atomically.
+
 ## `audit_pdf_zip.py`
 
 Tests ZIP integrity with Python's standard `zipfile`, hashes every member in-stream, detects duplicate names, and invokes `pdfinfo` on temporary PDF bytes to collect only technical metadata. It never invokes `pdftotext`, OCR, or a network service. The complete member-level report is controlled evidence and must not be committed.

@@ -3,14 +3,14 @@
 ## Unit and documentary status
 
 - ManualSearchUnitID: `MSU-RE-2022-MAIN`
-- DocumentaryCollectionStatus: `BLOCKED`
-- CurrentBlocker: `OFFICIAL_VENUE_CROSSCHECK_REQUIRED`
+- DocumentaryCollectionStatus: `COMPLETE`
+- CurrentBlocker: ``
 
 ## Controlled sources
 
 - PRIMARY_TOC: `SRC-RE-2022-MAIN-IEEE-TOC-HUMAN-20260814` (`514b3ff55c04706b76321347eaac8d6f9def442d494037560987a84c2ac6548b`)
 - METADATA_SOURCE: `SRC-RE-2022-MAIN-IEEE-BIBTEX-HUMAN-20260814` (`0a8dcb65bbe3a25392825fb07e5a2d3b4d3ee84208bc9527e7ad86826fb95f25`)
-- VENUE_CROSSCHECK: not received (`REQUIRED`)
+- VENUE_CROSSCHECK: `SRC-RE-2022-MAIN-CROSSCHECK-HUMAN-20260814` (`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`)
 
 ## Level 1 — PRIMARY_TOC × METADATA_SOURCE
 
@@ -29,23 +29,35 @@
 - AmbiguousMatchCount: `0`
 - MaterialInventoryConflictCount: `0`
 
-All publisher TOC items match exactly one publisher BibTeX record. The export order differs from the membership-defining TOC order and was not used for ordinals. Non-literal title representations and author-list display differences are preserved diagnostically and are not silently corrected.
+The publisher metadata export does not define membership or ordinals.
 
 ## Level 2 — PRIMARY_TOC × VENUE_CROSSCHECK
 
-- ReconciliationStatus: `BLOCKED`
-- VenueCrosscheckStatus: `REQUIRED`
-- VenueCrosscheckItemCount: `0`
-- CrosscheckOnlyCount: `0` (not evaluated because the source is absent)
+- ObservedPageGranularity: `ITEM_LEVEL`
+- CrosscheckGranularity: `ITEM_LEVEL`
+- VenueCrosscheckStatus: `COMPLETE`
+- VenueCrosscheckItemCount: `47`
+- CrosscheckExactTitleMatchCount: `29`
+- CrosscheckNormalizedTitleMatchCount: `1`
+- CrosscheckTitleVersionDriftCount: `11`
+- CrosscheckAuthorListDriftCount: `9`
+- CrosscheckPrimaryOnlyCount: `0`
+- CrosscheckPrimaryEditorialOnlyCount: `8`
+- CrosscheckOnlyCount: `6`
+- CrosscheckAmbiguousCount: `0`
+- MaterialInventoryConflictCount: `0`
+- ReconciliationStatus: `COMPLETE`
 
-The missing independent official venue crosscheck is a process blocker, not a material inventory conflict by itself.
+The independent official item-level accepted-paper list covers every publisher research item. Publisher editorial records are legitimately primary-only, and crosscheck-only records belong to the broader event accepted-paper scope. The unit remains IN_PROGRESS because discovery is deferred. Orthographic, punctuation, presentation-suffix, and author-display differences are reported as drift rather than silently rewritten.
 
 ## Level 3 — documentary completion
 
-- DocumentaryCollectionStatus: `BLOCKED`
+- DocumentaryCollectionStatus: `COMPLETE`
+- UnitStatus: `IN_PROGRESS`
 - RawInventoryStatus: `COMPLETE`
 - NormalizationStatus: `COMPLETE`
-- ReconciliationStatus: `BLOCKED`
+- ReconciliationStatus: `COMPLETE`
 - DiscoveryDataRows: `0`
+- CandidateCountPopulated: `false`
 
-Complete official publisher `PRIMARY_TOC` evidence is sufficient to materialize raw membership, and validated publisher BibTeX is sufficient to populate matched normalized metadata. Documentary completion remains blocked until an independent official venue crosscheck is acquired and reconciled, or a later explicit methodological decision justifies its absence.
+No discovery, screening, snowballing, or conditional-trigger review was executed.
