@@ -19,6 +19,12 @@
 
 `DuplicateFileCount` includes two received BibTeX duplicates, one byte-identical ZIP duplicate, and one pair of ZIPs whose archive bytes differ but whose 45 PDF member hashes are identical.
 
+## Evidence-register boundary
+
+`source_manifest.csv` records only sources that participate in the documentary pipeline, such as `PRIMARY_TOC`, `VENUE_CROSSCHECK`, `METADATA_SOURCE`, or an official HTML `AUXILIARY_NAVIGATION` page. `controlled_evidence_intake_log.csv` records controlled evidence received during intake.
+
+PDF ZIPs are recorded only in the intake log and controlled audits as `CONTROLLED_FULLTEXT_PACKAGE`. They are not `AUXILIARY_NAVIGATION`, do not define documentary membership, do not provide bibliographic metadata for the source pipeline, and cannot authorize either raw- or normalized-inventory population. Their audited counts, duplicate relationships, and integrity results below are unchanged.
+
 ## File summary
 
 | File | Format | Scope | Records/PDFs | Integrity | Assignment | Note |
@@ -48,7 +54,7 @@
 
 All eight BibTeX files matched their expected SHA-256 and entry count, and every entry returned `parse_ok`. All ZIPs passed integrity testing; every member was a PDF and no archive contained duplicate member names. Full member lists and metadata-only PDF checks remain in controlled storage.
 
-The received BibTeX and ZIP packages do not establish documentary membership. No abstract, keyword text, PDF, ZIP, or licensed export is included in the public repository.
+The received BibTeX exports remain metadata sources where recorded in a unit manifest. ZIP packages remain controlled intake evidence only and do not establish documentary membership. No abstract, keyword text, PDF, ZIP, or licensed export is included in the public repository.
 
 ## Incremental HTML intake update
 

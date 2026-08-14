@@ -14,4 +14,8 @@ Tests ZIP integrity with Python's standard `zipfile`, hashes every member in-str
 
 Validates the public intake and gap CSV structures, required row counts, and identifier uniqueness without opening controlled evidence. It uses Python's standard library only.
 
-Both tools write only to paths supplied by arguments. For this intake, all detailed outputs belong under `.local-evidence/`; only aggregate, non-textual audit results may be published.
+The evidence-audit tools write only to paths supplied by arguments. For this intake, all detailed outputs belong under `.local-evidence/`; only aggregate, non-textual audit results may be published.
+
+## Evidence-register boundary
+
+Unit `source_manifest.csv` files are reserved for sources used in the documentary pipeline: `PRIMARY_TOC`, `VENUE_CROSSCHECK`, `METADATA_SOURCE`, and official HTML `AUXILIARY_NAVIGATION` pages. Controlled PDF ZIPs are not source-manifest entries. They remain recorded in `controlled_evidence_intake_log.csv` and aggregate controlled-evidence audits as `CONTROLLED_FULLTEXT_PACKAGE` evidence only. A ZIP cannot create documentary membership or authorize raw or normalized inventory population.

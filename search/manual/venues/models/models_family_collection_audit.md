@@ -13,16 +13,18 @@
 
 `BLOCKED` is required because three verified and instantiated units still lack controlled official publisher TOCs and official venue crosschecks. This family status does not close the pre-discovery wave or the final search update.
 
+Unit `source_manifest.csv` files contain only documentary-pipeline sources. Controlled PDF ZIPs remain exclusively in `controlled_evidence_intake_log.csv` and aggregate intake audits as `CONTROLLED_FULLTEXT_PACKAGE`; they are not `AUXILIARY_NAVIGATION`, cannot create membership, and cannot authorize raw or normalized inventory population. The ZIP and PDF totals already audited are unchanged.
+
 ## Year × track status
 
 | Year | TrackType | ManualSearchUnitID | UnitStatus | DocumentaryCollectionStatus | PrimaryTOCStatus | VenueCrosscheckStatus | RawRows | NormalizedRows | Notes |
 |---:|---|---|---|---|---|---|---:|---:|---|
-| 2022 | MAIN | `MSU-MODELS-2022-MAIN` | BLOCKED | BLOCKED | REQUIRED | REQUIRED | 0 | 0 | Publisher metadata and controlled PDF package received; primary and crosscheck evidence still required. |
-| 2022 | COMPANION | `MSU-MODELS-2022-COMPANION` | BLOCKED | BLOCKED | REQUIRED | REQUIRED | 0 | 0 | Publisher metadata and partial controlled PDF packages received; primary and crosscheck evidence still required. |
+| 2022 | MAIN | `MSU-MODELS-2022-MAIN` | BLOCKED | BLOCKED | REQUIRED | REQUIRED | 0 | 0 | Publisher metadata source registered in the unit manifest; controlled full-text package recorded only in the intake log; primary and crosscheck evidence still required. |
+| 2022 | COMPANION | `MSU-MODELS-2022-COMPANION` | BLOCKED | BLOCKED | REQUIRED | REQUIRED | 0 | 0 | Publisher metadata source registered in the unit manifest; controlled full-text packages recorded only in the intake log; primary and crosscheck evidence still required. |
 | 2023 | MAIN |  |  |  | NOT_CHECKED | NOT_CHECKED | 0 | 0 | No MODELS evidence received in this intake; no unit instantiated. |
 | 2023 | COMPANION |  |  |  | NOT_CHECKED | NOT_CHECKED | 0 | 0 | No MODELS evidence received in this intake; no unit instantiated. |
 | 2024 | MAIN | `MSU-MODELS-2024-MAIN` | IN_PROGRESS | COMPLETE | COMPLETE | COMPLETE | 27 | 27 | Validated pilot preserved byte-identically; incremental HTML was a documentary duplicate. |
-| 2024 | COMPANION | `MSU-MODELS-2024-COMPANION` | BLOCKED | BLOCKED | REQUIRED | REQUIRED | 0 | 0 | Publisher metadata and controlled PDF packages received; primary and crosscheck evidence still required. |
+| 2024 | COMPANION | `MSU-MODELS-2024-COMPANION` | BLOCKED | BLOCKED | REQUIRED | REQUIRED | 0 | 0 | Publisher metadata source registered in the unit manifest; controlled full-text packages recorded only in the intake log; primary and crosscheck evidence still required. |
 | 2025 | MAIN |  |  |  | NOT_CHECKED | NOT_CHECKED | 0 | 0 | No MODELS evidence received in this intake; publication status not inferred. |
 | 2025 | COMPANION |  |  |  | NOT_CHECKED | NOT_CHECKED | 0 | 0 | No MODELS evidence received in this intake; publication status not inferred. |
 | 2026 | MAIN |  |  |  | NOT_CHECKED | NOT_CHECKED | 0 | 0 | No MODELS evidence received in this intake; publication status not inferred. |

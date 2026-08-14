@@ -9,7 +9,7 @@
 
 ## Current evidence
 
-A publisher-generated BibTeX export and five controlled ZIP acquisitions were received and validated. Parts 3 and 4 are byte-identical, leaving four unique packages with 156 PDF members. They are metadata and package-completeness evidence only and do not establish documentary membership. The export-level source URL was not captured in the received artifact.
+A publisher-generated BibTeX export was received and remains registered in `source_manifest.csv` as `METADATA_SOURCE`. Five controlled full-text ZIP acquisitions are recorded only in the controlled evidence intake log. Parts 3 and 4 are byte-identical, leaving four unique packages with 156 PDF members. They are package-completeness evidence, are not documentary sources, and do not establish documentary membership. The export-level source URL was not captured in the received artifact.
 
 ## Missing primary evidence
 
@@ -37,4 +37,4 @@ Do not provide cookies, HAR files, access tokens, credentials, browser profiles,
 
 ## Notes
 
-Do not reacquire the BibTeX already received. The controlled PDF packages must not be used for relevance classification or as a substitute for the official TOC.
+Do not reacquire the validated BibTeX or controlled full-text packages. The packages must not be used for relevance classification or as a substitute for the official TOC.

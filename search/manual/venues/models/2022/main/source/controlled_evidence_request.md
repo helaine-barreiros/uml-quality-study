@@ -9,7 +9,7 @@
 
 ## Current evidence
 
-A publisher-generated BibTeX export and one controlled PDF package were received and validated. They are metadata and package-completeness evidence only and do not establish documentary membership. The export-level source URL was not captured in the received artifact.
+A publisher-generated BibTeX export was received and remains registered in `source_manifest.csv` as `METADATA_SOURCE`. A controlled full-text package is recorded only in the controlled evidence intake log. It is package-completeness evidence, is not a documentary source, and does not establish documentary membership. The export-level source URL was not captured in the received artifact.
 
 ## Missing primary evidence
 
@@ -37,4 +37,4 @@ Do not provide cookies, HAR files, access tokens, credentials, browser profiles,
 
 ## Notes
 
-Do not reacquire the BibTeX already received. The controlled PDF package must not be used for relevance classification or as a substitute for the official TOC.
+Do not reacquire the validated BibTeX or controlled full-text package. The package must not be used for relevance classification or as a substitute for the official TOC.
