@@ -49,3 +49,27 @@
 All eight BibTeX files matched their expected SHA-256 and entry count, and every entry returned `parse_ok`. All ZIPs passed integrity testing; every member was a PDF and no archive contained duplicate member names. Full member lists and metadata-only PDF checks remain in controlled storage.
 
 The received BibTeX and ZIP packages do not establish documentary membership. No abstract, keyword text, PDF, ZIP, or licensed export is included in the public repository.
+
+## Incremental HTML intake update
+
+- HTMLUpdateTimestamp: `2026-08-14T09:43:28Z`
+- NewHTMLFilesFound: `1`
+- NewHTMLFilesProcessed: `1`
+- DuplicateHTMLFiles: `1`
+- AssignedHTMLFiles: `1`
+- AmbiguousHTMLFiles: `0`
+- CompletePrimaryTOCHTMLCount: `1`
+- VenueCrosscheckHTMLCount: `0`
+- DynamicOrPartialHTMLCount: `0`
+- ControlledEvidenceCommittedCount: `0`
+- AbstractTextCommittedCount: `0`
+- KeywordTextCommittedCount: `0`
+- PDFCommittedCount: `0`
+
+| OriginalFilename | DetectedYear | DetectedTrack | DetectedPublisher | HTMLRole | HTMLCompletenessStatus | SHA256 | AssignmentStatus | ProcessingStatus | Notes |
+|---|---:|---|---|---|---|---|---|---|---|
+| `models_2024_conference.html` | 2024 | MAIN | Association for Computing Machinery | PRIMARY_TOC_CANDIDATE | COMPLETE_TOC | `e7ce91d104239e87fb1675ed64ca913933b47fbc193e5f7a7797c8472aa42efc` | DUPLICATE | DUPLICATE_RECORDED | New bytes represent the same canonical proceedings and the same ordered 27-item title, DOI, and locator sequences as the already registered pilot PRIMARY_TOC. The snapshot and its 89 browser-resource files remain controlled; MODELS Main 2024 was not modified. |
+
+The previously acquired file `Proceedings of the ACM_IEEE 27th International Conference on Model Driven Engineering Languages and Systems _ ACM Conferences.html` has SHA-256 `7efdf33b0bb911988956d08f45f902c693ac046949ea570a049e116055702f8e` and is already registered as the pilot PRIMARY_TOC. Five additional top-level HTML files and other nested HTML documents in `Downloads` were inspected by title and did not identify MODELS proceedings or an official MODELS event crosscheck; they were excluded from this MODELS intake. Associated browser resource HTMLs were treated as parts of their parent saved page, not as independent evidence.
+
+No new unit became eligible for materialization. The new complete HTML is a documentary duplicate for the protected, already complete MODELS Main 2024 pilot; it was not added to that unit's source manifest.

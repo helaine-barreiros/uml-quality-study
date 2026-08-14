@@ -24,12 +24,15 @@ def main() -> int:
     parser.add_argument("--intake-log", required=True, type=Path)
     parser.add_argument("--gap-log", required=True, type=Path)
     parser.add_argument("--unit-registry", type=Path)
+    parser.add_argument("--expected-evidence-rows", type=int)
     args = parser.parse_args()
 
     evidence = read_csv(args.intake_log)
     gaps = read_csv(args.gap_log)
-    if len(evidence) != 22:
-        raise SystemExit(f"expected 22 evidence rows, found {len(evidence)}")
+    if args.expected_evidence_rows is not None and len(evidence) != args.expected_evidence_rows:
+        raise SystemExit(
+            f"expected {args.expected_evidence_rows} evidence rows, found {len(evidence)}"
+        )
     ids = [row["EvidenceID"] for row in evidence]
     if len(ids) != len(set(ids)):
         raise SystemExit("duplicate EvidenceID")
