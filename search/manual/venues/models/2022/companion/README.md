@@ -1,6 +1,6 @@
-# MODELS 2024 Companion
+# MODELS 2022 Companion
 
-- ManualSearchUnitID: `MSU-MODELS-2024-COMPANION`
+- ManualSearchUnitID: `MSU-MODELS-2022-COMPANION`
 - UnitStatus: `BLOCKED`
 - DocumentaryCollectionStatus: `BLOCKED`
 - DiscoveryPhaseStatus: `DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`
