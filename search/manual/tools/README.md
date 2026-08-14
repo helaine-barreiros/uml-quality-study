@@ -14,9 +14,13 @@ Audits local saved IEEE Xplore and IEEE Computer Society Digital Library proceed
 
 Supported saved-page structures are the IEEE Xplore `List-results-items` proceedings view and the IEEE CSDL `article-list-item` proceedings view. A page without a matching complete cardinality marker is reported as partial and must not define membership.
 
+Runtime versions used for the RE/REW intake were Perl `5.40.1`, `BibTeX::Parser 1.05`, `HTML::TreeBuilder 5.07`, `Text::CSV 2.06`, `Unicode::Normalize 1.32`, `Digest::SHA 6.04`, `Getopt::Long 2.57`, `JSON::PP 4.16`, and `Encode 3.21`.
+
 ## `reconcile_ieee_toc_metadata.py`
 
 Reconciles controlled item CSVs produced by the IEEE TOC auditor and BibTeX auditor. Matching uses an IEEE record locator/BibTeX key when available, then literal title, then a transparent diagnostic title normalization. The script reports title-set, order, author-list drift, ambiguity, and material-conflict counts. It uses Python's standard library only and never uses metadata-export order to define documentary order.
+
+The RE/REW intake used Python `3.13.7` for this reconciliation step.
 
 ## `audit_pdf_zip.py`
 

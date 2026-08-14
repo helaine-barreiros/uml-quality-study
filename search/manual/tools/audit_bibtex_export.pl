@@ -68,7 +68,7 @@ close $bib_raw or die "Cannot close $input: $!\n";
 # without a separating line break.  BibTeX::Parser 1.05 stops after the first
 # such entry.  Insert only the missing lexical boundary, then still require the
 # proper parser to parse and validate every entry.
-my $entry_boundary_insertions = ($bib_bytes =~ s/\}\s*\@(?=[A-Za-z])/\}\n\@/g);
+my $entry_boundary_insertions = 0 + ($bib_bytes =~ s/\}\@(?=[A-Za-z])/\}\n\@/g);
 open my $bib, '<:encoding(UTF-8)', \$bib_bytes
     or die "Cannot open in-memory BibTeX: $!\n";
 my $parser = BibTeX::Parser->new($bib);

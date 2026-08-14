@@ -16,3 +16,5 @@ Os três registros globais têm funções distintas:
 Os critérios gerais de promoção de venues condicionais permanecem os do protocolo v1.7: (1) seed relevante não recuperado por fonte automatizada core; (2) pelo menos dois candidatos elegíveis identificados durante busca automatizada, pilot screening ou snowballing; ou (3) decisão conjunta baseada em risco documentado de cobertura. Nenhum trigger é avaliado neste registro.
 
 A002-R2 organiza a sequência como `initial screening -> snowballing -> screening of snowballing records -> conditional trigger review -> final update iterations -> fixed-point closure`. Venues ativados na segunda onda percorrem o mesmo pipeline documental e seletivo; novos estudos podem reabrir snowballing e trigger review antes da síntese.
+
+O batch offline da família IEEE Requirements Engineering é documentado em [venues/re/](venues/re/). Os TOCs e exports controlados não são redistribuídos; os registros públicos preservam apenas proveniência, hashes, contagens, lacunas e estados de execução.

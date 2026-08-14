@@ -3,7 +3,7 @@ MVP-MODELS-MAIN,CORE,MODELS,MODELS main conference,Every applicable year in the 
 MVP-MODELS-COMPANION,CORE,MODELS,MODELS Companion,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,PARTIAL,
 MVP-MODELSWARD,CORE,MODELSWARD,MODELSWARD,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
 MVP-SOSYM,CORE,SoSyM,Software and Systems Modeling,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
-MVP-IEEE-RE,CORE,IEEE RE,IEEE International Requirements Engineering Conference and directly related workshops,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,PENDING_SCOPE_RESOLUTION,Concrete related workshops must be documented before unit instantiation.
+MVP-IEEE-RE,CORE,IEEE RE,IEEE International Requirements Engineering Conference and directly related workshops,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,PARTIAL,RE Main and REW Workshops units for 2022-2025 are concretely instantiated from controlled official publisher evidence; other applicable years remain pending documentary verification.
 MVP-REFSQ,CORE,REFSQ,REFSQ,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
 MVP-ICSE-MAIN,CORE,ICSE,ICSE main conference,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
 MVP-ICSE-SEIP,CORE,ICSE,ICSE Software Engineering in Practice,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
