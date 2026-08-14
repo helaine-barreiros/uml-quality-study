@@ -1,3 +1,3 @@
 # Raw documentary inventory
 
-The controlled IEEE publisher TOC contains 62 ordered items and passed offline completeness checks. Publication of raw membership rows is deferred because the required official `VENUE_CROSSCHECK` is absent. `inventory_raw.csv` therefore remains header-only. BibTeX does not define membership.
+The controlled IEEE publisher `PRIMARY_TOC` contains 62 ordered items and passed offline completeness checks. `inventory_raw.csv` materializes every locally observed TOC item in publisher order without relevance filtering. BibTeX does not define membership. Discovery and screening were not executed.
