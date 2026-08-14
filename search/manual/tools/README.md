@@ -22,6 +22,14 @@ Reconciles controlled item CSVs produced by the IEEE TOC auditor and BibTeX audi
 
 The RE/REW intake used Python `3.13.7` for this reconciliation step.
 
+## `materialize_ieee_toc_bibtex.py`
+
+Materializes raw and normalized inventories from previously audited local IEEE TOC and BibTeX evidence. The tool validates the original controlled-file hashes against the unit source manifest, requires a complete one-to-one deterministic reconciliation, preserves TOC order as documentary membership, uses BibTeX only for matched metadata enrichment, validates both produced CSVs, and publishes them atomically. It uses Python's standard library only and has no network client. Venue, unit identifiers, source identifiers, paths, and expected documentary context are supplied as arguments; no year, title, DOI, or cardinality is hardcoded.
+
+## `render_ieee_unit_documents.py`
+
+Renders the public per-unit README, raw audit, normalization audit, and three-level reconciliation report from safe aggregate audit JSON. Research/editorial counts and all unit context are passed as arguments; the renderer does not inspect or redistribute controlled textual fields. Output files are published atomically.
+
 ## `audit_pdf_zip.py`
 
 Tests ZIP integrity with Python's standard `zipfile`, hashes every member in-stream, detects duplicate names, and invokes `pdfinfo` on temporary PDF bytes to collect only technical metadata. It never invokes `pdftotext`, OCR, or a network service. The complete member-level report is controlled evidence and must not be committed.
