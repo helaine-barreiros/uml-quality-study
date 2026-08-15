@@ -1275,19 +1275,26 @@ S5 & The report provides extractable information about evaluator reliability, co
 \textbf{Code} & \textbf{Criterion} \\
 \midrule
 \endhead
-E1 & The item is not a complete scientific report, such as an editorial, preface, keynote summary, poster, slide deck, table of contents, or extended abstract without sufficient methods and results. \\
-E2 & The study does not use an LLM or uses an LLM only for a peripheral activity that does not materially determine UML diagram content. \\
-E3 & The output is not UML and no separable UML result is reported. \\
-E4 & The task evaluates, explains, or summarizes an existing diagram without generating, transforming, completing, repairing, or revising it. \\
-E5 & The source is code, an image, or an existing model without a substantive textual requirements or domain description component. \\
-E6 & The report concerns generic diagram generation, C4, ER, BPMN, SysML, architecture sketches, or Mermaid diagrams without a separable UML contribution. \\
-E7 & The report is a secondary or tertiary study. Such reports are retained separately for background and snowballing. \\
-E8 & The report is a duplicate or a less complete member of a publication family. \\
-E9 & The report falls outside the time or language scope. \\
-E10 & The full text cannot be obtained after reasonable retrieval attempts. \\
-E11 & UML generation results cannot be separated from other artifacts or tasks. \\
+E1 & The item is not a complete scientific report, such as an editorial, preface, keynote, tutorial, slide deck, poster-only item, abstract-only record, thesis, book, patent, or non-scientific web content. \\
+E2 & The report is a secondary or tertiary study. \\
+E3 & The report is a duplicate or a less complete member of a publication family. \\
+E4 & The report is outside the temporal or language scope of the review. \\
+E5 & The full text cannot be obtained after documented access attempts. \\
+E6 & The study does not use an LLM as a substantive component in producing, transforming, completing, repairing, refining, or revising UML diagram content. \\
+E7 & The output is not UML, or no separable UML result is reported. This includes generic diagram generation, C4, ER, BPMN, SysML, architecture sketches, or Mermaid diagrams when no separable UML contribution is available. \\
+E8 & The task only evaluates, explains, summarizes, classifies, or discusses an existing UML diagram, without producing, transforming, completing, repairing, refining, or revising UML diagram content. \\
+E9 & The source input is code, an image, an existing UML model, logs, or another non-textual artifact without a substantive textual requirements or domain description component. \\
+E10 & UML generation results cannot be separated from other generated artifacts, tasks, or outputs. \\
 \bottomrule
 \end{longtable}
+
+When more than one exclusion criterion applies, the first criterion that clearly explains the exclusion is recorded. If title and abstract are insufficient to decide whether the report involves LLM-based UML generation from textual requirements or domain descriptions, the report is retained for full-text screening.
+
+\subsection{Layer 2 analytical eligibility}
+
+Absence of quality evaluation is not an exclusion criterion for Layer 1. Reports that satisfy the Layer 1 scope but do not provide extractable evidence about textual validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, or correction effort are mapped in Layer 1 and marked as not eligible for Layer 2 synthesis.
+
+Reports are eligible for Layer 2 when they provide extractable evidence about at least one quality-related construct, evaluation reference, inadequacy category, metric, judgment procedure, oracle, validation activity, or correction process associated with the generated UML diagram content.
 
 \subsection{Ambiguity rules}
 
@@ -1398,6 +1405,9 @@ Open science & Data, prompts, code, models, and replication package & Record ava
 Construct & Original quality term & Preserve the term exactly as reported \\
 Construct & Definition and theoretical source & Extract verbatim or near verbatim definition within copyright limits; record cited framework \\
 Construct & Normalized construct & Textual validity, UML conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, readability, clarity, or other \\
+Construct & SyntacticEvidenceAvailable & Indicates whether the report provides extractable evidence about textual validity, rendering validity, UML syntactic conformity, grammar conformance, metamodel conformance, well-formedness, or notation-level validity of the generated UML diagram content. \\
+Construct & SemanticEvidenceAvailable & Indicates whether the report provides extractable evidence about semantic correctness, semantic completeness, domain fidelity, requirements coverage, omitted domain elements, unsupported additions, incorrect relations, incorrect actors, incorrect behavior, or other meaning-level inadequacies of the generated UML diagram content. \\
+Construct & SyntaxSemanticDissonanceEvidence & Indicates whether the report provides explicit or inferable evidence that a generated UML artifact satisfies a syntactic or textual validity condition while still presenting semantic inadequacy, or conversely that semantic adequacy is discussed separately from syntactic validity. Allowed values: Yes, No, Unclear. \\
 Reference & Evaluation reference type & Requirements, domain description, gold model, reference model, UML specification, parser, metamodel, rubric, experts, LLM judge, or composite reference \\
 Reference & Reference construction and validation & Who created it, from which sources, through which process, and whether disagreement or alternative valid models were handled \\
 Unit & Unit of assessment & Diagram, requirement, proposition, actor, use case, class, attribute, relation, message, state, transition, or other \\
