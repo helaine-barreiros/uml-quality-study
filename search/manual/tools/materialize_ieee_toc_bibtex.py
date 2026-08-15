@@ -183,6 +183,7 @@ def main() -> None:
     parser.add_argument("--year", required=True)
     parser.add_argument("--venue", required=True)
     parser.add_argument("--volume-track-issue", default="")
+    parser.add_argument("--extraction-tool", default="")
     parser.add_argument("--primary-source-id", required=True)
     parser.add_argument("--metadata-source-id", required=True)
     parser.add_argument("--source-manifest", type=Path, required=True)
@@ -266,7 +267,10 @@ def main() -> None:
             "VolumeTrackIssueRaw": args.volume_track_issue,
             "PublisherRecordURLRaw": toc_row["Locator"],
             "RetrievedAt": primary_source["RetrievedAt"],
-            "ExtractionMethod": ("audit_acm_toc_html.pl" if "ItemType" in toc_row else "audit_ieee_toc_html.pl") + " offline structural extraction",
+            "ExtractionMethod": (
+                args.extraction_tool
+                or ("audit_acm_toc_html.pl" if "ItemType" in toc_row else "audit_ieee_toc_html.pl")
+            ) + " offline structural extraction",
             "Notes": raw_notes,
         }
         notes = ([f"Matched to publisher BibTeX by {evidence}."] if not editorial else ["Editorial item retained from PRIMARY_TOC without inferred metadata record."])

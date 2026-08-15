@@ -20,6 +20,10 @@ Runtime versions used for the RE/REW intake were Perl `5.40.1`, `BibTeX::Parser 
 
 Audits a locally saved ACM proceedings page without network access. It reads only the locally materialized `tableOfContent`, preserves an explicitly offered front-matter item, extracts ordered bibliographic display fields without retaining abstract text, rejects incomplete research records, duplicate DOI values, and locally visible load-more controls, and emits controlled item-level CSV plus a JSON summary. The expected year is supplied as an argument and must be observable in the controlled HTML. Dependencies are Perl, `HTML::TreeBuilder`, `Text::CSV`, `Unicode::Normalize`, `Encode`, `Digest::SHA`, `Getopt::Long`, and `JSON::PP`.
 
+## `audit_scitepress_toc_html.pl`
+
+Audits a locally saved SCITEPRESS `ProceedingsDetails.aspx` page without network access. It extracts the locally materialized ordered paper list and safe bibliographic display fields, validates the observed year and publisher-page structure, and compares the local cardinality with an independently parsed publisher metadata-export count supplied as an argument. A page whose item count does not match that count is reported as `PARTIAL_TOC` and cannot define a materialized inventory. The tool does not execute JavaScript, retain abstracts or keywords, or contain hardcoded years, titles, DOIs, ISBNs, or cardinalities. Dependencies are Perl, `HTML::TreeBuilder`, `Text::CSV`, `Unicode::Normalize`, `Encode`, `Digest::SHA`, `Getopt::Long`, and `JSON::PP`.
+
 ## `reconcile_ieee_toc_metadata.py`
 
 Reconciles controlled item CSVs produced by the IEEE TOC auditor and BibTeX auditor. Matching uses an IEEE record locator/BibTeX key when available, then literal title, then a transparent diagnostic title normalization. The script reports title-set, order, author-list drift, ambiguity, and material-conflict counts. It uses Python's standard library only and never uses metadata-export order to define documentary order.
@@ -33,6 +37,8 @@ The reconciler also accepts the extended ACM TOC audit schema. It matches an obs
 Materializes raw and normalized inventories from previously audited local IEEE TOC and BibTeX evidence. The tool validates the original controlled-file hashes against the unit source manifest, requires a complete one-to-one deterministic reconciliation, preserves TOC order as documentary membership, uses BibTeX only for matched metadata enrichment, validates both produced CSVs, and publishes them atomically. It uses Python's standard library only and has no network client. Venue, unit identifiers, source identifiers, paths, and expected documentary context are supplied as arguments; no year, title, DOI, or cardinality is hardcoded.
 
 The materializer also accepts the extended ACM audit schema emitted by `audit_acm_toc_html.pl`: explicitly marked editorial members are retained without an inferred `MetadataSourceID`, while research records still require complete deterministic matching. The historical filename is retained for compatibility with previously audited commands.
+
+The same extended schema is emitted by `audit_scitepress_toc_html.pl`. The optional `--extraction-tool` argument records the actual offline parser in raw provenance instead of relying on the historical IEEE/ACM filename convention.
 
 ## `render_ieee_unit_documents.py`
 
