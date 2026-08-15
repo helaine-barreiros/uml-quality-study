@@ -11,3 +11,4 @@ Publisher TOCs define documentary membership. Publisher BibTeX enriches only sec
 - [controlled evidence intake audit](nlbse_controlled_evidence_intake_audit.md)
 - [family collection matrix](nlbse_family_collection_matrix.csv)
 - [family collection audit](nlbse_family_collection_audit.md)
+- [NLBSE 2026 event evidence](nlbse_2026_event_evidence.md)
