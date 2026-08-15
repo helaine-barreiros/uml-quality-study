@@ -15,3 +15,5 @@ A versão 1.7 não altera as research questions, eligibility criteria, analytica
 O [Amendment A001](amendments/A001-normalized-inventory-schema.md) define prospectivamente o schema da camada normalized, sem alterar a versão metodológica corrente 1.7.
 
 O [Amendment A002](amendments/A002-documentary-collection-before-discovery.md), revisado por A002-R2, corrige a ordem entre snowballing e revisão de triggers condicionais e formaliza o fechamento por ponto fixo da atualização final obrigatória, sem alterar a versão metodológica corrente 1.7.
+
+O [Amendment A003](amendments/A003-screening-exclusion-criteria.md) clarifies the exclusion criteria and separates Layer 1 eligibility from Layer 2 analytical eligibility for quality-related synthesis.
