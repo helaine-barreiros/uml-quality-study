@@ -1,0 +1,2 @@
+SourceID,ManualSearchUnitID,SourceRole,URL,RetrievedAt,LocalSnapshot,SHA256,ContentType,Notes
+SRC-REFSQ-2026-SPRINGER-BIBTEX-HUMAN-20260815,MSU-REFSQ-2026,METADATA_SOURCE,,2026-08-14T19:49:10Z,controlled://MSU-REFSQ-2026/publisher_export.bib,0dd1367dad656a67c5bd2fd41788d6846d6501350cc2eff0ab27505e5b6a6724,application/x-bibtex,Human-acquired aggregate publisher export parsed with BibTeX::Parser 1.05; source bytes retained in controlled storage and not redistributed; does not define membership.

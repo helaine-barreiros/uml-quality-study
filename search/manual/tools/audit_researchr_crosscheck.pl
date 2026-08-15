@@ -41,6 +41,9 @@ sub visible_text {
 
 my ($title_node) = $tree->look_down(_tag => 'title');
 my $document_title = visible_text($title_node);
+my $page_text = visible_text($tree);
+die "Expected year not observable in controlled HTML\n" unless $page_text =~ /\b\Q$year\E\b/;
+die "Expected venue not observable in controlled HTML\n" unless $page_text =~ /\b\Q$track\E\b/i;
 my $observed_url = '';
 for my $link ($tree->look_down(_tag => 'link')) {
     if (lc($link->attr('rel') // '') eq 'canonical' && ($link->attr('href') // '') ne '') {
@@ -54,6 +57,15 @@ if (!$observed_url) {
             $observed_url = $meta->attr('content');
             last;
         }
+    }
+}
+if (!$observed_url && uc($track) eq 'REFSQ') {
+    for my $anchor ($tree->look_down(_tag => 'a')) {
+        my $href = $anchor->attr('href') // '';
+        next unless $href =~ m{^https://\Q$year\E\.refsq\.org/track/[^#]+}i;
+        $href =~ s/#$//;
+        $observed_url = $href;
+        last;
     }
 }
 
