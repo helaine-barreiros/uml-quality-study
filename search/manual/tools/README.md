@@ -20,6 +20,10 @@ Runtime versions used for the RE/REW intake were Perl `5.40.1`, `BibTeX::Parser 
 
 Audits a locally saved ACM proceedings page without network access. It reads only the locally materialized `tableOfContent`, preserves an explicitly offered front-matter item, extracts ordered bibliographic display fields without retaining abstract text, rejects incomplete research records, duplicate DOI values, and locally visible load-more controls, and emits controlled item-level CSV plus a JSON summary. The expected year is supplied as an argument and must be observable in the controlled HTML. Dependencies are Perl, `HTML::TreeBuilder`, `Text::CSV`, `Unicode::Normalize`, `Encode`, `Digest::SHA`, `Getopt::Long`, and `JSON::PP`.
 
+## `audit_scitepress_toc_html.pl`
+
+Audits a locally saved SCITEPRESS `ProceedingsDetails.aspx` page without network access. It extracts the locally materialized ordered paper list and safe bibliographic display fields, validates the observed year and publisher-page structure, and compares the local cardinality with an independently parsed publisher metadata-export count supplied as an argument. A page whose item count does not match that count is reported as `PARTIAL_TOC` and cannot define a materialized inventory. The tool does not execute JavaScript, retain abstracts or keywords, or contain hardcoded years, titles, DOIs, ISBNs, or cardinalities. Dependencies are Perl, `HTML::TreeBuilder`, `Text::CSV`, `Unicode::Normalize`, `Encode`, `Digest::SHA`, `Getopt::Long`, and `JSON::PP`.
+
 ## `reconcile_ieee_toc_metadata.py`
 
 Reconciles controlled item CSVs produced by the IEEE TOC auditor and BibTeX auditor. Matching uses an IEEE record locator/BibTeX key when available, then literal title, then a transparent diagnostic title normalization. The script reports title-set, order, author-list drift, ambiguity, and material-conflict counts. It uses Python's standard library only and never uses metadata-export order to define documentary order.
