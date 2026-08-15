@@ -6,7 +6,7 @@
 - Stage: Before formal screening
 - Status: `Applied`
 - Scope: Clarification and operationalization of exclusion criteria and Layer 2 eligibility handling
-- RecordedCommit:
+- RecordedCommit: `59de5de4f90165e05182c016194e8fb64fb58756`
 
 ## Does not change
 
