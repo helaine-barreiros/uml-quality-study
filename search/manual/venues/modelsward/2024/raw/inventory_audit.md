@@ -8,9 +8,12 @@
 - NormalizedRows: `40`
 - DiscoveryDataRows: `0`
 - CandidateCountPopulated: `false`
-- VenueCrosscheckStatus: `REQUIRED`
+- VenueCrosscheckSHA256: `03dfb2cfbb0beadb4655c35abe82ca46db0d3616114268bfe9d6dc4a8eb6e6a0`
+- CrosscheckGranularity: `EVENT_LEVEL`
+- VenueCrosscheckItemCount: `0`
+- VenueCrosscheckStatus: `PARTIAL`
 - DocumentaryCollectionStatus: `BLOCKED`
-- CurrentBlocker: `OFFICIAL_VENUE_CROSSCHECK_REQUIRED`
+- CurrentBlocker: `ITEM_LEVEL_VENUE_CROSSCHECK_REQUIRED`
 - ControlledEvidenceCommittedCount: `0`
 
 Source ordinals are unique and sequential. The complete publisher TOC defines membership; discovery was not executed.

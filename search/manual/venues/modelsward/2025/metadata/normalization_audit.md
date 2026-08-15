@@ -14,9 +14,12 @@
 - MaterialInventoryConflictCount: `0`
 - DiscoveryDataRows: `0`
 - CandidateCountPopulated: `false`
-- VenueCrosscheckStatus: `REQUIRED`
+- VenueCrosscheckSHA256: `71b274efaec6e62bd078f5d90c83f8eaff7f243654badfb67d52350e7757667b`
+- CrosscheckGranularity: `EVENT_LEVEL`
+- VenueCrosscheckItemCount: `0`
+- VenueCrosscheckStatus: `PARTIAL`
 - DocumentaryCollectionStatus: `BLOCKED`
-- CurrentBlocker: `OFFICIAL_VENUE_CROSSCHECK_REQUIRED`
+- CurrentBlocker: `ITEM_LEVEL_VENUE_CROSSCHECK_REQUIRED`
 - ControlledEvidenceCommittedCount: `0`
 
 All metadata matches are DOI-exact. Abstract text is blank publicly and availability is represented only by the controlled-availability enum. Discovery was not executed.
