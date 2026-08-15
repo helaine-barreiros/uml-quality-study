@@ -124,21 +124,28 @@ def manifest_source(rows: list[dict[str, str]], source_id: str, role: str) -> di
     return matches[0]
 
 
-def match_records(toc: list[dict[str, str]], metadata: list[dict[str, str]]) -> list[tuple[dict[str, str], dict[str, str], str]]:
+def match_records(toc: list[dict[str, str]], metadata: list[dict[str, str]]) -> list[tuple[dict[str, str], dict[str, str] | None, str]]:
+    research_toc = [row for row in toc if row.get("IsEditorial", "false").casefold() != "true"]
     unused = set(range(len(metadata)))
-    matches: list[tuple[dict[str, str], dict[str, str], str]] = []
+    research_matches: dict[str, tuple[dict[str, str], str]] = {}
     by_key: dict[str, list[int]] = {}
+    by_doi: dict[str, list[int]] = {}
     by_literal: dict[str, list[int]] = {}
     by_normalized: dict[str, list[int]] = {}
     for index, row in enumerate(metadata):
         by_key.setdefault(row["BibTeXKey"], []).append(index)
+        by_doi.setdefault(normalize_doi(row["DOI"]), []).append(index)
         by_literal.setdefault(row["Title"], []).append(index)
         by_normalized.setdefault(normalized_text(row["Title"]), []).append(index)
-    for toc_row in toc:
+    for research_position, toc_row in enumerate(research_toc):
         candidates: list[int] = []
         evidence = ""
+        doi = normalize_doi(toc_row.get("DOI", ""))
+        if doi:
+            candidates = [index for index in by_doi.get(doi, []) if index in unused]
+            evidence = "publisher DOI exact match"
         key = locator_key(toc_row["Locator"])
-        if key:
+        if len(candidates) != 1 and key:
             candidates = [index for index in by_key.get(key, []) if index in unused]
             evidence = "IEEE record locator equals publisher BibTeX key"
         if len(candidates) != 1:
@@ -150,14 +157,23 @@ def match_records(toc: list[dict[str, str]], metadata: list[dict[str, str]]) -> 
                 if index in unused
             ]
             evidence = "diagnostic normalized title"
+        if len(candidates) != 1 and research_position in unused:
+            if normalized_text(toc_row["Title"]) == normalized_text(metadata[research_position]["Title"]):
+                candidates = [research_position]
+                evidence = "equal complete sequence and duplicate occurrence ordinal"
         if len(candidates) != 1:
             fail(f"Ambiguous or missing metadata match for TOC ordinal {toc_row['EntryOrdinal']}: {toc_row['Title']}")
         index = candidates[0]
         unused.remove(index)
-        matches.append((toc_row, metadata[index], evidence))
+        research_matches[toc_row["EntryOrdinal"]] = (metadata[index], evidence)
     if unused:
         fail(f"Unmatched publisher metadata records: {len(unused)}")
-    return matches
+    return [
+        (row, *research_matches[row["EntryOrdinal"]])
+        if row.get("IsEditorial", "false").casefold() != "true"
+        else (row, None, "editorial item present only in PRIMARY_TOC")
+        for row in toc
+    ]
 
 
 def main() -> None:
@@ -192,7 +208,9 @@ def main() -> None:
 
     toc_header, toc = read_csv(args.toc_entries)
     metadata_header, metadata = read_csv(args.metadata_entries)
-    if toc_header != ["EntryOrdinal", "Title", "Authors", "Year", "Pages", "Locator"]:
+    base_toc_header = ["EntryOrdinal", "Title", "Authors", "Year", "Pages", "Locator"]
+    acm_toc_header = ["EntryOrdinal", "ItemType", "Title", "Authors", "DOI", "Year", "Pages", "Locator", "Section", "IsEditorial"]
+    if toc_header not in (base_toc_header, acm_toc_header):
         fail("Unexpected audited TOC entries schema")
     required_metadata = {
         "BibTeXKey", "DOI", "Title", "Authors", "Year", "Booktitle", "Series", "ISBN",
@@ -203,8 +221,9 @@ def main() -> None:
         fail("Unexpected audited metadata entries schema")
     if any(row["ParseStatus"] != "PARSE_OK" for row in metadata):
         fail("Publisher metadata contains a parse failure")
-    if len(toc) != len(metadata):
-        fail(f"TOC/metadata cardinality mismatch: {len(toc)} != {len(metadata)}")
+    research_toc = [row for row in toc if row.get("IsEditorial", "false").casefold() != "true"]
+    if len(research_toc) != len(metadata):
+        fail(f"Research TOC/metadata cardinality mismatch: {len(research_toc)} != {len(metadata)}")
     if [int(row["EntryOrdinal"]) for row in toc] != list(range(1, len(toc) + 1)):
         fail("TOC ordinals are not unique and sequential")
     doi_values = [normalize_doi(row["DOI"]) for row in metadata]
@@ -215,7 +234,7 @@ def main() -> None:
     if reconciliation["MaterialInventoryConflictCount"] != 0:
         fail("Material inventory conflict recorded by controlled reconciliation")
     matches = match_records(toc, metadata)
-    if len(matches) != reconciliation["MatchedRecordCount"]:
+    if sum(metadata_row is not None for _, metadata_row, _ in matches) != reconciliation["MatchedRecordCount"]:
         fail("Match count differs from controlled reconciliation")
 
     normalized_at = datetime.now(timezone.utc).isoformat(timespec="seconds").replace("+00:00", "Z")
@@ -227,8 +246,9 @@ def main() -> None:
     for ordinal, (toc_row, metadata_row, evidence) in enumerate(matches, 1):
         manual_id = f"{args.id_prefix}-{ordinal:04d}"
         match_evidence_counts[evidence] += 1
-        title_drift = toc_row["Title"] != metadata_row["Title"]
-        author_drift = normalized_authors(toc_row["Authors"]) != normalized_authors(metadata_row["Authors"])
+        editorial = metadata_row is None
+        title_drift = not editorial and toc_row["Title"] != metadata_row["Title"]
+        author_drift = not editorial and normalized_authors(toc_row["Authors"]) != normalized_authors(metadata_row["Authors"])
         title_representation_count += int(title_drift)
         author_drift_count += int(author_drift)
         raw_notes = "Complete controlled publisher PRIMARY_TOC membership row; discovery was not executed."
@@ -240,16 +260,16 @@ def main() -> None:
             "SourceRecordLocator": toc_row["Locator"],
             "TitleRaw": toc_row["Title"],
             "AuthorsRaw": toc_row["Authors"],
-            "DOIRaw": "",
+            "DOIRaw": toc_row.get("DOI", ""),
             "VenueRaw": args.venue,
             "YearRaw": toc_row["Year"] or args.year,
             "VolumeTrackIssueRaw": args.volume_track_issue,
             "PublisherRecordURLRaw": toc_row["Locator"],
             "RetrievedAt": primary_source["RetrievedAt"],
-            "ExtractionMethod": "audit_ieee_toc_html.pl offline structural extraction",
+            "ExtractionMethod": ("audit_acm_toc_html.pl" if "ItemType" in toc_row else "audit_ieee_toc_html.pl") + " offline structural extraction",
             "Notes": raw_notes,
         }
-        notes = [f"Matched to publisher BibTeX by {evidence}."]
+        notes = ([f"Matched to publisher BibTeX by {evidence}."] if not editorial else ["Editorial item retained from PRIMARY_TOC without inferred metadata record."])
         if title_drift:
             notes.append("TOC/BibTeX title representation drift preserved; no external correction applied.")
         if author_drift:
@@ -260,32 +280,32 @@ def main() -> None:
             "ManualSearchUnitID": args.unit_id,
             "SourceOrdinal": str(ordinal),
             "InventorySourceID": args.primary_source_id,
-            "MetadataSourceID": args.metadata_source_id,
+            "MetadataSourceID": "" if editorial else args.metadata_source_id,
             "TitleRaw": toc_row["Title"],
-            "TitleNormalized": clean(metadata_row["Title"]),
+            "TitleNormalized": clean(toc_row["Title"] if editorial else metadata_row["Title"]),
             "AuthorsRaw": toc_row["Authors"],
-            "AuthorsNormalized": clean(metadata_row["Authors"]),
-            "DOIRaw": "",
-            "DOINormalized": normalize_doi(metadata_row["DOI"]),
+            "AuthorsNormalized": clean(toc_row["Authors"] if editorial else metadata_row["Authors"]),
+            "DOIRaw": toc_row.get("DOI", ""),
+            "DOINormalized": "" if editorial else normalize_doi(metadata_row["DOI"]),
             "VenueRaw": args.venue,
-            "VenueNormalized": clean(metadata_row["Booktitle"]),
+            "VenueNormalized": args.venue if editorial else clean(metadata_row["Booktitle"]),
             "YearRaw": toc_row["Year"] or args.year,
-            "YearNormalized": clean(metadata_row["Year"]),
+            "YearNormalized": args.year if editorial else clean(metadata_row["Year"]),
             "VolumeTrackIssue": args.volume_track_issue,
             "PublisherRecordURL": toc_row["Locator"],
-            "MetadataSourceURL": metadata_row["URL"],
-            "Publisher": clean(metadata_row["Publisher"]),
+            "MetadataSourceURL": "" if editorial else metadata_row["URL"],
+            "Publisher": "" if editorial else clean(metadata_row["Publisher"]),
             "PublisherAddress": "",
-            "ISBN": metadata_row["ISBN"],
-            "Pages": metadata_row["Pages"],
-            "NumPages": metadata_row["NumPages"],
-            "PublicationLocation": clean(metadata_row["Location"]),
-            "Series": clean(metadata_row["Series"]),
+            "ISBN": "" if editorial else metadata_row["ISBN"],
+            "Pages": toc_row["Pages"] if editorial else metadata_row["Pages"],
+            "NumPages": "" if editorial else metadata_row["NumPages"],
+            "PublicationLocation": "" if editorial else clean(metadata_row["Location"]),
+            "Series": "" if editorial else clean(metadata_row["Series"]),
             "AbstractRaw": "",
-            "AbstractAvailability": metadata_row["AbstractAvailability"],
-            "AbstractSourceURL": metadata_row["URL"] if metadata_row["AbstractAvailability"] == "AVAILABLE_CONTROLLED_NOT_REDISTRIBUTED" else "",
+            "AbstractAvailability": "NOT_APPLICABLE" if editorial else metadata_row["AbstractAvailability"],
+            "AbstractSourceURL": "" if editorial or metadata_row["AbstractAvailability"] != "AVAILABLE_CONTROLLED_NOT_REDISTRIBUTED" else metadata_row["URL"],
             "AuthorKeywordsRaw": "",
-            "AuthorKeywordsAvailability": metadata_row["KeywordsAvailability"],
+            "AuthorKeywordsAvailability": "NOT_APPLICABLE" if editorial else metadata_row["KeywordsAvailability"],
             "FullTextURL": "",
             "RetrievedAt": primary_source["RetrievedAt"],
             "NormalizedAt": normalized_at,
@@ -310,7 +330,7 @@ def main() -> None:
         fail("Published raw SourceOrdinal invariant failed")
     if any(row["InventorySourceID"] != args.primary_source_id for row in reread_raw + reread_normalized):
         fail("InventorySourceID invariant failed")
-    if any(row["MetadataSourceID"] != args.metadata_source_id for row in reread_normalized):
+    if any(row["MetadataSourceID"] not in ("", args.metadata_source_id) for row in reread_normalized):
         fail("MetadataSourceID invariant failed")
     if any(row["AbstractRaw"] or row["AuthorKeywordsRaw"] or row["FullTextURL"] for row in reread_normalized):
         fail("Controlled text/full-text publication invariant failed")
@@ -323,7 +343,7 @@ def main() -> None:
         "MetadataExportSHA256": actual_metadata_hash,
         "PrimaryTotalItems": len(toc),
         "MetadataExportRecordCount": len(metadata),
-        "MatchedRecordCount": len(matches),
+        "MatchedRecordCount": sum(metadata_row is not None for _, metadata_row, _ in matches),
         "RawRows": len(reread_raw),
         "NormalizedRows": len(reread_normalized),
         "RawInventorySHA256": raw_hash,

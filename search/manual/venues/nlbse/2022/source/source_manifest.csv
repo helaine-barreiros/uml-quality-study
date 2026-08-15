@@ -1,0 +1,2 @@
+SourceID,ManualSearchUnitID,SourceRole,URL,RetrievedAt,LocalSnapshot,SHA256,ContentType,Notes
+SRC-NLBSE-2022-PUBLISHER-BIBTEX-HUMAN-20260815,MSU-NLBSE-2022,METADATA_SOURCE,,2026-08-14T20:16:09Z,controlled://MSU-NLBSE-2022/publisher_export.bib,ef10a3d97933f293051e043c4bedb7b493f191a08876ba45635c7527a736bc28,application/x-bibtex,Publisher-generated BibTeX acquired through CAPES and parsed as 15 records with BibTeX::Parser 1.05. It identifies NLBSE '22 but reports year=2023; preserved without correction. Does not define membership; export URL was not captured.
