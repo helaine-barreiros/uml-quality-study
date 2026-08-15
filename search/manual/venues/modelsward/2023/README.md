@@ -11,6 +11,8 @@
 - ReconciliationStatus: `BLOCKED`
 - NormalizationStatus: `COMPLETE`
 - DiscoveryPhaseStatus: `DEFERRED_UNTIL_PRE_DISCOVERY_COLLECTION_CLOSED`
-- CurrentBlocker: `OFFICIAL_VENUE_CROSSCHECK_REQUIRED`
+- VenueCrosscheckStatus: `PARTIAL`
+- CrosscheckGranularity: `EVENT_LEVEL`
+- CurrentBlocker: `ITEM_LEVEL_VENUE_CROSSCHECK_REQUIRED`
 
-The complete controlled publisher TOC defines documentary membership, and the publisher BibTeX enriches all securely matched records. Documentary completion remains blocked until an independent official venue crosscheck is acquired and reconciled. No discovery or screening was performed.
+The complete controlled publisher TOC defines documentary membership, and the publisher BibTeX enriches all securely matched records. The received official annual landing page is an `EVENT_LEVEL` crosscheck without a locally materialized paper list. Documentary completion remains blocked until an item-level or complete session-level official crosscheck is acquired and reconciled. No discovery or screening was performed.

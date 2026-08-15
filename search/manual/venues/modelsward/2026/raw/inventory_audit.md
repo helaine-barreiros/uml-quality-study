@@ -8,7 +8,10 @@
 - NormalizedRows: `0`
 - DiscoveryDataRows: `0`
 - CandidateCountPopulated: `false`
-- VenueCrosscheckStatus: `REQUIRED`
+- VenueCrosscheckSHA256: `628113d5c1e79d1ef4ece578dac83d61f8f9c9226277cb4b57a48ad3ea7cba57`
+- CrosscheckGranularity: `EVENT_LEVEL`
+- VenueCrosscheckItemCount: `0`
+- VenueCrosscheckStatus: `PARTIAL`
 - DocumentaryCollectionStatus: `BLOCKED`
 - CurrentBlocker: `COMPLETE_PRIMARY_TOC_REQUIRED`
 - ControlledEvidenceCommittedCount: `0`
