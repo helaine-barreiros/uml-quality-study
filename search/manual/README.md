@@ -18,3 +18,5 @@ Os critérios gerais de promoção de venues condicionais permanecem os do proto
 A002-R2 organiza a sequência como `initial screening -> snowballing -> screening of snowballing records -> conditional trigger review -> final update iterations -> fixed-point closure`. Venues ativados na segunda onda percorrem o mesmo pipeline documental e seletivo; novos estudos podem reabrir snowballing e trigger review antes da síntese.
 
 O batch offline da família IEEE Requirements Engineering é documentado em [venues/re/](venues/re/). Os TOCs e exports controlados não são redistribuídos; os registros públicos preservam apenas proveniência, hashes, contagens, lacunas e estados de execução.
+
+O batch offline da família NLBSE é documentado em [venues/nlbse/](venues/nlbse/). BibTeX e pacotes PDF permanecem controlados; apenas TOCs completos do publisher podem definir membership.

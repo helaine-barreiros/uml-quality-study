@@ -32,6 +32,8 @@ The reconciler also accepts the extended ACM TOC audit schema. It matches an obs
 
 Materializes raw and normalized inventories from previously audited local IEEE TOC and BibTeX evidence. The tool validates the original controlled-file hashes against the unit source manifest, requires a complete one-to-one deterministic reconciliation, preserves TOC order as documentary membership, uses BibTeX only for matched metadata enrichment, validates both produced CSVs, and publishes them atomically. It uses Python's standard library only and has no network client. Venue, unit identifiers, source identifiers, paths, and expected documentary context are supplied as arguments; no year, title, DOI, or cardinality is hardcoded.
 
+The materializer also accepts the extended ACM audit schema emitted by `audit_acm_toc_html.pl`: explicitly marked editorial members are retained without an inferred `MetadataSourceID`, while research records still require complete deterministic matching. The historical filename is retained for compatibility with previously audited commands.
+
 ## `render_ieee_unit_documents.py`
 
 Renders the public per-unit README, raw audit, normalization audit, and three-level reconciliation report from safe aggregate audit JSON. Research/editorial counts and all unit context are passed as arguments; the renderer does not inspect or redistribute controlled textual fields. Output files are published atomically.

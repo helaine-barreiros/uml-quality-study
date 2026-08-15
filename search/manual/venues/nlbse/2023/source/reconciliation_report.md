@@ -29,7 +29,7 @@
 - AmbiguousMatchCount: `0`
 - MaterialInventoryConflictCount: `0`
 
-All publisher TOC items match exactly one publisher BibTeX record. The export order differs from the membership-defining TOC order and was not used for ordinals. Non-literal title representations and author-list display differences are preserved diagnostically and are not silently corrected.
+All publisher TOC items match exactly one publisher BibTeX record. The complete normalized title sequence is equal, but only the membership-defining TOC controls ordinals. Non-literal title representations and author-list display differences are preserved diagnostically and are not silently corrected.
 
 ## Level 2 — PRIMARY_TOC × VENUE_CROSSCHECK
 
