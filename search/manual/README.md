@@ -20,3 +20,5 @@ A002-R2 organiza a sequência como `initial screening -> snowballing -> screenin
 O batch offline da família IEEE Requirements Engineering é documentado em [venues/re/](venues/re/). Os TOCs e exports controlados não são redistribuídos; os registros públicos preservam apenas proveniência, hashes, contagens, lacunas e estados de execução.
 
 O batch offline da família NLBSE é documentado em [venues/nlbse/](venues/nlbse/). BibTeX e pacotes PDF permanecem controlados; apenas TOCs completos do publisher podem definir membership.
+
+O batch offline da família MODELSWARD é documentado em [venues/modelsward/](venues/modelsward/). Páginas completas `ProceedingsDetails.aspx` da SCITEPRESS definem membership; exports BibTeX apenas enriquecem registros correspondentes e evidências controladas não são redistribuídas.

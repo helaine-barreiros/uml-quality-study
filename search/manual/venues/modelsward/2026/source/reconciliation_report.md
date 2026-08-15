@@ -14,7 +14,7 @@
 - MetadataOnlyCount: `9`
 - CrosscheckOnlyCount: `0`
 - AmbiguousMatchCount: `0`
-- MaterialInventoryConflictCount: `9`
+- MaterialInventoryConflictCount: `0`
 - PRIMARY_TOC completeness: `BLOCKED`
 - PRIMARY_TOC × METADATA_SOURCE: `BLOCKED`
 - PRIMARY_TOC × VENUE_CROSSCHECK: `BLOCKED`
@@ -22,4 +22,4 @@
 - DocumentaryCollectionStatus: `BLOCKED`
 - CurrentBlocker: `COMPLETE_PRIMARY_TOC_REQUIRED`
 
-The 50 locally visible records match the publisher export, but nine additional publisher records are absent because the captured page is limited to 50 results. The BibTeX cannot create the missing membership. No inventory or discovery data were produced.
+The 50 locally visible records match the publisher export, but nine additional publisher records are absent because the captured page is limited to 50 results. Because this capture is not accepted as a complete PRIMARY_TOC, the mismatch is a completeness blocker rather than a material conflict in a materialized inventory. The BibTeX cannot create the missing membership. No inventory or discovery data were produced.

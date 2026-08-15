@@ -38,6 +38,8 @@ Materializes raw and normalized inventories from previously audited local IEEE T
 
 The materializer also accepts the extended ACM audit schema emitted by `audit_acm_toc_html.pl`: explicitly marked editorial members are retained without an inferred `MetadataSourceID`, while research records still require complete deterministic matching. The historical filename is retained for compatibility with previously audited commands.
 
+The same extended schema is emitted by `audit_scitepress_toc_html.pl`. The optional `--extraction-tool` argument records the actual offline parser in raw provenance instead of relying on the historical IEEE/ACM filename convention.
+
 ## `render_ieee_unit_documents.py`
 
 Renders the public per-unit README, raw audit, normalization audit, and three-level reconciliation report from safe aggregate audit JSON. Research/editorial counts and all unit context are passed as arguments; the renderer does not inspect or redistribute controlled textual fields. Output files are published atomically.

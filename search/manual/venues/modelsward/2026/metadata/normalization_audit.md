@@ -7,7 +7,7 @@
 - MetadataExportRecordCount: `59`
 - RawRows: `0`
 - NormalizedRows: `0`
-- MaterialInventoryConflictCount: `9`
+- MaterialInventoryConflictCount: `0`
 - DiscoveryDataRows: `0`
 - CandidateCountPopulated: `false`
 - VenueCrosscheckStatus: `REQUIRED`

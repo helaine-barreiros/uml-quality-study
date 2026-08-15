@@ -1,7 +1,7 @@
 VenuePlanID,CoreOrConditional,VenueFamily,VenueOrJournal,ScopeDefinition,PlannedIntervalStart,PlannedIntervalEndRule,ActivationRule,ActivationStatus,UnitInstantiationStatus,Notes
 MVP-MODELS-MAIN,CORE,MODELS,MODELS main conference,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,PARTIAL,
 MVP-MODELS-COMPANION,CORE,MODELS,MODELS Companion,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,PARTIAL,
-MVP-MODELSWARD,CORE,MODELSWARD,MODELSWARD,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
+MVP-MODELSWARD,CORE,MODELSWARD,MODELSWARD,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,COMPLETE,MODELSWARD units for verified 2022-2026 proceedings are instantiated from controlled SCITEPRESS evidence; 2026 remains blocked by a partial PRIMARY_TOC.
 MVP-SOSYM,CORE,SoSyM,Software and Systems Modeling,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
 MVP-IEEE-RE,CORE,IEEE RE,IEEE International Requirements Engineering Conference and directly related workshops,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,PARTIAL,RE Main and REW Workshops units for 2022-2025 are concretely instantiated from controlled official publisher evidence; other applicable years remain pending documentary verification.
 MVP-REFSQ,CORE,REFSQ,REFSQ,Every applicable year in the review interval,2022-01,FINAL_SEARCH_DATE,CORE_ALWAYS_ACTIVE,ACTIVE,NOT_STARTED,
