@@ -170,7 +170,7 @@ The report is the unit of selection. The primary study is the unit used to preve
 \textbf{Term} & \textbf{Operational definition} \\
 \midrule
 \endhead
-Large Language Model & A neural language model identified by the study as a large, foundation, generative, instruction following, or conversational language model and used as a substantial component of the generation process. Rule based NLP and conventional machine learning without an LLM are outside scope. \\
+Large Language Model & A neural language model identified by the study as a large, foundation, generative, instruction following, or conversational language model and used as a substantial component of the generation process. Rule based NLP and conventional machine learning without an LLM are outside scope. The operational boundary in Section~\ref{sec:substantive_llm_use_boundary} governs cases in which a report uses broad labels such as language model, pretrained language model, or foundation model without clearly establishing a generative or semantically substantive role in UML content production. \\
 UML diagram & A model or diagram explicitly identified as UML or as one of the UML diagram types. PlantUML output is eligible only when it is intended to encode UML. Generic Mermaid, C4, ER, BPMN, or architectural diagrams are outside scope unless the UML component is separable. \\
 Textual software requirements & Natural language or structured textual descriptions of intended software behavior, structure, goals, actors, rules, constraints, scenarios, or domain information. Examples include requirements documents, use case narratives, user stories, problem statements, feature descriptions, and domain descriptions. \\
 Generation task & Production, completion, transformation, repair, refinement, or iterative revision of a UML diagram in which the LLM materially determines the resulting model content. \\
@@ -1252,6 +1252,17 @@ E11 & The report does not provide extractable evidence about the quality, validi
 
 When more than one exclusion criterion applies, the first criterion that clearly explains the exclusion is recorded. If title and abstract are insufficient to decide whether the report involves LLM-based UML generation from textual requirements or domain descriptions, the report is retained for full-text screening. The absence of explicit syntactic or semantic terminology in the title and abstract is not sufficient for exclusion when the report plausibly evaluates the generated UML output.
 
+\subsection{Operational boundary for substantive LLM use}
+\label{sec:substantive_llm_use_boundary}
+
+A report satisfies the LLM criterion only when the language model is used as a substantive component in producing, transforming, completing, repairing, refining, or revising the generated UML diagram content. Substantive use means that the model contributes directly to domain-bearing UML content, such as classes, attributes, operations, actors, use cases, relations, messages, lifelines, states, transitions, activities, components, dependencies, or other UML elements and relations.
+
+Model names or broad labels are not sufficient for inclusion. Terms such as pretrained language model, foundation model, or language model support inclusion only when the operational role of the model satisfies the substantive-use requirement. Encoder-only or representation models, including BERT-like models, do not satisfy the LLM criterion solely because they are pretrained language models. When such models are used only as classifiers, sequence taggers, embedding generators, named-entity recognizers, relation extractors, or supervised preprocessing components, the report is excluded under E6.
+
+Hybrid neural-symbolic pipelines are eligible when the LLM determines, proposes, or revises the semantic content of the UML diagram and symbolic components format, serialize, validate, render, or repair the representation. They are not eligible when symbolic rules determine the UML content and the language model only performs peripheral preprocessing, summarization, formatting, evaluation, or explanation.
+
+When title and abstract do not make the role of the model clear, the report is retained for full-text screening. The exclusion decision is made only when the full text provides sufficient evidence that the language model does not have a substantive role in producing, transforming, completing, repairing, refining, or revising UML diagram content.
+
 \subsection{Quality evidence classification during extraction}
 
 The review does not define a second eligibility layer. All included studies satisfy the same inclusion and exclusion criteria. During data extraction, each included study is classified according to the type and strength of quality evidence that it provides for the generated UML diagram content. These classifications support synthesis without redefining the eligible corpus.
@@ -1339,8 +1350,14 @@ Artifact & GenerationTask & Generation; transformation; completion; repair; refi
 Input & InputRequirementForm & Requirements document; user stories; use case narratives; scenarios; problem statements; domain descriptions; structured specifications; mixed textual input; unclear. \\
 Input & Input structure and quality & Free text, template, semi structured, structured; reported ambiguity, inconsistency, incompleteness, or preprocessing \\
 Domain and data & Application domain and dataset & Domain, public or private status, size, provenance, reference availability \\
-LLM & Model family, model name, provider, version & Preserve exact reported names and dates; code missing version explicitly \\
-LLM & Access and deployment & Web interface, remote API, local inference, open weights, closed model, or mixed \\
+LLM & ModelFamily & Exact model family or model name reported by the study, such as GPT, ChatGPT, Claude, Gemini, Llama, Qwen, DeepSeek, T5, BART, BERT, RoBERTa, or other. \\
+LLM & ModelArchitectureOrAccessMode & Autoregressive; encoder-decoder; encoder-only; conversational/instructional; API-based; open-weight; fine-tuned; unclear; not reported. \\
+LLM & GenerativeOrInstructionalUse & Yes; No; Unclear. \\
+LLM & LLMRoleInPipeline & Semantic content generator; semantic content reviser; candidate proposer; surface formatter; syntax repairer; validator; evaluator only; preprocessor only; embedding or classifier only; unclear. \\
+LLM & SemanticContentAuthority & LLM-determined; hybrid LLM-symbolic; symbolic/rule-determined; unclear. \\
+LLM & SymbolicPipelineRole & None reported; formatting; serialization; validation; rendering; syntax repair; semantic rule generation; content generation; unclear. \\
+LLM & SubstantiveLLMUseDecision & Included as substantive LLM use; excluded as non-substantive language-model use; unclear at title and abstract; resolved at full text. \\
+LLM & BoundaryDecisionRationale & Short textual explanation of how the reviewers decided whether the model had a substantive role in producing, transforming, completing, repairing, refining, or revising UML diagram content. \\
 Context & DomainKnowledgeProvided & None reported; implicit in requirements; explicit domain description; examples; ontology or structured knowledge; retrieval augmented context; expert-provided context; unclear. \\
 Context & UMLTechnicalInstructionProvided & None reported; notation instruction; metamodel or well-formedness instruction; PlantUML syntax instruction; examples; tool or parser feedback; unclear. \\
 Context & PromptingOrContextStrategy & Zero-shot; few-shot; chain-of-thought or reasoning instruction; retrieval augmented generation; iterative prompting; agentic workflow; fine tuning; tool feedback loop; mixed; unclear. \\

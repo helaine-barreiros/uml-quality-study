@@ -16,4 +16,4 @@ O [Amendment A001](amendments/A001-normalized-inventory-schema.md) define prospe
 
 O [Amendment A002](amendments/A002-documentary-collection-before-discovery.md), revisado por A002-R2, corrige a ordem entre snowballing e revisão de triggers condicionais e formaliza o fechamento por ponto fixo da atualização final obrigatória, sem alterar a versão metodológica corrente 1.7.
 
-O [Amendment A003](amendments/A003-screening-exclusion-criteria.md) clarifies that the review uses a single eligibility corpus focused on quality evidence in LLM-based UML diagram generation. Analytical subsets, including syntax-semantic dissonance evidence, are derived during extraction rather than represented as a second eligibility layer.
+O [Amendment A003](amendments/A003-screening-exclusion-criteria.md) clarifies quality-focused eligibility and the operational boundary for substantive LLM use, including encoder-only models and hybrid neural-symbolic pipelines.
