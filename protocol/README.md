@@ -10,10 +10,10 @@ PRIMARY_TOC / source evidence
 -> screening/discovery.csv
 ```
 
-A versão 1.7 não altera as research questions, eligibility criteria, analytical layers ou review interval. Futuras alterações após eventual registro formal devem ser tratadas como amendments, conforme o próprio protocolo.
+A versão 1.7 não altera as research questions, eligibility criteria, analytical design ou review interval. Futuras alterações após eventual registro formal devem ser tratadas como amendments, conforme o próprio protocolo.
 
 O [Amendment A001](amendments/A001-normalized-inventory-schema.md) define prospectivamente o schema da camada normalized, sem alterar a versão metodológica corrente 1.7.
 
 O [Amendment A002](amendments/A002-documentary-collection-before-discovery.md), revisado por A002-R2, corrige a ordem entre snowballing e revisão de triggers condicionais e formaliza o fechamento por ponto fixo da atualização final obrigatória, sem alterar a versão metodológica corrente 1.7.
 
-O [Amendment A003](amendments/A003-screening-exclusion-criteria.md) clarifies the exclusion criteria and separates Layer 1 eligibility from Layer 2 analytical eligibility for quality-related synthesis.
+O [Amendment A003](amendments/A003-screening-exclusion-criteria.md) clarifies that the review uses a single eligibility corpus focused on quality evidence in LLM-based UML diagram generation. Analytical subsets, including syntax-semantic dissonance evidence, are derived during extraction rather than represented as a second eligibility layer.

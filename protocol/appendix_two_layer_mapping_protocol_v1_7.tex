@@ -14,13 +14,13 @@
 \providecommand{\no}{\textit{No}}
 \newcommand{\reviewtitle}{Large Language Models for UML Diagram Generation}
 
-\chapter{Protocol for the Two Layer Systematic Mapping Study}
-\label{app:two_layer_mapping_protocol}
+\chapter{Protocol for the Quality-Focused Systematic Mapping Study}
+\label{app:quality_focused_mapping_protocol}
 
 \section{Protocol Identification and Status}
 \label{sec:protocol_identification}
 
-This appendix specifies the protocol for a systematic mapping study with an embedded qualitative synthesis. The first analytical layer maps the research landscape concerned with the generation of Unified Modeling Language diagrams by Large Language Models from textual software requirements and explicit domain descriptions. The second analytical layer examines, in greater depth, the subset of studies that provides extractable evidence about diagram quality, inadequacies, evaluation references, measurement procedures, pragmatic adequacy, or correction effort.
+This appendix specifies the protocol for a focused systematic mapping study with structured extraction and synthesis of quality evidence in LLM-based UML diagram generation. The study maps primary research on the generation, transformation, completion, repair, refinement, or revision of UML diagram content from textual software requirements and explicit domain descriptions, and analyzes extractable evidence about syntactic quality, semantic quality, syntax-semantic dissonance, evaluation references, measurement procedures, pragmatic adequacy, and correction effort.
 
 The protocol follows the planning, search, selection, extraction, and synthesis principles established for secondary studies in Software Engineering \cite{Kitchenham2007Guidelines,Brereton2007Lessons,Petersen2015Mapping,Zhang2011Identifying}. Reporting will be checked against the Software Engineering Guidelines for Reporting Secondary Studies, PRISMA 2020, and PRISMA-S \cite{Kitchenham2023SEGRESS,Page2021PRISMA,Rethlefsen2021PRISMAS}. Protocol amendments will be versioned and documented according to the transparency principles of PRISMA-P \cite{Shamseer2015PRISMAP}.
 
@@ -33,8 +33,8 @@ The protocol follows the planning, search, selection, extraction, and synthesis 
 \toprule
 \textbf{Field} & \textbf{Specification} \\
 \midrule
-Review title & \reviewtitle: A Two Layer Systematic Mapping Study with an Embedded Qualitative Synthesis of Quality Assessment \\
-Review type & Systematic mapping study with two analytical layers \\
+Review title & \reviewtitle: A Focused Systematic Mapping Study of Quality Evidence \\
+Review type & Focused systematic mapping study with structured extraction and synthesis of quality evidence \\
 Protocol version & 1.7, provenance and auditability draft \\
 Protocol date & 2026-08-11 \\
 Review team & \protocolfield{Names, affiliations, and ORCID identifiers} \\
@@ -56,36 +56,19 @@ Recent primary studies indicate that LLMs can generate UML diagrams that satisfy
 
 The conceptual background on model quality distinguishes the relation between a model and its language, the relation between a model and the relevant domain, and the relation between a model and its interpreters or uses \cite{Lindland1994Quality,Krogstie2006Process}. The UML specification also distinguishes concrete representations from the abstract syntax and well formedness constraints of the modeling language \cite{OMG2017UML}. These distinctions are necessary for evaluating generated diagrams, but the manner in which recent LLM studies operationalize them remains to be systematically reconstructed.
 
-Related secondary studies provide important but different forms of coverage. Reviews of UML model quality predate the current LLM based generation setting \cite{Genero2011UMLQuality}. Reviews of transformations from natural language to UML mainly cover rule based and earlier machine learning approaches \cite{Ahmed2022NaturalUML}. Recent studies map LLM applications across Model Driven Engineering or review UML and entity relationship diagram generation at a broad level \cite{Zhang2027LLMMDE,Rahmanian2026Diagrams}. The present study has a narrower and more analytically intensive objective. It maps the complete UML generation landscape within the defined scope and synthesizes how the evaluative subset defines, classifies, measures, and validates diagram quality and inadequacies.
+Related secondary studies provide important but different forms of coverage. Reviews of UML model quality predate the current LLM based generation setting \cite{Genero2011UMLQuality}. Reviews of transformations from natural language to UML mainly cover rule based and earlier machine learning approaches \cite{Ahmed2022NaturalUML}. Recent studies map LLM applications across Model Driven Engineering or review UML and entity relationship diagram generation at a broad level \cite{Zhang2027LLMMDE,Rahmanian2026Diagrams}. The present study has a narrower and more analytically intensive objective. It maps LLM-based UML generation studies that report extractable quality evidence and synthesizes how they define, classify, measure, and validate diagram quality and inadequacies.
 
 The review is necessary because the subsequent thesis stages depend on construct clarity. Before the incidence of inadequacies can be estimated, their categories and units must be defined. Before contextual determinants can be investigated, the dependent quality constructs must be operationalized. Before pragmatic effects or rework can be evaluated, the literature must be examined for existing tasks, measures, and procedures. The secondary study therefore has both descriptive and constitutive functions. It maps the field and establishes the evidence base required to formulate later empirical questions and instruments.
 
-\section{Study Design and Analytical Layers}
+\section{Study Design and Analytical Focus}
 \label{sec:protocol_design}
 
-Systematic maps are primarily designed to structure a research area through classification and counting, whereas systematic reviews place greater emphasis on focused evidence synthesis \cite{Petersen2015Mapping}. This study combines both functions through two explicitly separated analytical layers.
-
-\begin{table}[htbp]
-\centering
-\small
-\caption{Analytical layers of the secondary study}
-\label{tab:protocol_layers}
-\begin{tabularx}{\textwidth}{p{0.16\textwidth} p{0.25\textwidth} X p{0.22\textwidth}}
-\toprule
-\textbf{Layer} & \textbf{Primary function} & \textbf{Eligible evidence} & \textbf{Principal products} \\
-\midrule
-Layer 1 & Systematic mapping of the research landscape & Primary reports in which one or more LLMs generate, transform, complete, repair, or iteratively revise UML diagrams from textual software requirements or explicit textual domain descriptions & Publication map, diagram and task map, input and output map, technical configuration map, evaluation practice map, and open science map \\
-Layer 2 & Embedded qualitative and metrological synthesis & Layer 1 reports that provide extractable evaluation of syntactic, semantic, pragmatic, consistency, inadequacy, or correction related properties & Construct matrix, normalized taxonomy of reported inadequacies, evaluation reference map, metric catalogue, coding and reliability map, and evidence gap analysis \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-Membership in Layer 2 does not create a second independent review. It denotes an additional analytical status assigned to a subset of the Layer 1 corpus. The search strategy is designed for Layer 1 and therefore does not include quality terms that could reduce recall. Layer 2 eligibility is determined during full text screening and confirmed during extraction.
+Systematic maps are primarily designed to structure a research area through classification and counting, whereas systematic reviews place greater emphasis on focused evidence synthesis \cite{Petersen2015Mapping}. This study combines descriptive mapping with structured extraction and synthesis of quality evidence in a single eligible corpus. Every included report must provide extractable evidence about the quality of generated UML content. Analytical groupings are derived from extraction fields, including the availability of syntactic evidence, semantic evidence, syntax-semantic dissonance evidence, and PlantUML generation; they are not separate eligibility strata.
 
 \section{Objective and Expected Contribution}
 \label{sec:protocol_objective}
 
-The general objective is to map the scientific literature on LLM based generation of UML diagrams from textual software requirements and to synthesize, in depth, how the evaluative subset conceptualizes, operationalizes, detects, classifies, and measures the quality and inadequacies of the generated diagrams.
+The general objective is to map primary studies that use LLMs to generate, transform, complete, repair, refine, or revise UML diagram content from textual software requirements or explicit textual domain descriptions, and to synthesize how these studies characterize, operationalize, measure, and report the syntactic and semantic quality of the generated UML content, including evidence of syntax-semantic dissonance.
 
 The study is expected to produce six integrated contributions.
 
@@ -106,29 +89,30 @@ The review does not claim that the resulting taxonomy exhausts every possible in
 The overarching question is the following.
 
 \begin{quote}
-\textbf{ORQ.} How has the literature investigated the generation of UML diagrams by LLMs from textual software requirements, and how does the evaluative subset conceptualize, operationalize, and assess the quality and inadequacies of the generated diagrams?
+\textbf{ORQ.} How have primary studies used LLMs to generate, transform, complete, repair, refine, or revise UML diagram content from textual software requirements or explicit textual domain descriptions, and how do they characterize, operationalize, measure, and report syntactic quality, semantic quality, and syntax-semantic dissonance in the generated UML content?
 \end{quote}
 
 The question is decomposed into mapping questions and synthesis questions.
 
-\subsection{Layer 1 mapping questions}
+\subsection{Mapping questions}
 
 \begin{description}[style=nextline,leftmargin=2.0cm,labelwidth=1.5cm]
     \item[MQ1.] How is the research landscape distributed by publication year, venue, publication type, research method, contribution type, author affiliation, and availability of replication material?
-    \item[MQ2.] Which UML diagram types, generation tasks, source specification formats, application domains, datasets, and output representations are investigated?
-    \item[MQ3.] Which LLM families, model versions, access modes, prompting strategies, demonstrations, retrieval mechanisms, fine tuning procedures, agent structures, tool integrations, and inference configurations are reported?
+    \item[MQ2.] Which UML diagram types, generation, transformation, completion, repair, refinement, or revision tasks, textual input forms, application domains, datasets, and output representations, including PlantUML, are investigated?
+    \item[MQ3.] Which LLM families, model versions, access modes, prompting and context strategies, demonstrations, retrieval mechanisms, fine tuning procedures, agent structures, tool integrations, feedback mechanisms, and inference parameters are reported?
     \item[MQ4.] Which evaluation dimensions, baselines, human roles, automated procedures, and open science practices are reported across the mapped studies?
     \item[MQ5.] How do diagram types, generation configurations, and evaluation practices co occur across the literature, and which combinations remain under investigated?
 \end{description}
 
-\subsection{Layer 2 synthesis questions}
+\subsection{Quality evidence and synthesis questions}
 
 \begin{description}[style=nextline,leftmargin=2.0cm,labelwidth=1.5cm]
-    \item[SQ1.] How are textual validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, and related quality constructs defined and operationalized?
+    \item[SQ1.] Which quality constructs are used, and how are textual validity, rendering validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, and correction effort defined or operationalized?
     \item[SQ2.] Which inadequacies are reported, how are they defined, which UML elements or relations carry them, and how can the original categories be normalized without erasing diagram specific distinctions?
-    \item[SQ3.] Which evaluation references, oracles, units of assessment, metrics, scales, thresholds, aggregation rules, automated checks, and human judgment procedures are used?
-    \item[SQ4.] How do the studies establish the reliability and validity of quality assessments, including evaluator training, independent coding, agreement measurement, adjudication, repeated generation, sensitivity analysis, and reporting of uncertainty?
-    \item[SQ5.] Which characteristics of the generation context are manipulated, controlled, or associated with quality outcomes, and how are pragmatic adequacy, inspection, correction, rework, or productivity effects defined and measured?
+    \item[SQ3.] Which metrics, rubrics, oracles, semantic references, units of assessment, scales, thresholds, aggregation rules, evaluators, automated tools, and judgment procedures are used?
+    \item[SQ4.] To what extent does the reported evidence distinguish syntactic quality from semantic quality, and what direct or indirect evidence of syntax-semantic dissonance is available?
+    \item[SQ5.] How do the studies establish the reliability and validity of quality assessments, including evaluator training, independent coding, agreement measurement, adjudication, repeated generation, sensitivity analysis, and reporting of uncertainty?
+    \item[SQ6.] How are requirements, technical specifications, domain knowledge, UML instructions, prompts, examples, tools, retrieval, and feedback provided as generation context, and how are pragmatic adequacy, inspection, correction, rework, or productivity effects defined and measured?
 \end{description}
 
 \subsection{Traceability between questions, data, and synthesis}
@@ -152,8 +136,9 @@ MQ5 & Combined categories from MQ2 to MQ4 & Co occurrence matrices and gap analy
 SQ1 & Original terms, definitions, citations, operational definitions, examples & Conceptual comparison and normalized construct matrix & Quality construct matrix \\
 SQ2 & Original inadequacy labels, textual definitions, examples, affected UML carrier, reference violated & Hybrid deductive and inductive coding, constant comparison, and negative case analysis & Taxonomy of reported inadequacies \\
 SQ3 & Reference, oracle, unit, formula, denominator, scale, threshold, aggregation, procedure & Metrological comparison and traceability analysis & Evaluation reference and metric catalogue \\
-SQ4 & Reviewer roles, training, independence, agreement, adjudication, repetitions, uncertainty & Methodological appraisal and reliability profile & Assessment credibility matrix \\
-SQ5 & Context variables, treatment or contrast, outcome relation, task, effort measure & Narrative synthesis stratified by inferential strength & Context, pragmatic, and rework evidence map \\
+SQ4 & Syntactic and semantic evidence availability, dissonance classification, evidence basis & Extraction-based comparison and evidence grouping & Syntax-semantic dissonance evidence map \\
+SQ5 & Reviewer roles, training, independence, agreement, adjudication, repetitions, uncertainty & Methodological appraisal and reliability profile & Assessment credibility matrix \\
+SQ6 & Context variables, requirements, domain knowledge, UML instructions, prompts, examples, tools, feedback, task, effort measure & Narrative synthesis stratified by inferential strength & Generation context, pragmatic, and rework evidence map \\
 \bottomrule
 \end{longtable}
 
@@ -621,7 +606,7 @@ Before protocol registration, the validation pilot will compare the contribution
 
 \subsection{Conceptual search blocks}
 
-The search strategy is intentionally broad enough to identify Layer 1 studies. It is organized into three conceptual blocks.
+The search strategy is intentionally broad enough to identify candidate studies for the focused review. It is organized into three conceptual blocks.
 
 \begin{table}[htbp]
 \centering
@@ -650,7 +635,7 @@ AND (generation and source terms)
 \end{minipage}
 \end{quote}
 
-The search does not require quality terms. Requiring terms such as semantic, correctness, or hallucination at retrieval time could exclude generation studies that evaluate quality under different terminology. Layer 2 is therefore identified after retrieval.
+The search does not require quality terms. Requiring terms such as semantic, correctness, or hallucination at retrieval time could exclude generation studies that evaluate quality under different terminology. Extractable quality evidence is therefore assessed after retrieval through the eligibility criteria and structured full-text inspection.
 
 \subsection{Generic baseline search string}
 
@@ -1209,18 +1194,18 @@ metadata remain documented in the replication package.
 
 \subsection{Complementary search}
 
-Backward and forward snowballing will be conducted according to a predefined and recorded procedure \cite{Wohlin2014Snowballing}. The start set comprises all included Layer 1 studies and relevant secondary studies. Backward snowballing inspects references. Forward snowballing uses Google Scholar and, when available, Scopus or Web of Science citation links. Newly identified records are deduplicated and screened with the same criteria used for database results. Iterations continue until one complete iteration produces no new eligible primary study.
+Backward and forward snowballing will be conducted according to a predefined and recorded procedure \cite{Wohlin2014Snowballing}. The start set comprises all included studies and relevant secondary studies. Backward snowballing inspects references. Forward snowballing uses Google Scholar and, when available, Scopus or Web of Science citation links. Newly identified records are deduplicated and screened with the same criteria used for database results. Iterations continue until one complete iteration produces no new eligible primary study.
 
 The automated search will be updated immediately before the final synthesis and reporting. The update will use the same sources, concepts, and eligibility criteria. Changes caused by database syntax or platform evolution will be documented.
 
 \section{Eligibility Criteria}
 \label{sec:protocol_eligibility}
 
-\subsection{Layer 1 inclusion criteria}
+\subsection{Inclusion criteria}
 
 \begin{longtable}{p{0.10\textwidth} p{0.82\textwidth}}
-\caption{Layer 1 inclusion criteria}
-\label{tab:protocol_inclusion_layer1}\\
+\caption{Inclusion criteria}
+\label{tab:protocol_inclusion}\\
 \toprule
 \textbf{Code} & \textbf{Criterion} \\
 \midrule
@@ -1229,36 +1214,12 @@ The automated search will be updated immediately before the final synthesis and 
 \textbf{Code} & \textbf{Criterion} \\
 \midrule
 \endhead
-I1 & The report describes a primary scientific study. \\
-I2 & One or more LLMs play a substantial role in generating, transforming, completing, repairing, or iteratively revising a UML diagram. \\
-I3 & The source includes textual software requirements or explicit textual domain descriptions. A study with multiple input types is eligible when the textual requirement component is substantive. \\
-I4 & The output is explicitly UML or an explicitly identified UML diagram type. \\
-I5 & The report provides sufficient information to characterize at least the generation task, diagram type, model or system, and study contribution. \\
-I6 & The full text is available in English. \\
-I7 & The report falls within the defined publication interval. \\
-\bottomrule
-\end{longtable}
-
-\subsection{Layer 2 inclusion criteria}
-
-A Layer 1 study is assigned to Layer 2 when it satisfies at least criterion S1 and provides enough information for one or more of S2 to S5.
-
-\begin{longtable}{p{0.10\textwidth} p{0.82\textwidth}}
-\caption{Layer 2 inclusion criteria}
-\label{tab:protocol_inclusion_layer2}\\
-\toprule
-\textbf{Code} & \textbf{Criterion} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{Code} & \textbf{Criterion} \\
-\midrule
-\endhead
-S1 & The report evaluates at least one property of the generated diagram related to textual validity, UML conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, inadequacy, inspection, correction, or rework. \\
-S2 & The report identifies or permits reconstruction of the reference, oracle, criterion, or judgment process used for evaluation. \\
-S3 & The report defines or exemplifies one or more inadequacy categories or provides element level results from which categories can be coded. \\
-S4 & The report provides extractable metrics, scales, judgments, or comparative outcomes. \\
-S5 & The report provides extractable information about evaluator reliability, contextual determinants, pragmatic use, or correction effort. \\
+I1 & The report is a complete primary scientific study within the temporal and language scope of the review. \\
+I2 & The study uses at least one LLM as a substantive component of the diagram generation process. \\
+I3 & The task produces, transforms, completes, repairs, refines, or revises UML diagram content. \\
+I4 & The source input includes textual software requirements, user stories, scenarios, specifications, problem statements, or explicit textual domain descriptions. \\
+I5 & The generated result includes explicit and separable UML diagram content, such as PlantUML code, another textual UML representation, XMI, a rendered UML diagram, or another representation from which UML content can be assessed. \\
+I6 & The report provides extractable evidence about the quality, validity, correctness, completeness, consistency, pragmatic adequacy, or correction of the generated UML diagram content. \\
 \bottomrule
 \end{longtable}
 
@@ -1285,16 +1246,17 @@ E7 & The output is not UML, or no separable UML result is reported. This include
 E8 & The task only evaluates, explains, summarizes, classifies, or discusses an existing UML diagram, without producing, transforming, completing, repairing, refining, or revising UML diagram content. \\
 E9 & The source input is code, an image, an existing UML model, logs, or another non-textual artifact without a substantive textual requirements or domain description component. \\
 E10 & UML generation results cannot be separated from other generated artifacts, tasks, or outputs. \\
+E11 & The report does not provide extractable evidence about the quality, validity, correctness, completeness, consistency, pragmatic adequacy, or correction of the generated UML diagram content. \\
 \bottomrule
 \end{longtable}
 
-When more than one exclusion criterion applies, the first criterion that clearly explains the exclusion is recorded. If title and abstract are insufficient to decide whether the report involves LLM-based UML generation from textual requirements or domain descriptions, the report is retained for full-text screening.
+When more than one exclusion criterion applies, the first criterion that clearly explains the exclusion is recorded. If title and abstract are insufficient to decide whether the report involves LLM-based UML generation from textual requirements or domain descriptions, the report is retained for full-text screening. The absence of explicit syntactic or semantic terminology in the title and abstract is not sufficient for exclusion when the report plausibly evaluates the generated UML output.
 
-\subsection{Layer 2 analytical eligibility}
+\subsection{Quality evidence classification during extraction}
 
-Absence of quality evaluation is not an exclusion criterion for Layer 1. Reports that satisfy the Layer 1 scope but do not provide extractable evidence about textual validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, or correction effort are mapped in Layer 1 and marked as not eligible for Layer 2 synthesis.
+The review does not define a second eligibility layer. All included studies satisfy the same inclusion and exclusion criteria. During data extraction, each included study is classified according to the type and strength of quality evidence that it provides for the generated UML diagram content. These classifications support synthesis without redefining the eligible corpus.
 
-Reports are eligible for Layer 2 when they provide extractable evidence about at least one quality-related construct, evaluation reference, inadequacy category, metric, judgment procedure, oracle, validation activity, or correction process associated with the generated UML diagram content.
+The extraction classifies whether the study provides evidence about textual validity, rendering validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, or correction effort. It also records whether syntactic and semantic evidence are reported separately and whether the report provides direct, indirect, absent, unclear, or non-assessable evidence of syntax-semantic dissonance.
 
 \subsection{Ambiguity rules}
 
@@ -1319,7 +1281,7 @@ The record management log will contain the following fields.
     \item duplicate group and publication family identifier;
     \item screening decisions by reviewer and stage;
     \item exclusion criterion and justification;
-    \item Layer 1 and Layer 2 status;
+    \item eligibility decision and quality-evidence classification;
     \item extraction and appraisal status;
     \item amendment or recoding flags.
 \end{itemize}
@@ -1327,7 +1289,7 @@ The record management log will contain the following fields.
 \section{Study Selection Process}
 \label{sec:protocol_selection}
 
-Selection comprises calibration, title and abstract screening, full text screening, Layer 2 assignment, and publication family reconciliation.
+Selection comprises calibration, title and abstract screening, full text screening, quality-evidence confirmation, and publication family reconciliation.
 
 \subsection{Reviewer calibration}
 
@@ -1339,26 +1301,26 @@ The primary reviewer screens all deduplicated records. A second reviewer indepen
 
 \subsection{Full text screening}
 
-Every record retained after title and abstract screening is assessed independently by two reviewers. Each reviewer records one of three decisions, include in Layer 1, exclude, or unclear. Excluded reports receive one primary exclusion criterion and a textual justification. Disagreements are resolved through discussion. Unresolved cases are decided by an adjudicator with expertise in Software Engineering and UML or LLM based modeling.
+Every record retained after title and abstract screening is assessed independently by two reviewers. Each reviewer records one of three decisions, include, exclude, or unclear. Excluded reports receive one primary exclusion criterion and a textual justification. Disagreements are resolved through discussion. Unresolved cases are decided by an adjudicator with expertise in Software Engineering and UML or LLM based modeling.
 
-\subsection{Layer 2 assignment}
+\subsection{Quality-evidence confirmation}
 
-Layer 2 eligibility is assessed independently during full text screening and verified during extraction. A report may initially be marked as potentially Layer 2 when evaluation is mentioned but not sufficiently described. Final assignment occurs after the evaluation related fields are inspected. Reasons for non assignment to Layer 2 are coded, for example no quality evaluation, no extractable reference, no extractable metric, or only anecdotal examples.
+Extractable quality evidence is assessed independently during full-text screening under I6 and E11. When evaluation is mentioned but not sufficiently described at title and abstract, the report is retained for full-text assessment. For included reports, the type and strength of syntactic, semantic, pragmatic, and correction-related evidence are classified during extraction without creating an additional eligibility status.
 
 \subsection{Selection reporting}
 
-The final report will present a PRISMA flow diagram and a table of full text exclusions. Counts will distinguish database search, manual search, citation searching, duplicates, non research items, Layer 1 studies, Layer 2 studies, and unique primary studies after publication family merging \cite{Page2021PRISMA}.
+The final report will present a PRISMA flow diagram and a table of full text exclusions. Counts will distinguish database search, manual search, citation searching, duplicates, non research items, included studies, extraction-derived quality-evidence groupings, and unique primary studies after publication family merging \cite{Page2021PRISMA}.
 
 \section{Data Extraction}
 \label{sec:protocol_extraction}
 
-Data extraction is guided directly by the research questions. Two linked forms are used. The Layer 1 form is applied to every included primary study. The Layer 2 form is applied only to the evaluative subset. Each field has a definition, allowed values, examples, missing data code, and relationship to one or more research questions.
+Data extraction is guided directly by the research questions. Two linked sections of one structured extraction form are applied to every included primary study: mapping and generation-context fields, and quality-evidence fields. Each field has a definition, allowed values, examples, missing data code, and relationship to one or more research questions. Analytical subsets are derived from these fields and do not alter eligibility.
 
-\subsection{Layer 1 extraction form}
+\subsection{Mapping and generation-context extraction form}
 
 \begin{longtable}{p{0.17\textwidth} p{0.27\textwidth} p{0.48\textwidth}}
-\caption{Layer 1 extraction framework}
-\label{tab:protocol_layer1_extraction}\\
+\caption{Mapping and generation-context extraction framework}
+\label{tab:protocol_mapping_extraction}\\
 \toprule
 \textbf{Facet} & \textbf{Field} & \textbf{Extraction rule} \\
 \midrule
@@ -1372,28 +1334,31 @@ Bibliographic & Authors and affiliations & Extract organizations, countries, and
 Study & Goal and research questions & Preserve verbatim formulation and code study purpose \\
 Study & Research method & Classify experiment, quasi experiment, benchmark, case study, user study, demonstration, design and evaluation, qualitative study, or other \\
 Study & Contribution type & Tool, method, model, framework, dataset, benchmark, empirical findings, taxonomy, or other \\
-Artifact & UML diagram type & Use the explicit UML type; allow multiple values \\
-Artifact & Generation task & Generation, completion, transformation, repair, refinement, or iterative revision \\
-Input & Source artifact type & Requirements document, user story, use case narrative, scenario, problem statement, domain description, mixed input, or other \\
+Artifact & DiagramType & Class diagram; use case diagram; sequence diagram; activity diagram; state machine diagram; state diagram; component diagram; deployment diagram; object diagram; communication diagram; package diagram; composite structure diagram; timing diagram; interaction overview diagram; multiple UML types; unclear. \\
+Artifact & GenerationTask & Generation; transformation; completion; repair; refinement; iterative revision; mixed task; unclear. \\
+Input & InputRequirementForm & Requirements document; user stories; use case narratives; scenarios; problem statements; domain descriptions; structured specifications; mixed textual input; unclear. \\
 Input & Input structure and quality & Free text, template, semi structured, structured; reported ambiguity, inconsistency, incompleteness, or preprocessing \\
 Domain and data & Application domain and dataset & Domain, public or private status, size, provenance, reference availability \\
 LLM & Model family, model name, provider, version & Preserve exact reported names and dates; code missing version explicitly \\
 LLM & Access and deployment & Web interface, remote API, local inference, open weights, closed model, or mixed \\
-Context & Prompting and context configuration & Zero shot, one shot, few shot, role instruction, constraints, examples, domain knowledge, UML knowledge, retrieval, multi turn, or other \\
+Context & DomainKnowledgeProvided & None reported; implicit in requirements; explicit domain description; examples; ontology or structured knowledge; retrieval augmented context; expert-provided context; unclear. \\
+Context & UMLTechnicalInstructionProvided & None reported; notation instruction; metamodel or well-formedness instruction; PlantUML syntax instruction; examples; tool or parser feedback; unclear. \\
+Context & PromptingOrContextStrategy & Zero-shot; few-shot; chain-of-thought or reasoning instruction; retrieval augmented generation; iterative prompting; agentic workflow; fine tuning; tool feedback loop; mixed; unclear. \\
 Context & Adaptation and orchestration & Fine tuning, preference optimization, agents, tools, self correction, iterative feedback, or none \\
 Inference & Sampling and repetition & Temperature, top p, top k, seed, number of generations, selection policy \\
-Output & Representation & PlantUML, Mermaid intended as UML, XMI, JSON, XML, graphical output, prose, or other \\
+Output & OutputRepresentation & PlantUML code; rendered UML diagram; XMI; textual UML description; image; mixed representation; other explicit UML representation; unclear. \\
+Output & PlantUMLGenerated & Yes; No; Unclear. \\
 Evaluation & Dimensions and baselines & Reported quality dimensions, comparison conditions, human baseline, rule based baseline, or no baseline \\
 Evaluation & Human involvement & Author inspection, domain expert, UML expert, student, practitioner, independent evaluator, or participant \\
 Open science & Data, prompts, code, models, and replication package & Record availability, persistent identifier, access restrictions, and completeness \\
 \bottomrule
 \end{longtable}
 
-\subsection{Layer 2 extraction form}
+\subsection{Quality-evidence extraction form}
 
 \begin{longtable}{p{0.17\textwidth} p{0.27\textwidth} p{0.48\textwidth}}
-\caption{Layer 2 extraction framework}
-\label{tab:protocol_layer2_extraction}\\
+\caption{Quality-evidence extraction framework}
+\label{tab:protocol_quality_evidence_extraction}\\
 \toprule
 \textbf{Facet} & \textbf{Field} & \textbf{Extraction rule} \\
 \midrule
@@ -1405,10 +1370,14 @@ Open science & Data, prompts, code, models, and replication package & Record ava
 Construct & Original quality term & Preserve the term exactly as reported \\
 Construct & Definition and theoretical source & Extract verbatim or near verbatim definition within copyright limits; record cited framework \\
 Construct & Normalized construct & Textual validity, UML conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, readability, clarity, or other \\
-Construct & SyntacticEvidenceAvailable & Indicates whether the report provides extractable evidence about textual validity, rendering validity, UML syntactic conformity, grammar conformance, metamodel conformance, well-formedness, or notation-level validity of the generated UML diagram content. \\
-Construct & SemanticEvidenceAvailable & Indicates whether the report provides extractable evidence about semantic correctness, semantic completeness, domain fidelity, requirements coverage, omitted domain elements, unsupported additions, incorrect relations, incorrect actors, incorrect behavior, or other meaning-level inadequacies of the generated UML diagram content. \\
-Construct & SyntaxSemanticDissonanceEvidence & Indicates whether the report provides explicit or inferable evidence that a generated UML artifact satisfies a syntactic or textual validity condition while still presenting semantic inadequacy, or conversely that semantic adequacy is discussed separately from syntactic validity. Allowed values: Yes, No, Unclear. \\
-Reference & Evaluation reference type & Requirements, domain description, gold model, reference model, UML specification, parser, metamodel, rubric, experts, LLM judge, or composite reference \\
+Construct & SyntacticEvidenceAvailable & Yes; No; Unclear. \\
+Construct & SemanticEvidenceAvailable & Yes; No; Unclear. \\
+Construct & SyntacticQualityConstruct & Textual validity; rendering validity; PlantUML parseability; UML syntactic conformity; metamodel conformance; well-formedness; notation-level validity; other; not reported. \\
+Construct & SemanticQualityConstruct & Semantic correctness; semantic completeness; requirements coverage; domain fidelity; consistency with source requirements; omitted element; unsupported addition; incorrect relation; incorrect actor; incorrect behavior; other; not reported. \\
+Metric & SyntacticMetricOrProcedure & Exact metric, rubric, parser, compiler, rendering check, metamodel check, checklist, human judgment, automated tool, or narrative procedure reported by the study. \\
+Metric & SemanticMetricOrProcedure & Exact metric, rubric, oracle, reference model, gold standard, requirements traceability procedure, expert judgment, checklist, human coding, automated comparison, or narrative procedure reported by the study. \\
+Reference & EvaluationReference & Requirements text; domain description; reference UML model; gold standard; rubric; expert judgment; benchmark; parser or renderer; UML specification; metamodel; other; unclear. \\
+Reference & OracleOrGoldStandard & Yes; No; Partial; Unclear. \\
 Reference & Reference construction and validation & Who created it, from which sources, through which process, and whether disagreement or alternative valid models were handled \\
 Unit & Unit of assessment & Diagram, requirement, proposition, actor, use case, class, attribute, relation, message, state, transition, or other \\
 Inadequacy & Original label and definition & Preserve the source label and its operational meaning \\
@@ -1417,28 +1386,34 @@ Inadequacy & Violated reference & Concrete syntax, UML abstract syntax, UML cons
 Inadequacy & UML carrier & Affected diagram element, relation, constraint, sequence, state, behavior, or diagram level property \\
 Metric & Metric name and formula & Extract formula, numerator, denominator, scale, direction, threshold, and aggregation rule \\
 Metric & Automation level & Fully automated, tool assisted, human coded, LLM assessed, or mixed \\
-Evaluation & Evaluator profile and independence & Number, expertise, training, blinding, independence, adjudication \\
+Evaluation & HumanEvaluatorRole & Author; independent evaluator; domain expert; UML expert; student; practitioner; crowd worker; not reported; not applicable. \\
+Evaluation & AutomatedEvaluatorTool & PlantUML; parser; renderer; model checker; custom script; LLM-as-judge; other; none reported. \\
+Evaluation & QualityAggregationRule & Per diagram; per element; per relation; per requirement; per prompt; per model; percentage; score; ordinal scale; pass/fail; narrative only; unclear. \\
 Reliability & Agreement and uncertainty & Agreement measure, value, confidence interval, repeated generation, variance, effect size, significance, or qualitative confidence \\
 Context relation & Context factor & Factor manipulated, controlled, observed, or merely reported \\
 Context relation & Inferential status & Descriptive, comparative, relational, causal, mechanistic, or unsupported claim \\
 Pragmatic use & Task, actor, and outcome & Engineering activity, participant profile, success criterion, time, accuracy, decision quality, or comprehension \\
+Rework & CorrectionOrReworkEvidence & Yes; No; Unclear. \\
 Rework & Correction measure & Time, edit count, changed elements, distance, severity, number of iterations, subjective effort, or other \\
+Syntax-semantic dissonance & SyntaxSemanticDissonanceEvidence & Direct; Indirect; Absent; Unclear; Not assessable. \\
+Syntax-semantic dissonance & SyntaxSemanticDissonanceType & Syntactically valid but semantically incorrect; syntactically valid but semantically incomplete; renderable but domain-inconsistent; textually valid PlantUML with wrong UML relation; syntactically invalid but semantically partially recoverable; other; not applicable. \\
+Syntax-semantic dissonance & DissonanceEvidenceBasis & Short textual explanation of the evidence supporting the classification. \\
 Limitations & Construct and evaluation threats & Author reported and reviewer inferred limitations, kept in separate fields \\
 \bottomrule
 \end{longtable}
 
 \subsection{Missing and ambiguous data}
 
-The extraction database distinguishes \textit{not reported}, \textit{not applicable}, \textit{unclear}, and \textit{not accessible}. Reviewers must not infer missing model versions, prompts, parameters, metrics, or evaluator qualifications from external assumptions. Supplementary material and replication packages may be used when explicitly linked to the report. Authors may be contacted once for clarification when the missing information is essential to Layer 2 interpretation, and every contact attempt is logged.
+The extraction database distinguishes \textit{not reported}, \textit{not applicable}, \textit{unclear}, and \textit{not accessible}. Reviewers must not infer missing model versions, prompts, parameters, metrics, or evaluator qualifications from external assumptions. Supplementary material and replication packages may be used when explicitly linked to the report. Authors may be contacted once for clarification when the missing information is essential to quality-evidence interpretation, and every contact attempt is logged.
 
 \subsection{Extraction pilot and verification}
 
-The forms will be piloted on a temporally and methodologically diverse sample of at least ten studies. The sample must include different UML diagram types and evaluation references. The pilot assesses field clarity, extraction time, category overlap, missing data frequency, and the feasibility of unit level extraction. All interpretive Layer 2 fields are independently extracted by two reviewers. Objective Layer 1 metadata may be extracted by one reviewer and verified through an independent audit of at least 20 percent. Any material revision to the form or codebook triggers retrospective review of studies already extracted.
+The forms will be piloted on a temporally and methodologically diverse sample of at least ten studies. The sample must include different UML diagram types and evaluation references. The pilot assesses field clarity, extraction time, category overlap, missing data frequency, and the feasibility of unit level extraction. All interpretive quality-evidence fields are independently extracted by two reviewers. Objective mapping metadata may be extracted by one reviewer and verified through an independent audit of at least 20 percent. Any material revision to the form or codebook triggers retrospective review of studies already extracted.
 
 \section{Methodological and Reporting Appraisal}
 \label{sec:protocol_appraisal}
 
-Layer 1 studies are not excluded solely because of methodological weakness. Exclusion based on a quality score could distort the map of an emerging area. Layer 2 studies are appraised to qualify the credibility and comparability of the evidence. Appraisal distinguishes methodological adequacy, reporting completeness, and availability of replication material. No single total score will be used as a substitute for domain specific judgment.
+Included studies are not excluded solely because of methodological weakness. Exclusion based on a methodological quality score could distort the map of an emerging area. All included studies are appraised to qualify the credibility and comparability of their quality evidence. Appraisal distinguishes methodological adequacy, reporting completeness, and availability of replication material. No single total score will be used as a substitute for domain specific judgment.
 
 \begin{longtable}{p{0.10\textwidth} p{0.58\textwidth} p{0.24\textwidth}}
 \caption{Methodological and reporting appraisal domains}
@@ -1467,7 +1442,7 @@ A13 & Are prompts, outputs, datasets, code, rubrics, or replication materials av
 \bottomrule
 \end{longtable}
 
-Four domains are treated as critical for interpreting Layer 2 findings: A3, A5, A6, and A7. Sensitivity analyses compare conclusions derived from all Layer 2 studies with conclusions derived from studies that have no \textit{No} judgment in the critical domains. The appraisal is not used to manufacture a universal quality rank among heterogeneous study designs.
+Four domains are treated as critical for interpreting quality-evidence findings: A3, A5, A6, and A7. Sensitivity analyses compare conclusions derived from all included studies with conclusions derived from studies that have no \textit{No} judgment in the critical domains. The appraisal is not used to manufacture a universal quality rank among heterogeneous study designs.
 
 \section{Coding and Taxonomy Construction}
 \label{sec:protocol_coding}
@@ -1505,7 +1480,7 @@ The initial dimensions are the following.
     \item Construct diagram specific subcategories under shared transversal dimensions.
     \item Search for negative cases that challenge category definitions.
     \item Independently recode the pilot subset with the revised codebook.
-    \item Apply the stable codebook to the remaining Layer 2 corpus.
+    \item Apply the stable codebook to the remaining included corpus.
     \item Retrospectively recode earlier studies whenever a material category or boundary changes.
 \end{enumerate}
 
@@ -1513,14 +1488,14 @@ The codebook is versioned. Each code contains a definition, inclusion rule, excl
 
 \subsection{Coding reliability}
 
-Two reviewers independently code all Layer 2 inadequacy data. Agreement is assessed at the normalized category level and at the principal dimensions of the tuple in Equation~\ref{eq:protocol_inadequacy_tuple}. Cohen kappa is used for binary and mutually exclusive nominal decisions \cite{Cohen1960Kappa}. Krippendorff alpha is preferred when categories are multiple, data are missing, or more than two coders are involved \cite{Krippendorff2018Content}. Reliability values are interpreted together with confusion matrices, category prevalence, and documented disagreement patterns. Disagreements are resolved by discussion and adjudication, and the consensus code is stored separately from the original reviewer codes.
+Two reviewers independently code all inadequacy data from included studies. Agreement is assessed at the normalized category level and at the principal dimensions of the tuple in Equation~\ref{eq:protocol_inadequacy_tuple}. Cohen kappa is used for binary and mutually exclusive nominal decisions \cite{Cohen1960Kappa}. Krippendorff alpha is preferred when categories are multiple, data are missing, or more than two coders are involved \cite{Krippendorff2018Content}. Reliability values are interpreted together with confusion matrices, category prevalence, and documented disagreement patterns. Disagreements are resolved by discussion and adjudication, and the consensus code is stored separately from the original reviewer codes.
 
 \section{Synthesis Plan}
 \label{sec:protocol_synthesis}
 
-\subsection{Layer 1 descriptive mapping}
+\subsection{Descriptive mapping of included studies}
 
-Layer 1 is synthesized through frequencies, proportions, temporal distributions, cross tabulations, and co occurrence matrices. Planned analyses include the following.
+The included studies are mapped through frequencies, proportions, temporal distributions, cross tabulations, and co occurrence matrices. Planned analyses include the following.
 
 \begin{itemize}
     \item publication year by venue and publication type;
@@ -1537,15 +1512,15 @@ Layer 1 is synthesized through frequencies, proportions, temporal distributions,
 
 Counts are reported using both reports and unique primary studies where relevant. Categories with multiple values are explicitly identified as non exclusive. No meta analysis is planned because heterogeneous tasks, units, references, and metrics are expected. Any later quantitative aggregation requires a protocol amendment and a demonstrated basis for commensurability.
 
-\subsection{Layer 2 conceptual synthesis}
+\subsection{Extraction-based synthesis of quality constructs}
 
 Definitions are synthesized through a construct matrix containing the original term, reported definition, theoretical source, normalized construct, evaluation reference, unit, indicator, metric, and study context. The synthesis will identify convergent definitions, overloaded terms, unnamed operationalizations, and cases in which identical labels denote different procedures.
 
-\subsection{Layer 2 taxonomic synthesis}
+\subsection{Taxonomy of reported UML inadequacies}
 
 The taxonomy is presented at two levels. The transversal level organizes discrepancy operations and violated references that recur across diagram types. The specific level records how these operations manifest in actors, use cases, classes, relations, attributes, messages, lifelines, states, transitions, activities, and other UML elements. Frequencies are presented as frequencies of reporting and coding within the reviewed corpus, not as estimates of real world defect prevalence unless the primary data support that inference.
 
-\subsection{Layer 2 metrological synthesis}
+\subsection{Metric and evaluation-reference catalogue}
 
 Metrics and procedures are organized by the chain
 
@@ -1556,9 +1531,15 @@ Metrics and procedures are organized by the chain
 
 The synthesis compares parsability, compilation, UML rule checks, precision, recall, F scores, coverage, edit distance, graph similarity, expert ratings, LLM judge scores, task performance, time, and other measures only after reconstructing their definitions and denominators. Measures with the same name but different operationalizations are not pooled.
 
-\subsection{Context, pragmatic adequacy, and rework synthesis}
+\subsection{Syntax-semantic dissonance synthesis}
 
-Reported context factors are classified as merely described, experimentally manipulated, statistically associated, or proposed without empirical evaluation. Causal language is used only when the original design supports it. Pragmatic and rework evidence is synthesized by task, actor, diagram type, outcome, and measure. A study that reports comprehensibility without an engineering task is not automatically coded as evidence of pragmatic adequacy.
+Syntax-semantic dissonance is analyzed from the explicit extraction fields for syntactic evidence, semantic evidence, dissonance classification, dissonance type, and evidence basis. The synthesis distinguishes direct evidence from indirect evidence and does not infer semantic adequacy from parseability, renderability, textual validity, or UML syntactic conformity alone.
+
+Analytical subsets include studies with syntactic evidence only; studies with semantic evidence only; studies with both syntactic and semantic evidence; studies with direct syntax-semantic dissonance evidence; studies with indirect or non-assessable dissonance evidence; and studies generating PlantUML code. These subsets are derived during extraction and are not eligibility layers.
+
+\subsection{Generation context, pragmatic adequacy, and rework synthesis}
+
+Reported context factors are classified as merely described, experimentally manipulated, statistically associated, or proposed without empirical evaluation. The synthesis examines how requirements, technical specifications, domain knowledge, UML technical instructions, prompts, examples, retrieval, tools, parser or renderer feedback, and iterative workflows are provided as generation context. Causal language is used only when the original design supports it. Pragmatic and rework evidence is synthesized by task, actor, diagram type, outcome, and measure. A study that reports comprehensibility without an engineering task is not automatically coded as evidence of pragmatic adequacy.
 
 \subsection{Heterogeneity and sensitivity analysis}
 
@@ -1577,7 +1558,7 @@ Heterogeneity is examined across diagram type, educational or professional conte
 \textbf{Role} & \textbf{Responsible researcher} & \textbf{Responsibilities} \\
 \midrule
 Primary reviewer & \protocolfield{Name} & Search execution, record management, complete screening, extraction coordination, synthesis, and audit log \\
-Second reviewer & \protocolfield{Name} & Independent calibration, sampled title and abstract screening, complete full text screening, Layer 2 extraction and coding \\
+Second reviewer & \protocolfield{Name} & Independent calibration, sampled title and abstract screening, complete full text screening, quality-evidence extraction and coding \\
 Adjudicator & \protocolfield{Name} & Resolution of unresolved eligibility, extraction, appraisal, and coding disagreements \\
 Methodological validator & \protocolfield{Name} & Review of protocol, search strategy, selection process, synthesis, and reporting alignment \\
 UML domain validator & \protocolfield{Name} & Review of diagram terminology, codebook boundaries, UML carrier categories, and reference distinctions \\
@@ -1659,14 +1640,14 @@ Pre registration revisions are recorded as version history. After protocol regis
 \textbf{Version and date} & \textbf{Changed element} & \textbf{Rationale} & \textbf{Expected impact} \\
 \midrule
 \endhead
-1.0, \protocolfield{Date} & Initial two layer protocol draft & Establish the complete methodological architecture before validation & Baseline draft; not registered \\
-1.1, 2026-08-10 & Information source strategy, manual venue sets, and source retention rules & Separate automated corpus identification from manual coverage validation and make source decisions auditable & Improved coverage rationale and reproducibility; no change to review questions or analytical layers \\
+1.0, \protocolfield{Date} & Initial systematic mapping protocol draft & Establish the complete methodological architecture before validation & Baseline draft; not registered \\
+1.1, 2026-08-10 & Information source strategy, manual venue sets, and source retention rules & Separate automated corpus identification from manual coverage validation and make source decisions auditable & Improved coverage rationale and reproducibility; no change to review questions or analytical design \\
 1.2, 2026-08-10 & Source contribution controls, validity threats, completion criteria, and validation checklist & Register the operational evidence required to retain, remove, or expand sources and venues & Makes venue selection bias, database redundancy, manual yield, and source decisions explicitly auditable \\
-1.3, 2026-08-10 & Scopus search validation and source-specific query specification & Register controlled S1--S4 sensitivity tests, preserve the five prespecified seeds, remove the ambiguous ``foundation model*'' term, and restrict the UML block to title, abstract, or author keywords in Scopus & Establishes Scopus search-string version 1.0 with a documented record-level rationale; no change to review questions, analytical layers, or eligibility criteria \\
+1.3, 2026-08-10 & Scopus search validation and source-specific query specification & Register controlled S1--S4 sensitivity tests, preserve the five prespecified seeds, remove the ambiguous ``foundation model*'' term, and restrict the UML block to title, abstract, or author keywords in Scopus & Establishes Scopus search-string version 1.0 with a documented record-level rationale; no change to review questions, analytical design, or eligibility criteria \\
 1.4, 2026-08-10 & IEEE Xplore search validation and source-specific query specification & Register the invalid Structured Advanced Search implementation I0 and the controlled Command Search rounds I1--I3; establish the IEEE-specific seed denominator; reject the over-restrictive UML-field modification and accept the LLM-field restriction & Establishes IEEE Xplore search-string version 1.0 while preserving source-specific field semantics and the review's conceptual search architecture \\
 1.5, 2026-08-11 & Manual venue inspection procedure & Specify the handsearching unit, source hierarchy, census-like title and abstract inspection, candidate statuses, required record fields, positive coverage controls, cross-source merge, incremental yield, completion rules, initial operational order, and audit outputs & Makes manual coverage validation reproducible and separates discovery from formal eligibility screening; no change to review questions, eligibility criteria, or final review interval \\
 1.6, 2026-08-11 & ACM Full-Text Collection search validation & Register the ACM-specific seed denominator, interface field-prefix tests, A1--A3 controlled validation rounds, rejection of the UML-field restriction because of diagnostic false negatives, acceptance of the LLM-field restriction, cancellation of A4, and the exact ACM production query implementation & Establishes ACM Full-Text Collection search-strategy version 1.0 while preserving source-specific field behavior and the review's conceptual search architecture \\
-1.7, 2026-08-11 & Manual-search provenance and documentary-inventory controls & Formalize source roles, PRIMARY\_TOC membership, source manifests, permissible snapshots and hashes, immutable raw documentary inventories, raw-to-normalized identifier traceability, InventoryConflict reconciliation, operational unit states, and strengthened COMPLETE criteria & Makes the manual-search population and every transformation from documentary source to screening decision independently auditable; no change to research questions, eligibility criteria, analytical layers, or review interval \\
+1.7, 2026-08-11 & Manual-search provenance and documentary-inventory controls & Formalize source roles, PRIMARY\_TOC membership, source manifests, permissible snapshots and hashes, immutable raw documentary inventories, raw-to-normalized identifier traceability, InventoryConflict reconciliation, operational unit states, and strengthened COMPLETE criteria & Makes the manual-search population and every transformation from documentary source to screening decision independently auditable; no change to research questions, eligibility criteria, analytical design, or review interval \\
 \protocolfield{Validated version and date} & Initial registered protocol & Prospective registration after completion of the validation checklist & Baseline for post registration amendments \\
 \bottomrule
 \end{longtable}
@@ -1684,13 +1665,13 @@ The secondary study will be considered methodologically complete when the follow
     \item Every required manual-search unit has a documented operational state; before final synthesis, every available unit has reached \texttt{COMPLETE}, while genuinely unavailable future proceedings remain explicitly \texttt{PENDING}. Source manifests, raw and normalized inventories, discovery logs, candidate sets, and coverage comparisons are preserved in the replication package.
     \item Source contribution, redundancy, seed recovery, and any source retention or removal decision are documented.
     \item Deduplication, selection, and publication family reconciliation are complete and auditable.
-    \item Every Layer 1 study has a verified general extraction record.
-    \item Every Layer 2 study has independently verified interpretive extraction and appraisal.
-    \item The codebook has reached a stable version and all Layer 2 studies have been coded under that version.
+    \item Every included study has a verified mapping and generation-context extraction record.
+    \item Every included study has independently verified quality-evidence extraction and appraisal.
+    \item The codebook has reached a stable version and all included studies have been coded under that version.
     \item Research question specific syntheses have been completed and checked against the extracted data.
     \item Sensitivity analyses and negative case checks have been performed where applicable.
     \item The PRISMA flow, SEGRESS checklist, PRISMA-S search record, exclusion table, replication package, and amendment log are complete.
-    \item Conclusions distinguish the mapped corpus, the evaluative subset, publication reports, unique primary studies, and evaluation instances.
+    \item Conclusions distinguish the mapped corpus, extraction-derived analytical subsets, publication reports, unique primary studies, and evaluation instances.
 \end{enumerate}
 
 The final report will avoid causal or prevalence claims that exceed the designs and units represented in the primary studies. Frequencies in the map describe the literature, not necessarily the real frequency of inadequacies in LLM generated UML diagrams. The taxonomy describes reported and operationalized inadequacies, not a complete ontology of every defect that can occur.
@@ -1709,16 +1690,16 @@ The final report will avoid causal or prevalence claims that exceed the designs 
 \textbf{ID} & \textbf{Validation item} & \textbf{Status} \\
 \midrule
 \endhead
-V01 & Review type and two layer design are explicitly justified. & \protocolfield{Pending} \\
+V01 & The focused systematic mapping design and quality-evidence emphasis are explicitly justified. & \protocolfield{Pending} \\
 V02 & The general objective and every research question are approved by the review team. & \protocolfield{Pending} \\
 V03 & Operational definitions resolve the principal scope ambiguities. & \protocolfield{Pending} \\
-V04 & Layer 1 and Layer 2 eligibility criteria have positive and negative examples. & \protocolfield{Pending} \\
+V04 & The unified eligibility criteria and quality-evidence requirement have positive and negative examples. & \protocolfield{Pending} \\
 V05 & Core and provisional information sources, source retention decisions, and the core and conditional manual venue sets have been validated and documented. & \protocolfield{Pending} \\
 V06 & The baseline string retrieves the complete seed set or every failure has a documented complementary route, and a source contribution matrix has been produced. & \protocolfield{Pending} \\
 V07 & Search strings for every source have been peer reviewed and preserved verbatim. & \protocolfield{Pending} \\
 V08 & Reviewer roles, independence, conflict resolution, and availability are confirmed. & \protocolfield{Pending} \\
 V09 & Selection calibration has met the predefined agreement target. & \protocolfield{Pending} \\
-V10 & Layer 1 and Layer 2 extraction forms have been piloted and revised. & \protocolfield{Pending} \\
+V10 & Mapping, generation-context, and quality-evidence extraction fields have been piloted and revised. & \protocolfield{Pending} \\
 V11 & The appraisal instrument has been piloted across heterogeneous study designs. & \protocolfield{Pending} \\
 V12 & The taxonomy codebook has been piloted across multiple UML diagram types. & \protocolfield{Pending} \\
 V13 & Data management, backup, licensing, and replication package procedures are operational. & \protocolfield{Pending} \\
