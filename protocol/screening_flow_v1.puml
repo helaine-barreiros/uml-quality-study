@@ -1,0 +1,197 @@
+@startuml screening_flow_v1
+' ============================================================================
+'  Triagem por titulo e resumo — UML Quality SLR
+'  Diagrama de atividade correspondente ao fluxograma de screening_manual_v1.md
+'  Protocolo de referencia: appendix_two_layer_mapping_protocol_v1_7.tex
+'  Versao 1 — 2026-08-15
+' ============================================================================
+
+skinparam shadowing false
+skinparam defaultFontSize 12
+skinparam ArrowColor #555555
+skinparam ArrowFontSize 11
+skinparam ActivityBorderColor #333333
+skinparam ActivityBackgroundColor #FFFFFF
+skinparam ActivityDiamondBackgroundColor #FFF8E1
+skinparam ActivityDiamondBorderColor #B8860B
+skinparam ActivityDiamondFontSize 12
+skinparam PartitionBorderColor #888888
+skinparam PartitionBackgroundColor #FAFAFA
+skinparam NoteBackgroundColor #F1F1F1
+skinparam NoteBorderColor #AAAAAA
+skinparam NoteFontSize 11
+
+title Triagem por titulo e resumo — UML Quality SLR (protocolo v1.7)
+
+header Instrumento de calibracao dos revisores
+footer screening_manual_v1.md — v1, 2026-08-15
+
+start
+
+:Registro recuperado\n(titulo + resumo + palavras-chave + metadados);
+
+note right
+  **Principio orientador**
+  Nesta etapa nao se inclui nada. So se exclui.
+  I1..I6 nao sao aplicados positivamente aqui.
+  A incerteza SEMPRE retem (protocolo, l. 1263).
+end note
+
+' ===========================================================================
+partition "PORTAO A — formal e metadado (objetivo, sem julgamento de conteudo)" {
+
+  if (A1. Ano entre jan/2022 e a data da busca\nE relato escrito em ingles?) then (nao)
+    :EXCLUIR — **E4**\nfora do escopo temporal ou de idioma; <<#FFCDD2>>
+    note right
+      Antes de excluir, verificar a clausula
+      de extensao do intervalo (protocolo, l. 192):
+      so se aplica se houver estudo **elegivel**
+      anterior a 2022.
+    end note
+    stop
+  else (sim)
+  endif
+
+  if (A2. E um relato cientifico completo?) then (nao)
+    :EXCLUIR — **E1**\nnao e relato cientifico completo; <<#FFCDD2>>
+    note right
+      Editorial, prefacio, keynote, tutorial,
+      slides, poster, resumo-apenas, tese,
+      livro, patente, volume de anais.
+    end note
+    stop
+  else (sim)
+  endif
+
+  if (A3. E estudo primario?) then (nao)
+    :EXCLUIR — **E2**\nestudo secundario ou terciario; <<#FFCDD2>>
+    note right
+      Survey **da literatura** = E2.
+      Survey como **questionario com
+      participantes** = estudo primario.
+      Guardar para snowballing e
+      validacao da busca.
+    end note
+    stop
+  else (sim)
+  endif
+
+  if (A4. E registro unico?) then (nao)
+    :EXCLUIR — **E3**\nduplicata ou membro menos completo\nde familia de publicacao; <<#FFCDD2>>
+    note right
+      Deduplicacao **nao destrutiva**:
+      vincular por duplicate_group e
+      duplicate_role, nunca apagar.
+    end note
+    stop
+  else (sim)
+  endif
+}
+
+' ===========================================================================
+partition "PORTAO B — substantivo (saida -> origem -> direcao -> entrada)" {
+
+  switch (B1. Qual e o artefato de **saida**?)
+  case (UML explicito, PlantUML, XMI ou\nrepresentacao da qual UML seja avaliavel)
+    :saida compativel;
+  case (explicitamente OUTRA notacao\n[BPMN, ER, C4, SysML, Mermaid, esboco]\nSEM componente UML separavel)
+    :EXCLUIR — **E7**\na saida nao e UML; <<#FFCDD2>>
+    stop
+  case (resumo nao deixa claro)
+    :RETER\nflag INCERTO_SAIDA; <<#FFF9C4>>
+  endswitch
+
+  switch (B2. Quem determina o **conteudo semantico**\ndesse diagrama?    [RF-01 + RF-02])
+  case (LLM nomeado propondo, gerando ou\nrevisando elementos portadores\nde significado)
+    :LLM com autoridade semantica;
+  case (sem LLM; NLP de regras; ML convencional;\nencoder BERT/RoBERTa como classificador,\nextrator ou NER; LLM so parafraseia,\nresume, formata ou e citado na motivacao)
+    :EXCLUIR — **E6**\nLLM nao e componente substantivo; <<#FFCDD2>>
+    note right
+      Registrar na observacao **qual regra**
+      sustentou a exclusao:
+      **RF-01** natureza do modelo, ou
+      **RF-02** autoridade semantica.
+    end note
+    stop
+  case ("AI-assisted", "automated modeling",\n"language model" sem especificar papel)
+    :RETER\nflag INCERTO_PAPEL_LLM; <<#FFF9C4>>
+  endswitch
+
+  switch (B3. Qual e a **direcao do fluxo**?)
+  case (texto --> LLM --> UML\n[o UML e PRODUTO])
+    :direcao compativel;
+  case (LLM revisa, repara ou refina\num UML existente ALTERANDO o conteudo)
+    :revisao substantiva\n(prevista no I3);
+  case (UML existente --> LLM --> avaliacao,\nexplicacao, resumo, classificacao, critica\n[nada e alterado])
+    :EXCLUIR — **E8**\nso avalia UML existente; <<#FFCDD2>>
+    stop
+  case (UML existente --> LLM -->\ncodigo, testes, documentacao)
+    :EXCLUIR — **E7**\no produto nao e UML; <<#FFCDD2>>
+    stop
+  endswitch
+
+  switch (B4. O que **entra** no processo?)
+  case (requisitos, user stories, cenarios,\nespecificacoes, problem statements,\ndescricoes textuais de dominio)
+    :entrada compativel;
+  case (explicitamente e SOMENTE codigo, imagem,\nmodelo existente, logs ou outro\nartefato nao textual)
+    :EXCLUIR — **E9**\nentrada nao textual; <<#FFCDD2>>
+    note right
+      Aqui o I2 ate pode estar satisfeito.
+      O que falha e a **entrada** (I4).
+      Nao rotular como E6.
+    end note
+    stop
+  case (nao declarado no resumo)
+    :RETER\nflag INCERTO_ENTRADA; <<#FFF9C4>>
+  endswitch
+}
+
+' ===========================================================================
+partition "PORTAO C — evidencia de qualidade (NAO exclui nesta etapa)" {
+
+  if (C1. O resumo menciona avaliacao, medicao,\nacuracia, correcao, completude, comparacao,\nestudo com humanos ou benchmark?) then (sim)
+    :flag EVIDENCIA = EXPLICITA; <<#FFF9C4>>
+  else (nao)
+    :flag EVIDENCIA = A_VERIFICAR; <<#FFF9C4>>
+    note right
+      A **ausencia** de vocabulario de qualidade
+      NUNCA autoriza exclusao nesta etapa
+      (protocolo, l. 1253 e 1308).
+      E11 so e decidido no texto completo.
+    end note
+  endif
+
+  if (Ha indicio de que o UML nao se separa\ndos demais artefatos gerados?) then (sim)
+    :flag CANDIDATO_E10; <<#FFF9C4>>
+  else (nao)
+  endif
+}
+
+:**RETIDO PARA TEXTO COMPLETO**; <<#C8E6C9>>
+note right
+  Decididos apenas na etapa seguinte:
+  **E10** UML nao separavel
+  **E11** sem evidencia extraivel de qualidade
+  **E5**  texto completo inacessivel
+          (apos tentativas documentadas,
+           na fase de obtencao do PDF)
+end note
+
+:Registrar no portao que decidiu\n(gate_a / gate_b / gate_c: outcome, reviewer,\ndatetime, notes)\n**metodo -> evidencia -> discussao -> decisao**\ne, se retido por incerteza, qual pergunta\no texto completo precisa responder;
+
+stop
+
+' ===========================================================================
+legend bottom
+  |= | **Regras de ouro da primeira etapa** |
+  | 1 | A incerteza retem. Se houve hesitacao, o registro avanca. |
+  | 2 | Ausencia de vocabulario de qualidade nunca exclui. |
+  | 3 | Um criterio primario por exclusao: o primeiro do fluxograma que explica claramente o caso. |
+  | 4 | Exclusao e nao destrutiva: o registro permanece, marcado e justificado, para o PRISMA. |
+  | 5 | Nao sobrecarregar I2/E6. Entrada = I4/E9, tarefa = I3/E8, saida = I5/E7, evidencia = I6/E11. |
+  |= | **Regras de fronteira** |
+  | RF-01 | Encoder pre-instrucional (BERT, RoBERTa) so satisfaz I2 se o uso for gerativo ou semanticamente constitutivo do conteudo UML. Como classificador, tagger, extrator, embeddings ou NER: E6. Se o resumo nao permitir distinguir: reter. |
+  | RF-02 | O LLM e substantivo quando tem autoridade semantica sobre elementos UML portadores de significado. A presenca de regras simbolicas no pipeline e irrelevante; o que decide e quem determina o conteudo semantico. |
+endlegend
+
+@enduml

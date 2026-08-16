@@ -26,6 +26,10 @@ env/
 **/papers/**/*.pdf
 **/articles/**/*.pdf
 **/literature/**/*.pdf
+search/automated/pdfs/
+
+# Dated snapshots of the master CSV; git itself is the version history
+search/automated/backups/
 
 # Credentials and secrets
 .env
