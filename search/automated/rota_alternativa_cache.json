@@ -1,0 +1,609 @@
+{
+ "742_SCOPUS": {
+  "doi": "10.1007/978-981-95-3052-6_9",
+  "titulo": "GraphRAG-KM: An Automated Framework for Transforming Industrial Documents into Ontology an",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "743_SCOPUS": {
+  "doi": "10.1007/978-3-031-94569-4_1",
+  "titulo": "Leveraging LLMs for Domain Modeling: The Impact of Granularity and Strategy on Quality",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "756_SCOPUS": {
+  "doi": "10.1007/978-3-031-75872-0_16",
+  "titulo": "Establishing Traceability Between Natural Language Requirements and Software Artifacts by ",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "763_SCOPUS": {
+  "doi": "10.1007/978-3-031-64073-5_6",
+  "titulo": "A Systematic Approach to Derive Conceptual Models from BPMN Models",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "768_SCOPUS": {
+  "doi": "10.1007/978-3-032-18011-7_4",
+  "titulo": "FALAA: Framework for the Abstraction of Language Agent Architectures",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "769_SCOPUS": {
+  "doi": "10.1007/978-3-031-57523-5_8",
+  "titulo": "Generative AI with Modeling and Simulation of Activity and Flow-Based Diagrams",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "770_SCOPUS": {
+  "doi": "10.1007/978-3-031-96841-9_10",
+  "titulo": "LLM as a Code Generator in Agile Model Driven Development",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "771_SCOPUS": {
+  "doi": "10.1007/978-3-031-99264-3_2",
+  "titulo": "A RAG-Enhanced AI Feedback for UML Education",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "774_SCOPUS": {
+  "doi": "10.1007/978-3-031-85930-4_13",
+  "titulo": "Leveraging Chat-GPT to Generate Educational Assessment Materials for Software Engineering",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "778_SCOPUS": {
+  "doi": "10.1007/978-3-032-08620-4_8",
+  "titulo": "Model Deepening with Large Language Models: Insights from Exploratory Studies with ChatGPT",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "789_SCOPUS": {
+  "doi": "10.1007/978-3-032-21631-1_28",
+  "titulo": "A Comparative Study of Object and Sequence Diagrams in Automated UML Understanding",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "794_SCOPUS": {
+  "doi": "10.1007/978-981-96-6599-0_23",
+  "titulo": "A Novel Visual-Enhanced Dual Stream Long-Term Decision Framework for Large Language Model ",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "804_SCOPUS": {
+  "doi": "10.1007/s42044-025-00324-x",
+  "titulo": "AI-driven fuzzy requirement engineering for cybersecurity: integrating linguistic decision",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "808_SCOPUS": {
+  "doi": "10.1007/978-3-031-97207-2_20",
+  "titulo": "From Mock-Ups to IFML-Like GUI Models: Using Large Language Models in Web Engineering",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "832_SCOPUS": {
+  "doi": "10.1007/978-3-031-92611-2_1",
+  "titulo": "Parsing Requirements for Automatic Prompting of Large Language Models for Requirements Val",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "840_SCOPUS": {
+  "doi": "10.1007/978-3-032-04190-6_23",
+  "titulo": "An Automated Diagram Generator of Reference Solutions for Modeling Educators",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "841_SCOPUS": {
+  "doi": "10.1007/978-3-032-22567-2_8",
+  "titulo": "Extracting UML Class Diagrams from Textual Specifications: Comparative Analysis of Some De",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "849_SCOPUS": {
+  "doi": "10.1007/978-3-032-28274-3_22",
+  "titulo": "Evaluating LLM-Generated Finite State Machines: The Impact of Prompting Techniques on Stru",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "868_SCOPUS": {
+  "doi": "10.1007/978-3-032-15839-0_37",
+  "titulo": "Multimodal Validation in UML Synthesis: A Dual-Case Study on Sequence and Class Diagram Ge",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "877_SCOPUS": {
+  "doi": "10.1007/978-981-95-4724-1_15",
+  "titulo": "Automated UML Generation: A Framework for Class Diagram Synthesis and Multimodal Validatio",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "880_SCOPUS": {
+  "doi": "10.1007/978-981-96-3965-6_47",
+  "titulo": "LLM-Enhanced SysML Formal Method for Flanking Protection in Train Autonomous Control Syste",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "907_SCOPUS": {
+  "doi": "10.1007/978-3-032-28117-3_1",
+  "titulo": "Iterative vs. Plan-Driven Approaches in Human-LLM Collaborative Modeling: An Empirical Stu",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "913_SCOPUS": {
+  "doi": "10.1007/978-3-032-19185-4_5",
+  "titulo": "Automating Generation of UML Sequence Diagrams Using LLM",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "923_SCOPUS": {
+  "doi": "10.1007/978-981-95-4213-0_11",
+  "titulo": "A Test-Driven Approach for Refining Use Case Specifications of Software Requirements with ",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "929_SCOPUS": {
+  "doi": "10.1007/978-3-031-75872-0_14",
+  "titulo": "How are LLMs Used for Conceptual Modeling? An Exploratory Study on Interaction Behavior an",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "932_SCOPUS": {
+  "doi": "10.1007/978-3-032-28274-3_15",
+  "titulo": "On the Alignment of Vibe Coding and Conceptual Models: An Exploratory Study with Base44",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "933_SCOPUS": {
+  "doi": "10.1007/978-981-92-2885-0_10",
+  "titulo": "An LLM-Based Multi-agent Framework for Automatic Use Case Diagrams and Scenarios Generatio",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": "CLOSED",
+   "arxiv": null
+  }
+ },
+ "943_SCOPUS": {
+  "doi": "10.1007/978-3-032-24402-4_36",
+  "titulo": "Verification-Centric ChatGPT-Integrated Pedagogy in Introductory Object-Oriented Programmi",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "945_SCOPUS": {
+  "doi": "10.1007/978-3-032-18159-6_37",
+  "titulo": "Pioneering a DeepSeek R1-Generated UML Dataset and an Automated Multimodal Visual Validati",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "950_SCOPUS": {
+  "doi": "10.1007/978-3-032-00071-2_10",
+  "titulo": "Multi-modal Summarization in Model-Based Engineering: Automotive Software Development Case",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "963_SCOPUS": {
+  "doi": "10.1007/978-981-95-3355-8_34",
+  "titulo": "A Novel Pipeline for Automatic UML Sequence Diagram Synthesis and Multimodal Scoring",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "969_SCOPUS": {
+  "doi": "10.1007/978-3-032-02138-0_5",
+  "titulo": "Automated Software Architecture Design Recovery from Source Code Using LLMs",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "977_SCOPUS": {
+  "doi": "10.1007/978-3-032-08620-4_13",
+  "titulo": "Prompt-Guided Evaluation of GPT-4o, Gemini and DeepSeek on UML-to-Java Code Generation",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "978_SCOPUS": {
+  "doi": "10.1007/978-3-031-96096-3_26",
+  "titulo": "Requirements Extraction, Definition, and Design Using Retrieval Augmented Generation and L",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "986_SCOPUS": {
+  "doi": "10.1007/978-3-031-88653-9_9",
+  "titulo": "Towards an Approach for Extracting UML Class Diagrams Using Advanced Language Models",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "erro": "HTTP Error 404: Not Found"
+  }
+ },
+ "376_ACM": {
+  "doi": "10.14778/2733004.2733081",
+  "titulo": "GEMINI: an integrative healthcare analytics system",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": "CLOSED",
+   "arxiv": null
+  }
+ },
+ "759_SCOPUS": {
+  "doi": "10.4271/12-09-02-0010",
+  "titulo": "Fault Tree Analysis Generation Using Generative Artificial Intelligence with an Autonomy S",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "790_SCOPUS": {
+  "doi": "10.1117/12.3071751",
+  "titulo": "Development of a hybrid software architecture based on artificial intelligence",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "812_SCOPUS": {
+  "doi": "10.1002/sys.70032",
+  "titulo": "Artificial Intelligence Enabled Systems Engineering Modeling With Retrieval Augmented Gene",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "825_SCOPUS": {
+  "doi": "10.54941/ahfe1006393",
+  "titulo": "Exploration for Model-Based System Engineering (eGAIA4MBSE)",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "829_SCOPUS": {
+  "doi": "10.1080/08874417.2026.2650523",
+  "titulo": "Interactive LLM Agent Review for Software Engineering Artifacts",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "838_SCOPUS": {
+  "doi": "10.1002/cae.70080",
+  "titulo": "Can Multimodal Large Language Models Grade Like an Expert? A Study on UML Class Diagram As",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "861_SCOPUS": {
+  "doi": "10.1016/j.jss.2025.112709",
+  "titulo": "Assessing UML diagrams by GPT: Implications for education",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": "2412.17200"
+  }
+ },
+ "876_SCOPUS": {
+  "doi": "10.1016/j.infsof.2025.107955",
+  "titulo": "UCD-LLM: A use case diagram requirement modeling multi-agent framework with large language",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "934_SCOPUS": {
+  "doi": "10.1016/j.neucom.2025.132502",
+  "titulo": "Structure-guided function-level code generation with LLMs via UML activity diagrams",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ },
+ "952_SCOPUS": {
+  "doi": "10.1016/j.tcs.2024.114879",
+  "titulo": "Generating Java code pairing with ChatGPT",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": "CLOSED",
+   "arxiv": null
+  }
+ },
+ "960_SCOPUS": {
+  "doi": "10.1080/13603108.2025.2529979",
+  "titulo": "Design and implementation of an online research ethics management information system with ",
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "status": null,
+   "arxiv": null
+  }
+ }
+}

@@ -1,0 +1,3085 @@
+{
+ "521_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automated Domain Modeling with Large Language Models: A Comparative Study"
+  }
+ },
+ "436_ACM": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automated Design of Complex Analog Circuits with Multiagent based Reinforcement "
+  }
+ },
+ "516_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Requirements Modeling Aided by ChatGPT: An Experience in Embedded Systems"
+  }
+ },
+ "494_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Translating Natural Language Specifications into Access Control Policies by Leve"
+  }
+ },
+ "330_ACM": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  }
+ },
+ "549_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Integrating LLMs and Knowledge Graphs for Medical AI: Advances, Challenges, and "
+  }
+ },
+ "524_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://osf.io/expuq/download",
+   "arxiv": null,
+   "titulo": "Recommendations to Create Programming Exercises to Overcome ChatGPT"
+  }
+ },
+ "439_ACM": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "HAL (Le Centre pour la Communication Scientifique Directe)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://hal.science/hal-03968479"
+    }
+   ]
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enabling semantic interoperability of asset administration shells through an ont"
+  }
+ },
+ "148_ACM": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "LiSSA: Toward Generic Traceability Link Recovery Through Retrieval- Augmented Ge"
+  }
+ },
+ "541_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://arxiv.org/pdf/2406.08120",
+   "arxiv": "2406.08120",
+   "titulo": "Interlinking User Stories and GUI Prototyping: A Semi-Automatic LLM-Based Approa"
+  }
+ },
+ "539_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Easing Adoption of Model Based System Engineering With Application of Generative"
+  }
+ },
+ "526_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Exploring the Potential Use of Generative AI in Software Engineering Education"
+  }
+ },
+ "508_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "LLM-Based Automation of COSMIC Functional Size Measurement From Use Cases"
+  }
+ },
+ "563_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2408.01916",
+   "titulo": "MAO: A Framework for Process Model Generation With Multi-Agent Orchestration"
+  }
+ },
+ "523_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2503.22587",
+   "titulo": "LLM-enabled Instance Model Generation"
+  }
+ },
+ "528_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "From Problem Descriptions to User Stories: Utilizing Large Language Models throu"
+  }
+ },
+ "087_ACM": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2406.17651",
+   "titulo": "Software Model Evolution with Large Language Models: Experiments on Simulated, P"
+  }
+ },
+ "298_ACM": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2504.07479",
+   "titulo": "UniCAIM: A Unified CAM/CIM Architecture with Static-Dynamic KV Cache Pruning for"
+  }
+ },
+ "531_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Intelligent Agents for Requirements Engineering: Use, Feasibility and Evaluation"
+  }
+ },
+ "560_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Utility-Preserving DP-SGD for Large Language Models in Mental-Health EHRs"
+  }
+ },
+ "398_ACM": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://arxiv.org/pdf/2309.13342",
+   "arxiv": "2309.13342",
+   "titulo": "Evolve the Model Universe of a System Universe"
+  }
+ },
+ "567_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Zero-Shot Construction of Chinese Medical Knowledge Graph with ChatGPT"
+  }
+ },
+ "382_ACM": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1145/3685651.3685653"
+    },
+    {
+     "host": "Diva portal (Dalarna University Library)",
+     "versao": "submittedVersion",
+     "pdf": "https://ltu.diva-portal.org/smash/get/diva2:1908559/FULLTEXT01",
+     "landing": "http://urn.kb.se/resolve?urn=urn:nbn:se:ltu:diva-110570"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1145/3685651.3685653",
+   "arxiv": null,
+   "titulo": "Digital Twin-based Condition Monitoring with Distributed Data Mapping of OPC UA "
+  }
+ },
+ "506_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ReCompGPT: An NL2NL Framework for Automated Requirements Completeness"
+  }
+ },
+ "564_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Towards Multi-Agentic AI for automated software design and modelling: challenges"
+  }
+ },
+ "495_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Generating SysML V2 Models from Natural Language Requirements Using Large Langua"
+  }
+ },
+ "532_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "http://arxiv.org/pdf/2411.05340",
+   "arxiv": "2411.05340",
+   "titulo": "Improving Multi-Domain Task-Oriented Dialogue System with Offline Reinforcement "
+  }
+ },
+ "568_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Measurement of ChatGPT Performance in Mapping Natural Language Speficaction into"
+  }
+ },
+ "559_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Research on Foreign Language Corpus Model of Chatbot ChatGPT under New Era Artif"
+  }
+ },
+ "501_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "SecureGenKeys: Building Secure and Personalized Keypads with Generative AI"
+  }
+ },
+ "565_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "The Ability of Pretrained Large Language Models in Understanding Health Concepts"
+  }
+ },
+ "527_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2506.11548",
+   "titulo": "Augmenting the Generality and Performance of Large Language Models for Software "
+  }
+ },
+ "514_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Complex Flowchart Text Generation Based on Large Language Models"
+  }
+ },
+ "509_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Teaching LLMs Non-Functional Requirements Modeling: A Grammar and RAG Approach"
+  }
+ },
+ "507_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Digital Pulse-Width Modulation Circuit Design Using Large Language Models"
+  }
+ },
+ "468_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "C-LEIA: An Interactive LLM-based Simulator for Requirements Interviews"
+  }
+ },
+ "490_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "From Scenario to Case Model: Generating CMMN Models from Natural Language with L"
+  }
+ },
+ "551_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing Electronic Signature Systems through Large Language Models for Automat"
+  }
+ },
+ "562_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2508.18675",
+   "titulo": "Requirements Development and Formalization for Reliable Code Generation: A Multi"
+  }
+ },
+ "544_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Using Large Language Models for System Modeling: Current State and Future Implic"
+  }
+ },
+ "543_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Multimodal Knowledge Graph Construction and Agent Planning Method for Intellig"
+  }
+ },
+ "512_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing Medical Diagnosis with Fine-Tuned LLMs"
+  }
+ },
+ "550_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Multi-Scale Adaptive Retrieval-Augmented Generation Framework with Semantic an"
+  }
+ },
+ "538_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Improving Gemini's Ability to Generate Syntactically Correct Mermaid Code"
+  }
+ },
+ "535_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Development of Business Diagram Creation Using AR Technology and Physical Blocks"
+  }
+ },
+ "546_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Knowledge Driven Method for Data Synthesis and Evaluation Using Large Language"
+  }
+ },
+ "520_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Comparative Study of Large Language Models for Model-Driven Reverse Engineerin"
+  }
+ },
+ "552_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Integrating Generative AI Across the Agile Software Development Lifecycle"
+  }
+ },
+ "467_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automated Requirements Assessment and UML Generation from Natural Language"
+  }
+ },
+ "623_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "Repositorio Institucional de la Universidad de Málaga (University of Málaga)",
+     "versao": "submittedVersion",
+     "pdf": "https://riuma.uma.es/xmlui/bitstream/10630/30332/4/ICSE_NIER_23___Model_autocompletion%20%282%29.pdf",
+     "landing": "https://hdl.handle.net/10630/30332"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://riuma.uma.es/xmlui/bitstream/10630/30332/4/ICSE_NIER_23___Model_autocompletion%20%282%29.pdf",
+   "arxiv": "2212.03404",
+   "titulo": "Towards using Few-Shot Prompt Learning for Automating Model Completion"
+  }
+ },
+ "599_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://arxiv.org/pdf/2304.06122",
+   "arxiv": "2304.06122",
+   "titulo": "Analyzing ChatGPT's Aptitude in an Introductory Computer Engineering Course"
+  }
+ },
+ "595_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Joint LLM-KG System for Disease Q&A"
+  }
+ },
+ "575_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Leveraging Generative AI for Architecture Knowledge Management"
+  }
+ },
+ "570_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Leveraging Open Source LLMs for Software Engineering Education and Training"
+  }
+ },
+ "607_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Early Risk Prediction of Depression Based on Social Media Posts in Arabic"
+  }
+ },
+ "625_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2405.03122",
+   "titulo": "Automatic Retrieval-Augmented Generation of 6G Network Specifications for Use Ca"
+  }
+ },
+ "604_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://arxiv.org/pdf/2406.04300",
+   "arxiv": "2406.04300",
+   "titulo": "Text-to-Drive: Diverse Driving Behavior Synthesis via Large Language Models"
+  }
+ },
+ "583_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Assessment of ChatGPT's Proficiency in Software Development"
+  }
+ },
+ "579_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "EyeGraphGPT: Knowledge Graph Enhanced Multimodal Large Language Model for Ophtha"
+  }
+ },
+ "588_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "QoS-Aware Service Composition: A Retrospective"
+  }
+ },
+ "571_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Program Synthesis with Generative Pre-trained Transformers and Grammar-Guided Ge"
+  }
+ },
+ "633_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Software development in the age of intelligence: embracing large language models"
+  }
+ },
+ "617_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Prompt-Based Approach for Software Development"
+  }
+ },
+ "581_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Step-forward structuring disease phenotypic entities with LLMs for disease under"
+  }
+ },
+ "585_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "GenAI-enabled Network Design for the Case of the Outage Probability of a Beaulie"
+  }
+ },
+ "597_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Translating Formal Specs: Event-B to English"
+  }
+ },
+ "576_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Medical Graph-RAG: Bilingual Graph-Based Reasoning for Cardiological Intelligenc"
+  }
+ },
+ "596_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing Patient Comprehension of Discharge Notes with a Retrieval-Augmented LL"
+  }
+ },
+ "613_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "MedRAG-Agent: Medical Query Resolution By Employing A Multi-Agent, Knowledge Gra"
+  }
+ },
+ "620_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://pure.au.dk/portal/en/publications/ab40e400-d72f-4cc2-8126-cafedf511cf0"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://pure.au.dk/portal/en/publications/ab40e400-d72f-4cc2-8126-cafedf511cf0",
+   "arxiv": null,
+   "titulo": "Semantic grounding of LLMs using knowledge graphs for query reformulation in med"
+  }
+ },
+ "631_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "KB2Bench: Toward a Benchmark Framework for Large Language Models on Medical Know"
+  }
+ },
+ "615_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2404.03664",
+   "titulo": "LLMs in the Heart of Differential Testing: A Case Study on a Medical Rule Engine"
+  }
+ },
+ "593_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Service-Oriented Framework for An Integrated Study of Intelligent Data Collect"
+  }
+ },
+ "635_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "KG-Infused LLM for Virtual Health Assistant: Accelerated Inference and Enhanced "
+  }
+ },
+ "578_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Abbreviation Identification and Disambiguation in Real-World Clinical Narratives"
+  }
+ },
+ "609_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Research on Disease Drug Knowledge Graph Based on Different Source Medical Guide"
+  }
+ },
+ "577_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Can AI Bridge the Health Literacy Gap? An Analysis of Requirements and Opportuni"
+  }
+ },
+ "582_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Evaluating Assists in Specifying Requirements for Reinforcement Learning"
+  }
+ },
+ "612_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2506.13171",
+   "titulo": "Querying Large Automotive Software Models: Agentic vs. Direct LLM Approaches"
+  }
+ },
+ "580_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Rethinking How to Teach Analysis and Modelling of Business Requirements: A Serio"
+  }
+ },
+ "569_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Accelerating Educational Assessment in Software Engineering through Human-AI Col"
+  }
+ },
+ "574_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "User Acceptance Test Case Generation Using LLMs"
+  }
+ },
+ "622_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Chimera-3X: A Hybrid Cognitive Engine for Retrieval-Augmented Biomedical Consult"
+  }
+ },
+ "614_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Low-Resource Biomedical Event Detection: Enhancement with Context Generated by L"
+  }
+ },
+ "626_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2505.02500",
+   "titulo": "Automating Automotive Software Development: A Synergy of Generative AI and Model"
+  }
+ },
+ "605_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Semantic Kernel for Software Engineering: A Multi-Agent Framework for Autonomous"
+  }
+ },
+ "621_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2026.3671629"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/ad91a568d32b4f4596c86dc1004b8f87"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2026.3671629",
+   "arxiv": null,
+   "titulo": "A Business Process-Centric Approach for LLM-Driven Functional Test Generation"
+  }
+ },
+ "606_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "RAILL: Retrieval-Augmented Instruction Tuning for Low-Resource Language Model Tr"
+  }
+ },
+ "601_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ExplainMed++: Generating Human-Centered Medical QA Summaries with Explanations"
+  }
+ },
+ "624_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "MAIA: A Multidimensional Benchmark for Assessing Medical AI Agents"
+  }
+ },
+ "598_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Systematic Review of Cloud Enabled AI Framework for Optimizing the Software Deve"
+  }
+ },
+ "611_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automated Derivation of Formal Properties from Requirements"
+  }
+ },
+ "629_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Detection and Defense Against Backdoor Attacks in Large Language Models Based on"
+  }
+ },
+ "634_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Principles of Object-Process Methodology for System Architecture Modeling in Com"
+  }
+ },
+ "587_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "AssertSynth: LLM-Based Assertion Synthesis via Multimodal Specification Extracti"
+  }
+ },
+ "616_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Diagram-Aware Automatic Review of Software Design Documents Using Multimodal Lar"
+  }
+ },
+ "632_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Grounding Generative AI in Software Engineering: Are We There Yet?"
+  }
+ },
+ "602_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "CKG-RAG: Enhancing LLM Reasoning in Medical Domain Using Contextual Knowledge Gr"
+  }
+ },
+ "573_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2604.08293",
+   "titulo": "CIAO - Code In Architecture Out - Automated Software Architecture Documentation "
+  }
+ },
+ "645_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "http://arxiv.org/pdf/2406.10729",
+   "arxiv": "2406.10729",
+   "titulo": "A Comprehensive Survey of Foundation Models in Medicine"
+  }
+ },
+ "687_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2024.3519423"
+    },
+    {
+     "host": "Australasian Journal of Paramedicine",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://ro.ecu.edu.au/ecuworks2022-2026/4958"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/84c1700c7a4640298f56ea0fdf883fb8"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2024.3519423",
+   "arxiv": null,
+   "titulo": "AI-Analyst: An AI-Assisted SDLC Analysis Framework for Business Cost Optimizatio"
+  }
+ },
+ "703_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2024.3478781"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/b80c500c742142d68878364aa00c8ed2"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2024.3478781",
+   "arxiv": null,
+   "titulo": "A Multiscale Interactive Attention Short Text Classification Model Based on BERT"
+  }
+ },
+ "651_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "http://arxiv.org/pdf/2412.15256",
+   "arxiv": "2412.15256",
+   "titulo": "Structured Extraction of Real World Medical Knowledge using LLMs for Summarizati"
+  }
+ },
+ "667_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Comparative analysis of diabetes diagnosis: WE-LSTM networks and WizardLM-powere"
+  }
+ },
+ "693_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "SiQA: A Large Multi-Modal Question Answering Model for Structured Images Based o"
+  }
+ },
+ "701_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing Medical Dialogue Summarization: A MediExtract Distillation Framework"
+  }
+ },
+ "643_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2502.08108",
+   "titulo": "Generative AI and Empirical Software Engineering: A Paradigm Shift"
+  }
+ },
+ "688_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Exploring Pre-Trained Language Models to Build Knowledge Graph for Metal-Organic"
+  }
+ },
+ "656_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  }
+ },
+ "647_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Explainable AI Frameworks for Large Language Models in High-Stakes Decision-Maki"
+  }
+ },
+ "644_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Static and Dynamic Embedding Approaches to Identify Is-A Relations in SNOMED CT"
+  }
+ },
+ "685_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "AI Enabled Chat-Driven Database Management for NLP to SQL Conversion"
+  }
+ },
+ "657_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Mapping Extracted Free-Text Primary Diagnoses to ICD-10 and SNOMED-CT Using SciS"
+  }
+ },
+ "677_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Named Entity Recognition via Unified Information Extraction Framework"
+  }
+ },
+ "676_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2503.16262",
+   "titulo": "Neurosymbolic Architectural Reasoning: Towards Formal Analysis through Neural So"
+  }
+ },
+ "671_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Bridging Knowledge and Language Models in Healthcare: A RAG Survey"
+  }
+ },
+ "699_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Development of a multi level data generation application for GEMSOS"
+  }
+ },
+ "648_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://arxiv.org/pdf/2206.11612",
+   "arxiv": "2206.11612",
+   "titulo": "Constructing Cross-Lingual Consumer Health Vocabulary with Word-Embedding from C"
+  }
+ },
+ "649_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Revolutionizing Project Collaborations: The Role of AI Integration"
+  }
+ },
+ "681_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "PhenoAlign: A Hybrid Data-Knowledge-Driven Approach for Precisely Aligning Pheno"
+  }
+ },
+ "686_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "RadLink: Linking Clinical Entities from Radiology Reports"
+  }
+ },
+ "654_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Use of Large Language Models for Cataloging Medical Reports in Reconfigurable Di"
+  }
+ },
+ "641_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "GenAI-Enabled Network Design: ABEP of SC Diversity Under the Combined Effects of"
+  }
+ },
+ "678_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Making Smart Contracts Easier To Understand"
+  }
+ },
+ "661_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Developing Explainable AI Models for Personalized Treatment Recommendations Usin"
+  }
+ },
+ "658_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Artificial intelligence in business process modelling: A structured overview of "
+  }
+ },
+ "702_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Leveling Up Software Project Management Education: From Manual Mastery to AI Emp"
+  }
+ },
+ "662_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Knowledge Probing on Decoder-Only Models in Medical Domain"
+  }
+ },
+ "668_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Greek-HemaRAG: A Retrieval-Augmented Generation System for Hematologic Malignanc"
+  }
+ },
+ "697_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Knowledge Graph Augmented Retrieval Applications in Healthcare"
+  }
+ },
+ "660_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "HemaRAG: A Retrieval-Augmented Generation System for Medical Question Answering "
+  }
+ },
+ "689_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "HobbyHive: A Social Platform for Hobby Connect, Risk-Aware Engagement and Commun"
+  }
+ },
+ "639_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing University Student Mental Health Through AI-Driven Personalized Biblio"
+  }
+ },
+ "653_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Improving Retrieval-Augmented Generation for Medical Literature: A Case Study on"
+  }
+ },
+ "663_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Construction of a Knowledge Graph of Civil Aviation Emergencies"
+  }
+ },
+ "670_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Review of Programming and Human–Robot Interaction Methods in Industrial Roboti"
+  }
+ },
+ "638_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Detecting Role Impersonation in AI-Generated Clinical Oncology Text Using Knowle"
+  }
+ },
+ "659_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Infusing Structural Knowledge for Language Generation with Relational Graph Diff"
+  }
+ },
+ "680_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Evaluating the Effectiveness of AI-Generated Test Cases for Industrial Applicati"
+  }
+ },
+ "691_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2026.3680516"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/dc0656f5d8164a5a8bd033a7e2b0b01c"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2026.3680516",
+   "arxiv": null,
+   "titulo": "SymptoMatch: Improving Clinical Symptom Recognition via Bidirectional Learning F"
+  }
+ },
+ "679_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "RAG-Based Multi-Agent Systems for Drug Discovery with Indian Medicinal Plants"
+  }
+ },
+ "696_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  }
+ },
+ "674_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Custom Transformer-Based Domain-Specific Language Model for Public Health Educat"
+  }
+ },
+ "664_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Context Graph: Conversational State Tracking for Knowledge Graph Construction"
+  }
+ },
+ "684_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2026.3692741"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2026.3692741",
+   "arxiv": null,
+   "titulo": "GoT-HCS: Graph-of-Thoughts Enhanced Hierarchical Reasoning for Automated Clinica"
+  }
+ },
+ "666_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Semantic-Based Ontology Mapping and Merging in the Medical Domain Using Large La"
+  }
+ },
+ "700_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Multi-Agent AI-Assisted Design and Validation of Complex Microservices Architect"
+  }
+ },
+ "655_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Semantic Consistency Analysis of Large Language Models for Rare Disease Diagnosi"
+  }
+ },
+ "640_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2603.21178",
+   "titulo": "LLM-based Automated Architecture View Generation: Where Are We Now?"
+  }
+ },
+ "758_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://arxiv.org/pdf/2303.16244",
+   "arxiv": "2303.16244",
+   "titulo": "On Codex Prompt Engineering for OCL Generation: An Empirical Study"
+  }
+ },
+ "708_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Transformative Potentials and Ethical Considerations of AI Tools in Higher Educa"
+  }
+ },
+ "798_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A new approach for automatic test case generation from use case diagram using LL"
+  }
+ },
+ "807_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Teaching UML using a RAG-based LLM"
+  }
+ },
+ "712_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "http://arxiv.org/pdf/2311.13852",
+   "arxiv": "2311.13852",
+   "titulo": "A Cross Attention Approach to Diagnostic Explainability Using Clinical Practice "
+  }
+ },
+ "719_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing Clinical Note Generation from Doctor-Patient Conversations through Sem"
+  }
+ },
+ "727_IEEE": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2024.3521596"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/a8743917bdc041868059521dbbd7e22c"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2024.3521596",
+   "arxiv": null,
+   "titulo": "From Information Overload to Lucidity: A Survey on Leveraging GPTs for Systemati"
+  }
+ },
+ "726_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "FlingFlow: LLM-Driven Dynamic Strategies for Efficient Cloth Flattening"
+  }
+ },
+ "724_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Redefining Human-Machine Collaboration: Industry 5.0 to Improve Safety and Effic"
+  }
+ },
+ "716_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Bridging Modality Gap with Large Speech and Language Models for End-to-End Speec"
+  }
+ },
+ "806_SCOPUS": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2025.3615828"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/b417cbe359b144dcaaa31056889ed73d"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2025.3615828",
+   "arxiv": null,
+   "titulo": "LLM-Driven MDA Pipeline for Generating UML Class Diagrams and Code"
+  }
+ },
+ "704_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2508.17703",
+   "titulo": "EMPOWER: Evolutionary Medical Prompt Optimization With Reinforcement Learning."
+  }
+ },
+ "761_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Roadmap for Software Engineering Education using ChatGPT"
+  }
+ },
+ "737_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Error-Aware Text-to-SQL Generation for Clinical Trial Eligibility Criteria Query"
+  }
+ },
+ "775_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automated Mobile Operator Customer Service Using Large Language Models Combined "
+  }
+ },
+ "715_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "AI Driven Crop Management and Market Solutions"
+  }
+ },
+ "772_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "IO-AutoMapper: Leveraging LLMs to Bind I/O Signal List Entries to Control Functi"
+  }
+ },
+ "803_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "UML Sequence Diagram Generation: A Multi-Model, Multi-Domain Evaluation"
+  }
+ },
+ "796_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "API-Aware Stepwise Prompting for LLM-based Workflow Code Generation"
+  }
+ },
+ "766_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2509.13896",
+   "titulo": "Mind the Ethics! The Overlooked Ethical Dimensions of GenAI in Software Modeling"
+  }
+ },
+ "713_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Generative Statecharts-Driven PDEVS Modeling"
+  }
+ },
+ "802_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automated Feature Extraction and UML Modeling from Real-World Unstructured Egypt"
+  }
+ },
+ "721_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Knowledge Graph-Based Genetic Fuzzy Agent for Human Intelligence and Machine Co-"
+  }
+ },
+ "764_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Real Time Self-Generating Control for AI Platforms"
+  }
+ },
+ "717_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Abstractive Biomedical Long Document Summarization Through Zero-Shot Prompting"
+  }
+ },
+ "734_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "OpenProcess/6000: a total solution for process management"
+  }
+ },
+ "722_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Towards Implementing and Evaluating AI-Assisted Pull Requests in Software Engine"
+  }
+ },
+ "754_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing Learners' Object-Oriented Programming Skills through the Integration o"
+  }
+ },
+ "735_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Dynamic Prompting Improves Turn-taking in Embodied Spoken Dialogue Systems"
+  }
+ },
+ "792_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "On the Generalization Capabilities of LLMs for Reverse Engineering Sequence Diag"
+  }
+ },
+ "757_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Unintended Changes: How LLMs Corrupt and Correct Textual Models"
+  }
+ },
+ "795_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "WIP: Generative Artificial Intelligence in Undergraduate Software Engineering Ed"
+  }
+ },
+ "718_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Designing a Conversational Agent for Competence Development"
+  }
+ },
+ "707_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Benchmarking NLP Paradigms for Livestream Transcript Highlight Detection"
+  }
+ },
+ "709_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2505.14906",
+   "titulo": "Understanding 6G through Language Models: A Case Study on LLM-aided Structured E"
+  }
+ },
+ "733_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Lightweight Entity-Aware Summarization of Clinical Texts Using a Hybrid Extracti"
+  }
+ },
+ "711_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  }
+ },
+ "730_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Medical ASR Enhancement by Domain-Specific Reinforcement Fine-Tuning"
+  }
+ },
+ "736_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Enhancing the MBSE Process with Agentic AI"
+  }
+ },
+ "732_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "FSMVision: Semantic Extraction of Finite State Machines from Diagrams via Multim"
+  }
+ },
+ "706_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Agentic Symbolic Learning for Deterministic and Granular Clinical Data Normaliza"
+  }
+ },
+ "780_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "AI in Requirements Engineering, Software Design, and Software Architecture: A Sy"
+  }
+ },
+ "783_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ADRAG: Avionics Diagnostic Retrieval-Augmented Generation by Fusing Hierarchical"
+  }
+ },
+ "779_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Verification Method of UML Diagrams Using Large Language Models"
+  }
+ },
+ "729_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Evaluating the Capabilities of MLLMs to Accurately Extract Information from Comp"
+  }
+ },
+ "723_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  }
+ },
+ "784_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Transparent AI Feedback via Process-Aware Modeling: An Educational Middleware Ap"
+  }
+ },
+ "728_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Survey of Knowledge Graph–Based Semantic Representations for Medical Text Anal"
+  }
+ },
+ "720_IEEE": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "GenAI-Driven Occupational Safety Analysis in IoT-Enabled Environments"
+  }
+ },
+ "922_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://arxiv.org/pdf/2404.17739",
+   "arxiv": "2404.17739",
+   "titulo": "How LLMs Aid in UML Modeling: An Exploratory Study with Novice Analysts"
+  }
+ },
+ "816_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2501.04908",
+   "titulo": "HaVen: Hallucination-Mitigated LLM for Verilog Code Generation Aligned with HDL "
+  }
+ },
+ "924_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Accelerating Model-Based Systems Engineering by Harnessing Generative AI"
+  }
+ },
+ "837_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ECHO: An Approach to Enhance Use Case Quality Exploiting Large Language Models"
+  }
+ },
+ "970_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "LLM-Based Class Diagram Derivation from User Stories with Chain-of-Thought Promp"
+  }
+ },
+ "843_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A Multi-Agent LLM Environment for Software Design and Refactoring: A Conceptual "
+  }
+ },
+ "902_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "VeriOpt: PPA-Aware High-Quality Verilog Generation via Multi-Role LLMs"
+  }
+ },
+ "815_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ChatGPT's Aptitude in Utilizing UML Diagrams for Software Engineering Exercise G"
+  }
+ },
+ "956_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Leveraging LLMs to Automate Software Architecture Design from Informal Specifica"
+  }
+ },
+ "823_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "A comparison of different Large Language Models for the generation of UML class "
+  }
+ },
+ "948_SCOPUS": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2025.3638372"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/9cd72104a6e44032ba86a0cd1b48139a"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2025.3638372",
+   "arxiv": null,
+   "titulo": "Fine-Tuned LLMs Versus Rule-Based NLP for UML Diagram Generation: An Educational"
+  }
+ },
+ "865_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Using Large Language Models to Extract UML Class Diagrams from Java Programs"
+  }
+ },
+ "851_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "State Diagram Extension and Test Case Generation Based on Large Language Models "
+  }
+ },
+ "931_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2508.21097",
+   "titulo": "Model-Driven Quantum Code Generation Using Large Language Models and Retrieval-A"
+  }
+ },
+ "839_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2508.00630",
+   "titulo": "MCeT: Behavioral Model Correctness Evaluation using Large Language Models"
+  }
+ },
+ "873_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Creating UML Class Diagrams with General-Purpose LLMs"
+  }
+ },
+ "863_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Exploring Generative AI’s Impact on Facilitating the Transition of On-Premises A"
+  }
+ },
+ "985_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Transforming Software Architecture Design With Intelligent Assistants-A Comparat"
+  }
+ },
+ "882_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Harnessing ChatGPT for Model Transformation in Software Architecture: From UML S"
+  }
+ },
+ "858_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Evaluating Large Language Models in Exercises of UML Use Case Diagrams Modeling"
+  }
+ },
+ "982_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Learning to Transform: Evaluating LLMs on Model Transformation by Example"
+  }
+ },
+ "972_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Evaluating Multi-Modal LLMs for Automatically Recognizing Semantic Elements in U"
+  }
+ },
+ "981_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Can we use LLMs to recover Trace Links between Source Code and Security Requirem"
+  }
+ },
+ "821_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Cartoon Extraction Mechanism via UML Model Based on Natural Language Requirement"
+  }
+ },
+ "822_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Empowering Software Architects with Artificial Intelligence: Analyzing GitHub Co"
+  }
+ },
+ "886_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Towards Class Diagram Generation from User Stories Using LLMs"
+  }
+ },
+ "878_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Activity Diagrams as Cognitive Bridges: Revolutionizing Programming Education wi"
+  }
+ },
+ "965_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Bridging Models and Language: An Encoder-Decoder Approach for Automated Architec"
+  }
+ },
+ "959_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "AI-Assisted Transformation of the Two-Hemisphere Model into Structured IT Projec"
+  }
+ },
+ "870_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Using LLMs to Accelerate the Development of Blockchain-Based Solutions: A Case S"
+  }
+ },
+ "904_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Accelerating Timing Specification Verification of Interrupt-Driven Real-Time Sys"
+  }
+ },
+ "893_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2511.09231",
+   "titulo": "Leveraging Large Language Models for Use Case Model Generation from Software Req"
+  }
+ },
+ "957_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Can AI Build Systems? an Exploratory Study on Generating Software Architecture W"
+  }
+ },
+ "966_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2508.03379",
+   "titulo": "Data Dependency-Aware Code Generation from Enhanced UML Sequence Diagrams"
+  }
+ },
+ "926_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "AI-Assisted System Design: Improving Sequence Diagrams Through Use Case Scenario"
+  }
+ },
+ "980_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ArchCrafter: Leveraging LLMs to Scan and Interpretable Software Architecture Fla"
+  }
+ },
+ "881_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automating Requirements Modelling with LLMs: An Iterative Contrastive Optimisati"
+  }
+ },
+ "939_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "LLMs Can Code, But Can They Do Designƒ"
+  }
+ },
+ "899_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ML4FPGA: An LLM Framework for Electronic Design Automation and Verification on F"
+  }
+ },
+ "968_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Java Code Generation Method Based on UML Class Diagrams and Large Language Model"
+  }
+ },
+ "894_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Integrating GenAI in Embedded Systems Education: from Requirements to Prototypin"
+  }
+ },
+ "962_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "ScalePulse: Combinatorial Llm Framework for Scalability Constraint"
+  }
+ },
+ "810_SCOPUS": {
+  "openalex": {
+   "oa": true,
+   "locs": [
+    {
+     "host": "IEEE Access",
+     "versao": "publishedVersion",
+     "pdf": null,
+     "landing": "https://doi.org/10.1109/access.2026.3686308"
+    },
+    {
+     "host": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "http://urn.kb.se/resolve?urn=urn:nbn:se:mdh:diva-76775"
+    },
+    {
+     "host": "DOAJ (DOAJ: Directory of Open Access Journals)",
+     "versao": "submittedVersion",
+     "pdf": null,
+     "landing": "https://doaj.org/article/c7471f9f2fbb406882d586e96f79190d"
+    }
+   ]
+  },
+  "s2": {
+   "oa": true,
+   "pdf": "https://doi.org/10.1109/access.2026.3686308",
+   "arxiv": null,
+   "titulo": "VeriGen: An LLM-Augmented Framework for End-to-End Automation of Software Develo"
+  }
+ },
+ "901_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Automatic Construction of UML Class Diagram from Text in Natural Language"
+  }
+ },
+ "887_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "AI-based navigation browser extension for AWS"
+  }
+ },
+ "811_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Comparative Structural and Semantic Evaluation of Fine-Tuned Large Language Mode"
+  }
+ },
+ "905_SCOPUS": {
+  "openalex": {
+   "oa": false,
+   "locs": []
+  },
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Leveraging Large Language Models for Event Storming in Domain-Driven Design: A C"
+  }
+ },
+ "149_ACM": {
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": "2510.18297",
+   "titulo": "From Retrieval to Generation: Unifying External and Parametric Knowledge for Med"
+  }
+ },
+ "750_SCOPUS": {
+  "s2": {
+   "oa": false,
+   "pdf": "",
+   "arxiv": null,
+   "titulo": "Assisting Stakeholders in Class Diagram Interpretation with LLMs: a Work in Prog"
+  }
+ }
+}

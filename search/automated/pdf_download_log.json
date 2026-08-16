@@ -1,0 +1,3348 @@
+{
+ "006_ACM": {
+  "status": "OK",
+  "bytes": 1187057,
+  "url": "https://arxiv.org/pdf/2509.14088"
+ },
+ "007_ACM": {
+  "status": "OK",
+  "bytes": 1024122,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3652620.3686246?download=true",
+  "via": "navegador_manual"
+ },
+ "009_ACM": {
+  "status": "OK",
+  "bytes": 637649,
+  "url": "/home/helaine-barreiros/Downloads/3717383.3717389.pdf",
+  "via": "indicado_usuario"
+ },
+ "015_ACM": {
+  "status": "OK",
+  "bytes": 692476,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3652620.3687804?download=true",
+  "via": "navegador_manual"
+ },
+ "017_ACM": {
+  "status": "OK",
+  "bytes": 761626,
+  "url": "/home/helaine-barreiros/Downloads/3737286.pdf",
+  "via": "indicado_usuario"
+ },
+ "018_ACM": {
+  "status": "OK",
+  "bytes": 5173636,
+  "url": "/home/helaine-barreiros/Downloads/3755881.3755926.pdf",
+  "via": "indicado_usuario"
+ },
+ "022_ACM": {
+  "status": "OK",
+  "bytes": 1379547,
+  "url": "https://orbilu.uni.lu/bitstream/10993/68803/1/3828167.pdf"
+ },
+ "023_ACM": {
+  "status": "OK",
+  "bytes": 6273111,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3736167",
+  "via": "navegador_manual"
+ },
+ "024_ACM": {
+  "status": "OK",
+  "bytes": 2174405,
+  "url": "https://jyx.jyu.fi/bitstreams/044d135c-005b-460a-8473-fcee397e69b0/download"
+ },
+ "025_ACM": {
+  "status": "OK",
+  "bytes": 1969887,
+  "url": "https://arxiv.org/pdf/2510.04519"
+ },
+ "026_ACM": {
+  "status": "OK",
+  "bytes": 515731,
+  "url": "/home/helaine-barreiros/Downloads/Designing_2026_Using_GenAI_in_Design_Education_1_.pdf",
+  "via": "acervo_local_doi"
+ },
+ "030_ACM": {
+  "status": "OK",
+  "bytes": 813857,
+  "url": "https://arxiv.org/pdf/2510.22338"
+ },
+ "034_ACM": {
+  "status": "OK",
+  "bytes": 488190,
+  "url": "https://eprints.gla.ac.uk/344038/1/344038.pdf"
+ },
+ "035_ACM": {
+  "status": "OK",
+  "bytes": 657348,
+  "url": "https://arxiv.org/pdf/2605.02455"
+ },
+ "039_ACM": {
+  "status": "OK",
+  "bytes": 2107099,
+  "url": "https://arxiv.org/pdf/2512.05908"
+ },
+ "040_ACM": {
+  "status": "OK",
+  "bytes": 8622548,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3772077",
+  "via": "navegador_manual"
+ },
+ "042_ACM": {
+  "status": "OK",
+  "bytes": 3092724,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3623762.3633499",
+  "via": "navegador_manual"
+ },
+ "045_ACM": {
+  "status": "OK",
+  "bytes": 1374149,
+  "url": "https://arxiv.org/pdf/2509.07794"
+ },
+ "046_ACM": {
+  "status": "OK",
+  "bytes": 1740447,
+  "url": "https://arxiv.org/pdf/2601.00469"
+ },
+ "049_ACM": {
+  "status": "OK",
+  "bytes": 3893669,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3766557.3766635",
+  "via": "navegador_manual"
+ },
+ "050_ACM": {
+  "status": "OK",
+  "bytes": 966037,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3766905",
+  "via": "navegador_manual"
+ },
+ "051_ACM": {
+  "status": "OK",
+  "bytes": 329559,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3702653.3744328",
+  "via": "navegador_manual"
+ },
+ "060_ACM": {
+  "status": "OK",
+  "bytes": 659408,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3579028.3609016",
+  "via": "navegador_manual"
+ },
+ "064_ACM": {
+  "status": "OK",
+  "bytes": 2272559,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3750727",
+  "via": "navegador_manual"
+ },
+ "066_ACM": {
+  "status": "OK",
+  "bytes": 3293451,
+  "url": "https://eprints.gla.ac.uk/381818/1/381818.pdf"
+ },
+ "069_ACM": {
+  "status": "OK",
+  "bytes": 1526273,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3640543.3645144",
+  "via": "navegador_manual"
+ },
+ "070_ACM": {
+  "status": "OK",
+  "bytes": 1555537,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3696630.3727255?download=true",
+  "via": "navegador_manual"
+ },
+ "071_ACM": {
+  "status": "OK",
+  "bytes": 4343461,
+  "url": "https://arxiv.org/pdf/2504.03051"
+ },
+ "073_ACM": {
+  "status": "OK",
+  "bytes": 1803493,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639477.3639743",
+  "via": "navegador_manual"
+ },
+ "074_ACM": {
+  "status": "OK",
+  "bytes": 623883,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3715336.3735823",
+  "via": "navegador_manual"
+ },
+ "076_ACM": {
+  "status": "OK",
+  "bytes": 3367732,
+  "url": "https://vtechworks.lib.vt.edu/bitstreams/62c9e21c-a6cc-4f06-956d-185721f48647/download"
+ },
+ "078_ACM": {
+  "status": "OK",
+  "bytes": 1055729,
+  "url": "https://vbn.aau.dk/ws/files/816051756/3708523.pdf",
+  "via": "alternate"
+ },
+ "079_ACM": {
+  "status": "OK",
+  "bytes": 1018443,
+  "url": "https://arxiv.org/pdf/2505.11857",
+  "via": "alternate"
+ },
+ "080_ACM": {
+  "status": "OK",
+  "bytes": 3202094,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3586183.3606737",
+  "via": "navegador_manual"
+ },
+ "083_ACM": {
+  "status": "OK",
+  "bytes": 1074718,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3637528.3671469",
+  "via": "navegador_manual"
+ },
+ "085_ACM": {
+  "status": "OK",
+  "bytes": 1840152,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3696630.3730554",
+  "via": "navegador_manual"
+ },
+ "088_ACM": {
+  "status": "OK",
+  "bytes": 853878,
+  "url": "https://strathprints.strath.ac.uk/91906/1/Clift-and-Petrovska-2024-Learning-without-limits-analysing-the-usage-of-generative-AI-in-a-summative-assessment.pdf",
+  "via": "alternate"
+ },
+ "091_ACM": {
+  "status": "OK",
+  "bytes": 858205,
+  "url": "/home/helaine-barreiros/Downloads/ICSE_SEIS_2026_camera_ready.pdf",
+  "via": "acervo_local_doi"
+ },
+ "096_ACM": {
+  "status": "OK",
+  "bytes": 3912039,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3754450",
+  "via": "navegador_manual"
+ },
+ "098_ACM": {
+  "status": "OK",
+  "bytes": 1017462,
+  "url": "https://arxiv.org/pdf/2405.07500"
+ },
+ "101_ACM": {
+  "status": "OK",
+  "bytes": 2271673,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3626111.3628205",
+  "via": "navegador_manual"
+ },
+ "107_ACM": {
+  "status": "OK",
+  "bytes": 1085293,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3589335.3651941",
+  "via": "navegador_manual"
+ },
+ "110_ACM": {
+  "status": "OK",
+  "bytes": 696924,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3770084",
+  "via": "navegador_manual"
+ },
+ "111_ACM": {
+  "status": "OK",
+  "bytes": 2578226,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3643795.3648384?download=true",
+  "via": "navegador_manual"
+ },
+ "112_ACM": {
+  "status": "OK",
+  "bytes": 1085587,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3743093.3771004",
+  "via": "navegador_manual"
+ },
+ "114_ACM": {
+  "status": "OK",
+  "bytes": 1399448,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3679240.3734601",
+  "via": "navegador_manual"
+ },
+ "116_ACM": {
+  "status": "OK",
+  "bytes": 6973848,
+  "url": "https://orbilu.uni.lu/bitstream/10993/66853/1/3733599.pdf"
+ },
+ "117_ACM": {
+  "status": "OK",
+  "bytes": 693645,
+  "url": "https://arxiv.org/pdf/2604.09120"
+ },
+ "120_ACM": {
+  "status": "OK",
+  "bytes": 611038,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3652620.3687800?download=true",
+  "via": "navegador_manual"
+ },
+ "124_ACM": {
+  "status": "OK",
+  "bytes": 785384,
+  "url": "https://arxiv.org/pdf/2603.26567"
+ },
+ "125_ACM": {
+  "status": "OK",
+  "bytes": 2339514,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3657305",
+  "via": "navegador_manual"
+ },
+ "130_ACM": {
+  "status": "OK",
+  "bytes": 974438,
+  "url": "https://arxiv.org/pdf/2603.08616"
+ },
+ "134_ACM": {
+  "status": "OK",
+  "bytes": 2848352,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3650105.3652290",
+  "via": "navegador_manual"
+ },
+ "135_ACM": {
+  "status": "OK",
+  "bytes": 2011929,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3733049",
+  "via": "navegador_manual"
+ },
+ "138_ACM": {
+  "status": "OK",
+  "bytes": 449582,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3643660.3643942?download=true",
+  "via": "navegador_manual"
+ },
+ "142_ACM": {
+  "status": "OK",
+  "bytes": 936830,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3771678.3771686",
+  "via": "navegador_manual"
+ },
+ "143_ACM": {
+  "status": "OK",
+  "bytes": 885237,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3626252.3630927",
+  "via": "navegador_manual"
+ },
+ "145_ACM": {
+  "status": "OK",
+  "bytes": 1429226,
+  "url": "https://arxiv.org/pdf/2410.16991",
+  "via": "alternate"
+ },
+ "146_ACM": {
+  "status": "OK",
+  "bytes": 2934407,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3769011",
+  "via": "navegador_manual"
+ },
+ "150_ACM": {
+  "status": "OK",
+  "bytes": 911558,
+  "url": "https://research.chalmers.se/publication/544465/file/544465_Fulltext.pdf"
+ },
+ "151_ACM": {
+  "status": "OK",
+  "bytes": 551968,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3650105.3652291",
+  "via": "navegador_manual"
+ },
+ "152_ACM": {
+  "status": "OK",
+  "bytes": 477721,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639478.3643087",
+  "via": "navegador_manual"
+ },
+ "158_ACM": {
+  "status": "OK",
+  "bytes": 548484,
+  "url": "/home/helaine-barreiros/Downloads/007_O’Neill_BCSHCI24 (2).pdf",
+  "via": "indicado_usuario"
+ },
+ "159_ACM": {
+  "status": "OK",
+  "bytes": 436968,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639478.3639797",
+  "via": "navegador_manual"
+ },
+ "160_ACM": {
+  "status": "OK",
+  "bytes": 755856,
+  "url": "https://arxiv.org/pdf/2408.09766"
+ },
+ "162_ACM": {
+  "status": "OK",
+  "bytes": 4326347,
+  "url": "https://arxiv.org/pdf/2501.05155"
+ },
+ "163_ACM": {
+  "status": "OK",
+  "bytes": 1783442,
+  "url": "https://arxiv.org/pdf/2501.10551"
+ },
+ "164_ACM": {
+  "status": "OK",
+  "bytes": 1062562,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3701716.3717810",
+  "via": "navegador_manual"
+ },
+ "172_ACM": {
+  "status": "OK",
+  "bytes": 7634233,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3771283",
+  "via": "navegador_manual"
+ },
+ "175_ACM": {
+  "status": "OK",
+  "bytes": 568961,
+  "url": "https://arxiv.org/pdf/2403.06254",
+  "via": "alternate"
+ },
+ "177_ACM": {
+  "status": "OK",
+  "bytes": 898670,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3616961.3616974",
+  "via": "navegador_manual"
+ },
+ "179_ACM": {
+  "status": "OK",
+  "bytes": 233333,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3719384.3719439",
+  "via": "navegador_manual"
+ },
+ "181_ACM": {
+  "status": "OK",
+  "bytes": 1380561,
+  "url": "https://arxiv.org/pdf/2411.03137",
+  "via": "alternate"
+ },
+ "183_ACM": {
+  "status": "OK",
+  "bytes": 3109126,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3746058.3758982",
+  "via": "navegador_manual"
+ },
+ "186_ACM": {
+  "status": "OK",
+  "bytes": 1013412,
+  "url": "https://pure.tue.nl/ws/files/348701028/3652620.3687806.pdf",
+  "via": "alternate"
+ },
+ "187_ACM": {
+  "status": "OK",
+  "bytes": 1579070,
+  "url": "https://vtechworks.lib.vt.edu/bitstreams/c59f7f3b-c93b-4aa2-b794-c7804fbc3a47/download"
+ },
+ "189_ACM": {
+  "status": "OK",
+  "bytes": 1443925,
+  "url": "https://arxiv.org/pdf/2510.11938"
+ },
+ "190_ACM": {
+  "status": "OK",
+  "bytes": 349334,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3728725.3728757",
+  "via": "navegador_manual"
+ },
+ "192_ACM": {
+  "status": "OK",
+  "bytes": 484888,
+  "url": "/home/helaine-barreiros/Downloads/jmlgen-ftfjp21-final_NoteACM.pdf",
+  "via": "indicado_usuario"
+ },
+ "193_ACM": {
+  "status": "OK",
+  "bytes": 1856065,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639474.3640076",
+  "via": "navegador_manual"
+ },
+ "195_ACM": {
+  "status": "OK",
+  "bytes": 1976562,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3701716.3717556",
+  "via": "navegador_manual"
+ },
+ "196_ACM": {
+  "status": "OK",
+  "bytes": 3649619,
+  "url": "/home/helaine-barreiros/Downloads/Turning_Low_Code_Development_Platforms_into_True_No_Code_preprint.pdf",
+  "via": "acervo_local_doi"
+ },
+ "197_ACM": {
+  "status": "OK",
+  "bytes": 290381,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3718751.3718807",
+  "via": "navegador_manual"
+ },
+ "198_ACM": {
+  "status": "OK",
+  "bytes": 3215422,
+  "url": "https://jyx.jyu.fi/bitstreams/becf75d6-075e-4f3e-a1f0-79369a60f36f/download",
+  "via": "alternate"
+ },
+ "199_ACM": {
+  "status": "OK",
+  "bytes": 3115728,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3636243.3636247",
+  "via": "navegador_manual"
+ },
+ "200_ACM": {
+  "status": "OK",
+  "bytes": 1270914,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3687997.3695650",
+  "via": "navegador_manual"
+ },
+ "201_ACM": {
+  "status": "OK",
+  "bytes": 4570587,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3696410.3714782",
+  "via": "navegador_manual"
+ },
+ "202_ACM": {
+  "status": "OK",
+  "bytes": 2173298,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3543507.3587430",
+  "via": "navegador_manual"
+ },
+ "204_ACM": {
+  "status": "OK",
+  "bytes": 24143901,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3674149",
+  "via": "navegador_manual"
+ },
+ "206_ACM": {
+  "status": "OK",
+  "bytes": 837746,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3721146.3721962",
+  "via": "navegador_manual"
+ },
+ "207_ACM": {
+  "status": "OK",
+  "bytes": 536668,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3773365.3773397?download=true",
+  "via": "navegador_manual"
+ },
+ "208_ACM": {
+  "status": "OK",
+  "bytes": 1673886,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3583780.3614961",
+  "via": "navegador_manual"
+ },
+ "209_ACM": {
+  "status": "OK",
+  "bytes": 2136045,
+  "url": "https://arxiv.org/pdf/2605.01920"
+ },
+ "211_ACM": {
+  "status": "OK",
+  "bytes": 481627,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3699538.3699541",
+  "via": "navegador_manual"
+ },
+ "212_ACM": {
+  "status": "OK",
+  "bytes": 1623104,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3696630.3728493",
+  "via": "navegador_manual"
+ },
+ "213_ACM": {
+  "status": "OK",
+  "bytes": 7645383,
+  "url": "https://arxiv.org/pdf/2604.16342"
+ },
+ "214_ACM": {
+  "status": "OK",
+  "bytes": 971177,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3587102.3588815",
+  "via": "navegador_manual"
+ },
+ "221_ACM": {
+  "status": "OK",
+  "bytes": 825702,
+  "url": "https://orbilu.uni.lu/bitstream/10993/62741/1/AI%20Assisted%20Domain%20Modeling%20Explainability%20and%20Traceability.pdf"
+ },
+ "224_ACM": {
+  "status": "OK",
+  "bytes": 1476108,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3587102.3588794",
+  "via": "navegador_manual"
+ },
+ "225_ACM": {
+  "status": "OK",
+  "bytes": 547390,
+  "url": "https://arxiv.org/pdf/2410.13966"
+ },
+ "227_ACM": {
+  "status": "OK",
+  "bytes": 1117457,
+  "url": "https://arxiv.org/pdf/2511.20940"
+ },
+ "228_ACM": {
+  "status": "OK",
+  "bytes": 1122523,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3663547.3759686",
+  "via": "navegador_manual"
+ },
+ "230_ACM": {
+  "status": "OK",
+  "bytes": 5888584,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3652620.3688255?download=true",
+  "via": "navegador_manual"
+ },
+ "232_ACM": {
+  "status": "OK",
+  "bytes": 676482,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3721201.3725513",
+  "via": "navegador_manual"
+ },
+ "233_ACM": {
+  "status": "OK",
+  "bytes": 1447100,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3721201.3725426",
+  "via": "navegador_manual"
+ },
+ "235_ACM": {
+  "status": "NOT_PDF",
+  "detail": "html",
+  "url": "https://riuma.uma.es/xmlui/bitstream/10630/30332/4/ICSE_NIER_23___Model_autocompletion%20%282%29.pdf"
+ },
+ "241_ACM": {
+  "status": "OK",
+  "bytes": 966595,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639474.3640068",
+  "via": "navegador_manual"
+ },
+ "244_ACM": {
+  "status": "OK",
+  "bytes": 993552,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3587102.3588814",
+  "via": "navegador_manual"
+ },
+ "246_ACM": {
+  "status": "OK",
+  "bytes": 947459,
+  "url": "https://arxiv.org/pdf/2503.23513"
+ },
+ "249_ACM": {
+  "status": "OK",
+  "bytes": 8120064,
+  "url": "https://arxiv.org/pdf/2508.02823",
+  "via": "alternate"
+ },
+ "251_ACM": {
+  "status": "OK",
+  "bytes": 1123052,
+  "url": "https://arxiv.org/pdf/2511.09268"
+ },
+ "252_ACM": {
+  "status": "OK",
+  "bytes": 691384,
+  "url": "https://pure.tue.nl/ws/files/388221065/dsar-evaluation.pdf"
+ },
+ "255_ACM": {
+  "status": "OK",
+  "bytes": 580863,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3613372.3613405",
+  "via": "navegador_manual"
+ },
+ "257_ACM": {
+  "status": "OK",
+  "bytes": 4278526,
+  "url": "https://arxiv.org/pdf/2302.07427",
+  "via": "alternate"
+ },
+ "259_ACM": {
+  "status": "OK",
+  "bytes": 998788,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3605098.3635889",
+  "via": "navegador_manual"
+ },
+ "260_ACM": {
+  "status": "OK",
+  "bytes": 1179354,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3652620.3687809?download=true",
+  "via": "navegador_manual"
+ },
+ "263_ACM": {
+  "status": "OK",
+  "bytes": 1390499,
+  "url": "https://arxiv.org/pdf/2404.13307"
+ },
+ "266_ACM": {
+  "status": "OK",
+  "bytes": 6152241,
+  "url": "https://arxiv.org/pdf/2504.04553"
+ },
+ "267_ACM": {
+  "status": "OK",
+  "bytes": 1443329,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3576882.3617916",
+  "via": "navegador_manual"
+ },
+ "269_ACM": {
+  "status": "OK",
+  "bytes": 728658,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3705328.3748022",
+  "via": "navegador_manual"
+ },
+ "270_ACM": {
+  "status": "OK",
+  "bytes": 14559896,
+  "url": "https://arxiv.org/pdf/2601.01027"
+ },
+ "272_ACM": {
+  "status": "OK",
+  "bytes": 1640793,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3695053.3731092",
+  "via": "navegador_manual"
+ },
+ "274_ACM": {
+  "status": "OK",
+  "bytes": 777350,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639474.3640059",
+  "via": "navegador_manual"
+ },
+ "275_ACM": {
+  "status": "OK",
+  "bytes": 807001,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3584931.3607020",
+  "via": "navegador_manual"
+ },
+ "276_ACM": {
+  "status": "OK",
+  "bytes": 9176066,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3702647",
+  "via": "navegador_manual"
+ },
+ "282_ACM": {
+  "status": "OK",
+  "bytes": 1909055,
+  "url": "https://arxiv.org/pdf/2605.24138"
+ },
+ "288_ACM": {
+  "status": "OK",
+  "bytes": 2221540,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3502265",
+  "via": "navegador_manual"
+ },
+ "295_ACM": {
+  "status": "OK",
+  "bytes": 2851910,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3768740.3768744",
+  "via": "navegador_manual"
+ },
+ "297_ACM": {
+  "status": "OK",
+  "bytes": 1043715,
+  "url": "https://arxiv.org/pdf/2506.11014",
+  "via": "alternate"
+ },
+ "299_ACM": {
+  "status": "OK",
+  "bytes": 796520,
+  "url": "https://arxiv.org/pdf/2512.14756"
+ },
+ "300_ACM": {
+  "status": "OK",
+  "bytes": 279364,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3756580.3756605",
+  "via": "navegador_manual"
+ },
+ "301_ACM": {
+  "status": "OK",
+  "bytes": 2453615,
+  "url": "https://arxiv.org/pdf/2502.18681"
+ },
+ "302_ACM": {
+  "status": "OK",
+  "bytes": 994120,
+  "url": "https://arxiv.org/pdf/2402.01738"
+ },
+ "308_ACM": {
+  "status": "OK",
+  "bytes": 652526,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3613372.3614189",
+  "via": "navegador_manual"
+ },
+ "311_ACM": {
+  "status": "OK",
+  "bytes": 1085665,
+  "url": "https://arxiv.org/pdf/2504.04630"
+ },
+ "313_ACM": {
+  "status": "OK",
+  "bytes": 578989,
+  "url": "https://arxiv.org/pdf/2405.04282"
+ },
+ "314_ACM": {
+  "status": "OK",
+  "bytes": 5184562,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3735452.3735536",
+  "via": "navegador_manual"
+ },
+ "316_ACM": {
+  "status": "OK",
+  "bytes": 1120923,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3756580.3756590",
+  "via": "navegador_manual"
+ },
+ "322_ACM": {
+  "status": "OK",
+  "bytes": 1921973,
+  "url": "https://arxiv.org/pdf/2409.11864",
+  "via": "alternate"
+ },
+ "325_ACM": {
+  "status": "OK",
+  "bytes": 1548082,
+  "url": "https://arxiv.org/pdf/2509.07588",
+  "via": "alternate"
+ },
+ "327_ACM": {
+  "status": "OK",
+  "bytes": 6470986,
+  "url": "https://arxiv.org/pdf/2505.07142",
+  "via": "alternate"
+ },
+ "329_ACM": {
+  "status": "OK",
+  "bytes": 1726835,
+  "url": "https://arxiv.org/pdf/2505.08064",
+  "via": "alternate"
+ },
+ "331_ACM": {
+  "status": "OK",
+  "bytes": 727616,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3643657.3643910?download=true",
+  "via": "navegador_manual"
+ },
+ "332_ACM": {
+  "status": "OK",
+  "bytes": 2606077,
+  "url": "https://arxiv.org/pdf/2505.13903"
+ },
+ "333_ACM": {
+  "status": "OK",
+  "bytes": 1395823,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3595634",
+  "via": "navegador_manual"
+ },
+ "334_ACM": {
+  "status": "OK",
+  "bytes": 861484,
+  "url": "https://arxiv.org/pdf/2404.02548",
+  "via": "alternate"
+ },
+ "336_ACM": {
+  "status": "OK",
+  "bytes": 1442504,
+  "url": "https://publikationen.bibliothek.kit.edu/1000167587/181936963",
+  "via": "alternate"
+ },
+ "351_ACM": {
+  "status": "OK",
+  "bytes": 1676183,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3550356.3563134",
+  "via": "navegador_manual"
+ },
+ "353_ACM": {
+  "status": "OK",
+  "bytes": 59269177,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3746060",
+  "via": "navegador_manual"
+ },
+ "354_ACM": {
+  "status": "OK",
+  "bytes": 1191738,
+  "url": "https://arxiv.org/pdf/2304.05973"
+ },
+ "357_ACM": {
+  "status": "OK",
+  "bytes": 2099367,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3729230",
+  "via": "navegador_manual"
+ },
+ "362_ACM": {
+  "status": "OK",
+  "bytes": 1320530,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3653081.3653130",
+  "via": "navegador_manual"
+ },
+ "365_ACM": {
+  "status": "OK",
+  "bytes": 2431373,
+  "url": "https://arxiv.org/pdf/2510.05245",
+  "via": "alternate"
+ },
+ "367_ACM": {
+  "status": "OK",
+  "bytes": 1054548,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3583780.3615126",
+  "via": "navegador_manual"
+ },
+ "370_ACM": {
+  "status": "OK",
+  "bytes": 1162277,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3701716.3717649",
+  "via": "navegador_manual"
+ },
+ "374_ACM": {
+  "status": "OK",
+  "bytes": 47093394,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3613904.3642230",
+  "via": "navegador_manual"
+ },
+ "378_ACM": {
+  "status": "OK",
+  "bytes": 1034488,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3600160.3605043",
+  "via": "navegador_manual"
+ },
+ "382_ACM": {
+  "status": "ERROR",
+  "detail": "URLError",
+  "url": "https://ltu.diva-portal.org/smash/get/diva2:1908559/FULLTEXT01"
+ },
+ "387_ACM": {
+  "status": "OK",
+  "bytes": 1878277,
+  "url": "https://repository.falmouth.ac.uk/6306/1/iticse_2025_wg_preprint.pdf",
+  "via": "alternate"
+ },
+ "391_ACM": {
+  "status": "OK",
+  "bytes": 1113887,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3768586",
+  "via": "navegador_manual"
+ },
+ "392_ACM": {
+  "status": "OK",
+  "bytes": 1927568,
+  "url": "/home/helaine-barreiros/Downloads/Web_of_DT___ACM_ToIT.pdf",
+  "via": "indicado_usuario"
+ },
+ "394_ACM": {
+  "status": "OK",
+  "bytes": 1933932,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3699520",
+  "via": "navegador_manual"
+ },
+ "402_ACM": {
+  "status": "OK",
+  "bytes": 2471131,
+  "url": "https://pure.tue.nl/ws/files/344922767/3652620.3688559.pdf"
+ },
+ "404_ACM": {
+  "status": "OK",
+  "bytes": 1343052,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3652037.3663946",
+  "via": "navegador_manual"
+ },
+ "406_ACM": {
+  "status": "OK",
+  "bytes": 1057001,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3771678.3771683",
+  "via": "navegador_manual"
+ },
+ "407_ACM": {
+  "status": "OK",
+  "bytes": 2916593,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3531056.3542784",
+  "via": "navegador_manual"
+ },
+ "411_ACM": {
+  "status": "OK",
+  "bytes": 5516210,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3714393.3726494",
+  "via": "navegador_manual"
+ },
+ "413_ACM": {
+  "status": "OK",
+  "bytes": 908183,
+  "url": "https://publikationen.bibliothek.kit.edu/1000174513/154912983"
+ },
+ "416_ACM": {
+  "status": "OK",
+  "bytes": 859341,
+  "url": "https://publications.polymtl.ca/59852/1/59852_Towards_ontological.pdf"
+ },
+ "417_ACM": {
+  "status": "OK",
+  "bytes": 966595,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3603273.3632223",
+  "via": "navegador_manual"
+ },
+ "419_ACM": {
+  "status": "OK",
+  "bytes": 635725,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3587889.3587904",
+  "via": "navegador_manual"
+ },
+ "433_ACM": {
+  "status": "OK",
+  "bytes": 1533980,
+  "url": "https://arxiv.org/pdf/2205.04284"
+ },
+ "434_ACM": {
+  "status": "OK",
+  "bytes": 2031499,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3653081.3653220",
+  "via": "navegador_manual"
+ },
+ "435_ACM": {
+  "status": "OK",
+  "bytes": 859526,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3585967.3585982",
+  "via": "navegador_manual"
+ },
+ "438_ACM": {
+  "status": "OK",
+  "bytes": 946935,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3762329.3762349",
+  "via": "navegador_manual"
+ },
+ "440_ACM": {
+  "status": "OK",
+  "bytes": 929459,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3550356.3561559",
+  "via": "navegador_manual"
+ },
+ "441_ACM": {
+  "status": "OK",
+  "bytes": 1653437,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3587135.3592179",
+  "via": "navegador_manual"
+ },
+ "443_ACM": {
+  "status": "OK",
+  "bytes": 583125,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3576841.3589628",
+  "via": "navegador_manual"
+ },
+ "445_ACM": {
+  "status": "OK",
+  "bytes": 791665,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3600160.3605055",
+  "via": "navegador_manual"
+ },
+ "446_ACM": {
+  "status": "OK",
+  "bytes": 1003031,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3594806.3596596",
+  "via": "navegador_manual"
+ },
+ "465_IEEE": {
+  "status": "OK",
+  "bytes": 880330,
+  "url": "https://orbilu.uni.lu/bitstream/10993/63431/1/2024-MODRE-AAF.pdf"
+ },
+ "533_IEEE": {
+  "status": "OK",
+  "bytes": 1856065,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639474.3640076",
+  "via": "navegador_manual"
+ },
+ "534_IEEE": {
+  "status": "OK",
+  "bytes": 403918,
+  "url": "https://kclpure.kcl.ac.uk/ws/files/365557502/saner2025Lano.pdf"
+ },
+ "536_IEEE": {
+  "status": "OK",
+  "bytes": 2848352,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3650105.3652290",
+  "via": "navegador_manual"
+ },
+ "556_IEEE": {
+  "status": "OK",
+  "bytes": 299224,
+  "url": "https://annals-csis.org/Volume_43/drp/pdf/5613.pdf"
+ },
+ "561_IEEE": {
+  "status": "OK",
+  "bytes": 2964930,
+  "url": "https://arxiv.org/pdf/2403.17209"
+ },
+ "589_IEEE": {
+  "status": "OK",
+  "bytes": 2718405,
+  "url": "https://arxiv.org/pdf/2511.05165"
+ },
+ "591_IEEE": {
+  "status": "OK",
+  "bytes": 644671,
+  "url": "https://arxiv.org/pdf/2607.11464"
+ },
+ "608_IEEE": {
+  "status": "OK",
+  "bytes": 229926,
+  "url": "https://www.osti.gov/servlets/purl/1997756"
+ },
+ "610_IEEE": {
+  "status": "OK",
+  "bytes": 1759755,
+  "url": "https://arxiv.org/pdf/2406.03712"
+ },
+ "618_IEEE": {
+  "status": "OK",
+  "bytes": 200819,
+  "url": "https://kclpure.kcl.ac.uk/ws/files/362335948/icess24.pdf"
+ },
+ "623_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2212.03404",
+  "url": "https://arxiv.org/pdf/2212.03404",
+  "arquivo": "623_IEEE.pdf"
+ },
+ "637_IEEE": {
+  "status": "OK",
+  "bytes": 480170,
+  "url": "/home/helaine-barreiros/Downloads/nihms-2041658.pdf",
+  "via": "acervo_local_doi"
+ },
+ "646_IEEE": {
+  "status": "OK",
+  "bytes": 857486,
+  "url": "https://arxiv.org/pdf/2506.22688"
+ },
+ "682_IEEE": {
+  "status": "OK",
+  "bytes": 1625196,
+  "url": "/home/helaine-barreiros/Downloads/2024194694.pdf",
+  "via": "acervo_local_title"
+ },
+ "683_IEEE": {
+  "status": "OK",
+  "bytes": 4578426,
+  "url": "https://arxiv.org/pdf/2407.13598"
+ },
+ "731_IEEE": {
+  "status": "OK",
+  "bytes": 2560443,
+  "url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10539102.pdf"
+ },
+ "738_SCOPUS": {
+  "status": "OK",
+  "url": "https://www.designsociety.org/download-publication/47592/minimal_data_maximal_impact_language_model-based_pipelines_for_the_automatic_generation_of_use_case_diagrams_from_requirements",
+  "via": "manual_pass"
+ },
+ "740_SCOPUS": {
+  "status": "OK",
+  "bytes": 4583853,
+  "url": "http://thesai.org/Downloads/Volume15No1/Paper_30-Costless_Expert_Systems_Devolplment_and_Re_engineering.pdf"
+ },
+ "744_SCOPUS": {
+  "status": "OK",
+  "bytes": 5475542,
+  "url": "https://www.nature.com/articles/s41598-025-15676-4.pdf"
+ },
+ "748_SCOPUS": {
+  "status": "OK",
+  "bytes": 880330,
+  "url": "https://orbilu.uni.lu/bitstream/10993/63431/1/2024-MODRE-AAF.pdf"
+ },
+ "752_SCOPUS": {
+  "status": "OK",
+  "bytes": 2863683,
+  "url": "/home/helaine-barreiros/Downloads/information-17-00165.pdf",
+  "via": "acervo_local_doi"
+ },
+ "753_SCOPUS": {
+  "status": "OK",
+  "bytes": 2789257,
+  "url": "https://link.springer.com/content/pdf/10.1007/s10270-026-01373-x.pdf"
+ },
+ "788_SCOPUS": {
+  "status": "OK",
+  "bytes": 1856065,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3639474.3640076",
+  "via": "navegador_manual"
+ },
+ "797_SCOPUS": {
+  "status": "OK",
+  "bytes": 328372,
+  "url": "https://thesai.org/Downloads/Volume17No2/Paper_24-Automating_Computation_Independent_Model_Elicitation.pdf"
+ },
+ "809_SCOPUS": {
+  "status": "OK",
+  "bytes": 411117,
+  "url": "/home/helaine-barreiros/Downloads/applsci-16-06540.pdf",
+  "via": "acervo_local_title"
+ },
+ "818_SCOPUS": {
+  "status": "OK",
+  "bytes": 1784107,
+  "url": "/home/helaine-barreiros/Downloads/journal_tiis_20-4_1208006993.pdf",
+  "via": "acervo_local_title"
+ },
+ "820_SCOPUS": {
+  "status": "OK",
+  "bytes": 659408,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3579028.3609016",
+  "via": "navegador_manual"
+ },
+ "830_SCOPUS": {
+  "status": "OK",
+  "bytes": 805646,
+  "url": "https://revistas.uned.es/index.php/ried/article/download/47173/34206"
+ },
+ "833_SCOPUS": {
+  "status": "OK",
+  "bytes": 1154290,
+  "url": "https://aclanthology.org/2025.findings-acl.425.pdf"
+ },
+ "844_SCOPUS": {
+  "status": "OK",
+  "bytes": 557827,
+  "url": "https://doi.org/10.22266/ijies2026.0430.27"
+ },
+ "848_SCOPUS": {
+  "status": "OK",
+  "bytes": 2127341,
+  "url": "https://e-journal.unair.ac.id/JISEBI/article/download/78374/36729"
+ },
+ "853_SCOPUS": {
+  "status": "OK",
+  "bytes": 1265641,
+  "url": "https://aclanthology.org/2025.findings-acl.134.pdf"
+ },
+ "859_SCOPUS": {
+  "status": "OK",
+  "bytes": 3195271,
+  "url": "https://arxiv.org/pdf/2509.03463"
+ },
+ "864_SCOPUS": {
+  "status": "OK",
+  "bytes": 622211,
+  "url": "https://www.jmir.org/2025/1/e69190/PDF"
+ },
+ "869_SCOPUS": {
+  "status": "OK",
+  "bytes": 4587660,
+  "url": "https://cdn.techscience.press/files/CMES/2026/TSP_CMES-146-1/TSP_CMES_75442/TSP_CMES_75442.pdf"
+ },
+ "872_SCOPUS": {
+  "status": "OK",
+  "bytes": 2848352,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3650105.3652290",
+  "via": "navegador_manual"
+ },
+ "879_SCOPUS": {
+  "status": "OK",
+  "bytes": 1454474,
+  "url": "https://link.springer.com/content/pdf/10.1007/s10270-024-01206-9.pdf"
+ },
+ "888_SCOPUS": {
+  "status": "OK",
+  "bytes": 3250161,
+  "url": "https://computingonline.net/computing/article/view/4189/1255"
+ },
+ "889_SCOPUS": {
+  "status": "OK",
+  "bytes": 2445893,
+  "url": "/home/helaine-barreiros/Downloads/applsci-16-06617.pdf",
+  "via": "acervo_local_title"
+ },
+ "903_SCOPUS": {
+  "status": "OK",
+  "bytes": 1750925,
+  "url": "/home/helaine-barreiros/Downloads/symmetry-18-00337.pdf",
+  "via": "acervo_local_title"
+ },
+ "908_SCOPUS": {
+  "status": "OK",
+  "bytes": 3173269,
+  "url": "https://arxiv.org/pdf/2503.12293"
+ },
+ "910_SCOPUS": {
+  "status": "OK",
+  "bytes": 1179354,
+  "url": "https://dl.acm.org/doi/pdf/10.1145/3652620.3687809?download=true",
+  "via": "navegador_manual"
+ },
+ "914_SCOPUS": {
+  "status": "OK",
+  "bytes": 735286,
+  "url": "/home/helaine-barreiros/Downloads/J Software Evolu Process - 2025 - Mayr%E2%80%90Dorn - Generating Quality Assurance Constraints From Natural Language With LLMs.pdf",
+  "via": "acervo_local_doi"
+ },
+ "915_SCOPUS": {
+  "status": "OK",
+  "bytes": 803017,
+  "url": "https://link.springer.com/content/pdf/10.1007/978-981-99-8088-8_18.pdf"
+ },
+ "916_SCOPUS": {
+  "status": "OK",
+  "bytes": 1047101,
+  "url": "/home/helaine-barreiros/Downloads/electronics-15-01239-v2.pdf",
+  "via": "acervo_local_doi"
+ },
+ "917_SCOPUS": {
+  "status": "OK",
+  "bytes": 1459832,
+  "url": "https://doi.org/10.22364/bjmc.2025.13.1.03"
+ },
+ "921_SCOPUS": {
+  "status": "OK",
+  "bytes": 2718405,
+  "url": "https://arxiv.org/pdf/2511.05165"
+ },
+ "925_SCOPUS": {
+  "status": "OK",
+  "bytes": 263134,
+  "url": "https://arxiv.org/pdf/2511.22409"
+ },
+ "927_SCOPUS": {
+  "status": "OK",
+  "bytes": 663140,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S187705092602168X-main (1).pdf",
+  "via": "acervo_local_title"
+ },
+ "936_SCOPUS": {
+  "status": "OK",
+  "bytes": 594152,
+  "url": "http://www.jot.fm/issues/issue_2025_02/a14.pdf"
+ },
+ "938_SCOPUS": {
+  "status": "OK",
+  "bytes": 3197318,
+  "url": "https://link.springer.com/content/pdf/10.1007/s44163-026-01363-4.pdf"
+ },
+ "941_SCOPUS": {
+  "status": "OK",
+  "bytes": 1787388,
+  "url": "https://ris.utwente.nl/ws/files/496461589/134819.pdf"
+ },
+ "944_SCOPUS": {
+  "status": "OK",
+  "bytes": 548484,
+  "url": "/home/helaine-barreiros/Downloads/007_O’Neill_BCSHCI24.pdf",
+  "via": "acervo_local_doi"
+ },
+ "946_SCOPUS": {
+  "status": "OK",
+  "bytes": 2654504,
+  "url": "https://link.springer.com/content/pdf/10.1007/978-3-032-26204-2_11.pdf"
+ },
+ "955_SCOPUS": {
+  "status": "OK",
+  "bytes": 1007301,
+  "url": "https://aclanthology.org/2025.naacl-long.180.pdf"
+ },
+ "958_SCOPUS": {
+  "status": "OK",
+  "bytes": 3261215,
+  "url": "/home/helaine-barreiros/Downloads/information-16-00565 (1).pdf",
+  "via": "acervo_local_doi"
+ },
+ "964_SCOPUS": {
+  "status": "OK",
+  "bytes": 1058723,
+  "url": "https://www.mecs-press.org/ijwmt/ijwmt-v16-n3/IJWMT-V16-N3-8.pdf",
+  "via": "retry_headers"
+ },
+ "975_SCOPUS": {
+  "status": "OK",
+  "bytes": 521914,
+  "url": "/home/helaine-barreiros/Downloads/IET Software - 2025 - Li - Enhancing Requirements via Structured Formalization and Process%E2%80%90State Consistency Validation  An (1).pdf",
+  "via": "acervo_local_doi"
+ },
+ "976_SCOPUS": {
+  "status": "OK",
+  "bytes": 1689777,
+  "url": "https://link.springer.com/content/pdf/10.1007/s10270-023-01105-5.pdf"
+ },
+ "027_ACM": {
+  "status": "OK",
+  "bytes": 98137683,
+  "url": "/home/helaine-barreiros/Downloads/3744920.pdf",
+  "via": "acervo_local_doi"
+ },
+ "061_ACM": {
+  "status": "OK",
+  "bytes": 971444,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3687807.pdf",
+  "via": "acervo_local_doi"
+ },
+ "077_ACM": {
+  "status": "OK",
+  "bytes": 2154631,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part5_pdf/10_1145_3652620_3687773.pdf",
+  "via": "acervo_local_doi"
+ },
+ "105_ACM": {
+  "status": "OK",
+  "bytes": 867080,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3687810.pdf",
+  "via": "acervo_local_doi"
+ },
+ "121_ACM": {
+  "status": "OK",
+  "bytes": 2886634,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_conference_pdfs/Text2VQL Teaching a Model Query Language to Open-Source Language Models with ChatGPT.pdf",
+  "via": "acervo_local_title"
+ },
+ "141_ACM": {
+  "status": "OK",
+  "bytes": 617959,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3687803.pdf",
+  "via": "acervo_local_doi"
+ },
+ "182_ACM": {
+  "status": "OK",
+  "bytes": 2208052,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_conference_pdfs/Toward Intelligent Generation of Tailored Graphical Concrete Syntax.pdf",
+  "via": "acervo_local_title"
+ },
+ "215_ACM": {
+  "status": "OK",
+  "bytes": 1239899,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_conference_pdfs/AI-Driven Consistency of SysML Diagrams.pdf",
+  "via": "acervo_local_doi"
+ },
+ "222_ACM": {
+  "status": "OK",
+  "bytes": 724803,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3687808.pdf",
+  "via": "acervo_local_doi"
+ },
+ "296_ACM": {
+  "status": "OK",
+  "bytes": 837030,
+  "url": "/home/helaine-barreiros/Downloads/models_2020_companion_part2_pdf/10_1145_3417990_3421438.pdf",
+  "via": "acervo_local_doi"
+ },
+ "379_ACM": {
+  "status": "OK",
+  "bytes": 913518,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3688252.pdf",
+  "via": "acervo_local_doi"
+ },
+ "393_ACM": {
+  "status": "OK",
+  "bytes": 482648,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part5_pdf/10_1145_3652620_3688202.pdf",
+  "via": "acervo_local_doi"
+ },
+ "405_ACM": {
+  "status": "OK",
+  "bytes": 983555,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3688260.pdf",
+  "via": "acervo_local_title"
+ },
+ "415_ACM": {
+  "status": "OK",
+  "bytes": 2523003,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3686248.pdf",
+  "via": "acervo_local_title"
+ },
+ "432_ACM": {
+  "status": "OK",
+  "bytes": 911966,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3688262.pdf",
+  "via": "acervo_local_doi"
+ },
+ "542_IEEE": {
+  "status": "OK",
+  "bytes": 676482,
+  "url": "/home/helaine-barreiros/Downloads/3721201.3725513.pdf",
+  "via": "acervo_local_title"
+ },
+ "705_IEEE": {
+  "status": "OK",
+  "bytes": 727616,
+  "url": "/home/helaine-barreiros/Downloads/3643657.3643910.pdf",
+  "via": "acervo_local_title"
+ },
+ "760_SCOPUS": {
+  "status": "OK",
+  "bytes": 757785,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/AUG an Interactive Tool for Clarifying and Generating UML Models Based on Large Language Models.pdf",
+  "via": "acervo_local_doi"
+ },
+ "828_SCOPUS": {
+  "status": "OK",
+  "bytes": 366109,
+  "url": "/home/helaine-barreiros/Downloads/3696630.3730562.pdf",
+  "via": "acervo_local_title"
+ },
+ "842_SCOPUS": {
+  "status": "OK",
+  "bytes": 1057679,
+  "url": "/home/helaine-barreiros/Downloads/3652620.3676877.pdf",
+  "via": "acervo_local_title"
+ },
+ "850_SCOPUS": {
+  "status": "OK",
+  "bytes": 348375,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/Semantic Relation Extraction for Use Case Modeling A PlantUML-based Automation Framework.pdf",
+  "via": "acervo_local_title"
+ },
+ "896_SCOPUS": {
+  "status": "OK",
+  "bytes": 6069861,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part5_pdf/10_1145_3652620_3687776.pdf",
+  "via": "acervo_local_title"
+ },
+ "898_SCOPUS": {
+  "status": "OK",
+  "bytes": 503911,
+  "url": "/home/helaine-barreiros/Downloads/esem_2024_part2_pdf/10_1145_3674805_3690741.pdf",
+  "via": "acervo_local_doi"
+ },
+ "912_SCOPUS": {
+  "status": "OK",
+  "bytes": 214042,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/Leveraging Language Models for Automated Requirements to Design Transformation in MDA.pdf",
+  "via": "acervo_local_doi"
+ },
+ "930_SCOPUS": {
+  "status": "OK",
+  "bytes": 558757,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/Generative AI for Diagrams as Code and Code as Diagrams.pdf",
+  "via": "acervo_local_doi"
+ },
+ "942_SCOPUS": {
+  "status": "OK",
+  "bytes": 787233,
+  "url": "/home/helaine-barreiros/Downloads/3640310.3674081.pdf",
+  "via": "acervo_local_doi"
+ },
+ "951_SCOPUS": {
+  "status": "OK",
+  "bytes": 584909,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/AI - Driven Automated UML Modeling Framework Design and Practice.pdf",
+  "via": "acervo_local_title"
+ },
+ "961_SCOPUS": {
+  "status": "OK",
+  "bytes": 1885999,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part5_pdf/A RAG-based Feedback Tool to Augment UML Class Diagram Learning.pdf",
+  "via": "acervo_local_doi"
+ },
+ "974_SCOPUS": {
+  "status": "OK",
+  "bytes": 1168408,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/LLM-based Iterative Approach to Metamodeling in Automotive.pdf",
+  "via": "acervo_local_title"
+ },
+ "496_IEEE": {
+  "status": "OK",
+  "bytes": 7424635,
+  "url": "/home/helaine-barreiros/Downloads/From_Natural-Language_Description_to_Formalization_Capturing_Human-Centered_Social_Design_Intentions_in_BIM_using_Large_Language_Models.pdf",
+  "via": "indicado_usuario"
+ },
+ "739_SCOPUS": {
+  "status": "OK",
+  "bytes": 6267077,
+  "url": "/home/helaine-barreiros/Downloads/127124.pdf",
+  "via": "indicado_usuario"
+ },
+ "751_SCOPUS": {
+  "status": "OK",
+  "bytes": 262736,
+  "url": "/home/helaine-barreiros/Downloads/126232.pdf",
+  "via": "indicado_usuario"
+ },
+ "755_SCOPUS": {
+  "status": "OK",
+  "bytes": 1000065,
+  "url": "/home/helaine-barreiros/Downloads/a29.pdf",
+  "via": "indicado_usuario"
+ },
+ "762_SCOPUS": {
+  "status": "OK",
+  "bytes": 267405,
+  "url": "/home/helaine-barreiros/Downloads/142493.pdf",
+  "via": "indicado_usuario"
+ },
+ "773_SCOPUS": {
+  "status": "OK",
+  "bytes": 252683,
+  "url": "/home/helaine-barreiros/Downloads/131030.pdf",
+  "via": "indicado_usuario"
+ },
+ "836_SCOPUS": {
+  "status": "OK",
+  "bytes": 288977,
+  "url": "/home/helaine-barreiros/Downloads/2025_Otto-etal_Code-and-test-generation-for-I4.0-state-machines.pdf",
+  "via": "indicado_usuario"
+ },
+ "852_SCOPUS": {
+  "status": "OK",
+  "bytes": 422985,
+  "url": "/home/helaine-barreiros/Downloads/144023.pdf",
+  "via": "indicado_usuario"
+ },
+ "860_SCOPUS": {
+  "status": "OK",
+  "bytes": 3832963,
+  "url": "/home/helaine-barreiros/Downloads/An_Educational_Dialogue_System_for_Visually_Impaired_People.pdf",
+  "via": "indicado_usuario"
+ },
+ "883_SCOPUS": {
+  "status": "OK",
+  "bytes": 558292,
+  "url": "/home/helaine-barreiros/Downloads/yang-et-al-2026-ai-driven-patient-centered-care-a-digital-transformation-framework-for-gynecologic-cancer-genetic.pdf",
+  "via": "indicado_usuario"
+ },
+ "884_SCOPUS": {
+  "status": "OK",
+  "bytes": 1308995,
+  "url": "/home/helaine-barreiros/Downloads/123561.pdf",
+  "via": "indicado_usuario"
+ },
+ "890_SCOPUS": {
+  "status": "OK",
+  "bytes": 335939,
+  "url": "/home/helaine-barreiros/Downloads/145696.pdf",
+  "via": "indicado_usuario"
+ },
+ "892_SCOPUS": {
+  "status": "OK",
+  "bytes": 331840,
+  "url": "/home/helaine-barreiros/Downloads/IEEESoft2024_AuthorVersion.pdf",
+  "via": "indicado_usuario"
+ },
+ "895_SCOPUS": {
+  "status": "OK",
+  "bytes": 1513435,
+  "url": "/home/helaine-barreiros/Downloads/A closer look at ChatGPT s role in concept map generation for education.pdf",
+  "via": "indicado_usuario"
+ },
+ "947_SCOPUS": {
+  "status": "OK",
+  "bytes": 2423526,
+  "url": "/home/helaine-barreiros/Downloads/BDCC-10-00002.pdf",
+  "via": "indicado_usuario"
+ },
+ "971_SCOPUS": {
+  "status": "OK",
+  "bytes": 869267,
+  "url": "/home/helaine-barreiros/Downloads/144675.pdf",
+  "via": "indicado_usuario"
+ },
+ "983_SCOPUS": {
+  "status": "OK",
+  "bytes": 974650,
+  "url": "/home/helaine-barreiros/Downloads/2025_AssessingSuitabilityofLLMsforUMLCDGeneration.pdf",
+  "via": "indicado_usuario"
+ },
+ "940_SCOPUS": {
+  "status": "OK",
+  "bytes": 2365966,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S2352340926005123-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "032_ACM": {
+  "status": "OK",
+  "bytes": 1057679,
+  "url": "/home/helaine-barreiros/Downloads/3652620.3676877.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "590_IEEE": {
+  "status": "OK",
+  "bytes": 3832963,
+  "url": "/home/helaine-barreiros/Downloads/An_Educational_Dialogue_System_for_Visually_Impaired_People.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "554_IEEE": {
+  "status": "OK",
+  "bytes": 288977,
+  "url": "/home/helaine-barreiros/Downloads/2025_Otto-etal_Code-and-test-generation-for-I4.0-state-machines.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "102_ACM": {
+  "status": "OK",
+  "bytes": 366109,
+  "url": "/home/helaine-barreiros/Downloads/3696630.3730562.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "002_ACM": {
+  "status": "OK",
+  "bytes": 787233,
+  "url": "/home/helaine-barreiros/Downloads/3640310.3674081.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "290_ACM": {
+  "status": "OK",
+  "bytes": 1009487,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part3_pdf/10_1145_3652620_3687778.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "004_ACM": {
+  "status": "OK",
+  "bytes": 503911,
+  "url": "/home/helaine-barreiros/Downloads/esem_2024_part2_pdf/10_1145_3674805_3690741.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "483_IEEE": {
+  "status": "OK",
+  "bytes": 757785,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/AUG an Interactive Tool for Clarifying and Generating UML Models Based on Large Language Models.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "603_IEEE": {
+  "status": "OK",
+  "bytes": 558757,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/Generative AI for Diagrams as Code and Code as Diagrams.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "504_IEEE": {
+  "status": "OK",
+  "bytes": 214042,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/Leveraging Language Models for Automated Requirements to Design Transformation in MDA.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "456_IEEE": {
+  "status": "OK",
+  "bytes": 348375,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/Semantic Relation Extraction for Use Case Modeling A PlantUML-based Automation Framework.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "478_IEEE": {
+  "status": "OK",
+  "bytes": 584909,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/AI - Driven Automated UML Modeling Framework Design and Practice.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "519_IEEE": {
+  "status": "OK",
+  "bytes": 1168408,
+  "url": "/home/helaine-barreiros/Downloads/bulk-download (4)/LLM-based Iterative Approach to Metamodeling in Automotive.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "011_ACM": {
+  "status": "OK",
+  "bytes": 1885999,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part5_pdf/A RAG-based Feedback Tool to Augment UML Class Diagram Learning.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "178_ACM": {
+  "status": "OK",
+  "bytes": 6069861,
+  "url": "/home/helaine-barreiros/Downloads/models_2024_companion_part5_pdf/10_1145_3652620_3687776.pdf",
+  "via": "acervo_local_titulo"
+ },
+ "781_SCOPUS": {
+  "status": "OK",
+  "bytes": 1567733,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S1389041724000949-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "813_SCOPUS": {
+  "status": "OK",
+  "bytes": 3233803,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S2666827026001052-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "814_SCOPUS": {
+  "status": "OK",
+  "bytes": 4501369,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S2542660525001623-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "891_SCOPUS": {
+  "status": "OK",
+  "bytes": 3696905,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S2666920X26000366-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "906_SCOPUS": {
+  "status": "OK",
+  "bytes": 1068551,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S1877050924026176-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "909_SCOPUS": {
+  "status": "OK",
+  "bytes": 3078615,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S2352711026002815-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "937_SCOPUS": {
+  "status": "OK",
+  "bytes": 26645081,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S016412122600107X-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "911_SCOPUS": {
+  "status": "OK",
+  "bytes": 667209,
+  "url": "/home/helaine-barreiros/Downloads/1-s2.0-S1877050925031138-main.pdf",
+  "via": "indicado_usuario"
+ },
+ "665_IEEE": {
+  "status": "OK_REPOSITORY_SUBSTITUIR",
+  "bytes": 703529,
+  "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11049250",
+  "via": "indicado_usuario"
+ },
+ "642_IEEE": {
+  "status": "OK_REPOSITORY_SUBSTITUIR",
+  "bytes": 378621,
+  "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9598957",
+  "via": "indicado_usuario"
+ },
+ "518_IEEE": {
+  "status": "OK_REPOSITORY_SUBSTITUIR",
+  "bytes": 1874959,
+  "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10741141",
+  "via": "indicado_usuario"
+ },
+ "566_IEEE": {
+  "status": "OK_REPOSITORY_SUBSTITUIR",
+  "bytes": 1088905,
+  "url": "https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10757391",
+  "via": "indicado_usuario"
+ },
+ "037_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2722308,
+  "url": "https://doi.org/10.1145/3760545.3783970",
+  "via": "indicado_usuario"
+ },
+ "029_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3753407,
+  "url": "https://doi.org/10.1145/3797115",
+  "via": "indicado_usuario"
+ },
+ "028_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3568194,
+  "url": "https://doi.org/10.1145/3811427.3811441",
+  "via": "indicado_usuario"
+ },
+ "855_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3568194,
+  "url": "https://www.scopus.com/pages/publications/105043970909?origin=resultslist",
+  "via": "indicado_usuario"
+ },
+ "019_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1933776,
+  "url": "https://doi.org/10.1145/3797091",
+  "via": "indicado_usuario"
+ },
+ "012_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1664725,
+  "url": "https://doi.org/10.1145/3794763.3794819",
+  "via": "indicado_usuario"
+ },
+ "010_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 763490,
+  "url": "https://doi.org/10.1145/3779208.3785383",
+  "via": "indicado_usuario"
+ },
+ "008_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 664395,
+  "url": "https://doi.org/10.1145/3803437.3805203",
+  "via": "indicado_usuario"
+ },
+ "003_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 970762,
+  "url": "https://doi.org/10.1145/3786146.3788643",
+  "via": "indicado_usuario"
+ },
+ "749_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 970762,
+  "url": "https://www.scopus.com/pages/publications/105044084523?origin=resultslist",
+  "via": "indicado_usuario"
+ },
+ "001_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1261757,
+  "url": "https://doi.org/10.1145/3796315.3796330",
+  "via": "indicado_usuario"
+ },
+ "062_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2046950,
+  "url": "https://doi.org/10.1145/3770762.3772548",
+  "via": "navegador_manual"
+ },
+ "065_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 813526,
+  "url": "https://doi.org/10.1145/3820355.3820384",
+  "via": "navegador_manual"
+ },
+ "068_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 667435,
+  "url": "https://doi.org/10.1145/3786228.3786241",
+  "via": "navegador_manual"
+ },
+ "854_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 667435,
+  "url": "https://doi.org/10.1145/3786228.3786241",
+  "via": "navegador_manual"
+ },
+ "072_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 887119,
+  "url": "https://doi.org/10.1145/3774816.3774844",
+  "via": "navegador_manual"
+ },
+ "086_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 610174,
+  "url": "https://doi.org/10.1145/3786152.3788588",
+  "via": "navegador_manual"
+ },
+ "089_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 625100,
+  "url": "https://doi.org/10.1145/3723010.3723012",
+  "via": "navegador_manual"
+ },
+ "090_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 13256496,
+  "url": "https://doi.org/10.1145/3797106",
+  "via": "navegador_manual"
+ },
+ "093_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1199066,
+  "url": "https://doi.org/10.1145/3786580.3786985",
+  "via": "navegador_manual"
+ },
+ "765_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1199066,
+  "url": "https://doi.org/10.1145/3786580.3786985",
+  "via": "navegador_manual"
+ },
+ "094_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 631437,
+  "url": "https://doi.org/10.1145/3806383.3815518",
+  "via": "navegador_manual"
+ },
+ "103_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1172547,
+  "url": "https://doi.org/10.1145/3772318.3791087",
+  "via": "navegador_manual"
+ },
+ "059_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 678964,
+  "url": "https://doi.org/10.1145/3744200.3744763",
+  "via": "navegador_manual"
+ },
+ "058_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 503220,
+  "url": "https://doi.org/10.1145/3754508.3754517",
+  "via": "navegador_manual"
+ },
+ "057_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2179018,
+  "url": "https://doi.org/10.1145/3805622.3810797",
+  "via": "navegador_manual"
+ },
+ "819_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2179018,
+  "url": "https://doi.org/10.1145/3805622.3810797",
+  "via": "navegador_manual"
+ },
+ "055_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1637390,
+  "url": "https://doi.org/10.1145/3773966.3777934",
+  "via": "navegador_manual"
+ },
+ "048_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 656232,
+  "url": "https://doi.org/10.1145/3754508.3754513",
+  "via": "navegador_manual"
+ },
+ "047_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3486956,
+  "url": "https://doi.org/10.1145/3756681.3756992",
+  "via": "navegador_manual"
+ },
+ "044_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3752567,
+  "url": "https://doi.org/10.1145/3802095",
+  "via": "navegador_manual"
+ },
+ "043_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 812050,
+  "url": "https://doi.org/10.1145/3786580.3786962",
+  "via": "navegador_manual"
+ },
+ "041_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 432844,
+  "url": "https://doi.org/10.1145/3786182.3788309",
+  "via": "navegador_manual"
+ },
+ "020_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 15176405,
+  "url": "https://doi.org/10.1145/3785143",
+  "via": "navegador_manual"
+ },
+ "119_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 583689,
+  "url": "https://doi.org/10.1145/3663529.3663779",
+  "via": "navegador_manual"
+ },
+ "129_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2013474,
+  "url": "https://doi.org/10.1145/3756681.3756993",
+  "via": "navegador_manual"
+ },
+ "122_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 818750,
+  "url": "https://doi.org/10.1145/3786151.3788601",
+  "via": "navegador_manual"
+ },
+ "128_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 881170,
+  "url": "https://doi.org/10.1145/3816433",
+  "via": "navegador_manual"
+ },
+ "106_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 676167,
+  "url": "https://doi.org/10.1145/3795154.3795362",
+  "via": "navegador_manual"
+ },
+ "412_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 659570,
+  "url": "https://doi.org/10.1145/3736130.3764512",
+  "via": "navegador_manual"
+ },
+ "428_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 935445,
+  "url": "https://doi.org/10.1145/3675888.3676064",
+  "via": "navegador_manual"
+ },
+ "426_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2086978,
+  "url": "https://doi.org/10.1145/3748699.3749778",
+  "via": "navegador_manual"
+ },
+ "414_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 11915050,
+  "url": "https://doi.org/10.1145/3786159.3788474",
+  "via": "navegador_manual"
+ },
+ "144_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 982073,
+  "url": "https://doi.org/10.1145/3769994.3770042",
+  "via": "navegador_manual"
+ },
+ "147_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1003449,
+  "url": "https://doi.org/10.1145/3773274.3774926",
+  "via": "navegador_manual"
+ },
+ "153_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 6319034,
+  "url": "https://doi.org/10.1145/3673764",
+  "via": "navegador_manual"
+ },
+ "154_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 741574,
+  "url": "https://doi.org/10.1145/3803846.3807460",
+  "via": "navegador_manual"
+ },
+ "155_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 43236664,
+  "url": "https://doi.org/10.1145/3766895",
+  "via": "navegador_manual"
+ },
+ "131_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 5264525,
+  "url": "https://doi.org/10.1145/3786161.3788461",
+  "via": "navegador_manual"
+ },
+ "856_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 5264525,
+  "url": "https://doi.org/10.1145/3786161.3788461",
+  "via": "navegador_manual"
+ },
+ "132_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 15242553,
+  "url": "https://doi.org/10.1145/3805803",
+  "via": "navegador_manual"
+ },
+ "137_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2135832,
+  "url": "https://doi.org/10.1145/3786175.3788350",
+  "via": "navegador_manual"
+ },
+ "139_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 634087,
+  "url": "https://doi.org/10.1145/3793654.3793757",
+  "via": "navegador_manual"
+ },
+ "140_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1537503,
+  "url": "https://doi.org/10.1145/3770855.3817570",
+  "via": "navegador_manual"
+ },
+ "157_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 6284246,
+  "url": "https://doi.org/10.1145/3788851.3805008",
+  "via": "navegador_manual"
+ },
+ "161_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2238256,
+  "url": "https://doi.org/10.1145/3779212.3790152",
+  "via": "navegador_manual"
+ },
+ "167_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2336290,
+  "url": "https://doi.org/10.1145/3799897",
+  "via": "navegador_manual"
+ },
+ "168_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2215312,
+  "url": "https://doi.org/10.1145/3772318.3790408",
+  "via": "navegador_manual"
+ },
+ "169_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 5320602,
+  "url": "https://doi.org/10.1145/3806789.3810262",
+  "via": "navegador_manual"
+ },
+ "171_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 513442,
+  "url": "https://doi.org/10.1145/3696630.3728593",
+  "via": "navegador_manual"
+ },
+ "173_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 882940,
+  "url": "https://doi.org/10.1145/3797092",
+  "via": "navegador_manual"
+ },
+ "174_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 4315647,
+  "url": "https://doi.org/10.1145/3778534.3778592",
+  "via": "navegador_manual"
+ },
+ "180_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1350776,
+  "url": "https://doi.org/10.1145/3794860.3794894",
+  "via": "navegador_manual"
+ },
+ "184_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1427956,
+  "url": "https://doi.org/10.1145/3770855.3817571",
+  "via": "navegador_manual"
+ },
+ "188_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1480554,
+  "url": "https://doi.org/10.1145/3805622.3810644",
+  "via": "navegador_manual"
+ },
+ "191_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 953743,
+  "url": "https://doi.org/10.1145/3786335.3813160",
+  "via": "navegador_manual"
+ },
+ "218_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1005797,
+  "url": "https://doi.org/10.1145/3724363.3729070",
+  "via": "navegador_manual"
+ },
+ "219_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1176920,
+  "url": "https://doi.org/10.1145/3805622.3810767",
+  "via": "navegador_manual"
+ },
+ "226_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 430568,
+  "url": "https://doi.org/10.1145/3802607.3802620",
+  "via": "navegador_manual"
+ },
+ "231_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 6095644,
+  "url": "https://doi.org/10.1145/3777730.3777737",
+  "via": "navegador_manual"
+ },
+ "236_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1135241,
+  "url": "https://doi.org/10.1145/3772318.3790757",
+  "via": "navegador_manual"
+ },
+ "237_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 861551,
+  "url": "https://doi.org/10.1145/3786582.3786831",
+  "via": "navegador_manual"
+ },
+ "240_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 15012260,
+  "url": "https://doi.org/10.1145/3772318.3791514",
+  "via": "navegador_manual"
+ },
+ "242_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 836746,
+  "url": "https://doi.org/10.1145/3803437.3805794",
+  "via": "navegador_manual"
+ },
+ "243_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 7038799,
+  "url": "https://doi.org/10.1145/3759023.3759115",
+  "via": "navegador_manual"
+ },
+ "248_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 546377,
+  "url": "https://doi.org/10.1145/3769994.3770025",
+  "via": "navegador_manual"
+ },
+ "250_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 552410,
+  "url": "https://doi.org/10.1145/3774816.3774838",
+  "via": "navegador_manual"
+ },
+ "253_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1085168,
+  "url": "https://doi.org/10.1145/3723010.3723021",
+  "via": "navegador_manual"
+ },
+ "254_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 952213,
+  "url": "https://doi.org/10.1145/3770762.3772641",
+  "via": "navegador_manual"
+ },
+ "261_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1910581,
+  "url": "https://doi.org/10.1145/3797069",
+  "via": "navegador_manual"
+ },
+ "262_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 612606,
+  "url": "https://doi.org/10.1145/3727967.3756830",
+  "via": "navegador_manual"
+ },
+ "265_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1351270,
+  "url": "https://doi.org/10.1145/3803401.3811979",
+  "via": "navegador_manual"
+ },
+ "194_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 255620,
+  "url": "https://doi.org/10.1145/3802463.3802479",
+  "via": "navegador_manual"
+ },
+ "203_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 639504,
+  "url": "https://doi.org/10.1145/3725783.3764388",
+  "via": "navegador_manual"
+ },
+ "271_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 50465786,
+  "url": "https://doi.org/10.1145/3731559",
+  "via": "navegador_manual"
+ },
+ "280_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 865672,
+  "url": "https://doi.org/10.1145/3803401.3811964",
+  "via": "navegador_manual"
+ },
+ "283_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 156523830,
+  "url": "https://doi.org/10.1145/3771557",
+  "via": "navegador_manual"
+ },
+ "284_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1135616,
+  "url": "https://doi.org/10.1145/3772052.3772207",
+  "via": "navegador_manual"
+ },
+ "285_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1300416,
+  "url": "https://doi.org/10.1145/3716368.3735168",
+  "via": "navegador_manual"
+ },
+ "289_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 849016,
+  "url": "https://doi.org/10.1145/3797261",
+  "via": "navegador_manual"
+ },
+ "293_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 496724,
+  "url": "https://doi.org/10.1145/3804601.3804680",
+  "via": "navegador_manual"
+ },
+ "304_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 4240467,
+  "url": "https://doi.org/10.1145/3706598.3714054",
+  "via": "navegador_manual"
+ },
+ "309_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 10864303,
+  "url": "https://doi.org/10.1145/3772318.3791534",
+  "via": "navegador_manual"
+ },
+ "310_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2859861,
+  "url": "https://doi.org/10.1145/3774521.3774604",
+  "via": "navegador_manual"
+ },
+ "312_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 659431,
+  "url": "https://doi.org/10.1145/3786580.3786969",
+  "via": "navegador_manual"
+ },
+ "315_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 7561917,
+  "url": "https://doi.org/10.1145/3816419",
+  "via": "navegador_manual"
+ },
+ "317_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 4504538,
+  "url": "https://doi.org/10.1145/3772318.3790966",
+  "via": "navegador_manual"
+ },
+ "319_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 788938,
+  "url": "https://doi.org/10.1145/3744915.3748467",
+  "via": "navegador_manual"
+ },
+ "321_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3519506,
+  "url": "https://doi.org/10.1145/3675888.3676142",
+  "via": "navegador_manual"
+ },
+ "323_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1019781,
+  "url": "https://doi.org/10.1145/3793655.3793717",
+  "via": "navegador_manual"
+ },
+ "335_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 305729,
+  "url": "https://doi.org/10.1145/3806980.3807159",
+  "via": "navegador_manual"
+ },
+ "337_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 413213,
+  "url": "https://doi.org/10.1145/3785987.3786029",
+  "via": "navegador_manual"
+ },
+ "338_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 290752,
+  "url": "https://doi.org/10.1145/3696009",
+  "via": "navegador_manual"
+ },
+ "343_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2029357,
+  "url": "https://doi.org/10.1145/3816440.3818602",
+  "via": "navegador_manual"
+ },
+ "344_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1824033,
+  "url": "https://doi.org/10.1145/3816770",
+  "via": "navegador_manual"
+ },
+ "346_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 652929,
+  "url": "https://doi.org/10.1145/3801228.3801231",
+  "via": "navegador_manual"
+ },
+ "348_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2048117,
+  "url": "https://doi.org/10.1145/3742413.3789116",
+  "via": "navegador_manual"
+ },
+ "356_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 4429059,
+  "url": "https://doi.org/10.1145/3772318.3791718",
+  "via": "navegador_manual"
+ },
+ "361_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1257359,
+  "url": "https://doi.org/10.1145/3786167.3788415",
+  "via": "navegador_manual"
+ },
+ "363_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 7886936,
+  "url": "https://doi.org/10.1145/3793655.3793729",
+  "via": "navegador_manual"
+ },
+ "364_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1548608,
+  "url": "https://doi.org/10.1145/3805760.3814893",
+  "via": "navegador_manual"
+ },
+ "366_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1703079,
+  "url": "https://doi.org/10.1145/3731599.3767592",
+  "via": "navegador_manual"
+ },
+ "385_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1064191,
+  "url": "https://doi.org/10.1145/3761668.3761688",
+  "via": "navegador_manual"
+ },
+ "408_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 5998046,
+  "url": "https://doi.org/10.1145/3733155.3733198",
+  "via": "navegador_manual"
+ },
+ "409_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 594677,
+  "url": "https://doi.org/10.1145/3386164.3387296",
+  "via": "navegador_manual"
+ },
+ "318_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2143589,
+  "url": "https://doi.org/10.1145/3706598.3713606",
+  "via": "navegador_manual"
+ },
+ "347_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 4932365,
+  "url": "https://doi.org/10.1145/3701551.3704125",
+  "via": "navegador_manual"
+ },
+ "486_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 4218938,
+  "url": "https://doi.org/10.1109/access.2024.3464242",
+  "via": "navegador_manual"
+ },
+ "493_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 11816329,
+  "url": "https://doi.org/10.1109/access.2025.3620431",
+  "via": "navegador_manual"
+ },
+ "499_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 8444026,
+  "url": "https://doi.org/10.1109/access.2025.3586554",
+  "via": "navegador_manual"
+ },
+ "511_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1885589,
+  "url": "https://doi.org/10.1109/access.2026.3657407",
+  "via": "navegador_manual"
+ },
+ "517_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1694749,
+  "url": "https://doi.org/10.1109/access.2026.3662817",
+  "via": "navegador_manual"
+ },
+ "530_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 5009066,
+  "url": "https://doi.org/10.1109/access.2025.3635218",
+  "via": "navegador_manual"
+ },
+ "553_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2633078,
+  "url": "https://doi.org/10.1109/access.2025.3614174",
+  "via": "navegador_manual"
+ },
+ "557_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2010396,
+  "url": "https://doi.org/10.1109/access.2024.3472500",
+  "via": "navegador_manual"
+ },
+ "627_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1155890,
+  "url": "https://doi.org/10.1109/access.2025.3564133",
+  "via": "navegador_manual"
+ },
+ "636_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1575335,
+  "url": "https://doi.org/10.1109/access.2025.3538803",
+  "via": "navegador_manual"
+ },
+ "652_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 12079299,
+  "url": "https://doi.org/10.1109/access.2025.3642232",
+  "via": "navegador_manual"
+ },
+ "672_IEEE": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1591377,
+  "url": "https://doi.org/10.1109/access.2025.3563337",
+  "via": "navegador_manual"
+ },
+ "787_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 985559,
+  "url": "https://doi.org/10.1145/3770762.3772551",
+  "via": "navegador_manual"
+ },
+ "845_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3402856,
+  "url": "https://doi.org/10.1145/3691620.3695336",
+  "via": "navegador_manual"
+ },
+ "897_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1678067,
+  "url": "https://doi.org/10.1145/3724363.3729056",
+  "via": "navegador_manual"
+ },
+ "013_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 38218061,
+  "url": "https://doi.org/10.1145/3735553",
+  "via": "capes_navegador"
+ },
+ "014_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1036600,
+  "url": "https://doi.org/10.1145/3704289.3704296",
+  "via": "capes_navegador"
+ },
+ "016_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 737698,
+  "url": "https://doi.org/10.1145/3711403.3711410",
+  "via": "capes_navegador"
+ },
+ "021_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 23932383,
+  "url": "https://doi.org/10.1145/3786334",
+  "via": "capes_navegador"
+ },
+ "031_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 5245636,
+  "url": "https://doi.org/10.1145/3796507",
+  "via": "capes_navegador"
+ },
+ "033_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2347377,
+  "url": "https://doi.org/10.1145/3664647.3681327",
+  "via": "capes_navegador"
+ },
+ "038_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 827377,
+  "url": "https://doi.org/10.1145/3786771",
+  "via": "capes_navegador"
+ },
+ "052_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 751462,
+  "url": "https://doi.org/10.1145/3788149.3788219",
+  "via": "capes_navegador"
+ },
+ "053_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2940578,
+  "url": "https://doi.org/10.1145/3712005",
+  "via": "capes_navegador"
+ },
+ "056_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 27257796,
+  "url": "https://doi.org/10.1145/3744660",
+  "via": "capes_navegador"
+ },
+ "115_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2936529,
+  "url": "https://doi.org/10.1145/3817056",
+  "via": "capes_navegador"
+ },
+ "118_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 14827596,
+  "url": "https://doi.org/10.1145/3765758",
+  "via": "capes_navegador"
+ },
+ "123_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 82457401,
+  "url": "https://doi.org/10.1145/3702987",
+  "via": "capes_navegador"
+ },
+ "126_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1065862,
+  "url": "https://doi.org/10.1145/3625223.3649280",
+  "via": "capes_navegador"
+ },
+ "127_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 704451,
+  "url": "https://doi.org/10.1145/3797276",
+  "via": "capes_navegador"
+ },
+ "220_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 14246723,
+  "url": "https://doi.org/10.1145/3628162",
+  "via": "capes_navegador"
+ },
+ "223_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 433991,
+  "url": "https://doi.org/10.1145/3696630.3730538",
+  "via": "capes_navegador"
+ },
+ "229_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1389023,
+  "url": "https://doi.org/10.1145/3816152",
+  "via": "capes_navegador"
+ },
+ "238_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1950799,
+  "url": "https://doi.org/10.1145/3800580",
+  "via": "capes_navegador"
+ },
+ "239_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1121616,
+  "url": "https://doi.org/10.1145/3701551.3708812",
+  "via": "capes_navegador"
+ },
+ "245_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1051859,
+  "url": "https://doi.org/10.1145/3641555.3705245",
+  "via": "capes_navegador"
+ },
+ "247_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 6811101,
+  "url": "https://doi.org/10.1145/3654777.3676357",
+  "via": "capes_navegador"
+ },
+ "256_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 478785,
+  "url": "https://doi.org/10.1145/3789595.3789621",
+  "via": "capes_navegador"
+ },
+ "258_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 525164,
+  "url": "https://doi.org/10.1145/3796535",
+  "via": "capes_navegador"
+ },
+ "264_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1099081,
+  "url": "https://doi.org/10.1145/3715003",
+  "via": "capes_navegador"
+ },
+ "268_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1757473,
+  "url": "https://doi.org/10.1145/3627673.3679671",
+  "via": "capes_navegador"
+ },
+ "277_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 13129025,
+  "url": "https://doi.org/10.1145/3733234",
+  "via": "capes_navegador"
+ },
+ "278_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 753593,
+  "url": "https://doi.org/10.1145/3696630.3727247",
+  "via": "capes_navegador"
+ },
+ "279_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3690231,
+  "url": "https://doi.org/10.1145/3708557.3716327",
+  "via": "capes_navegador"
+ },
+ "281_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1193588,
+  "url": "https://doi.org/10.1145/3365438.3410941",
+  "via": "capes_navegador"
+ },
+ "949_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2563735,
+  "url": "https://doi.org/10.1007/s10515-025-00587-5",
+  "via": "capes_navegador"
+ },
+ "420_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 118782,
+  "url": "https://doi.org/10.1162/coli.2003.29.2.328",
+  "via": "capes_navegador"
+ },
+ "861_SCOPUS": {
+  "via": "arxiv_api",
+  "url": "https://arxiv.org/pdf/2412.17200v4",
+  "arquivo": "861_SCOPUS.pdf",
+  "versao": "preprint v4"
+ },
+ "063_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 5595918,
+  "url": "https://doi.org/10.1145/3695988",
+  "via": "capes_navegador"
+ },
+ "075_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2555286,
+  "url": "https://doi.org/10.1145/3802133.3802306",
+  "via": "capes_navegador"
+ },
+ "082_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 859929,
+  "url": "https://doi.org/10.1145/3698587.3701356",
+  "via": "capes_navegador"
+ },
+ "084_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2454914,
+  "url": "https://doi.org/10.1145/3589334.3645623",
+  "via": "capes_navegador"
+ },
+ "095_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 599974,
+  "url": "https://doi.org/10.1145/3748636.3762802",
+  "via": "capes_navegador"
+ },
+ "099_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1366211,
+  "url": "https://doi.org/10.1145/3796563.3796599",
+  "via": "capes_navegador"
+ },
+ "104_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 13851976,
+  "url": "https://doi.org/10.1145/3723876",
+  "via": "capes_navegador"
+ },
+ "109_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 776470,
+  "url": "https://doi.org/10.1145/3650212.3680388",
+  "via": "capes_navegador"
+ },
+ "113_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 493467,
+  "url": "https://doi.org/10.1145/3796563.3796590",
+  "via": "capes_navegador"
+ },
+ "133_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3124544,
+  "url": "https://doi.org/10.1145/3643795.3648385",
+  "via": "capes_navegador"
+ },
+ "136_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 16424882,
+  "url": "https://doi.org/10.1145/3813804",
+  "via": "capes_navegador"
+ },
+ "166_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 739207,
+  "url": "https://doi.org/10.1145/3821489.3821508",
+  "via": "capes_navegador"
+ },
+ "176_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 7672705,
+  "url": "https://doi.org/10.1145/3698062.3698096",
+  "via": "capes_navegador"
+ },
+ "185_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1489013,
+  "url": "https://doi.org/10.1145/3802133.3802244",
+  "via": "capes_navegador"
+ },
+ "205_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1010114,
+  "url": "https://doi.org/10.1145/3649165.3690116",
+  "via": "capes_navegador"
+ },
+ "291_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2433077,
+  "url": "https://doi.org/10.1145/3736181.3747130",
+  "via": "capes_navegador"
+ },
+ "292_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 812968,
+  "url": "https://doi.org/10.1145/3652620.3687805",
+  "via": "capes_navegador"
+ },
+ "294_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 8149885,
+  "url": "https://doi.org/10.1145/3783988",
+  "via": "capes_navegador"
+ },
+ "303_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 15074422,
+  "url": "https://doi.org/10.1145/3788686",
+  "via": "capes_navegador"
+ },
+ "306_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 3085972,
+  "url": "https://doi.org/10.1145/3344948.3344973",
+  "via": "capes_navegador"
+ },
+ "320_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2149855,
+  "url": "https://doi.org/10.1145/3709155",
+  "via": "capes_navegador"
+ },
+ "339_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 678677,
+  "url": "https://doi.org/10.1145/3365871.3365873",
+  "via": "capes_navegador"
+ },
+ "341_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1310965,
+  "url": "https://doi.org/10.1145/3800963",
+  "via": "capes_navegador"
+ },
+ "345_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1507049,
+  "url": "https://doi.org/10.1145/3691620.3695019",
+  "via": "capes_navegador"
+ },
+ "349_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 4518862,
+  "url": "https://doi.org/10.1145/3676279",
+  "via": "capes_navegador"
+ },
+ "350_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 871630,
+  "url": "https://doi.org/10.1145/3797552.3797605",
+  "via": "capes_navegador"
+ },
+ "352_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 21343996,
+  "url": "https://doi.org/10.1145/3626203.3670526",
+  "via": "capes_navegador"
+ },
+ "358_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1180362,
+  "url": "https://doi.org/10.1145/3540250.3549127",
+  "via": "capes_navegador"
+ },
+ "340_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 196271146,
+  "url": "https://doi.org/10.1145/3796525",
+  "via": "capes_navegador"
+ },
+ "359_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 879156,
+  "url": "https://doi.org/10.1145/3820786.3820791",
+  "via": "capes_navegador"
+ },
+ "360_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2049255,
+  "url": "https://doi.org/10.1145/3716368.3735201",
+  "via": "capes_navegador"
+ },
+ "371_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1213578,
+  "url": "https://doi.org/10.1145/3711496.3711503",
+  "via": "capes_navegador"
+ },
+ "372_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 427616,
+  "url": "https://doi.org/10.1145/3711129.3711243",
+  "via": "capes_navegador"
+ },
+ "373_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 427835,
+  "url": "https://doi.org/10.1145/3788112.3788136",
+  "via": "capes_navegador"
+ },
+ "381_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1382879,
+  "url": "https://doi.org/10.1145/3746252.3761381",
+  "via": "capes_navegador"
+ },
+ "384_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2509213,
+  "url": "https://doi.org/10.1145/3550356.3561601",
+  "via": "capes_navegador"
+ },
+ "389_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1131087,
+  "url": "https://doi.org/10.1145/3486609.3487210",
+  "via": "capes_navegador"
+ },
+ "395_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 2299083,
+  "url": "https://doi.org/10.1145/3679409.3679432",
+  "via": "capes_navegador"
+ },
+ "400_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1773861,
+  "url": "https://doi.org/10.1145/3572919",
+  "via": "capes_navegador"
+ },
+ "401_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 812749,
+  "url": "https://doi.org/10.1145/3708036.3708159",
+  "via": "capes_navegador"
+ },
+ "403_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 760178,
+  "url": "https://doi.org/10.1145/3708557.3716340",
+  "via": "capes_navegador"
+ },
+ "410_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1074752,
+  "url": "https://doi.org/10.1145/3230833.3232821",
+  "via": "capes_navegador"
+ },
+ "421_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1021607,
+  "url": "https://doi.org/10.1145/3550356.3563135",
+  "via": "capes_navegador"
+ },
+ "424_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 15760369,
+  "url": "https://doi.org/10.1145/3611314.3615920",
+  "via": "capes_navegador"
+ },
+ "425_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1331479,
+  "url": "https://doi.org/10.1145/3795926.3795969",
+  "via": "capes_navegador"
+ },
+ "429_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 846823,
+  "url": "https://doi.org/10.1145/3550356.3558516",
+  "via": "capes_navegador"
+ },
+ "430_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1550485,
+  "url": "https://doi.org/10.1145/3550356.3552393",
+  "via": "capes_navegador"
+ },
+ "437_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1139371,
+  "url": "https://doi.org/10.1145/3428690.3429177",
+  "via": "capes_navegador"
+ },
+ "447_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1460663,
+  "url": "https://doi.org/10.1145/2304576.2304613",
+  "via": "capes_navegador"
+ },
+ "450_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 1722922,
+  "url": "https://doi.org/10.1145/2245276.2245323",
+  "via": "capes_navegador"
+ },
+ "452_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 188736,
+  "url": "https://doi.org/10.1145/1039174.1039187",
+  "via": "capes_navegador"
+ },
+ "453_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 835131,
+  "url": "https://doi.org/10.1145/3060403.3060418",
+  "via": "capes_navegador"
+ },
+ "454_ACM": {
+  "status": "OK_PUBLISHER",
+  "bytes": 351986,
+  "url": "https://doi.org/10.1145/1899475.1899485",
+  "via": "capes_navegador"
+ },
+ "846_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 455105,
+  "url": "https://doi.org/10.1145/3643795.3648391",
+  "via": "capes_navegador"
+ },
+ "431_ACM": {
+  "via": "capes_navegador",
+  "arquivo": "431_ACM.pdf",
+  "obs": "validado manualmente (ligadura)"
+ },
+ "871_SCOPUS": {
+  "status": "OK_PUBLISHER",
+  "bytes": 768000,
+  "url": "https://doi.org/10.1145/3796563.3796606",
+  "via": "capes_navegador"
+ },
+ "286_ACM": {
+  "via": "navegador_manual",
+  "arquivo": "286_ACM.pdf",
+  "obs": "preprint anonimo ICLR, substituir pela versao ACM"
+ },
+ "825_SCOPUS": {
+  "via": "varredura_downloads",
+  "arquivo": "825_SCOPUS.pdf",
+  "url": "https://doi.org/10.54941/ahfe1006393"
+ },
+ "522_IEEE": {
+  "via": "figshare",
+  "arquivo": "522_IEEE.pdf",
+  "obs": "versao de autor, substituir pela IEEE"
+ },
+ "087_ACM": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2406.17651",
+  "url": "https://arxiv.org/pdf/2406.17651",
+  "arquivo": "087_ACM.pdf"
+ },
+ "149_ACM": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2510.18297",
+  "url": "https://arxiv.org/pdf/2510.18297",
+  "arquivo": "149_ACM.pdf"
+ },
+ "298_ACM": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2504.07479",
+  "url": "https://arxiv.org/pdf/2504.07479",
+  "arquivo": "298_ACM.pdf"
+ },
+ "398_ACM": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2309.13342",
+  "url": "https://arxiv.org/pdf/2309.13342",
+  "arquivo": "398_ACM.pdf"
+ },
+ "523_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2503.22587",
+  "url": "https://arxiv.org/pdf/2503.22587",
+  "arquivo": "523_IEEE.pdf"
+ },
+ "524_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "s2",
+  "url": "https://osf.io/expuq/download",
+  "arquivo": "524_IEEE.pdf"
+ },
+ "527_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2506.11548",
+  "url": "https://arxiv.org/pdf/2506.11548",
+  "arquivo": "527_IEEE.pdf"
+ },
+ "532_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2411.05340",
+  "url": "https://arxiv.org/pdf/2411.05340",
+  "arquivo": "532_IEEE.pdf"
+ },
+ "541_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2406.08120",
+  "url": "https://arxiv.org/pdf/2406.08120",
+  "arquivo": "541_IEEE.pdf"
+ },
+ "562_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2508.18675",
+  "url": "https://arxiv.org/pdf/2508.18675",
+  "arquivo": "562_IEEE.pdf"
+ },
+ "563_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2408.01916",
+  "url": "https://arxiv.org/pdf/2408.01916",
+  "arquivo": "563_IEEE.pdf"
+ },
+ "573_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2604.08293",
+  "url": "https://arxiv.org/pdf/2604.08293",
+  "arquivo": "573_IEEE.pdf"
+ },
+ "599_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2304.06122",
+  "url": "https://arxiv.org/pdf/2304.06122",
+  "arquivo": "599_IEEE.pdf"
+ },
+ "604_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2406.04300",
+  "url": "https://arxiv.org/pdf/2406.04300",
+  "arquivo": "604_IEEE.pdf"
+ },
+ "612_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2506.13171",
+  "url": "https://arxiv.org/pdf/2506.13171",
+  "arquivo": "612_IEEE.pdf"
+ },
+ "615_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2404.03664",
+  "url": "https://arxiv.org/pdf/2404.03664",
+  "arquivo": "615_IEEE.pdf"
+ },
+ "625_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2405.03122",
+  "url": "https://arxiv.org/pdf/2405.03122",
+  "arquivo": "625_IEEE.pdf"
+ },
+ "626_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2505.02500",
+  "url": "https://arxiv.org/pdf/2505.02500",
+  "arquivo": "626_IEEE.pdf"
+ },
+ "640_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2603.21178",
+  "url": "https://arxiv.org/pdf/2603.21178",
+  "arquivo": "640_IEEE.pdf"
+ },
+ "643_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2502.08108",
+  "url": "https://arxiv.org/pdf/2502.08108",
+  "arquivo": "643_IEEE.pdf"
+ },
+ "645_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2406.10729",
+  "url": "https://arxiv.org/pdf/2406.10729",
+  "arquivo": "645_IEEE.pdf"
+ },
+ "648_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2206.11612",
+  "url": "https://arxiv.org/pdf/2206.11612",
+  "arquivo": "648_IEEE.pdf"
+ },
+ "651_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2412.15256",
+  "url": "https://arxiv.org/pdf/2412.15256",
+  "arquivo": "651_IEEE.pdf"
+ },
+ "676_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2503.16262",
+  "url": "https://arxiv.org/pdf/2503.16262",
+  "arquivo": "676_IEEE.pdf"
+ },
+ "704_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2508.17703",
+  "url": "https://arxiv.org/pdf/2508.17703",
+  "arquivo": "704_IEEE.pdf"
+ },
+ "709_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2505.14906",
+  "url": "https://arxiv.org/pdf/2505.14906",
+  "arquivo": "709_IEEE.pdf"
+ },
+ "712_IEEE": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2311.13852",
+  "url": "https://arxiv.org/pdf/2311.13852",
+  "arquivo": "712_IEEE.pdf"
+ },
+ "758_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2303.16244",
+  "url": "https://arxiv.org/pdf/2303.16244",
+  "arquivo": "758_SCOPUS.pdf"
+ },
+ "766_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2509.13896",
+  "url": "https://arxiv.org/pdf/2509.13896",
+  "arquivo": "766_SCOPUS.pdf"
+ },
+ "816_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2501.04908",
+  "url": "https://arxiv.org/pdf/2501.04908",
+  "arquivo": "816_SCOPUS.pdf"
+ },
+ "839_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2508.00630",
+  "url": "https://arxiv.org/pdf/2508.00630",
+  "arquivo": "839_SCOPUS.pdf"
+ },
+ "893_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2511.09231",
+  "url": "https://arxiv.org/pdf/2511.09231",
+  "arquivo": "893_SCOPUS.pdf"
+ },
+ "922_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2404.17739",
+  "url": "https://arxiv.org/pdf/2404.17739",
+  "arquivo": "922_SCOPUS.pdf"
+ },
+ "931_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2508.21097",
+  "url": "https://arxiv.org/pdf/2508.21097",
+  "arquivo": "931_SCOPUS.pdf"
+ },
+ "966_SCOPUS": {
+  "via": "rota_alternativa_oa",
+  "fonte": "arxiv:2508.03379",
+  "url": "https://arxiv.org/pdf/2508.03379",
+  "arquivo": "966_SCOPUS.pdf"
+ }
+}
