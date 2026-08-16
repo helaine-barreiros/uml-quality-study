@@ -7,6 +7,10 @@
 - Status: `Applied`
 - RecordedCommit: `ea54a33f72cfc0c85619d6588266be1b4b5cd9dd`
 - PreviousRecordedCommit: `59de5de4f90165e05182c016194e8fb64fb58756`
+- RevisionID: `A003-R1`
+- RevisionDecisionDate: `2026-08-15`
+- RevisionRecordedAt: `2026-08-16T01:36:59Z`
+- RevisionRecordedCommit:
 - DoesNotChange:
   - search strings
   - information sources
@@ -40,6 +44,14 @@ The revision:
 The revised framing aligns eligibility with the study's quality-focused objective and avoids maintaining a broader mapping corpus whose reports provide no extractable quality evidence. Syntactic quality, semantic quality, and syntax-semantic dissonance remain analytical phenomena operationalized during extraction rather than separate eligibility structures.
 
 The validated search strings and the planned information sources are unchanged. The broad retrieval strategy remains appropriate because reports may evaluate quality without using explicit syntactic or semantic terminology in titles, abstracts, or keywords.
+
+## Substantive LLM use boundary
+
+- Model labels are not sufficient for inclusion.
+- Encoder-only models, including BERT-like and RoBERTa-like models, used only as classifiers, taggers, embedding generators, entity extractors, relation extractors, or supervised preprocessing components are excluded under E6.
+- Hybrid neural-symbolic pipelines are included only when the LLM determines, proposes, or revises the semantic content of the generated UML diagram.
+- Ambiguous title and abstract cases are retained for full-text screening.
+- The decision clarifies I2 and E6 without changing search strings, information sources, the review interval, or collected inventories.
 
 ## Historical provenance
 
