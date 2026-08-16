@@ -10,7 +10,7 @@
 - RevisionID: `A003-R1`
 - RevisionDecisionDate: `2026-08-15`
 - RevisionRecordedAt: `2026-08-16T01:36:59Z`
-- RevisionRecordedCommit:
+- RevisionRecordedCommit: `3104220bc71452b874fb229f4bdadf440f3d4026`
 - DoesNotChange:
   - search strings
   - information sources
@@ -55,4 +55,4 @@ The validated search strings and the planned information sources are unchanged. 
 
 ## Historical provenance
 
-`PreviousRecordedCommit` preserves the commit that recorded the earlier A003 formulation. The current `RecordedCommit` identifies the commit that introduces this revised quality-focused decision before any formal screening.
+`PreviousRecordedCommit` preserves the commit that recorded the earlier A003 formulation. The current `RecordedCommit` identifies the commit that introduces the revised quality-focused decision before any formal screening. `RevisionRecordedCommit` identifies the subsequent clarification of the substantive LLM-use boundary.
