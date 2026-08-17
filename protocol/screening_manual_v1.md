@@ -440,4 +440,70 @@ confiabilidade, e nao anotacao decorativa.
 | Versao | Data | Mudanca |
 |---|---|---|
 | v1 | 2026-08-15 | Versao inicial. Consolida o fluxograma de triagem por titulo e resumo, a tabela de decidibilidade dos criterios I1-I6 e E1-E11, e as regras operacionais de fronteira RF-01 (encoders pre-instrucionais) e RF-02 (autoridade semantica em pipelines hibridos). |
+| v1.2 | 2026-08-17 | Acrescenta a secao 10, que fixa a regra operacional do E5: prazo de espera, lembrete unico, data de corte e tratamento dos registros sem canal de contato. Sem alteracao nos criterios, no fluxograma ou nas regras de fronteira. |
 | v1.1 | 2026-08-16 | Reescrita da secao 6. O registro passa de um campo unico (`filter_1_observations`) para um bloco de quatro campos por portao (desfecho, revisor, momento, observacao), com o sub-portao codificado no desfecho e as flags do Portao C em campo proprio e consultavel. Acrescenta a secao 6.3, que separa decisoes fora dos portoes para um log de eventos (`screening_decision_log.csv`). Sem alteracao nos criterios, no fluxograma ou nas regras de fronteira. |
+
+---
+
+## 10. Regra operacional do E5 — esgotamento documentado de acesso
+
+O protocolo define o E5 como *"The full text cannot be obtained after documented
+access attempts"* (l. 1243 e seguintes), mas nao diz quantas tentativas, por
+quais vias, nem quanto tempo se espera. Sem essa definicao a exclusao vira
+decisao caso a caso, indefensavel em banca e impossivel de replicar. Esta secao
+fixa a regra.
+
+### 10.1 Vias que precisam ser esgotadas
+
+Um registro so pode receber E5 depois de percorridas, nesta ordem, todas as vias
+aplicaveis, cada uma com registro proprio no log:
+
+1. **Acesso aberto**: consulta ao Unpaywall e as versoes de repositorio
+   (`oa_status`, `oa_pdf_url`).
+2. **Assinatura institucional**: Portal de Periodicos CAPES, com e sem proxy.
+   Bloqueio contratual ou de borda conta como tentativa documentada, desde que a
+   evidencia seja registrada.
+3. **Busca manual**: motor academico, arXiv, pagina pessoal, repositorio
+   institucional, anais do evento.
+4. **Autor correspondente**: pedido de copia ao endereco declarado no registro.
+   Nao havendo endereco declarado, busca de canal por ORCID publico e por
+   cruzamento de coautoria com os demais registros do corpus.
+
+### 10.2 Prazo
+
+- O prazo comeca na **data da ultima tentativa documentada** do registro.
+- **Espera de 14 dias corridos.**
+- **Um unico lembrete**, no setimo dia. Um lembrete, nunca mais de um: insistir
+  alem disso e desproporcional para um pedido de cortesia e nao aumenta a taxa
+  de resposta de forma relevante.
+- Vencidos os 14 dias sem resposta, aplica-se o E5.
+
+Para este corpus, a ultima tentativa documentada e de **2026-08-17**, portanto:
+
+| Marco | Data |
+|---|---|
+| Lembrete unico | **2026-08-24** |
+| Corte do E5 | **2026-08-31** |
+
+A data de corte e unica para todo o corpus, alinhada pela tentativa mais recente.
+Escalonar por registro produziria uma dezena de datas diferentes sem ganho
+metodologico, e a data unica e a mais generosa para os autores contactados antes.
+
+### 10.3 Registros sem canal de contato
+
+Registro sem endereco declarado e sem canal recuperavel pelas vias de 10.1
+**nao espera os 14 dias**: nao ha o que aguardar. Recebe E5 na data em que a
+busca de canal se esgota, com o log declarando quais vias foram tentadas.
+
+### 10.4 Resposta negativa ou devolucao
+
+- **Devolucao de entrega** (endereco inexistente) sem canal alternativo: E5
+  imediato, como no caso ja registrado do 832_SCOPUS.
+- **Recusa explicita do autor**: E5 imediato. O prazo perde funcao.
+
+### 10.5 O que o E5 nao e
+
+O E5 e exclusao por **indisponibilidade**, nunca por conteudo. Um registro
+excluido por E5 continua contando no fluxo PRISMA como identificado e triado, e
+o relatorio final deve informar quantos textos se perderam e por qual via, porque
+esse numero e uma limitacao declarada do estudo e nao um detalhe operacional.
