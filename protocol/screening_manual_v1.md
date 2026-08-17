@@ -471,23 +471,28 @@ aplicaveis, cada uma com registro proprio no log:
 
 ### 10.2 Prazo
 
-- O prazo comeca na **data da ultima tentativa documentada** do registro.
-- **Espera de 14 dias corridos.**
+- O prazo e contado a partir de **2026-08-17**, data em que a rodada de pedidos
+  se encerrou e em que esta regra foi fixada.
+- **Espera de 15 dias corridos.**
 - **Um unico lembrete**, no setimo dia. Um lembrete, nunca mais de um: insistir
   alem disso e desproporcional para um pedido de cortesia e nao aumenta a taxa
   de resposta de forma relevante.
-- Vencidos os 14 dias sem resposta, aplica-se o E5.
-
-Para este corpus, a ultima tentativa documentada e de **2026-08-17**, portanto:
+- Vencidos os 15 dias sem resposta, aplica-se o E5.
 
 | Marco | Data |
 |---|---|
+| Inicio da contagem | 2026-08-17 |
 | Lembrete unico | **2026-08-24** |
-| Corte do E5 | **2026-08-31** |
+| Corte do E5 | **2026-09-01** |
 
-A data de corte e unica para todo o corpus, alinhada pela tentativa mais recente.
-Escalonar por registro produziria uma dezena de datas diferentes sem ganho
-metodologico, e a data unica e a mais generosa para os autores contactados antes.
+A data de corte e unica para todo o corpus. Escalonar por registro produziria uma
+dezena de datas diferentes sem ganho metodologico, e a data unica e a mais
+generosa para os autores contactados antes.
+
+Ate o corte, os registros sem resposta permanecem **pendentes**, e nao excluidos.
+Cada texto que chegar nesse intervalo e incorporado normalmente, com o
+`pdf_status` atualizado e o recebimento registrado no log. O E5 so alcanca o que
+ainda estiver pendente em 2026-09-01.
 
 ### 10.3 Registros sem canal de contato
 
