@@ -314,10 +314,13 @@ codigo aparece na tabela PRISMA. A ordem vai do mais objetivo e mais barato
 Duplicata exata e mecanica: DOI e titulo normalizado resolvem, e o lugar disso e
 o pre-passe D. **Familia de publicacao** — mesmo experimento, mesmo dataset,
 mesmo artefato publicado em versoes de extensao — quase nunca e visivel no
-resumo. Na primeira passagem, as 107 exclusoes por E3 foram todas mecanicas e
-nenhuma familia foi detectada por titulo e resumo; a unica familia real do corpus
-so se resolveu com os textos em maos. Manter a deteccao de familia no Portao A
-produzia uma pergunta que o revisor nao tem como responder ali.
+resumo. A primeira passagem prova isso com numero limpo: das 107 exclusoes por
+E3, **104 foram mecanicas** e decididas no Portao A por DOI e titulo, e as **3
+restantes eram familia de publicacao** — passaram o Portao A, passaram o Portao B
+e so foram resolvidas com os textos em maos (868_SCOPUS, 877_SCOPUS,
+963_SCOPUS). Nenhuma familia foi detectada por titulo e resumo. Manter a
+deteccao de familia no Portao A produzia uma pergunta que o revisor nao tem como
+responder ali.
 
 ### 3.2 Por que o Portao A nao descarta estudo secundario
 
