@@ -2,9 +2,29 @@
 
 - Instrumento: eligibility manual previsto na secao *Reviewer calibration* do protocolo v1.7 (l. 1296)
 - Protocolo de referencia: `appendix_two_layer_mapping_protocol_v1_7.tex`
-- Emenda de referencia: `amendments/A003-screening-exclusion-criteria.md`
+- Emendas de referencia: `amendments/A003-screening-exclusion-criteria.md` e
+  `amendments/A004-screening-gate-redesign.md`
 - Etapa: primeira triagem (titulo, resumo, palavras-chave e metadados)
-- Status: `Ativo`
+- Status: `Superado por screening_manual_v2.md. Preservado como registro da primeira passagem; nao usar para triar.`
+- Sucessor: `screening_manual_v2.md`
+
+> **Aviso de versao (v1.5, 2026-08-17).** A emenda **A004** redesenhou a estrutura
+> de portoes e realinhou as tabelas de criterios. As secoes **2, 3 e 4 deste
+> manual descrevem a estrutura efetivamente executada** sobre os 986 registros da
+> busca automatizada, e por isso **nao foram reescritas**: reescreve-las faria o
+> instrumento deixar de descrever o que foi feito, que e o mesmo motivo pelo qual
+> a A004 optou por congelar os codigos de exclusao em vez de renumera-los.
+> A estrutura nova esta na A004, secao 6, e passa a valer da re-triagem em diante.
+> Continuam validas e aplicaveis sem ressalva: a secao 0 (RF-01, RF-02, RF-03),
+> a secao 1, a secao 5, a secao 6, a secao 7, a secao 8 e a secao 10.
+>
+> | Onde estava | Onde esta agora |
+> |---|---|
+> | E5 (seccao 10) | atricao, estrato "identificado, nao recuperado" — A004 secao 3 |
+> | E10 | filtro C1 mais atributo `atribuicao do resultado` — A004 secao 2 |
+> | E11 e I6 | eixos de extracao L, D, U — A004 secao 1 |
+> | clausula de mistura de notacao do E7 | filtro B5, codigo E7b — A004 secao 2 |
+> | I1 e I5 fundidos | I1-I8 renumerados em ordem de filtro — A004 secoes 4 e 5 |
 - Idioma: portugues, por ser o instrumento operacional dos revisores. As
   observacoes registradas nos campos `gate_*_notes` seguem o mesmo idioma.
   Uma versao em ingles pode ser derivada para o apendice da tese.
@@ -13,9 +33,12 @@
 
 ## 0. Regras operacionais de fronteira
 
-Estas regras resolvem os dois pontos em que a redacao do I2 admite mais de uma
-leitura. Foram decididas antes da triagem de producao e valem uniformemente
-para todos os registros.
+Estas regras resolvem os pontos em que a redacao do I2 admite mais de uma
+leitura. As RF-01 e RF-02 foram decididas antes da triagem de producao. A RF-03
+foi acrescentada em 2026-08-17, durante a conferencia do corpus ja triado, e por
+isso exige verificacao retroativa dos registros ja excluidos por E6 — o
+resultado dessa verificacao esta no `screening_decision_log.csv`. Todas valem
+uniformemente para todos os registros.
 
 ### RF-01 — Encoders pre-instrucionais (BERT, RoBERTa e similares)
 
@@ -74,6 +97,61 @@ relevantes que usam LLM com *parsers*, validadores, PlantUML, lacos de reparo ou
 regras de formatacao. O hibrido e admissivel quando o LLM tem autoridade
 semantica sobre o conteudo UML.
 
+### RF-03 — Riqueza da entrada, RAG e contexto prescritivo nao transferem autoridade semantica
+
+Esta regra fecha uma lacuna do RF-02 detectada na conferencia do corpus. O RF-02
+so retira a autoridade semantica do LLM quando **regras simbolicas determinam o
+conteudo do modelo**. Essa qualificacao e a protecao inteira da regra, e o
+fluxograma a havia perdido. Sem ela, "o LLM apenas transforma" passa a poder ser
+lido como "o LLM apenas segue instrucoes", o que excluiria por E6 exatamente a
+configuracao de maior valor probatorio para esta revisao.
+
+**Enunciado.** Instrucoes tecnicas detalhadas, gabaritos de saida, exemplos
+*few-shot*, documentos anexados, base de conhecimento e recuperacao aumentada
+(*RAG*) **nao sao regras simbolicas** e **nao deslocam** a autoridade semantica
+para fora do modelo. Contexto restringe o espaco de saida; nao o computa. Um
+estudo que fornece requisitos ricos, ontologia de dominio ou documentos de
+referencia e ainda assim pede ao modelo que **decida** classes, atributos,
+relacoes, multiplicidades, atores ou mensagens continua satisfazendo o I2 e
+**nao pode ser excluido por E6**.
+
+**Teste operacional — variancia contrafactual.** Diante de um pipeline hibrido,
+pergunte:
+
+> Trocar o modelo, a semente ou a redacao do *prompt*, mantendo a mesma entrada,
+> poderia produzir um conjunto diferente de classes, relacoes ou multiplicidades?
+
+| Resposta | Leitura | Decisao |
+|---|---|---|
+| Nao, a saida e determinada pela entrada | O conteudo vem das regras; o modelo e transdutor | **E6** |
+| Sim, e a variacao recai sobre elementos portadores de significado | O modelo tem autoridade semantica | **Retem** |
+| Nao da para saber por titulo e resumo | Incerteza | **Retem** e sinaliza `INCERTO_PAPEL_LLM` |
+
+O teste e uma reformulacao operacional do RF-02, nao um criterio novo: ele apenas
+torna verificavel a pergunta "quem determina o conteudo semantico do diagrama?".
+
+**Fronteira com o E9.** Quando a entrada **ja carrega as decisoes de modelagem**
+em forma estruturada — lista de classes e atributos, esquema relacional, modelo
+existente, codigo-fonte — o caso nao e de papel do LLM, e de natureza da entrada.
+Registra-se **E9**, nao E6. Confundir os dois inflaciona o E6 e apaga da tabela
+PRISMA a razao real da exclusao.
+
+**Consequencia metodologica.** O fenomeno que esta revisao caracteriza e a
+**dissonancia entre adequacao sintatica e adequacao semantica** do artefato
+gerado. Essa dissonancia so e atribuivel ao modelo quando a entrada era
+suficiente: se o *prompt* era pobre, um diagrama semanticamente errado e
+explicavel pela subespecificacao; se o *prompt* era rico, prescritivo e
+aumentado por RAG e o diagrama ainda saiu semanticamente inadequado, o
+descompasso e atribuivel ao processo de geracao. **Entrada rica e, portanto,
+razao para reter, nao para excluir.** Uma leitura que excluisse esses estudos
+removeria do corpus os casos de maior poder explicativo e enviesaria a revisao
+na direcao de trabalhos com entrada pobre, onde o fenomeno e menos diagnostico.
+
+**Ressalva sobre o E6 em geral.** O E6 e um julgamento de **papel do modelo**.
+Ele nao e o lugar para registrar que um estudo e alheio ao objeto, que o LLM
+aparece so na motivacao ou em trabalhos futuros, ou que a entrada nao e textual.
+Vale a regra de ouro numero 5: **nao sobrecarregar o E6**.
+
 ---
 
 ## 1. Principio orientador da primeira etapa
@@ -105,11 +183,11 @@ criterion is clearly satisfied."*
 | **E3** duplicata ou familia de publicacao | Alta no nivel de registro | DOI e titulo normalizado resolvem duplicatas. Familia de publicacao (mesmo dataset, experimento ou artefato) frequentemente so se confirma no texto completo. |
 | **E7** saida nao e UML | Parcial | So exclui quando o resumo nomeia explicitamente outra notacao sem componente UML separavel. |
 | **E8** so avalia UML existente | Parcial | So exclui quando o resumo deixa claro que o diagrama ja existe e nao e alterado. |
-| **E6** LLM nao substantivo | Parcial | Aplicar com RF-01 e RF-02. So em casos limpidos. |
+| **E6** LLM nao substantivo | Parcial | Aplicar com RF-01, RF-02 e RF-03. So em casos limpidos. Nao usar como deposito de registros alheios ao objeto: se o registro nao produz UML, o criterio que explica primeiro e o **E7**. |
 | **E9** entrada nao textual | Parcial | So exclui quando o resumo declara explicitamente entrada de codigo, imagem, modelo existente ou logs, sem componente textual de requisitos. |
 | **E10** UML nao separavel | Baixa | Quase sempre exige texto completo. Aqui apenas sinalizar. |
 | **E11** sem evidencia extraivel de qualidade | Nao decidivel | Regra explicita do protocolo (l. 1253 e 1308). A ausencia de terminologia de qualidade no resumo nao autoriza exclusao. |
-| **E5** texto completo inacessivel | Nao e criterio desta etapa | So se aplica apos tentativas de acesso documentadas. Pertence a fase de obtencao de PDF. |
+| **E5** texto completo inacessivel | Deixou de ser criterio de exclusao (v1.4) | Passou a **atricao**: estrato "identificado, nao recuperado", sem `excluded=true` e sem codigo. Ver secao 10. |
 
 **Consequencia pratica:** nesta etapa apenas **E4, E1, E2, E3** e os casos
 limpidos de **E6 a E9** fecham um registro com seguranca. Todo o resto avanca.
@@ -172,19 +250,26 @@ da saida para a entrada.
        +--------------------------------------------------------------+
                                               |
                                               v
-   B2. QUEM DETERMINA O CONTEUDO SEMANTICO DESSE DIAGRAMA?   [RF-01 + RF-02]
+   B2. QUEM DETERMINA O CONTEUDO SEMANTICO DESSE DIAGRAMA?  [RF-01 + RF-02 + RF-03]
        +--------------------------------------------------------------+
        | LLM nomeado (GPT, ChatGPT, Claude, Gemini, Llama, Qwen,       |--> segue para B3
        | DeepSeek, Mistral, T5, BART...) propondo, gerando ou          |
-       | revisando elementos portadores de significado                 |
+       | revisando elementos portadores de significado.                |
+       | Vale ainda que o prompt seja longo e prescritivo, que haja    |
+       | RAG, ontologia, gabarito de saida ou exemplos few-shot        |
+       | (RF-03: contexto nao e regra simbolica)                       |
        +--------------------------------------------------------------+
-       | Sem LLM; ou NLP de regras/gramatica; ou ML convencional;      |--> EXCLUIR  E6
-       | ou encoder (BERT/RoBERTa) como classificador/extrator/NER;    |
-       | ou LLM so parafraseia, resume, formata, ou e citado apenas    |
-       | na motivacao ou em trabalhos futuros                          |
+       | Sem LLM em parte alguma do pipeline; ou NLP de regras /       |--> EXCLUIR  E6
+       | gramatica; ou ML convencional; ou encoder (BERT/RoBERTa)      |
+       | como classificador / extrator / NER;                          |
+       | ou o LLM so parafraseia, resume ou formata ENQUANTO REGRAS    |
+       | SIMBOLICAS DETERMINAM O CONTEUDO DO MODELO.                   |
+       | Teste RF-03: trocar modelo, semente ou redacao do prompt      |
+       | NAO poderia mudar classes, relacoes ou multiplicidades        |
        +--------------------------------------------------------------+
        | "AI-assisted", "automated modeling", "language model"         |--> RETER (sinalizar)
-       | sem especificar papel                                         |
+       | sem especificar papel; ou papel do LLM indistinguivel         |
+       | do papel das regras no resumo                                 |
        +--------------------------------------------------------------+
                                               |
                                               v
@@ -272,7 +357,9 @@ todas as classes e relacoes e o LLM apenas converte para PlantUML.
 | LLM gera modelo inicial; ferramenta corrige sintaxe | Retem | Conteudo semantico originado no LLM |
 | LLM sugere mensagens de sequence diagram; regras ordenam e formalizam | Retem, se a contribuicao semantica for clara | LLM participa da composicao do conteudo UML |
 | LLM revisa semanticamente diagrama gerado por regras, alterando conteudo | Retem | Revisao substantiva, prevista no I3 |
-| Regras extraem tudo; LLM apenas transforma em PlantUML | E6, ou E10 conforme o caso | LLM e formatador superficial, nao gerador semantico |
+| Regras extraem todas as classes e relacoes; o LLM recebe essa lista pronta e so a serializa em PlantUML | E6, ou E10 conforme o caso | O conteudo ja estava decidido antes do LLM; ele e transdutor de formato |
+| LLM recebe prompt longo e prescritivo, ontologia de dominio ou documentos via RAG, e ainda assim decide classes, atributos e relacoes | **Retem** | RF-03: contexto restringe o espaco de saida, nao o computa; a autoridade semantica continua no modelo |
+| Entrada ja e uma lista de classes e atributos, um esquema relacional, um modelo existente ou codigo-fonte | **E9**, nao E6 | RF-03: o problema e a natureza da entrada, nao o papel do modelo |
 | BERT/RoBERTa fine-tuned para classificar sentencas ou extrair classes, atributos, atores ou relacoes | E6 | Nao gera conteudo UML, apenas rotula ou extrai candidatos |
 | BERT embeddings mais regras que montam o diagrama | E6 | A autoridade semantica esta nas regras e no pipeline |
 | BERT/RoBERTa como componente de NER ou relation extraction | E6 | Extracao supervisionada, nao geracao por LLM |
@@ -440,22 +527,33 @@ confiabilidade, e nao anotacao decorativa.
 | Versao | Data | Mudanca |
 |---|---|---|
 | v1 | 2026-08-15 | Versao inicial. Consolida o fluxograma de triagem por titulo e resumo, a tabela de decidibilidade dos criterios I1-I6 e E1-E11, e as regras operacionais de fronteira RF-01 (encoders pre-instrucionais) e RF-02 (autoridade semantica em pipelines hibridos). |
+| v1.5 | 2026-08-17 | Acrescenta o aviso de versao no cabecalho, que registra a emenda **A004** (decisoes **alfa**, **beta**, **gama**, **delta** e **epsilon**) e congela as secoes 2 a 4 como registro da estrutura efetivamente executada sobre os 986 registros. Atualiza a linha do E5 na tabela de decidibilidade. Nenhuma secao operacional foi reescrita: a estrutura nova de portoes e a tabela realinhada de criterios vivem na A004, secao 6, e valem da re-triagem em diante. |
+| v1.4 | 2026-08-17 | Decisao de desenho **gamma**: o E5 deixa de ser criterio de exclusao e passa a **atricao**, no estrato "identificado, nao recuperado". Reescreve a secao 10 (verbo do corte muda de *excluir por E5* para **fechar o estrato**; 10.5 passa a justificar a mudanca de estatuto com o perfil sistematico da perda) e atualiza a linha do E5 na tabela de decidibilidade. Prazo de 2026-09-01 inalterado. Pendente de formalizacao na emenda A004, junto com **alfa** (E11 vira variavel de extracao em tres eixos) e **beta** (E7b volta ao Portao B; E10 vira C1 mais atributo de atribuicao). |
+| v1.3 | 2026-08-17 | Acrescenta a **RF-03**, que fixa que riqueza de prompt, RAG, ontologia e gabarito de saida nao deslocam a autoridade semantica para fora do LLM, define o **teste de variancia contrafactual** como criterio operacional e separa a fronteira E6 / E9. Corrige a caixa B2 do fluxograma, que havia perdido a qualificacao *"enquanto regras simbolicas determinam o conteudo"* presente na RF-02, e desdobra a linha ambigua da tabela de casos. Motivada pela conferencia do corpus descrita no `screening_decision_log.csv`. Sem alteracao nos criterios do protocolo. |
 | v1.2 | 2026-08-17 | Acrescenta a secao 10, que fixa a regra operacional do E5: prazo de espera, lembrete unico, data de corte e tratamento dos registros sem canal de contato. Sem alteracao nos criterios, no fluxograma ou nas regras de fronteira. |
 | v1.1 | 2026-08-16 | Reescrita da secao 6. O registro passa de um campo unico (`filter_1_observations`) para um bloco de quatro campos por portao (desfecho, revisor, momento, observacao), com o sub-portao codificado no desfecho e as flags do Portao C em campo proprio e consultavel. Acrescenta a secao 6.3, que separa decisoes fora dos portoes para um log de eventos (`screening_decision_log.csv`). Sem alteracao nos criterios, no fluxograma ou nas regras de fronteira. |
 
 ---
 
-## 10. Regra operacional do E5 — esgotamento documentado de acesso
+## 10. Regra operacional do acesso ao texto completo — atricao, nao exclusao
+
+> **Mudanca de estatuto (v1.4, decisao de desenho gamma, 2026-08-17).** O E5
+> deixou de ser criterio de exclusao e passou a ser tratado como **atricao**.
+> Nenhum registro recebe `excluded=true` nem codigo de exclusao por falta de
+> texto completo: ele vai para o estrato **"identificado, nao recuperado"**.
+> A razao esta em 10.5. Toda esta secao continua valendo como regra de
+> esgotamento de vias e de prazo; o que mudou foi **o verbo do corte**, que era
+> *excluir por E5* e passou a ser **fechar o estrato**.
 
 O protocolo define o E5 como *"The full text cannot be obtained after documented
 access attempts"* (l. 1243 e seguintes), mas nao diz quantas tentativas, por
-quais vias, nem quanto tempo se espera. Sem essa definicao a exclusao vira
+quais vias, nem quanto tempo se espera. Sem essa definicao o desfecho vira
 decisao caso a caso, indefensavel em banca e impossivel de replicar. Esta secao
 fixa a regra.
 
 ### 10.1 Vias que precisam ser esgotadas
 
-Um registro so pode receber E5 depois de percorridas, nesta ordem, todas as vias
+Um registro so pode ir para o estrato **nao recuperado** depois de percorridas, nesta ordem, todas as vias
 aplicaveis, cada uma com registro proprio no log:
 
 1. **Acesso aberto**: consulta ao Unpaywall e as versoes de repositorio
@@ -477,38 +575,75 @@ aplicaveis, cada uma com registro proprio no log:
 - **Um unico lembrete**, no setimo dia. Um lembrete, nunca mais de um: insistir
   alem disso e desproporcional para um pedido de cortesia e nao aumenta a taxa
   de resposta de forma relevante.
-- Vencidos os 15 dias sem resposta, aplica-se o E5.
+- Vencidos os 15 dias sem resposta, o registro e **movido para o estrato nao
+  recuperado**.
 
 | Marco | Data |
 |---|---|
 | Inicio da contagem | 2026-08-17 |
 | Lembrete unico | **2026-08-24** |
-| Corte do E5 | **2026-09-01** |
+| Fechamento do estrato nao recuperado | **2026-09-01** |
 
 A data de corte e unica para todo o corpus. Escalonar por registro produziria uma
 dezena de datas diferentes sem ganho metodologico, e a data unica e a mais
 generosa para os autores contactados antes.
 
-Ate o corte, os registros sem resposta permanecem **pendentes**, e nao excluidos.
-Cada texto que chegar nesse intervalo e incorporado normalmente, com o
-`pdf_status` atualizado e o recebimento registrado no log. O E5 so alcanca o que
-ainda estiver pendente em 2026-09-01.
+Ate o corte, os registros sem resposta permanecem **pendentes**. Cada texto que
+chegar nesse intervalo e incorporado normalmente, com o `pdf_status` atualizado
+e o recebimento registrado no log. Em 2026-09-01 o estrato **fecha**: o que
+ainda estiver pendente e contado e caracterizado como nao recuperado, e o
+estrato deixa de receber novos textos.
 
 ### 10.3 Registros sem canal de contato
 
 Registro sem endereco declarado e sem canal recuperavel pelas vias de 10.1
-**nao espera os 14 dias**: nao ha o que aguardar. Recebe E5 na data em que a
-busca de canal se esgota, com o log declarando quais vias foram tentadas.
+**nao espera os 15 dias**: nao ha o que aguardar. Vai para o estrato nao
+recuperado na data em que a busca de canal se esgota, com o log declarando quais
+vias foram tentadas.
 
 ### 10.4 Resposta negativa ou devolucao
 
-- **Devolucao de entrega** (endereco inexistente) sem canal alternativo: E5
-  imediato, como no caso ja registrado do 832_SCOPUS.
-- **Recusa explicita do autor**: E5 imediato. O prazo perde funcao.
+- **Devolucao de entrega** (endereco inexistente) sem canal alternativo: estrato
+  nao recuperado imediato, como no caso ja registrado do 832_SCOPUS.
+- **Recusa explicita do autor**: estrato nao recuperado imediato. O prazo perde
+  funcao.
 
-### 10.5 O que o E5 nao e
+### 10.5 Por que atricao e nao exclusao
 
-O E5 e exclusao por **indisponibilidade**, nunca por conteudo. Um registro
-excluido por E5 continua contando no fluxo PRISMA como identificado e triado, e
-o relatorio final deve informar quantos textos se perderam e por qual via, porque
-esse numero e uma limitacao declarada do estudo e nao um detalhe operacional.
+Todos os demais criterios afirmam algo **sobre o registro**: o ano, o tipo de
+publicacao, o objeto, o papel do modelo, a separabilidade. O E5 afirma algo
+**sobre nos** — sobre a capacidade de acesso da revisora dentro de uma janela de
+tempo. Relatar *"excluidos por E5: 53"* faz o leitor ler *"53 inelegiveis"*,
+quando o enunciado correto e *"53 elegiveis que nao consegui ler"*.
+
+O PRISMA 2020 ja separa as duas coisas em caixas distintas do fluxo: *Reports
+not retrieved* e anterior e disjunta de *Reports excluded, with reasons*. Manter
+o E5 na tabela de criterios funde caixas que a diretriz separa.
+
+O argumento decisivo, porem, e empirico: **a perda nao e aleatoria**. Entre os
+137 retidos apos os Portoes A e B, 84 tem texto e 53 nao tem, e os 53 concentram-se
+sistematicamente em tres dimensoes:
+
+| Dimensao | Padrao observado |
+|---|---|
+| Modelo de acesso | **zero** registros OPEN entre os 53 (50 CLOSED); 42 OPEN entre os 84 |
+| Tipo e base | periodico 25/30 (83%) vs. conferencia 58/105 (55%); ACM 96%, Scopus 55%, IEEE 40% |
+| Recencia | 2024: 79% recuperado · 2025: 53% · 2026: 62% |
+
+O vies de recencia e o mais grave, porque o objeto da revisao e de literatura
+rapida e a fatia mais recente e a mais informativa sobre familias de modelo e
+estrategias de prompt. Dizer "53 excluidos" apagaria essas tres assimetrias
+dentro de um codigo de exclusao. Dizer "53 identificados e nao recuperados, com
+este perfil" declara a ameaca a validade externa.
+
+**Mitigacao.** 52 dos 53 possuem resumo, o que torna o estrato rotulado e nao
+uma contagem vazia. Cobertura por questao:
+
+| Questoes | Base |
+|---|---|
+| MQ1 | os 137 retidos |
+| MQ2, MQ3 | os 84 com texto, com **verificacao de sensibilidade** contra os 52 resumos |
+| MQ4, MQ5, SQ1-SQ6 | apenas os 84, por dependerem de operacionalizacao que nunca esta no resumo |
+
+O relatorio final informa a atricao com as tres dimensoes de vies nominalmente,
+na secao de limitacoes.
