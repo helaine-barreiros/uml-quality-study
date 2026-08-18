@@ -624,7 +624,46 @@ ausente</b> por contagem dos codigos de ausencia, <b>sobreposicao de categorias<
 <b>clareza dos campos</b> pelas notas por campo, e <b>viabilidade da extracao em nivel de
 unidade</b> pelo numero de ocorrencias que os campos repetiveis realmente receberem.</p>
 
-<h3>2.3 Uma pergunta que o piloto tem de responder: a instancia de avaliacao</h3>
+<h3>2.3 O desvio que nao e do piloto: a l. 1638 fala do corpus inteiro</h3>
+<div class="alerta"><b>Desvio 3 &mdash; dupla codificacao da inadequacao.</b> O desvio 1 acima
+e a versao pequena de uma exigencia bem maior, e convem nao confundir as duas. A l. 1558
+pede dois extratores nos campos interpretativos <b>do piloto</b>; a l. 1638 abre com
+<i>two reviewers independently code <b>all</b> inadequacy data from included studies</i>
+&mdash; e do <b>corpus inteiro</b>, nao de dez estudos. Hoje o plano em execucao cobre
+<b>zero</b> disso.<br>
+<b>O que a exigencia NAO e:</b> ela nao pede dupla codificacao dos 65 campos. Ela diz
+<i>inadequacy data</i>, que sao os campos <b>46 a 50</b>, o grupo <span
+class="mono">INADEQUACAO</span>. Isso e o que torna a exigencia praticavel, e vale registrar
+antes que ela seja lida como grande demais para caber.</div>
+<div class="nota"><b>Consequencia operacional, ja acomodada:</b> a l. 1638 termina exigindo
+que <i>the consensus code is stored <b>separately</b> from the original reviewer codes</i>.
+A chave do arquivo de extracao ja inclui <span class="mono">extrator</span>, entao o
+consenso entra como <span class="mono">extrator=CONSENSO</span> em linhas proprias e os
+codigos originais dos dois revisores permanecem recuperaveis, que e o que a linha protege.
+<b>Mas isso cria um risco que precisa de regra escrita:</b> cada dado de inadequacao passa a
+existir em ate <b>tres</b> linhas, e qualquer contagem que nao filtre por <span
+class="mono">extrator</span> triplica. Regra: a <b>sintese</b> le so
+<span class="mono">CONSENSO</span>; o calculo de <b>concordancia</b> le so os dois
+revisores; nenhuma analise le os tres juntos.</div>
+<div class="nota"><b>Qual estatistica, campo a campo</b> &mdash; a propria l. 1638 decide.
+Kappa de Cohen serve a decisoes nominais <b>mutuamente exclusivas</b>, o caso dos campos
+<b>47</b> e <b>48</b>, que admitem um valor por inadequacao. Alfa de Krippendorff e
+<i>preferred when categories are multiple, data are missing, or more than two coders are
+involved</i>: e o caso do campo <b>49</b>, que e repetivel e aceita varios portadores na
+mesma inadequacao, e do campo <b>50</b>, cuja ausencia e <b>por construcao</b>, ja que so se
+preenche quando o estudo reporta. Nao e escolha de gosto, e leitura.</div>
+<div class="alerta"><b>O que continua em aberto, e e o que de fato bloqueia:</b> medir
+concordancia pressupoe que os dois revisores estejam falando <b>das mesmas unidades</b>. A
+l. 1638 diz em que niveis medir, mas <b>nao</b> diz como alinhar as unidades &mdash; e dois
+revisores lendo o mesmo estudo podem registrar cinco e sete inadequacoes. Sem regra de
+alinhamento nao existe tabela de contingencia e nenhum kappa e computavel. Ha pelo menos
+duas saidas &mdash; usar o <b>rotulo nativo</b> (campo 46) como chave de pareamento, ou
+fixar a lista de unidades numa primeira passagem e codificar as dimensoes numa segunda
+&mdash; e a escolha <b>tem de ser feita antes</b> das duas passagens, nunca depois de
+gerados os dados. Nada disto foi decidido aqui: esta declarado para que nao seja descoberto
+na hora de medir.</div>
+
+<h3>2.4 Uma pergunta que o piloto tem de responder: a instancia de avaliacao</h3>
 <div class="alerta"><b>O protocolo define tres niveis de analise e este instrumento
 implementa um.</b> A l. 157 nomeia o relato, o <b>estudo primario</b> e a <b>instancia de
 avaliacao</b>, esta ultima definida como uma combinacao extraivel de tipo de diagrama,
