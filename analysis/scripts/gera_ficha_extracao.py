@@ -159,6 +159,31 @@ for c in codebook:
         'ex':    vals if not fechado else [],
     })
 
+# ------------------------------------------------- 8d-4: fonte unica dos codigos
+# O codebook da TAXONOMIA (l. 1634) e o de EXTRACAO descrevem o mesmo
+# vocabulario em arquivos diferentes: os codigos da taxonomia SAO os valores dos
+# campos 47 e 48, e os portadores admitidos SAO os valores do campo 49. Foi
+# exatamente esse tipo de duplicacao sem reconciliacao, entre duas secoes do
+# protocolo, que produziu as cinco divergencias resolvidas no item 8c. O assert
+# abaixo existe para que o defeito nao possa renascer entre dois arquivos
+# nossos: qualquer edicao de um lado so INTERROMPE a geracao da ficha.
+TAX = list(csv.DictReader(open(os.path.join(
+    BASE, 'analysis/extraction/codebook_taxonomia.csv'), encoding='utf-8')))
+_v = {int(c['ordem']): [x.strip() for x in c['valores_admitidos'].split(';') if x.strip()]
+      for c in codebook if c['ordem'].isdigit()}
+_por_pai = collections.OrderedDict()
+for t in TAX:
+    _por_pai.setdefault(t['categoria_pai'], []).append(t['codigo'])
+assert _por_pai.get('OPERACAO_DE_DISCREPANCIA') == _v[47], \
+    'codebook da taxonomia diverge do campo 47'
+assert _por_pai.get('REFERENCIA_VIOLADA') == _v[48], \
+    'codebook da taxonomia diverge do campo 48'
+for t in TAX:
+    assert [p.strip() for p in t['portadores_admitidos'].split(';')] == _v[49], \
+        'portadores admitidos de %r divergem do campo 49' % t['codigo']
+n_tax = len(TAX)
+n_tax_construido = sum(1 for t in TAX if t['procedencia_exemplo'] == 'construido')
+
 SECOES = []
 for sec in ('MAPEAMENTO', 'QUALIDADE'):
     facetas = []
@@ -636,6 +661,47 @@ campos que descrevem <b>conjuntamente um mesmo objeto</b>. Os campos 40 e 41, em
 sejam da faceta <i>Metric</i> e repetiveis, ficaram <b>fora</b> &mdash; sao descricoes
 abertas e autonomas de procedimento, sem campo irmao com que se alinhar, e agrupa-las criaria
 posicoes que nunca se preenchem.</div>
+
+<h3>3.1 O codebook da taxonomia e um segundo artefato</h3>
+<p>O arquivo <span class="mono">analysis/extraction/codebook_taxonomia.csv</span> nao e o
+mesmo que o de extracao e nao substitui nenhum campo. O de extracao diz <b>quais campos
+preencher</b>; o da taxonomia diz <b>o que cada valor significa</b>. Ele cumpre a l. 1634,
+que exige de cada codigo definicao, regra de inclusao, regra de exclusao, exemplo positivo,
+exemplo negativo, categoria pai, portadores admitidos e historico de revisao. Sao
+<b>__N_TAX__ codigos</b>: as __N_TAX_REF__ referencias violadas do campo 48 e as
+__N_TAX_OPE__ operacoes de discrepancia do campo 47.</p>
+<div class="nota"><b>Portador nao e codigo, e atributo &mdash; por isso sao 14 e nao 25.</b>
+A prova esta na propria l. 1634, que poe <i>allowed UML carriers</i> entre os atributos de
+cada codigo: se o portador fosse um codigo, o atributo seria circular. Isso bate com a
+l. 1668, que poe operacoes e referencias no nivel <b>transversal</b> e deixa os portadores
+ao nivel <b>especifico</b>, que e tabulacao cruzada derivada da extracao e nao um segundo
+conjunto de codigos a definir a mao. Na v1.0 os __N_TAX__ codigos admitem <b>todos</b> os 11
+portadores, e isso e leitura e nao preguica: a restricao real de portador e governada pelo
+<b>tipo de diagrama</b> &mdash; nao ha <i>message</i> fora de interacao nem <i>state</i> fora
+de maquina de estados &mdash; e estreitar por codigo antes dos dados seria inventar
+restricao. Estreitar e tarefa do piloto e da revisao do <i>UML domain validator</i>
+(l. 1711).</div>
+<div class="alerta"><b>Os __N_TAX_CONSTR__ exemplos da v1.0 sao CONSTRUIDOS, e nenhum deles
+pode sobreviver a versao estavel.</b> A l. 1624 manda o codebook existir <b>antes</b> do
+piloto, mas a l. 1626 so produz exemplos de fronteira <b>depois</b>, ao comparar codigos
+entre estudos. Escrever agora exemplos com cara de literatura seria <b>fabricar
+evidencia</b>, e havia um risco pior: exemplos inventados por mim seriam moldados pela
+hipotese da dissonancia sintatico-semantica, que e o que a revisao existe para
+<b>descobrir</b>. Por isso cada linha declara
+<span class="mono">procedencia_exemplo</span>, hoje <span class="mono">construido</span> em
+todas as __N_TAX__, e o passo 4 da l. 1626 tem de substitui-las por
+<span class="mono">corpus</span>, com <span class="mono">logical_id</span> e pagina. A l. 1755
+ja listava <i>codebook provenance</i> como mitigacao declarada da ameaca de normalizacao
+taxonomica.<br>
+Um codigo nao tem sequer exemplo construido: <span class="mono">emergent category</span>, e
+por construcao. Qualquer exemplo positivo inventado ali seria a proposta de uma categoria
+nova feita <b>antes</b> dos dados, que e exatamente o que essa categoria existe para impedir.</div>
+<div class="nota"><b>Os dois codebooks descrevem o mesmo vocabulario, e isso e um risco.</b>
+Os codigos da taxonomia <b>sao</b> os valores dos campos 47 e 48, e os portadores admitidos
+<b>sao</b> os valores do campo 49. Foi esse tipo de duplicacao sem reconciliacao, entre duas
+secoes do protocolo, que produziu as cinco divergencias resolvidas no item 8c. Para que o
+defeito nao renasca entre dois arquivos nossos, o gerador <b>interrompe a geracao desta
+pagina</b> se os dois lados divergirem em um unico valor ou na ordem.</div>
 </section>
 
 <section id="estudos"><h2>4. Os estudos</h2>
@@ -696,11 +762,18 @@ pg = (HTML.replace('__CSS__', CSS + EXTRA)
         .replace('__N_COMP__', str(n_comp))
         .replace('__N_REP__', str(n_rep))
         .replace('__N_EST__', str(len(EST)))
+        .replace('__N_TAX__', str(n_tax))
+        .replace('__N_TAX_REF__', str(len(_por_pai['REFERENCIA_VIOLADA'])))
+        .replace('__N_TAX_OPE__', str(len(_por_pai['OPERACAO_DE_DISCREPANCIA'])))
+        .replace('__N_TAX_CONSTR__', str(n_tax_construido))
         .replace('__N_C1__', str(n_c1)))
 
 open(OUT, 'w', encoding='utf-8').write(pg)
 print('gerado:', OUT)
 print('estudos %d | sem C1 %d | campos %d (fechado %d, aberto %d, composto %d) | repetiveis %d'
       % (len(EST), n_c1, len(CAMPOS), n_fechado, n_aberto, n_comp, n_rep))
+print('taxonomia: %d codigos (%d referencias, %d operacoes), %d exemplos construidos'
+      % (n_tax, len(_por_pai['REFERENCIA_VIOLADA']),
+         len(_por_pai['OPERACAO_DE_DISCREPANCIA']), n_tax_construido))
 print('piloto %d (semente %d):' % (len(PILOTO), SEMENTE_PILOTO),
       ' '.join(e_['id'] for e_ in EST if e_['p']))
