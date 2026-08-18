@@ -31,6 +31,10 @@ search/automated/pdfs/
 # Dated snapshots of the master CSV; git itself is the version history
 search/automated/backups/
 
+# LaTeX build intermediates of the protocol rendering; the .tex is the source
+protocol/build/*
+!protocol/build/protocol_standalone.tex
+
 # Credentials and secrets
 .env
 .env.*

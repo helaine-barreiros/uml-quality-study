@@ -1,0 +1,42 @@
+% Standalone wrapper used ONLY to render a readable PDF of the protocol appendix.
+% It is not part of the protocol. The appendix file is included verbatim, so the
+% PDF always reflects the current .tex byte for byte; nothing is edited to build it.
+% The preamble reproduces the package list declared at the top of the appendix.
+\documentclass[11pt,a4paper]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\title{Protocol for the Quality-Focused Systematic Mapping Study\\
+\large Rendered from \texttt{appendix\_two\_layer\_mapping\_protocol\_v1\_7.tex}}
+\author{}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+
+\input{../appendix_two_layer_mapping_protocol_v1_7.tex}
+
+\bibliographystyle{plainnat}
+\bibliography{../appendix_two_layer_mapping_protocol_v1_7}
+
+\end{document}
