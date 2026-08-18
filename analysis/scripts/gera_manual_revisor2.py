@@ -9,7 +9,7 @@ A fila nao mostra a decisao da primeira revisora. Se mostrasse, a concordancia
 medida seria concordancia com uma resposta ja vista, e o kappa nao significaria
 nada. Por isso o HTML nao carrega os campos gate_*_outcome dos registros sorteados.
 """
-import csv, html, math, os, random, re
+import csv, hashlib, html, math, os, random, re
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
 CSV  = os.path.join(BASE, 'search/automated/custom_automated_search_collection.csv')
@@ -17,7 +17,7 @@ OUT  = os.path.join(BASE, 'analysis/manual_revisor2.html')
 CSS  = open(os.path.join(BASE, 'analysis/scripts/css_gate.css'), encoding='utf-8').read()
 
 SEMENTE = 20260817          # data em que a amostra foi sorteada
-FRACAO  = 0.20              # protocolo l.1296: ao menos 20 por cento
+FRACAO  = 0.20              # protocolo v1.8 l.1435: ao menos 20 por cento
 
 rows = list(csv.reader(open(CSV, encoding='utf-8')))
 i = {c: n for n, c in enumerate(rows[0])}
@@ -63,7 +63,24 @@ estratos = {}
 for r in data:
     estratos.setdefault(estrato(r), []).append(r)
 
-rnd = random.Random(SEMENTE)
+def semente_do_estrato(nome):
+    """Semente propria por estrato (manual v2, secao 11).
+
+    Um unico fluxo random.Random(SEMENTE) percorrendo os estratos em ordem faz o
+    sorteio de cada estrato depender do TAMANHO de todos os anteriores: mudar a
+    contagem de E1 reembaralha E12, E2, E3 e todos os seguintes, ainda que esses
+    estratos nao tenham sido tocados. O defeito foi observado na primeira
+    passagem, quando uma reclassificacao que nao mexeu em E8, E9 nem RETIDO
+    trocou 122 dos 201 sorteados. Derivar a semente do nome do estrato isola cada
+    sorteio: reclassificar um registro so remexe os dois estratos envolvidos.
+
+    sha256 e usado por ser estavel entre execucoes e entre maquinas, ao contrario
+    de hash(), que o Python aleatoriza por processo.
+    """
+    h = hashlib.sha256(nome.encode('utf-8')).digest()[:4]
+    return SEMENTE + int.from_bytes(h, 'big')
+
+
 amostra_ids = set()
 linhas_estrato = []
 for nome in sorted(estratos):
@@ -71,7 +88,7 @@ for nome in sorted(estratos):
     # arredonda para CIMA: o protocolo pede 'ao menos' 20 por cento, e
     # arredondar para baixo em varios estratos derrubaria o total abaixo do minimo
     k = max(1, math.ceil(len(grupo) * FRACAO))
-    sel = rnd.sample(grupo, k)
+    sel = random.Random(semente_do_estrato(nome)).sample(grupo, k)
     amostra_ids.update(r[i['logical_id']] for r in sel)
     linhas_estrato.append((nome, len(grupo), k))
 
@@ -398,7 +415,7 @@ alto, e toda a precisao foi transferida para a triagem que voce vai fazer.</div>
 </section>
 
 <section id="papel"><h2>2. O que se espera de voce</h2>
-<p>O protocolo (l. 1315) determina que cada registro retido seja avaliado de forma
+<p>O protocolo (l. 1439) determina que cada registro retido seja avaliado de forma
 <b>independente</b> por dois revisores, com discordancias resolvidas por discussao e
 impasses por um adjudicador com experiencia em Engenharia de Software e UML ou
 modelagem baseada em LLM.</p>
@@ -414,7 +431,7 @@ calculados a partir dele.</li>
 proposital e nao e desconfianca: uma segunda avaliacao que enxerga a primeira mede
 concordancia com uma resposta ja conhecida, e o kappa resultante nao significa nada.
 A pagina nao carrega esses campos. A comparacao acontece depois, fora daqui.</div>
-<p>A calibracao prevista no protocolo (l. 1296) continua ate <b>80 por cento de
+<p>A calibracao prevista no protocolo (l. 1431) continua ate <b>80 por cento de
 concordancia</b> e <b>kappa de Cohen de ao menos 0,70</b>. Abaixo disso, a divergencia
 e discutida e o manual e revisado &mdash; ou seja, discordar tem consequencia sobre o
 instrumento, nao so sobre o registro.</p>
@@ -426,7 +443,7 @@ inclui nada. So se exclui.</b></div>
 <p>Os criterios de inclusao I1 a I6 <b>nao sao aplicados positivamente</b> aqui. A
 inclusao so se confirma na leitura do texto completo. Titulo e resumo servem para
 remover o que e claramente inelegivel; todo o resto avanca.</p>
-<p class="lead">Base normativa, protocolo l. 1263: <i>"At title and abstract screening,
+<p class="lead">Base normativa, protocolo l. 1395: <i>"At title and abstract screening,
 uncertainty favors retention. A record is excluded only when an exclusion criterion is
 clearly satisfied."</i></p>
 </section>
@@ -444,7 +461,7 @@ registro com seguranca. Todo o resto avanca.</p>
 </section>
 
 <section id="fluxo"><h2>5. O fluxograma</h2>
-<p>A ordem nao e arbitraria. O protocolo (l. 1253) manda registrar <i>"the first
+<p>A ordem nao e arbitraria. O protocolo (l. 1317) manda registrar <i>"the first
 criterion that clearly explains the exclusion"</i>, entao a sequencia determina qual
 codigo aparece na tabela PRISMA. Ela vai do mais objetivo e barato (metadado) para o
 mais interpretativo (conteudo), e dentro do conteudo vai da saida para a entrada.</p>
@@ -473,7 +490,7 @@ depois de saber que ha um LLM em jogo.</p>
 
 <h3>7.1 B1 &mdash; identificar a saida</h3>
 __TAB_B1__
-<p class="lead">Regra do protocolo (l. 174): <i>PlantUML output is eligible only when it
+<p class="lead">Regra do protocolo (l. 176): <i>PlantUML output is eligible only when it
 is intended to encode UML.</i></p>
 
 <h3>7.2 B2 &mdash; identificar a autoridade semantica</h3>
@@ -563,13 +580,20 @@ __TAB_ARM__
 </section>
 
 <section id="amostra"><h2>11. Como sua fila foi montada</h2>
-<p>O protocolo (l. 1296) determina que o segundo revisor avalie <b>uma amostra aleatoria
+<p>O protocolo (l. 1435) determina que o segundo revisor avalie <b>uma amostra aleatoria
 estratificada de ao menos 20 por cento</b> mais <b>todos os registros marcados como
 incertos</b>. Sua fila e exatamente a uniao desses dois conjuntos.</p>
 <p>O sorteio usa semente fixa <span class="mono">__SEMENTE__</span>, portanto e
 reprodutivel: qualquer pessoa que rode o gerador obtem a mesma amostra. O estrato e o
 desfecho da primeira revisao, usado <b>apenas para sortear de forma proporcional</b> e
 nunca impresso ao lado do registro.</p>
+<p>Cada estrato sorteia com <b>semente propria</b>, derivada da semente do estudo mais um
+hash estavel do nome do estrato. A alternativa, um unico fluxo aleatorio percorrendo os
+estratos em ordem, faz o sorteio de cada estrato depender do tamanho de todos os
+anteriores: uma reclassificacao que nao toca um estrato ainda assim reembaralha a amostra
+dele. Isso foi observado na primeira passagem, quando uma mudanca que nao mexeu em E8, E9
+nem RETIDO trocou 122 dos 201 sorteados. Com semente por estrato, reclassificar um
+registro so remexe os dois estratos envolvidos.</p>
 __TAB_EST__
 <p>Somando, <b>__N_AM__</b> registros vieram do sorteio e <b>__N_SO_INC__</b> entraram
 apenas por estarem marcados como incertos, totalizando <b>__N_FILA__</b>.</p>
