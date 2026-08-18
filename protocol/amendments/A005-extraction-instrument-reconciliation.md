@@ -4,9 +4,10 @@
 - DecisionDate: `2026-08-18`
 - RecordedAt: `2026-08-18T00:00:00-03:00`
 - Stage: After screening, during construction of the extraction instrument and before the extraction pilot begins
-- Status: `Partly applied; Sections 6 and 7 are open`
+- Status: `Applied; Sections 6 and 7 transferred to A006`
 - PreviousRecordedCommit: `73e8b8335422c55c3c8597149e91edc84981046f`
-- RecordedCommit: `(to be filled by the commit that introduces this file)`
+- RecordedCommit: `e2fe3ee74c75edc64f6a7697f40b6a92d2f28060`
+- HeaderCorrection: On 2026-08-18 two header fields were corrected, and only the header was touched. `RecordedCommit` still carried its placeholder although the commit exists and is verifiable. `Status` changed because Sections 6 and 7, left open here, passed to the custody of A006. The text of Sections 6 and 7 is preserved exactly as recorded, including the SQ6 proposal that A006 withdraws: the record of a proposal that was later reversed is evidence, not an error to be erased.
 - DoesNotChange:
   - search strings
   - information sources
