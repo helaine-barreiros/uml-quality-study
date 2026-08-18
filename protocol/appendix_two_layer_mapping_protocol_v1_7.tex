@@ -1528,9 +1528,9 @@ Reference & OracleOrGoldStandard & Yes; No; Partial; Unclear. \\
 Reference & Reference construction and validation & Who created it, from which sources, through which process, and whether disagreement or alternative valid models were handled \\
 Unit & Unit of assessment & Diagram, requirement, proposition, actor, use case, class, attribute, relation, message, state, transition, or other \\
 Inadequacy & Original label and definition & Preserve the source label and its operational meaning \\
-Inadequacy & Normalized discrepancy operation & Omission, unsupported addition, incorrect representation, incorrect classification, inconsistency, duplication, redundancy, or other \\
-Inadequacy & Violated reference & Concrete syntax, UML abstract syntax, UML construct semantics, domain or requirements semantics, cross model consistency, or intended task \\
-Inadequacy & UML carrier & Affected diagram element, relation, constraint, sequence, state, behavior, or diagram level property \\
+Inadequacy & Normalized discrepancy operation & Omission, unsupported addition, incorrect representation, incorrect classification, inconsistency, duplication, redundancy, or emergent category. Selecting \textit{emergent category} requires recording the emergent label in free text \\
+Inadequacy & Violated reference & Concrete representation, UML abstract syntax, UML construct semantics, domain or requirements semantics, cross diagram consistency, or intended engineering task \\
+Inadequacy & UML carrier & Affected diagram, element, relation, property, constraint, sequence, state, transition, message, behavior, or other type specific unit \\
 Metric & Metric name and formula & Extract formula, numerator, denominator, scale, direction, threshold, and aggregation rule \\
 Metric & Automation level & Fully automated, tool assisted, human coded, LLM assessed, or mixed \\
 Evaluation & HumanEvaluatorRole & Author; independent evaluator; domain expert; UML expert; student; practitioner; crowd worker; not reported; not applicable. \\
@@ -1610,7 +1610,7 @@ where $R_v$ is the violated reference, $O_d$ is the discrepancy operation, $C_u$
 The initial dimensions are the following.
 
 \begin{enumerate}[label=\roman*)]
-    \item \textbf{violated reference}, comprising concrete representation, UML abstract syntax, UML construct semantics, domain or requirements semantics, cross diagram consistency, or intended use;
+    \item \textbf{violated reference}, comprising concrete representation, UML abstract syntax, UML construct semantics, domain or requirements semantics, cross diagram consistency, or intended engineering task;
     \item \textbf{discrepancy operation}, comprising omission, unsupported addition, incorrect representation, incorrect classification, inconsistency, duplication, redundancy, or emergent category;
     \item \textbf{UML carrier}, comprising the affected diagram, element, relation, property, constraint, sequence, state, transition, message, behavior, or other type specific unit;
     \item \textbf{severity or consequence}, preserved when the study reports a severity scale or task effect;
