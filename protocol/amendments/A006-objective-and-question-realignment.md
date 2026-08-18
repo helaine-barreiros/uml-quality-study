@@ -4,7 +4,7 @@
 - DecisionDate: `2026-08-18`
 - RecordedAt: `2026-08-18T00:00:00-03:00`
 - Stage: After screening, during construction of the extraction instrument and before the extraction pilot begins
-- Status: `Sections 2, 3 and 9 applied; Sections 4, 5 and 6 are open`
+- Status: `Sections 2, 3, 9 and 10 applied; Section 5 settled by Section 10; Sections 4 and 6 are open`
 - PreviousRecordedCommit: `e2fe3ee74c75edc64f6a7697f40b6a92d2f28060`
 - RecordedCommit: `b1f4c08dda8f383dad80f72cd85ac2b8e37efe30`
 - Section9Commit: `c2f23b2`
@@ -146,6 +146,10 @@ aligned with the specialization mechanisms and SQ6 aligned with the knowledge
 supplied. Not applied: it moves data ownership, and ownership is decided once,
 after the questions are settled.
 
+**Settled in Section 10, and the resolution proposed here was wrong.** Moving the
+two fields into SQ6 would have made them inherit the SQ6 subset. The defect was
+one level up: SQ6 was two questions welded together.
+
 ## 6. Open: the values of axis L
 
 Transferred from A005 section 7. l. 1348 gives the axis three values while the
@@ -243,3 +247,77 @@ l. 61, l. 73 and l. 94 now state the same verbs.
 No eligibility criterion, no extraction field and no screening decision changes.
 The `.tex` still has 1860 lines, so every line reference recorded anywhere
 remains valid.
+
+## 10. SQ6 is split into SQ6 and SQ7 (applied; this settles Section 5)
+
+Section 5 left open whether fields 19 and 20 should move from MQ3 to SQ6. The
+detailed reading shows that **the move as proposed would have been harmful**, and
+that the defect is one level up.
+
+### 10.1 SQ6 enumerated nine things and owned none of them
+
+| clause of SQ6 (old l. 117) | field that answers it | owner before |
+|---|---|---|
+| requirements, technical specifications | 8 `InputRequirementForm`, 9 `Input structure and quality` | MQ2 |
+| domain knowledge | 19 `DomainKnowledgeProvided` | MQ3 |
+| UML instructions | 20 `UMLTechnicalInstructionProvided` | MQ3 |
+| prompts, examples | 21 `PromptingOrContextStrategy` | MQ3 |
+| tools, feedback | 22 `Adaptation and orchestration` | MQ3 |
+| retrieval | 21, and a value inside 19 | MQ3 |
+
+The five fields SQ6 did own, 56 to 60, answer only its second half.
+
+### 10.2 The trap that Section 5 did not see
+
+Old l. 1376 gave SQ6 the subset *studies for which axis U is not absent*. Moving
+fields 19 and 20 into SQ6 would therefore have made them **reported over the
+studies that also happen to measure use**. How domain knowledge and the UML
+technical contract are supplied is a property of every generation setting, and it
+is deliverables 1 and 4 of Section 1; reporting it over that subset would answer
+the question the thesis most needs over a biased minority.
+
+This is the second time a proposal about SQ6 was made without examining its
+denominator: A005 section 7 proposed shrinking it, A006 section 5 proposed
+enlarging it, and neither looked at l. 1376. Both are recorded rather than erased.
+
+### 10.3 The diagnosis: SQ6 was a fused question
+
+The protocol already names this failure mode at l. 1354: *a fused question yields
+a fused code, and the distinction becomes unrecoverable*. The two halves of SQ6
+require **different denominators**, and one question carries one.
+
+| half | what it is in the reference model | correct denominator |
+|---|---|---|
+| how knowledge is supplied | domain knowledge and the technical contract | the whole corpus |
+| pragmatic, correction and rework effects | intended engineering use | axis U not absent |
+
+### 10.4 What was applied
+
+1. **SQ6** keeps the first half and loses the nine-item enumeration, which is the
+   same defect A005 section 6 names: a question that enumerates its own answers.
+2. **SQ7** is created for the second half, including inferential strength, which
+   is what fields 56 and 57 record and what l. 145 already asks to stratify by.
+3. **Ownership.** 19 and 20 move from MQ3 to SQ6, because they are knowledge.
+   21 and 22 **stay in MQ3**, because they are mechanism. This is the line the
+   reference model itself draws between responsibility and mechanism, and it
+   makes MQ3 exactly the configuration map its own title promises.
+4. **Fields 56 to 60 move to SQ7**, and `QualityAxisU` now defines the SQ7 subset.
+5. **Subsets.** SQ6 joins MQ1 to MQ5 on the whole corpus; SQ7 takes the axis U
+   subset. The subset table gained no row, because SQ6 joined an existing one.
+6. A sentence was added after l. 1382 stating why SQ6 covers the whole corpus, so
+   that the reason is in the protocol and not only in this amendment.
+
+### 10.5 Costs, declared
+
+- **Eleven questions become twelve.** This is a fused question being separated,
+  not a question being added: the number of extraction fields is unchanged.
+- **The `.tex` shifts lines for the first time since v1.8**, from 1860 to 1862.
+  The translation is: lines up to 117 unchanged; old 118 to 143 shift by one; old
+  144 onward shift by two. Recorded in the decision log as `CORRECAO_REFERENCIA`,
+  as was done for the v1.7 to v1.8 shift.
+- The extraction form generator, its verifier and the codebook were updated in
+  the same change, and the hard-coded field counts in the form were replaced by
+  values derived from the codebook, since they had already gone stale once.
+
+No eligibility criterion, no extraction field, no screening decision, and no
+recoding: the extraction file is still empty.

@@ -152,7 +152,7 @@ for c in codebook:
         'grp':   c['grupo_repeticao'],
         'q':     c['questoes'],
         # Duas relacoes diferentes, que a coluna questoes fundia ate o item F:
-        # "e dado de" (l. 133-143) e "define o subconjunto de" (l. 1373-1376).
+        # "e dado de" (l. 133-145) e "define o subconjunto de" (l. 1375-1378).
         'sub':   c['define_subconjunto'],
         'regra': c['regra_extracao'],
         # exemplos nao viram opcao: em campo aberto a lista do protocolo e
@@ -244,9 +244,9 @@ for c in CAMPOS:
 assert not any(';' in c['q'] for c in CAMPOS), 'sobrou campo com dois donos'
 assert len(DONOS['(instrumento)']) == 4, DONOS['(instrumento)']
 QUESTOES = ('MQ1', 'MQ2', 'MQ3', 'MQ4', 'MQ5',
-            'SQ1', 'SQ2', 'SQ3', 'SQ4', 'SQ5', 'SQ6')
+            'SQ1', 'SQ2', 'SQ3', 'SQ4', 'SQ5', 'SQ6', 'SQ7')
 SEM_CAMPO = [q for q in QUESTOES if q not in DONOS]
-assert SEM_CAMPO == ['MQ5'], SEM_CAMPO   # a MQ5 e computada (l. 137, l. 1380)
+assert SEM_CAMPO == ['MQ5'], SEM_CAMPO   # a MQ5 e computada (l. 137, l. 1382)
 
 # A correspondencia com as tabelas do protocolo, derivada e nao escrita: a
 # insercao da severidade e a fusao do campo de envolvimento humano se cancelam
@@ -299,14 +299,16 @@ PRODUTO = {
     'SQ3': 'Evaluation reference and metric catalogue',
     'SQ4': 'Syntax-semantic dissonance evidence map',
     'SQ5': 'Assessment credibility matrix',
-    'SQ6': 'Generation context, pragmatic, and rework evidence map',
+    'SQ6': 'Generation context knowledge map',
+    'SQ7': 'Pragmatic and rework evidence map',
 }
 # De onde cada produto se compõe quando a pergunta nao e dona do campo. Nao e
-# opiniao: sai da tabela de rastreabilidade l. 133-143 comparada com a posse.
+# opiniao: sai da tabela de rastreabilidade l. 133-145 comparada com a posse.
+# A SQ6 saiu daqui: depois da divisao da A006 secao 10 ela e dona dos seus dois
+# campos e nao le mais campo da MQ3.
 DERIVA = {
     'MQ4': 'MQ1, SQ3 e SQ5',
     'MQ5': 'MQ2, MQ3 e MQ4',
-    'SQ6': 'MQ3',
 }
 tab_donos = tab(
     ['Pergunta', '#Campos proprios', 'Campos', 'Tambem se compoe de', 'Produto'],
@@ -769,7 +771,7 @@ mapeamento campo a campo, embora o texto de abertura afirme que cada campo o tem
 vinculo &mdash; estender o mecanismo aos quatro foi decisao nossa, porque trata-lo so na
 SQ2 deixaria os outros tres com o mesmo defeito, silencioso. A quarta,
 <b>define_subconjunto</b>, existe porque a coluna <b>questoes</b> fundia duas relacoes
-diferentes: <i>e dado de</i> (l. 133-143) e <i>define o subconjunto de</i> (l. 1373-1376).
+diferentes: <i>e dado de</i> (l. 133-145) e <i>define o subconjunto de</i> (l. 1375-1378).
 A confusao era visivel dentro de <b>uma unica linha</b> &mdash; no eixo D a coluna
 <span class="mono">questoes</span> dizia <span class="mono">SQ1;SQ4</span> enquanto a regra
 de extracao, ao lado, dizia que ele <i>define os subconjuntos de SQ1 a SQ3</i>. As quatro
@@ -814,24 +816,31 @@ posicoes que nunca se preenchem.</div>
 <p>Cada campo pertence a <b>uma</b> pergunta. Antes, doze campos apareciam marcados com
 duas, o que parecia inofensivo e nao era: quando o mesmo dado responde a duas perguntas com
 <b>bases diferentes</b>, os dois numeros divergem e nada no arquivo diz qual esta certo. O
-caso limpo era o contexto de geracao, que a MQ3 relata sobre <b>todo</b> o corpus (l. 1373)
-e a SQ6 relataria sobre o subconjunto de eixo U nao ausente (l. 1376).</p>
+caso limpo era o contexto de geracao, que a MQ3 relatava sobre <b>todo</b> o corpus enquanto
+a SQ6 o relataria sobre o subconjunto de eixo U nao ausente.<br>
+<b>Esse caso foi resolvido dividindo a pergunta, e nao mudando o campo de dono.</b> A SQ6
+antiga era <b>fundida</b>: perguntava como o conhecimento e fornecido <i>e</i> como os
+efeitos pragmaticos sao medidos, e as duas metades pedem <b>denominadores diferentes</b>.
+Mover os campos de conhecimento para dentro dela teria feito o estrago que se queria evitar,
+porque eles herdariam o subconjunto de eixo U. A <b>SQ6</b> ficou com o conhecimento
+fornecido, sobre <b>todo</b> o corpus (l. 1375), e a nova <b>SQ7</b> ficou com os efeitos,
+sobre o subconjunto de eixo U nao ausente (l. 1378).</p>
 __TAB_DONOS__
 <div class="nota"><b>Perder o campo nao e perder a pergunta.</b> Posse de campo e uma coisa;
 composicao do produto de sintese e outra. A MQ4 continua produzindo o seu mapa de avaliacao
 e reprodutibilidade &mdash; so que a partir de campos cujo dono e MQ1, SQ3 e SQ5, mais o seu
-proprio. O mesmo vale para a metade de contexto da SQ6, que le campos da MQ3.</div>
+proprio.</div>
 <div class="alerta"><b>A MQ5 nao tem campo nenhum, e isso esta certo.</b> Zero campos aqui
 seria lido como esquecimento, entao fica declarado: a l. 137 diz que o dado da MQ5 sao
-<i>combined categories from MQ2 to MQ4</i> e a l. 1380 explica por que ela e <b>computada</b>
+<i>combined categories from MQ2 to MQ4</i> e a l. 1382 explica por que ela e <b>computada</b>
 &mdash; uma analise de lacunas rodada sobre um corpus filtrado por relato de evidencia
 relataria o filtro da propria revisao como lacuna da literatura. Criar campo para a MQ5
 seria pedir ao extrator que respondesse o que a sintese tem de calcular.<br>
 <b>O que a tabela acima torna impossivel de ignorar:</b> a MQ3 tem
-<b>13</b> campos proprios e a SQ2 tem <b>5</b>, sendo a SQ2 a taxonomia de inadequacoes, que
-o racional do estudo poe como precedencia numero um. O formulario esta calibrado para um
-mapping study convencional. Isso <b>nao</b> foi resolvido: depende de o piloto medir quantos
-dos 13 campos da MQ3 realmente se preenchem.</div>
+<b>__N_MQ3__</b> campos proprios e a SQ2 tem <b>__N_SQ2__</b>, sendo a SQ2 a taxonomia de
+inadequacoes, que o racional do estudo poe como precedencia numero um. O formulario esta
+calibrado para um mapping study convencional. Isso <b>nao</b> foi resolvido: depende de o
+piloto medir quantos dos __N_MQ3__ campos da MQ3 realmente se preenchem.</div>
 
 <h3>3.2 O codebook da taxonomia e um segundo artefato</h3>
 <p>O arquivo <span class="mono">analysis/extraction/codebook_taxonomia.csv</span> nao e o
@@ -955,6 +964,8 @@ pg = (HTML.replace('__CSS__', CSS + EXTRA)
         .replace('__N_TAX_REF__', str(len(_por_pai['REFERENCIA_VIOLADA'])))
         .replace('__N_TAX_OPE__', str(len(_por_pai['OPERACAO_DE_DISCREPANCIA'])))
         .replace('__N_TAX_CONSTR__', str(n_tax_construido))
+        .replace('__N_MQ3__', str(len(DONOS['MQ3'])))
+        .replace('__N_SQ2__', str(len(DONOS['SQ2'])))
         .replace('__N_C1__', str(n_c1)))
 
 open(OUT, 'w', encoding='utf-8').write(pg)

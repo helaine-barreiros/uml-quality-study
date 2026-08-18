@@ -114,7 +114,8 @@ The question is decomposed into mapping questions and synthesis questions.
     \item[SQ3.] Which metrics, rubrics, oracles, semantic references, units of assessment, scales, thresholds, aggregation rules, evaluators, automated tools, and judgment procedures are used?
     \item[SQ4.] To what extent does the reported evidence distinguish syntactic quality from semantic quality, and what direct or indirect evidence of syntax-semantic dissonance is available?
     \item[SQ5.] How do the studies establish the reliability and validity of quality assessments, including evaluator training, independent coding, agreement measurement, adjudication, repeated generation, sensitivity analysis, and reporting of uncertainty?
-    \item[SQ6.] How are requirements, technical specifications, domain knowledge, UML instructions, prompts, examples, tools, retrieval, and feedback provided as generation context, and how are pragmatic adequacy, inspection, correction, rework, or productivity effects defined and measured?
+    \item[SQ6.] How is the knowledge required for generation supplied and structured as generation context, with respect to the domain of the specified system and to the technical contract of the UML notation?
+    \item[SQ7.] How are pragmatic adequacy, inspection, correction, rework, or productivity effects defined and measured, and with what inferential strength are they claimed?
 \end{description}
 
 \subsection{Traceability between questions, data, and synthesis}
@@ -140,7 +141,8 @@ SQ2 & Original inadequacy labels, textual definitions, examples, affected UML ca
 SQ3 & Reference, oracle, unit, formula, denominator, scale, threshold, aggregation, procedure & Metrological comparison and traceability analysis & Evaluation reference and metric catalogue \\
 SQ4 & Syntactic and semantic evidence availability, dissonance classification, evidence basis & Extraction-based comparison and evidence grouping & Syntax-semantic dissonance evidence map \\
 SQ5 & Reviewer roles, training, independence, agreement, adjudication, repetitions, uncertainty & Methodological appraisal and reliability profile & Assessment credibility matrix \\
-SQ6 & Context variables, requirements, domain knowledge, UML instructions, prompts, examples, tools, feedback, task, effort measure & Narrative synthesis stratified by inferential strength & Generation context, pragmatic, and rework evidence map \\
+SQ6 & Domain knowledge supplied and UML technical instruction supplied & Classification and cross tabulation over the whole corpus & Generation context knowledge map \\
+SQ7 & Context factor, inferential status, task, actor, outcome, correction and rework measures & Narrative synthesis stratified by inferential strength & Pragmatic and rework evidence map \\
 \bottomrule
 \end{longtable}
 
@@ -1370,14 +1372,14 @@ The analytical subsets are computed from these axes rather than presumed by an e
 \textbf{Questions} & \textbf{Subset} \\
 \midrule
 \endhead
-MQ1 to MQ5 & The whole eligible corpus. \\
+MQ1 to MQ5, and SQ6 & The whole eligible corpus. \\
 SQ1 to SQ3 & Studies for which axis D is not absent. \\
 SQ4 & Studies for which axis L is not absent and axis D is not absent. \\
-SQ6 & Studies for which axis U is not absent. \\
+SQ7 & Studies for which axis U is not absent. \\
 \bottomrule
 \end{longtable}
 
-SQ4 asks to what extent the reported evidence distinguishes syntactic from semantic quality. Under an eligibility filter on evidence reporting, that subset would be assumed; under the axes it is computed, which is the difference between describing the literature and describing the review's own filter. The same argument governs MQ5, which asks which combinations remain under-investigated: a gap analysis run over a corpus filtered by evidence reporting would report the filter as a gap in the literature.
+SQ4 asks to what extent the reported evidence distinguishes syntactic from semantic quality. Under an eligibility filter on evidence reporting, that subset would be assumed; under the axes it is computed, which is the difference between describing the literature and describing the review's own filter. The same argument governs MQ5, which asks which combinations remain under-investigated: a gap analysis run over a corpus filtered by evidence reporting would report the filter as a gap in the literature. SQ6 covers the whole corpus for a related reason. What knowledge is supplied as generation context is a property of every generation setting, whereas the pragmatic effects asked by SQ7 exist only where axis U is not absent; reporting the former over the latter subset would describe the supply of domain knowledge and of the UML technical contract over the minority of studies that also measured use.
 
 \subsection{Full-text unavailability as attrition}
 \label{sec:protocol_attrition}
