@@ -4,9 +4,11 @@
 - DecisionDate: `2026-08-17`
 - RecordedAt: `2026-08-17T00:00:00-03:00`
 - Stage: During screening, after Gates A and B were completed over the automated corpus and before Gate C reading begins
-- Status: `Approved, application pending`
+- Status: `Applied`
 - PreviousRecordedCommit: `18505cbaae3318a5076abea76b8d8899758ae352`
-- RecordedCommit: `(to be filled by the commit that introduces this file)`
+- RecordedCommit: `73e8b8335422c55c3c8597149e91edc84981046f`
+- AppliedOn: `2026-08-17`
+- HeaderCorrection: Both fields above were corrected on 2026-08-18. `RecordedCommit` had never been filled in after the placeholder was written, and `Status` still read "Approved, application pending" although every item of Section 8 was completed on 2026-08-17. Only the header was touched; no decision, rationale or table in this amendment was altered. The correction is recorded in the decision log.
 - DoesNotChange:
   - search strings
   - information sources
