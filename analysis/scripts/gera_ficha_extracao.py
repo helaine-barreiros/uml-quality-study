@@ -143,6 +143,13 @@ for c in codebook:
         'campo': c['campo'],
         'tipo':  c['tipo'],
         'rep':   c['repetivel'] == 'SIM',
+        # Grupo de repeticao: campos que descrevem CONJUNTAMENTE um mesmo
+        # objeto e por isso compartilham indice. Sem ele a chave do arquivo de
+        # extracao produz LISTAS PARALELAS, e nada vincula a ocorrencia 3 de um
+        # campo a ocorrencia 3 do vizinho. O protocolo l. 1601-1608 define
+        # inadequacao como TUPLA, e a comparacao constante (l. 1626) e a
+        # analise de casos negativos (l. 1628) operam sobre casos.
+        'grp':   c['grupo_repeticao'],
         'q':     c['questoes'],
         'regra': c['regra_extracao'],
         # exemplos nao viram opcao: em campo aberto a lista do protocolo e
@@ -168,6 +175,18 @@ n_comp    = sum(1 for c in CAMPOS if c['tipo'] == 'composto')
 n_rep     = sum(1 for c in CAMPOS if c['rep'])
 n_c1      = sum(1 for e_ in EST if not e_['gc'])
 
+# Grupos de repeticao, na ordem em que aparecem. Todo campo de grupo tem de ser
+# repetivel, e o grupo tem de ser contiguo na ordem do codebook: sem isso a
+# instancia nao poderia ser renderizada como um cartao unico na tela.
+GRUPOS = collections.OrderedDict()
+for c in CAMPOS:
+    if c['grp']:
+        GRUPOS.setdefault(c['grp'], []).append(c['o'])
+for g, oo in GRUPOS.items():
+    assert oo == list(range(oo[0], oo[0] + len(oo))), 'grupo %s nao contiguo: %s' % (g, oo)
+    assert all(c['rep'] for c in CAMPOS if c['grp'] == g), 'grupo %s com campo nao repetivel' % g
+n_grp = sum(len(oo) for oo in GRUPOS.values())
+
 kpis = ''.join(
     '<div class="kpi %s"><b>%s</b><span>%s</span></div>' % (cls, v, k)
     for v, k, cls in [
@@ -175,6 +194,7 @@ kpis = ''.join(
         (n_c1, 'sem decisao C1', 'wr'),
         (len(CAMPOS), 'campos do protocolo', ''),
         (n_rep, 'campos repetiveis', ''),
+        (n_grp, 'em grupo de repeticao', ''),
         (len(PILOTO), 'sorteados para o piloto', 'ok'),
     ])
 
@@ -187,10 +207,12 @@ def tab(cab, linhas):
 
 
 tab_secoes = tab(
-    ['Secao', 'Faceta', '#Campos', 'Repetiveis'],
+    ['Secao', 'Faceta', '#Campos', 'Repetiveis', 'Grupo de repeticao'],
     [(sec, fac,
       sum(1 for c in CAMPOS if c['sec'] == sec and c['fac'] == fac),
-      sum(1 for c in CAMPOS if c['sec'] == sec and c['fac'] == fac and c['rep']))
+      sum(1 for c in CAMPOS if c['sec'] == sec and c['fac'] == fac and c['rep']),
+      ' '.join(sorted({c['grp'] for c in CAMPOS
+                       if c['sec'] == sec and c['fac'] == fac and c['grp']})))
      for sec, facs in SECOES for fac in facs])
 
 tab_est = tab(
@@ -238,19 +260,43 @@ EXTRA = """
 .oc .ord{color:var(--dim);font-size:11px;padding-top:7px}
 .cp .mais{font:inherit;font-size:12px;cursor:pointer;background:transparent;color:var(--ac);border:1px dashed var(--ln);border-radius:8px;padding:3px 11px}
 .prog{color:var(--dim);font-size:12.5px}
+.grp{border:1px solid var(--ac);border-radius:14px;padding:11px 13px;margin:12px 0;background:rgba(90,160,255,.03)}
+.grp>.grph{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:var(--ac);margin-bottom:4px}
+.grp>.grph .tg{text-transform:none;letter-spacing:0;font-size:10.5px;padding:1px 7px;border-radius:5px;border:1px solid var(--ln);color:var(--dim)}
+.grp>.mais{font:inherit;font-size:12px;cursor:pointer;background:transparent;color:var(--ac);border:1px dashed var(--ac);border-radius:8px;padding:4px 13px;margin-top:4px}
+.inst{border-left:3px solid var(--ac);padding-left:12px;margin:10px 0 14px}
+.inst .insth{font-size:12px;color:var(--dim);margin-bottom:4px}
+.inst .menos{font:inherit;font-size:11px;cursor:pointer;background:transparent;color:var(--dim);border:1px dashed var(--ln);border-radius:7px;padding:1px 8px;margin-left:6px}
 """
 
 # ------------------------------------------------------------------ js
 JS = """
 var EST=__EST__,CAMPOS=__CAMPOS__,AUS=__AUS__;
-var K='extracao.v1',S=JSON.parse(localStorage.getItem(K)||'{}');
+/* Chave nova de proposito. A v1 guardava os campos numa lista por campo; a v2
+   guarda os campos AGRUPADOS por instancia. Reaproveitar a chave misturaria as
+   duas formas no mesmo objeto e o export sairia meio tupla, meio lista. */
+var K='extracao.v2',S=JSON.parse(localStorage.getItem(K)||'{}');
 var cur=0;
+/* BLOCOS dobra campos consecutivos do mesmo grupo num bloco so. Fora do grupo,
+   cada bloco tem um campo e nada muda em relacao a v1. */
+var BLOCOS=[];
+CAMPOS.forEach(function(c){var b=BLOCOS[BLOCOS.length-1];
+  if(c.grp&&b&&b.grp===c.grp)b.cs.push(c);else BLOCOS.push({grp:c.grp||'',cs:[c]});});
 function salvar(){localStorage.setItem(K,JSON.stringify(S));}
-function est(id){if(!S[id])S[id]={gc:'',gcn:'',f:{}};return S[id];}
+function est(id){if(!S[id])S[id]={gc:'',gcn:'',f:{},g:{}};
+  if(!S[id].f)S[id].f={};if(!S[id].g)S[id].g={};return S[id];}
 function ocs(id,o){var e=est(id);if(!e.f[o])e.f[o]=[{}];return e.f[o];}
+/* Uma instancia e uma TUPLA: um objeto {ordem: [linhas]} que carrega os campos
+   do grupo juntos. Duas inadequacoes sao duas instancias, e cada campo dentro
+   de uma instancia ainda pode repetir (uma inadequacao com dois portadores). */
+function insts(id,g){var e=est(id);if(!e.g[g])e.g[g]=[{}];return e.g[g];}
+function gocs(id,g,k,o){var it=insts(id,g)[k];if(!it[o])it[o]=[{}];return it[o];}
 function preenchido(r){return !!((r.v&&r.v.length)||(r.nat&&r.nat.length));}
-function contaEstudo(id){var e=S[id];if(!e)return 0;var n=0;
-  for(var o in e.f){if(e.f[o].some(preenchido))n++;}return n;}
+function contaEstudo(id){var e=S[id];if(!e)return 0;var vis={},n=0;
+  for(var o in (e.f||{})){if(e.f[o].some(preenchido))vis[o]=1;}
+  for(var g in (e.g||{})){e.g[g].forEach(function(it){
+    for(var o2 in it){if(it[o2].some(preenchido))vis[o2]=1;}});}
+  for(var k in vis)n++;return n;}
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
 function opcoes(c,sel){var h='<option value="">--</option>';
@@ -259,6 +305,36 @@ function opcoes(c,sel){var h='<option value="">--</option>';
 function ausSel(sel){var h='<option value="">--</option>';
   AUS.forEach(function(v){h+='<option value="'+esc(v)+'"'+(v===sel?' selected':'')+'>'+esc(v)+'</option>';});
   return h;}
+
+/* Um cartao de campo. extra carrega data-g e data-i quando o campo esta dentro
+   de uma instancia de grupo; vazio quando nao esta. E o mesmo cartao nos dois
+   casos de proposito: o campo nao muda por estar agrupado, so ganha vinculo. */
+function cartao(c,lst,extra){
+  var h='<div class="cp'+(lst.some(preenchido)?' on':'')+'" data-o="'+c.o+'"'+extra+'>'
+    +'<div class="top"><span class="nm">'+esc(c.campo)+'</span>'
+    +'<span class="tg">'+esc(c.tipo)+'</span>'+(c.rep?'<span class="tg">repetivel</span>':'')
+    +'<span class="tg">'+esc(c.q)+'</span></div>';
+  if(c.regra)h+='<div class="rg">'+esc(c.regra)+'</div>';
+  if(c.ex.length)h+='<div class="rg"><i>exemplos do protocolo:</i> '+esc(c.ex.join('; '))+'</div>';
+  lst.forEach(function(r,n){
+    h+='<div class="oc" data-n="'+n+'"><div class="lin">';
+    if(c.rep)h+='<span class="ord">#'+(n+1)+'</span>';
+    if(c.tipo==='fechado'){
+      h+='<select data-k="v">'+opcoes(c,r.v)+'</select>'
+        +'<input class="nat" data-k="nat" placeholder="termo nativo do estudo" value="'+esc(r.nat)+'">';
+    }else{
+      h+='<select data-k="v" class="ausx">'+ausSel(AUS.indexOf(r.v)>=0?r.v:'')+'</select>';
+    }
+    h+='<input class="ev" data-k="ev" placeholder="evidencia: trecho literal, dentro dos limites de citacao" value="'+esc(r.ev)+'">'
+      +'<input class="loc" data-k="loc" placeholder="p. / secao" value="'+esc(r.loc)+'">'
+      +'</div>';
+    if(c.tipo!=='fechado')
+      h+='<textarea data-k="t" placeholder="valor, no vocabulario do estudo">'+esc(AUS.indexOf(r.v)>=0?(r.t||''):(r.t||r.v||''))+'</textarea>';
+    h+='</div>';
+  });
+  if(c.rep)h+='<button class="mais" data-mais="'+c.o+'">+ ocorrencia</button>';
+  return h+'</div>';
+}
 
 function render(){
   var e0=EST[cur],e=est(e0.id);
@@ -272,33 +348,25 @@ function render(){
     +'<input id="gcn" style="flex:1;min-width:300px" placeholder="metodo, evidencia, discussao, decisao" value="'+esc(e.gcn)+'">'
     +'</div></div>';
   var sec='',fac='';
-  CAMPOS.forEach(function(c){
-    if(c.sec!==sec){sec=c.sec;fac='';h+='<h3 style="color:var(--tx);border-bottom:2px solid var(--ln);padding-bottom:6px">'+esc(sec)+'</h3>';}
-    if(c.fac!==fac){fac=c.fac;h+='<div class="fac">'+esc(fac)+'</div>';}
-    var lst=ocs(e0.id,c.o),cheio=lst.some(preenchido);
-    h+='<div class="cp'+(cheio?' on':'')+'" data-o="'+c.o+'"><div class="top"><span class="nm">'+esc(c.campo)+'</span>'
-      +'<span class="tg">'+esc(c.tipo)+'</span>'+(c.rep?'<span class="tg">repetivel</span>':'')
-      +'<span class="tg">'+esc(c.q)+'</span></div>';
-    if(c.regra)h+='<div class="rg">'+esc(c.regra)+'</div>';
-    if(c.ex.length)h+='<div class="rg"><i>exemplos do protocolo:</i> '+esc(c.ex.join('; '))+'</div>';
-    lst.forEach(function(r,n){
-      h+='<div class="oc" data-n="'+n+'"><div class="lin">';
-      if(c.rep)h+='<span class="ord">#'+(n+1)+'</span>';
-      if(c.tipo==='fechado'){
-        h+='<select data-k="v">'+opcoes(c,r.v)+'</select>'
-          +'<input class="nat" data-k="nat" placeholder="termo nativo do estudo" value="'+esc(r.nat)+'">';
-      }else{
-        h+='<select data-k="v" class="ausx">'+ausSel(AUS.indexOf(r.v)>=0?r.v:'')+'</select>';
-      }
-      h+='<input class="ev" data-k="ev" placeholder="evidencia: trecho literal, dentro dos limites de citacao" value="'+esc(r.ev)+'">'
-        +'<input class="loc" data-k="loc" placeholder="p. / secao" value="'+esc(r.loc)+'">'
+  BLOCOS.forEach(function(b){
+    var c0=b.cs[0];
+    if(c0.sec!==sec){sec=c0.sec;fac='';h+='<h3 style="color:var(--tx);border-bottom:2px solid var(--ln);padding-bottom:6px">'+esc(sec)+'</h3>';}
+    if(c0.fac!==fac){fac=c0.fac;h+='<div class="fac">'+esc(fac)+'</div>';}
+    if(!b.grp){h+=cartao(c0,ocs(e0.id,c0.o),'');return;}
+    var lst=insts(e0.id,b.grp);
+    h+='<div class="grp"><div class="grph">'+esc(b.grp)+' &middot; '+lst.length+(lst.length>1?' instancias':' instancia')
+      +' <span class="tg">os '+b.cs.length+' campos abaixo descrevem O MESMO objeto e saem na mesma tupla</span></div>';
+    lst.forEach(function(it,k){
+      var vazia=b.cs.every(function(c){return !((it[c.o]||[]).some(preenchido));});
+      h+='<div class="inst"><div class="insth">#'+(k+1)+' &middot; <span class="mono">'+esc(b.grp+'-'+(k+1))+'</span>'
+        +(vazia&&lst.length>1?' <button class="menos" data-menosg="'+b.grp+'" data-i="'+k+'">remover</button>':'')
         +'</div>';
-      if(c.tipo!=='fechado')
-        h+='<textarea data-k="t" placeholder="valor, no vocabulario do estudo">'+esc(AUS.indexOf(r.v)>=0?(r.t||''):(r.t||r.v||''))+'</textarea>';
+      b.cs.forEach(function(c){
+        h+=cartao(c,gocs(e0.id,b.grp,k,c.o),' data-g="'+b.grp+'" data-i="'+k+'"');
+      });
       h+='</div>';
     });
-    if(c.rep)h+='<button class="mais" data-mais="'+c.o+'">+ ocorrencia</button>';
-    h+='</div>';
+    h+='<button class="mais" data-maisg="'+b.grp+'">+ instancia de '+esc(b.grp.toLowerCase())+'</button></div>';
   });
   document.getElementById('form').innerHTML=h;
   document.getElementById('sel').value=String(cur);
@@ -318,18 +386,28 @@ document.getElementById('form').addEventListener('input',function(ev){
   if(t.id==='gcn'){e.gcn=t.value;salvar();return;}
   if(t.name==='gc'){e.gc=t.value;salvar();return;}
   var oc=t.closest('.oc'),cp=t.closest('.cp');if(!oc||!cp)return;
-  var o=cp.dataset.o,n=+oc.dataset.n,r=ocs(e0.id,o)[n],k=t.dataset.k;
+  var o=cp.dataset.o,n=+oc.dataset.n,k=t.dataset.k;
+  var lst=cp.dataset.g?gocs(e0.id,cp.dataset.g,+cp.dataset.i,o):ocs(e0.id,o);
+  var r=lst[n];
   if(k==='t'){r.t=t.value;if(!r.v||AUS.indexOf(r.v)<0)r.v=t.value;}
   else r[k]=t.value;
-  cp.classList.toggle('on',ocs(e0.id,o).some(preenchido));
+  cp.classList.toggle('on',lst.some(preenchido));
   salvar();atualizaProg();
 });
 document.getElementById('form').addEventListener('change',function(ev){
   if(ev.target.name==='gc'){est(EST[cur].id).gc=ev.target.value;salvar();atualizaProg();}
 });
 document.getElementById('form').addEventListener('click',function(ev){
+  var id=EST[cur].id;
+  var bg=ev.target.closest('[data-maisg]');
+  if(bg){insts(id,bg.dataset.maisg).push({});salvar();render();return;}
+  var bm=ev.target.closest('[data-menosg]');
+  if(bm){insts(id,bm.dataset.menosg).splice(+bm.dataset.i,1);salvar();render();return;}
   var b=ev.target.closest('[data-mais]');if(!b)return;
-  ocs(EST[cur].id,b.dataset.mais).push({});salvar();render();
+  var cp=b.closest('.cp');
+  if(cp.dataset.g)gocs(id,cp.dataset.g,+cp.dataset.i,cp.dataset.o).push({});
+  else ocs(id,b.dataset.mais).push({});
+  salvar();render();
 });
 
 document.getElementById('sel').addEventListener('change',function(){cur=+this.value;render();window.scrollTo(0,0);});
@@ -346,12 +424,28 @@ document.getElementById('exp').onclick=function(){
   var quem=document.getElementById('quem').value.trim()||'SEM_NOME';
   var ts=new Date().toISOString();
   var out=[__CAB__];
+  /* instancia e o que amarra a tupla: INADEQUACAO-2 no campo 47 e a MESMA
+     inadequacao que INADEQUACAO-2 no campo 49. Vazio fora de grupo. A ordem de
+     BLOCOS preserva a ordem do codebook. */
   EST.forEach(function(x){
     var e=S[x.id];if(!e)return;
-    CAMPOS.forEach(function(c){
-      (e.f[c.o]||[]).forEach(function(r,n){
-        if(!preenchido(r))return;
-        out.push([x.id,c.campo,n+1,r.v||'',r.nat||'',r.ev||'',r.loc||'',quem,ts,r.nt||'']);
+    BLOCOS.forEach(function(b){
+      if(!b.grp){
+        var c=b.cs[0];
+        ((e.f||{})[c.o]||[]).forEach(function(r,n){
+          if(!preenchido(r))return;
+          out.push([x.id,c.campo,'',n+1,r.v||'',r.nat||'',r.ev||'',r.loc||'',quem,ts,r.nt||'']);
+        });
+        return;
+      }
+      ((e.g||{})[b.grp]||[]).forEach(function(it,k){
+        var inst=b.grp+'-'+(k+1);
+        b.cs.forEach(function(c){
+          (it[c.o]||[]).forEach(function(r,n){
+            if(!preenchido(r))return;
+            out.push([x.id,c.campo,inst,n+1,r.v||'',r.nat||'',r.ev||'',r.loc||'',quem,ts,r.nt||'']);
+          });
+        });
       });
     });
   });
@@ -405,8 +499,21 @@ estudo usa. Os dois, sempre que diferirem.</li>
 <li><b>Campo aberto ou composto:</b> escreva no vocabulario do estudo. O menu ao lado
 serve so para marcar ausencia.</li>
 <li><b>Evidencia:</b> o trecho que sustenta o valor, com pagina ou secao.</li>
+<li><b>Grupo de repeticao:</b> nos blocos com borda azul, use <b>+ instancia</b> para cada
+objeto novo &mdash; cada inadequacao, cada construto, cada metrica, cada modelo. Use
+<b>+ ocorrencia</b> dentro de um campo so quando <b>aquele mesmo objeto</b> tiver mais de
+um valor naquele campo, como uma inadequacao que atinge dois portadores.</li>
 <li><b>Exportar</b> os dois CSV ao final: o da extracao e o do Portao C.</li>
 </ol>
+<div class="alerta"><b>Instancia, e nao lista paralela.</b> O protocolo (l. 1601-1608)
+define inadequacao como uma <b>tupla</b>, nao como quatro listas soltas. Ate aqui a chave
+do arquivo de extracao era <span class="mono">(logical_id, campo, ocorrencia, extrator)</span>,
+e nela <b>nada dizia</b> que a terceira ocorrencia de <i>Violated reference</i> pertencia a
+terceira de <i>UML carrier</i>: bastava um campo ficar em branco numa das quatro listas para
+todas as tuplas seguintes se deslocarem em silencio. A coluna <span class="mono">instancia</span>
+amarra a tupla, e por isso os campos de um grupo aparecem juntos num cartao so. Sem esse
+vinculo a <b>comparacao constante</b> (l. 1626) e a <b>analise de casos negativos</b>
+(l. 1628) nao teriam sobre que operar, porque as duas trabalham com <b>casos</b>.</div>
 <div class="nota"><b>Vocabulario nativo primeiro.</b> Em todo campo fechado ha um lugar
 para o <b>termo do proprio estudo</b>, e ele nao e decorativo. Normalizar antes de
 registrar apaga a variacao terminologica entre os estudos &mdash; e essa variacao e o
@@ -480,6 +587,24 @@ o piloto responde quatro das cinco perguntas.</div>
 ausente</b> por contagem dos codigos de ausencia, <b>sobreposicao de categorias</b> e
 <b>clareza dos campos</b> pelas notas por campo, e <b>viabilidade da extracao em nivel de
 unidade</b> pelo numero de ocorrencias que os campos repetiveis realmente receberem.</p>
+
+<h3>2.3 Uma pergunta que o piloto tem de responder: a instancia de avaliacao</h3>
+<div class="alerta"><b>O protocolo define tres niveis de analise e este instrumento
+implementa um.</b> A l. 157 nomeia o relato, o <b>estudo primario</b> e a <b>instancia de
+avaliacao</b>, esta ultima definida como uma combinacao extraivel de tipo de diagrama,
+corpus de entrada, configuracao do modelo, condicao de geracao e procedimento de avaliacao.
+A ficha extrai <b>por estudo</b>. Um estudo que compare tres modelos em dois tipos de
+diagrama e uma linha so, e a variacao interna se perde.<br>
+Isso <b>nao</b> foi resolvido agora, e a razao esta na propria l. 1558: a
+<b>viabilidade da extracao em nivel de unidade</b> e uma das cinco perguntas que o piloto
+existe para responder. Decidir antes de medir seria inverter a ordem &mdash; ou se cria uma
+chave que ninguem consegue preencher, ou se descarta uma distincao de que a sintese vai
+precisar. Os grupos de repeticao ja registram <b>modelo</b>, <b>construto</b>,
+<b>inadequacao</b> e <b>metrica</b> como objetos separados, o que e a metade do caminho; o
+que falta e saber se o campo 6 (<i>DiagramType</i>, hoje de nivel de estudo e nao repetivel)
+e as condicoes de geracao precisam subir para a mesma granularidade. <b>Ao final do piloto,
+com dados na mao, isto volta a mesa</b> e, se mudar, vira emenda com revisao retrospectiva
+dos dez.</div>
 </section>
 
 <section id="mapa"><h2>3. Mapa dos campos</h2>
@@ -492,14 +617,25 @@ __TAB_SECOES__
 escrito no gerador. Corrigir o codebook e regerar a pagina muda o formulario sem tocar em
 codigo &mdash; e o que torna a revisao do formulario depois do piloto uma operacao barata
 em vez de uma reescrita.</div>
-<div class="alerta"><b>Duas colunas do codebook sao inferencia nossa, nao do protocolo.</b>
+<div class="alerta"><b>Tres colunas do codebook sao inferencia nossa, nao do protocolo.</b>
 A coluna <b>repetivel</b> nao existe nas tabelas do protocolo: foi marcada <span
 class="mono">NAO</span> onde a lista oferece valvula de escape (<i>multiple UML types</i>,
 <i>mixed task</i>, <i>mixed textual input</i>, <i>mixed representation</i>) e <span
 class="mono">SIM</span> onde nao oferece. A coluna <b>questoes</b> foi derivada em nivel de
 <b>faceta</b> da tabela de rastreabilidade, porque as tabelas de extracao nao trazem o
-mapeamento campo a campo, embora o texto de abertura afirme que cada campo o tem. As duas
-sao as primeiras coisas que o piloto deve testar.</div>
+mapeamento campo a campo, embora o texto de abertura afirme que cada campo o tem. A coluna
+<b>grupo_repeticao</b> tambem e nossa: o protocolo enuncia a tupla da inadequacao
+(l. 1601-1608) mas <b>nao</b> diz que construto, metrica e modelo tem o mesmo problema de
+vinculo &mdash; estender o mecanismo aos quatro foi decisao nossa, porque trata-lo so na
+SQ2 deixaria os outros tres com o mesmo defeito, silencioso. As tres sao as primeiras
+coisas que o piloto deve testar.</div>
+<div class="nota"><b>Quatro grupos, onze campos.</b> <span class="mono">MODELO</span> (11-12),
+<span class="mono">CONSTRUTO</span> (33-35), <span class="mono">INADEQUACAO</span> (46-49) e
+<span class="mono">METRICA</span> (50-51). O criterio foi estreito de proposito: entram os
+campos que descrevem <b>conjuntamente um mesmo objeto</b>. Os campos 40 e 41, embora tambem
+sejam da faceta <i>Metric</i> e repetiveis, ficaram <b>fora</b> &mdash; sao descricoes
+abertas e autonomas de procedimento, sem campo irmao com que se alinhar, e agrupa-las criaria
+posicoes que nunca se preenchem.</div>
 </section>
 
 <section id="estudos"><h2>4. Os estudos</h2>
@@ -520,8 +656,11 @@ de atricao, que nao e exclusao, e cujo prazo ainda corre.</p>
 <div class="nota">O progresso fica gravado <b>neste navegador</b>. Nao troque de maquina no
 meio, e exporte os dois CSV ao terminar. Limpar os dados do site apaga o trabalho. A
 exportacao da extracao sai no formato longo de
-<span class="mono">analysis/extraction/extracao.csv</span>; a do Portao C sai separada,
-porque desfecho de portao mora no CSV mestre.</div>
+<span class="mono">analysis/extraction/extracao.csv</span>, agora com a coluna
+<span class="mono">instancia</span> no formato <span class="mono">INADEQUACAO-2</span>,
+vazia fora dos grupos; a do Portao C sai separada, porque desfecho de portao mora no CSV
+mestre. A chave de gravacao no navegador passou a <span class="mono">extracao.v2</span>:
+a forma guardada mudou, e reaproveitar a v1 misturaria dois formatos no mesmo export.</div>
 <div id="form"></div>
 </section>
 </main>
