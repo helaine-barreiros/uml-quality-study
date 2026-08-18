@@ -21,7 +21,7 @@ CSV no MESMO cabecalho de analysis/extraction/extracao.csv, e a decisao do
 Portao C sai em CSV separado, porque o desfecho de portao mora no CSV mestre e
 nao no arquivo de extracao (manual v2, secao 7.1).
 """
-import collections, csv, hashlib, html, json, os, random, re
+import collections, csv, html, json, os, re
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
 CSV  = os.path.join(BASE, 'search/automated/custom_automated_search_collection.csv')
@@ -52,38 +52,41 @@ com_texto = [r for r in ret if r[i['pdf_status']].startswith('OK_')]
 com_texto.sort(key=lambda r: r[i['logical_id']])
 
 # ------------------------------------------------------------------ piloto
-# O sorteio mora AQUI, e nao numa lista fixa colada no codigo, para que a
-# amostra do piloto seja reproduzivel por quem auditar: mesma semente, mesmo
-# CSV, mesmos dez registros.
+# A amostra do piloto e uma LISTA CONGELADA, e nao um sorteio recalculado a cada
+# execucao. A primeira versao deste arquivo recalculava, e estava errada: o
+# sorteio depende do conjunto de estudos com texto, que CRESCE quando um autor
+# responde ao pedido de copia. Verificado em 2026-08-18, ao entrar 907_SCOPUS:
+# a amostra trocava 762_SCOPUS por 927_SCOPUS sozinha. Uma amostra que se
+# reembaralha a cada recuperacao nao e amostra, e o piloto registrado no log
+# deixaria de bater com o que a pagina mostra.
 #
-# Estratos: ano x tipo de veiculo. Sao os dois UNICOS eixos de diversidade
-# exigidos pela l. 1558 que se conhecem ANTES de extrair; os outros dois, tipo
-# de diagrama e referencial de avaliacao, so aparecem na leitura. Cada estrato
-# nao vazio recebe uma vaga, e as vagas que sobram vao para os estratos maiores.
-# A cota igual por estrato e deliberada: o piloto existe para submeter o
-# formulario a casos diferentes, nao para representar o corpus em proporcao.
+# COMO ESTES DEZ FORAM OBTIDOS, para quem auditar: sorteio estratificado por ano
+# x tipo de veiculo sobre os 52 estudos com texto em 2026-08-18, uma vaga por
+# estrato nao vazio e as vagas restantes para os estratos maiores, com semente
+# 20260818 combinada por sha256 com o nome do estrato. Ano e tipo de veiculo sao
+# os dois UNICOS eixos de diversidade da l. 1558 conheciveis antes de extrair.
+# A cota igual por estrato foi deliberada: o piloto submete o formulario a casos
+# diferentes, nao representa o corpus em proporcao. Nada olhou para o CONTEUDO
+# dos estudos, o que selecionaria pela variavel dependente e violaria a sexta
+# regra de ouro do manual v2. O procedimento completo esta no log, linha
+# DECISAO_DESENHO de 2026-08-18T02:45.
 #
-# Nada aqui olha para o CONTEUDO do estudo. Escolher o piloto pelo que o titulo
-# sugere sobre avaliacao de qualidade seria selecionar pela variavel dependente,
-# que e a sexta regra de ouro do manual v2.
-SEMENTE_PILOTO = 20260818        # data em que a amostra do piloto foi sorteada
-N_PILOTO = 10                    # minimo do protocolo, l. 1558
+# Registros recuperados DEPOIS do sorteio entram na fila de extracao, mas nao
+# entram no piloto: trocar a amostra a cada chegada tornaria o piloto um alvo
+# movel e invalidaria a comparacao entre o que foi planejado e o que foi feito.
+SEMENTE_PILOTO = 20260818        # semente do sorteio que produziu a lista abaixo
+PILOTO = {
+    '018_ACM', '521_IEEE', '751_SCOPUS', '762_SCOPUS', '801_SCOPUS',
+    '859_SCOPUS', '892_SCOPUS', '909_SCOPUS', '958_SCOPUS', '976_SCOPUS',
+}
+N_PILOTO = len(PILOTO)
 
 estratos = collections.OrderedDict()
 for r in com_texto:
     estratos.setdefault((r[i['PY']].strip(), r[i['TY']].strip()), []).append(r)
 
-cota = {k: 1 for k in estratos}
-for k in sorted(estratos, key=lambda k: (-len(estratos[k]), k))[:N_PILOTO - len(cota)]:
-    cota[k] += 1
-
-PILOTO = []
-for k in sorted(estratos):
-    rnd = random.Random(SEMENTE_PILOTO
-                        + int.from_bytes(hashlib.sha256(('%s|%s' % k).encode()).digest()[:8], 'big'))
-    PILOTO += [r[i['logical_id']] for r in rnd.sample(estratos[k], min(cota[k], len(estratos[k])))]
-PILOTO = set(PILOTO)
-assert len(PILOTO) == N_PILOTO, len(PILOTO)
+ausentes = PILOTO - {r[i['logical_id']] for r in com_texto}
+assert not ausentes, 'registro do piloto sumiu da fila com texto: %s' % sorted(ausentes)
 
 # Os do piloto vem primeiro na fila para que as setas os percorram em sequencia.
 com_texto.sort(key=lambda r: (r[i['logical_id']] not in PILOTO, r[i['logical_id']]))
@@ -202,7 +205,9 @@ tab_piloto = tab(
 
 tab_estratos = tab(
     ['Ano', 'Tipo', '#Com texto', '#No piloto'],
-    [(a, t, len(estratos[(a, t)]), cota[(a, t)]) for a, t in sorted(estratos)])
+    [(a, t, len(estratos[(a, t)]),
+      sum(1 for r in estratos[(a, t)] if r[i['logical_id']] in PILOTO))
+     for a, t in sorted(estratos)])
 
 # ------------------------------------------------------------------ css
 EXTRA = """
@@ -439,10 +444,19 @@ ja foi extraido &mdash; o que e mais um motivo para o piloto vir antes da produc
 
 <h3>2.1 A amostra sorteada</h3>
 <p>Estratos: <b>ano x tipo de veiculo</b>. Uma vaga por estrato nao vazio, e as vagas
-restantes para os estratos maiores. Semente fixa <span class="mono">__SEMENTE__</span>,
-portanto o sorteio e reproduzivel: mesma semente e mesmo CSV devolvem os mesmos dez.
-A cota igual por estrato e proposital &mdash; o piloto existe para submeter o formulario
-a casos <b>diferentes</b>, nao para representar o corpus em proporcao.</p>
+restantes para os estratos maiores, com semente <span class="mono">__SEMENTE__</span>
+sobre os 52 estudos que tinham texto em 2026-08-18. A cota igual por estrato e proposital
+&mdash; o piloto existe para submeter o formulario a casos <b>diferentes</b>, nao para
+representar o corpus em proporcao.</p>
+<div class="alerta"><b>A amostra esta CONGELADA, e nao e mais recalculada.</b> A primeira
+versao do gerador refazia o sorteio a cada execucao, e isso estava errado: o sorteio
+depende do conjunto de estudos com texto, que <b>cresce</b> quando um autor responde ao
+pedido de copia. Verificado ao entrar o 907_SCOPUS &mdash; a amostra trocava
+<span class="mono">762_SCOPUS</span> por <span class="mono">927_SCOPUS</span> sozinha, e a
+pagina deixaria de bater com o piloto registrado no log. Os dez agora sao lista fixa;
+a regra da semente fica ao lado apenas como <b>proveniencia</b> de como foram obtidos.
+Registros recuperados depois entram na fila de extracao, mas <b>nao</b> entram no piloto:
+amostra que se reembaralha a cada chegada e alvo movel.</div>
 __TAB_ESTRATOS__
 __TAB_PILOTO__
 <div class="nota"><b>Nada na selecao olhou para o conteudo dos estudos.</b> So ano, tipo de
