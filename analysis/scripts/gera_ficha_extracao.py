@@ -151,6 +151,9 @@ for c in codebook:
         # analise de casos negativos (l. 1628) operam sobre casos.
         'grp':   c['grupo_repeticao'],
         'q':     c['questoes'],
+        # Duas relacoes diferentes, que a coluna questoes fundia ate o item F:
+        # "e dado de" (l. 133-143) e "define o subconjunto de" (l. 1373-1376).
+        'sub':   c['define_subconjunto'],
         'regra': c['regra_extracao'],
         # exemplos nao viram opcao: em campo aberto a lista do protocolo e
         # ilustrativa, e transforma-la em menu induziria a escolher da lista em
@@ -159,28 +162,40 @@ for c in codebook:
         'ex':    vals if not fechado else [],
     })
 
+# Numero de ordem por NOME. Duas renumeracoes numa sessao so (a entrada da
+# severidade e a fusao do campo de envolvimento humano) mostraram que amarrar
+# trava ou texto ao numero do campo e amarrar ao que muda. Daqui para baixo o
+# numero e sempre DERIVADO do nome.
+ORD = {c['campo']: c['o'] for c in CAMPOS}
+assert len(ORD) == len(CAMPOS), 'nome de campo repetido no codebook'
+
 # ------------------------------------------------- 8d-4: fonte unica dos codigos
 # O codebook da TAXONOMIA (l. 1634) e o de EXTRACAO descrevem o mesmo
 # vocabulario em arquivos diferentes: os codigos da taxonomia SAO os valores dos
-# campos 47 e 48, e os portadores admitidos SAO os valores do campo 49. Foi
+# campos de operacao e de referencia, e os portadores admitidos SAO os valores
+# do campo de portador. Foi
 # exatamente esse tipo de duplicacao sem reconciliacao, entre duas secoes do
 # protocolo, que produziu as cinco divergencias resolvidas no item 8c. O assert
 # abaixo existe para que o defeito nao possa renascer entre dois arquivos
 # nossos: qualquer edicao de um lado so INTERROMPE a geracao da ficha.
 TAX = list(csv.DictReader(open(os.path.join(
     BASE, 'analysis/extraction/codebook_taxonomia.csv'), encoding='utf-8')))
-_v = {int(c['ordem']): [x.strip() for x in c['valores_admitidos'].split(';') if x.strip()]
-      for c in codebook if c['ordem'].isdigit()}
+_v = {c['campo']: c['vals'] if c['tipo'] != 'fechado' else
+      [x.strip() for x in
+       next(r['valores_admitidos'] for r in codebook if r['campo'] == c['campo']).split(';')
+       if x.strip()]
+      for c in CAMPOS}
+OPER, REF, PORT = 'Normalized discrepancy operation', 'Violated reference', 'UML carrier'
 _por_pai = collections.OrderedDict()
 for t in TAX:
     _por_pai.setdefault(t['categoria_pai'], []).append(t['codigo'])
-assert _por_pai.get('OPERACAO_DE_DISCREPANCIA') == _v[47], \
-    'codebook da taxonomia diverge do campo 47'
-assert _por_pai.get('REFERENCIA_VIOLADA') == _v[48], \
-    'codebook da taxonomia diverge do campo 48'
+assert _por_pai.get('OPERACAO_DE_DISCREPANCIA') == _v[OPER], \
+    'codebook da taxonomia diverge do campo %d' % ORD[OPER]
+assert _por_pai.get('REFERENCIA_VIOLADA') == _v[REF], \
+    'codebook da taxonomia diverge do campo %d' % ORD[REF]
 for t in TAX:
-    assert [p.strip() for p in t['portadores_admitidos'].split(';')] == _v[49], \
-        'portadores admitidos de %r divergem do campo 49' % t['codigo']
+    assert [p.strip() for p in t['portadores_admitidos'].split(';')] == _v[PORT], \
+        'portadores admitidos de %r divergem do campo %d' % (t['codigo'], ORD[PORT])
 n_tax = len(TAX)
 n_tax_construido = sum(1 for t in TAX if t['procedencia_exemplo'] == 'construido')
 
@@ -217,9 +232,31 @@ n_grp = sum(len(oo) for oo in GRUPOS.values())
 # nenhuma das tabelas. O assert existe para que a pagina nunca afirme "um campo
 # nosso" apontando para outra coisa.
 NOSSO = 'Reported severity or task effect'
-assert [c['o'] for c in CAMPOS if c['campo'] == NOSSO] == [50], \
-    'o campo acrescentado no 8b saiu do lugar'
+assert ORD[NOSSO] in GRUPOS['INADEQUACAO'], \
+    'o campo acrescentado no 8b saiu de dentro do grupo INADEQUACAO'
 n_tab = len(CAMPOS) - 1
+
+# Perguntas: quem e dono de que. Vazio em questoes significa INSTRUMENTO da
+# revisao, e sao exatamente os quatro campos de eixo e atribuicao.
+DONOS = collections.OrderedDict()
+for c in CAMPOS:
+    DONOS.setdefault(c['q'] or '(instrumento)', []).append(c['o'])
+assert not any(';' in c['q'] for c in CAMPOS), 'sobrou campo com dois donos'
+assert len(DONOS['(instrumento)']) == 4, DONOS['(instrumento)']
+QUESTOES = ('MQ1', 'MQ2', 'MQ3', 'MQ4', 'MQ5',
+            'SQ1', 'SQ2', 'SQ3', 'SQ4', 'SQ5', 'SQ6')
+SEM_CAMPO = [q for q in QUESTOES if q not in DONOS]
+assert SEM_CAMPO == ['MQ5'], SEM_CAMPO   # a MQ5 e computada (l. 137, l. 1380)
+
+# A correspondencia com as tabelas do protocolo, derivada e nao escrita: a
+# insercao da severidade e a fusao do campo de envolvimento humano se cancelam
+# depois da severidade.
+O_ULT_IGUAL = ORD['Dimensions and baselines']
+
+
+def faixa(g):
+    oo = GRUPOS[g]
+    return '%d-%d' % (oo[0], oo[-1])
 
 kpis = ''.join(
     '<div class="kpi %s"><b>%s</b><span>%s</span></div>' % (cls, v, k)
@@ -250,6 +287,34 @@ tab_secoes = tab(
       ' '.join(sorted({c['grp'] for c in CAMPOS
                        if c['sec'] == sec and c['fac'] == fac and c['grp']})))
      for sec, facs in SECOES for fac in facs])
+
+PRODUTO = {
+    'MQ1': 'Publication and evidence landscape',
+    'MQ2': 'Diagram, task, and data map',
+    'MQ3': 'Technical configuration map',
+    'MQ4': 'Evaluation and reproducibility map',
+    'MQ5': 'Research concentration and gap map',
+    'SQ1': 'Quality construct matrix',
+    'SQ2': 'Taxonomy of reported inadequacies',
+    'SQ3': 'Evaluation reference and metric catalogue',
+    'SQ4': 'Syntax-semantic dissonance evidence map',
+    'SQ5': 'Assessment credibility matrix',
+    'SQ6': 'Generation context, pragmatic, and rework evidence map',
+}
+# De onde cada produto se compõe quando a pergunta nao e dona do campo. Nao e
+# opiniao: sai da tabela de rastreabilidade l. 133-143 comparada com a posse.
+DERIVA = {
+    'MQ4': 'MQ1, SQ3 e SQ5',
+    'MQ5': 'MQ2, MQ3 e MQ4',
+    'SQ6': 'MQ3',
+}
+tab_donos = tab(
+    ['Pergunta', '#Campos proprios', 'Campos', 'Tambem se compoe de', 'Produto'],
+    [(q, len(DONOS.get(q, [])), ' '.join(str(o) for o in DONOS.get(q, [])) or '(nenhum)',
+      DERIVA.get(q, ''), PRODUTO[q]) for q in QUESTOES]
+    + [('(instrumento)', len(DONOS['(instrumento)']),
+        ' '.join(str(o) for o in DONOS['(instrumento)']), '',
+        'Eixos e atribuicao: computam subconjuntos, nao respondem pergunta')])
 
 tab_est = tab(
     ['Registro', 'Piloto', 'Ano', 'Tipo', 'Veiculo'],
@@ -460,8 +525,8 @@ document.getElementById('exp').onclick=function(){
   var quem=document.getElementById('quem').value.trim()||'SEM_NOME';
   var ts=new Date().toISOString();
   var out=[__CAB__];
-  /* instancia e o que amarra a tupla: INADEQUACAO-2 no campo 47 e a MESMA
-     inadequacao que INADEQUACAO-2 no campo 49. Vazio fora de grupo. A ordem de
+  /* instancia e o que amarra a tupla: INADEQUACAO-2 num campo do grupo e a MESMA
+     inadequacao que INADEQUACAO-2 no campo vizinho. Vazio fora de grupo. A ordem de
      BLOCOS preserva a ordem do codebook. */
   EST.forEach(function(x){
     var e=S[x.id];if(!e)return;
@@ -632,7 +697,7 @@ pede dois extratores nos campos interpretativos <b>do piloto</b>; a l. 1638 abre
 &mdash; e do <b>corpus inteiro</b>, nao de dez estudos. Hoje o plano em execucao cobre
 <b>zero</b> disso.<br>
 <b>O que a exigencia NAO e:</b> ela nao pede dupla codificacao dos 65 campos. Ela diz
-<i>inadequacy data</i>, que sao os campos <b>46 a 50</b>, o grupo <span
+<i>inadequacy data</i>, que sao os campos <b>__G_INADEQUACAO__</b>, o grupo <span
 class="mono">INADEQUACAO</span>. Isso e o que torna a exigencia praticavel, e vale registrar
 antes que ela seja lida como grande demais para caber.</div>
 <div class="nota"><b>Consequencia operacional, ja acomodada:</b> a l. 1638 termina exigindo
@@ -657,7 +722,7 @@ concordancia pressupoe que os dois revisores estejam falando <b>das mesmas unida
 l. 1638 diz em que niveis medir, mas <b>nao</b> diz como alinhar as unidades &mdash; e dois
 revisores lendo o mesmo estudo podem registrar cinco e sete inadequacoes. Sem regra de
 alinhamento nao existe tabela de contingencia e nenhum kappa e computavel. Ha pelo menos
-duas saidas &mdash; usar o <b>rotulo nativo</b> (campo 46) como chave de pareamento, ou
+duas saidas &mdash; usar o <b>rotulo nativo</b> (campo __O_ROTULO__) como chave de pareamento, ou
 fixar a lista de unidades numa primeira passagem e codificar as dimensoes numa segunda
 &mdash; e a escolha <b>tem de ser feita antes</b> das duas passagens, nunca depois de
 gerados os dados. Nada disto foi decidido aqui: esta declarado para que nao seja descoberto
@@ -676,7 +741,7 @@ existe para responder. Decidir antes de medir seria inverter a ordem &mdash; ou 
 chave que ninguem consegue preencher, ou se descarta uma distincao de que a sintese vai
 precisar. Os grupos de repeticao ja registram <b>modelo</b>, <b>construto</b>,
 <b>inadequacao</b> e <b>metrica</b> como objetos separados, o que e a metade do caminho; o
-que falta e saber se o campo 6 (<i>DiagramType</i>, hoje de nivel de estudo e nao repetivel)
+que falta e saber se o campo __O_DIAG__ (<i>DiagramType</i>, hoje de nivel de estudo e nao repetivel)
 e as condicoes de geracao precisam subir para a mesma granularidade. <b>Ao final do piloto,
 com dados na mao, isto volta a mesa</b> e, se mudar, vira emenda com revisao retrospectiva
 dos dez.</div>
@@ -702,13 +767,18 @@ mapeamento campo a campo, embora o texto de abertura afirme que cada campo o tem
 <b>grupo_repeticao</b> tambem e nossa: o protocolo enuncia a tupla da inadequacao
 (l. 1601-1608) mas <b>nao</b> diz que construto, metrica e modelo tem o mesmo problema de
 vinculo &mdash; estender o mecanismo aos quatro foi decisao nossa, porque trata-lo so na
-SQ2 deixaria os outros tres com o mesmo defeito, silencioso. As tres sao as primeiras
-coisas que o piloto deve testar.</div>
-<div class="alerta"><b>O campo 50 e o unico que nao vem das tabelas do protocolo.</b>
+SQ2 deixaria os outros tres com o mesmo defeito, silencioso. A quarta,
+<b>define_subconjunto</b>, existe porque a coluna <b>questoes</b> fundia duas relacoes
+diferentes: <i>e dado de</i> (l. 133-143) e <i>define o subconjunto de</i> (l. 1373-1376).
+A confusao era visivel dentro de <b>uma unica linha</b> &mdash; no eixo D a coluna
+<span class="mono">questoes</span> dizia <span class="mono">SQ1;SQ4</span> enquanto a regra
+de extracao, ao lado, dizia que ele <i>define os subconjuntos de SQ1 a SQ3</i>. As quatro
+sao as primeiras coisas que o piloto deve testar.</div>
+<div class="alerta"><b>O campo __O_SEV__ e o unico que nao vem das tabelas do protocolo.</b>
 A l. 1601-1608 define a inadequacao como a tupla <span class="mono">&lt;Rv, Od, Cu, Se,
 Ex&gt;</span> e a l. 1616 poe a severidade como quinta dimensao da codificacao, mas nenhuma
-das duas tabelas de extracao lhe deu casa: <i>Rv</i>, <i>Od</i> e <i>Cu</i> sao os campos 48,
-47 e 49, e <i>Ex</i> sao as colunas <span class="mono">evidencia</span> e <span
+das duas tabelas de extracao lhe deu casa: <i>Rv</i>, <i>Od</i> e <i>Cu</i> sao os campos __O_REF__,
+__O_OPER__ e __O_PORT__, e <i>Ex</i> sao as colunas <span class="mono">evidencia</span> e <span
 class="mono">localizacao</span>, que ja existem em <b>toda</b> linha do arquivo de extracao.
 So <i>Se</i> ficava de fora, e sem ela a tupla nao fecha.<br>
 <b>E aberto, e nao fechado, por leitura literal.</b> A l. 1616 diz que a severidade e
@@ -717,27 +787,60 @@ classificada</b>. Uma lista fechada inventaria uma escala que o estudo nao tem e
 normalizaria exatamente o que a linha manda conservar. Preencher <b>so</b> quando o estudo
 reporta, com o rotulo e a escala dele; quando nao reporta, escrever <span class="mono">not
 reported</span>.<br>
-<b>Consequencia mecanica:</b> os 15 campos seguintes desceram uma casa (50-64 passaram a
-51-65). Nao havia alternativa &mdash; a severidade e dimensao da inadequacao, entao ela tem
-de ficar <b>dentro</b> do grupo <span class="mono">INADEQUACAO</span>, e o grupo tem de ser
-contiguo. A auditoria contra o protocolo continua valendo porque a <b>ordem</b> nao mudou:
-houve uma insercao declarada, nao um rearranjo.</div>
-<div class="nota"><b>Quatro grupos, doze campos.</b> <span class="mono">MODELO</span> (11-12),
-<span class="mono">CONSTRUTO</span> (33-35), <span class="mono">INADEQUACAO</span> (46-50) e
-<span class="mono">METRICA</span> (51-52). O criterio foi estreito de proposito: entram os
-campos que descrevem <b>conjuntamente um mesmo objeto</b>. Os campos 40 e 41, embora tambem
+<b>Consequencia mecanica:</b> os campos seguintes desceram uma casa. Nao havia alternativa
+&mdash; a severidade e dimensao da inadequacao, entao ela tem de ficar <b>dentro</b> do
+grupo <span class="mono">INADEQUACAO</span>, e o grupo tem de ser contiguo. A auditoria
+contra o protocolo continua valendo porque a <b>ordem</b> nao mudou: houve uma insercao
+declarada, nao um rearranjo.</div>
+<div class="nota"><b>A numeracao e nossa, e a correspondencia com as tabelas do protocolo
+tem tres trechos.</b> Duas mudancas mexeram nela: entrou a severidade e saiu o campo de
+envolvimento humano, fundido no de papel do avaliador. As duas <b>se cancelam</b> depois da
+severidade, entao a conversao e simples e vale a pena registra-la em vez de deixa-la para
+quem for reler:
+<span class="mono">1&ndash;__O_ULT_IGUAL__</span> tem a mesma posicao no protocolo;
+<span class="mono">__O_PRIM_MAIS__&ndash;__O_ULT_MAIS__</span> tem posicao <b>numero mais
+um</b>, porque o campo 27 do protocolo foi fundido;
+<span class="mono">__O_SEV__</span> e nosso e nao tem posicao no protocolo; e de
+<span class="mono">__O_PRIM_IGUAL__</span> em diante a posicao volta a coincidir.</div>
+<div class="nota"><b>Quatro grupos, doze campos.</b> <span class="mono">MODELO</span> (__G_MODELO__),
+<span class="mono">CONSTRUTO</span> (__G_CONSTRUTO__), <span class="mono">INADEQUACAO</span> (__G_INADEQUACAO__) e
+<span class="mono">METRICA</span> (__G_METRICA__). O criterio foi estreito de proposito: entram os
+campos que descrevem <b>conjuntamente um mesmo objeto</b>. Os campos __O_MET1__ e __O_MET2__, embora tambem
 sejam da faceta <i>Metric</i> e repetiveis, ficaram <b>fora</b> &mdash; sao descricoes
 abertas e autonomas de procedimento, sem campo irmao com que se alinhar, e agrupa-las criaria
 posicoes que nunca se preenchem.</div>
 
-<h3>3.1 O codebook da taxonomia e um segundo artefato</h3>
+<h3>3.1 Um dado, um dono</h3>
+<p>Cada campo pertence a <b>uma</b> pergunta. Antes, doze campos apareciam marcados com
+duas, o que parecia inofensivo e nao era: quando o mesmo dado responde a duas perguntas com
+<b>bases diferentes</b>, os dois numeros divergem e nada no arquivo diz qual esta certo. O
+caso limpo era o contexto de geracao, que a MQ3 relata sobre <b>todo</b> o corpus (l. 1373)
+e a SQ6 relataria sobre o subconjunto de eixo U nao ausente (l. 1376).</p>
+__TAB_DONOS__
+<div class="nota"><b>Perder o campo nao e perder a pergunta.</b> Posse de campo e uma coisa;
+composicao do produto de sintese e outra. A MQ4 continua produzindo o seu mapa de avaliacao
+e reprodutibilidade &mdash; so que a partir de campos cujo dono e MQ1, SQ3 e SQ5, mais o seu
+proprio. O mesmo vale para a metade de contexto da SQ6, que le campos da MQ3.</div>
+<div class="alerta"><b>A MQ5 nao tem campo nenhum, e isso esta certo.</b> Zero campos aqui
+seria lido como esquecimento, entao fica declarado: a l. 137 diz que o dado da MQ5 sao
+<i>combined categories from MQ2 to MQ4</i> e a l. 1380 explica por que ela e <b>computada</b>
+&mdash; uma analise de lacunas rodada sobre um corpus filtrado por relato de evidencia
+relataria o filtro da propria revisao como lacuna da literatura. Criar campo para a MQ5
+seria pedir ao extrator que respondesse o que a sintese tem de calcular.<br>
+<b>O que a tabela acima torna impossivel de ignorar:</b> a MQ3 tem
+<b>13</b> campos proprios e a SQ2 tem <b>5</b>, sendo a SQ2 a taxonomia de inadequacoes, que
+o racional do estudo poe como precedencia numero um. O formulario esta calibrado para um
+mapping study convencional. Isso <b>nao</b> foi resolvido: depende de o piloto medir quantos
+dos 13 campos da MQ3 realmente se preenchem.</div>
+
+<h3>3.2 O codebook da taxonomia e um segundo artefato</h3>
 <p>O arquivo <span class="mono">analysis/extraction/codebook_taxonomia.csv</span> nao e o
 mesmo que o de extracao e nao substitui nenhum campo. O de extracao diz <b>quais campos
 preencher</b>; o da taxonomia diz <b>o que cada valor significa</b>. Ele cumpre a l. 1634,
 que exige de cada codigo definicao, regra de inclusao, regra de exclusao, exemplo positivo,
 exemplo negativo, categoria pai, portadores admitidos e historico de revisao. Sao
-<b>__N_TAX__ codigos</b>: as __N_TAX_REF__ referencias violadas do campo 48 e as
-__N_TAX_OPE__ operacoes de discrepancia do campo 47.</p>
+<b>__N_TAX__ codigos</b>: as __N_TAX_REF__ referencias violadas do campo __O_REF__ e as
+__N_TAX_OPE__ operacoes de discrepancia do campo __O_OPER__.</p>
 <div class="nota"><b>Portador nao e codigo, e atributo &mdash; por isso sao 14 e nao 25.</b>
 A prova esta na propria l. 1634, que poe <i>allowed UML carriers</i> entre os atributos de
 cada codigo: se o portador fosse um codigo, o atributo seria circular. Isso bate com a
@@ -765,8 +868,8 @@ Um codigo nao tem sequer exemplo construido: <span class="mono">emergent categor
 por construcao. Qualquer exemplo positivo inventado ali seria a proposta de uma categoria
 nova feita <b>antes</b> dos dados, que e exatamente o que essa categoria existe para impedir.</div>
 <div class="nota"><b>Os dois codebooks descrevem o mesmo vocabulario, e isso e um risco.</b>
-Os codigos da taxonomia <b>sao</b> os valores dos campos 47 e 48, e os portadores admitidos
-<b>sao</b> os valores do campo 49. Foi esse tipo de duplicacao sem reconciliacao, entre duas
+Os codigos da taxonomia <b>sao</b> os valores dos campos __O_OPER__ e __O_REF__, e os portadores admitidos
+<b>sao</b> os valores do campo __O_PORT__. Foi esse tipo de duplicacao sem reconciliacao, entre duas
 secoes do protocolo, que produziu as cinco divergencias resolvidas no item 8c. Para que o
 defeito nao renasca entre dois arquivos nossos, o gerador <b>interrompe a geracao desta
 pagina</b> se os dois lados divergirem em um unico valor ou na ordem.</div>
@@ -826,6 +929,23 @@ pg = (HTML.replace('__CSS__', CSS + EXTRA)
         .replace('__OPCOES__', opcoes)
         .replace('__N_CAMPOS__', str(len(CAMPOS)))
         .replace('__N_TAB__', str(n_tab))
+        .replace('__G_MODELO__', faixa('MODELO'))
+        .replace('__G_CONSTRUTO__', faixa('CONSTRUTO'))
+        .replace('__G_INADEQUACAO__', faixa('INADEQUACAO'))
+        .replace('__G_METRICA__', faixa('METRICA'))
+        .replace('__O_SEV__', str(ORD[NOSSO]))
+        .replace('__O_OPER__', str(ORD[OPER]))
+        .replace('__O_REF__', str(ORD[REF]))
+        .replace('__O_PORT__', str(ORD[PORT]))
+        .replace('__O_ROTULO__', str(ORD['Original label and definition']))
+        .replace('__O_DIAG__', str(ORD['DiagramType']))
+        .replace('__O_MET1__', str(ORD['SyntacticMetricOrProcedure']))
+        .replace('__O_MET2__', str(ORD['SemanticMetricOrProcedure']))
+        .replace('__O_ULT_IGUAL__', str(O_ULT_IGUAL))
+        .replace('__O_PRIM_MAIS__', str(O_ULT_IGUAL + 1))
+        .replace('__O_ULT_MAIS__', str(ORD[NOSSO] - 1))
+        .replace('__O_PRIM_IGUAL__', str(ORD[NOSSO] + 1))
+        .replace('__TAB_DONOS__', tab_donos)
         .replace('__N_FECHADO__', str(n_fechado))
         .replace('__N_ABERTO__', str(n_aberto))
         .replace('__N_COMP__', str(n_comp))
