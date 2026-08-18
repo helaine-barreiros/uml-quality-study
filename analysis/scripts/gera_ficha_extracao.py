@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Gera a ficha de extracao: Portao C mais os 64 campos, numa leitura so.
+"""Gera a ficha de extracao: Portao C mais os 65 campos, numa leitura so.
 
 A ficha e DIRIGIDA PELO CODEBOOK. O formulario nao esta escrito neste arquivo:
 ele e montado a partir de analysis/extraction/codebook_extracao.csv, campo a
@@ -7,13 +7,13 @@ campo. Revisar o codebook depois do piloto muda a pagina sem tocar em codigo,
 que e exatamente o que o protocolo l. 1558 preve ao dizer que revisao material
 do formulario dispara revisao retrospectiva.
 
-Por que um instrumento so. O C1, os quatro atributos de triagem e os 64 campos
+Por que um instrumento so. O C1, os quatro atributos de triagem e os 65 campos
 se respondem todos com o PDF aberto. Separar em duas passagens obrigaria a abrir
 52 artigos duas vezes, e a segunda leitura reconstruiria de memoria o que a
 primeira ja tinha visto.
 
 O formulario e renderizado no navegador, um estudo por vez, a partir de duas
-tabelas embutidas: a lista de estudos e a lista de campos. Renderizar 52 x 64
+tabelas embutidas: a lista de estudos e a lista de campos. Renderizar 52 x 65
 campos no HTML produziria um arquivo inutilmente grande.
 
 Saida: analysis/ficha_extracao.html, autocontida e offline. A exportacao produz
@@ -212,12 +212,23 @@ for g, oo in GRUPOS.items():
     assert all(c['rep'] for c in CAMPOS if c['grp'] == g), 'grupo %s com campo nao repetivel' % g
 n_grp = sum(len(oo) for oo in GRUPOS.values())
 
+# 8b: um unico campo NAO vem das duas tabelas de extracao do protocolo. A tupla
+# da l. 1601-1608 tem cinco dimensoes e a severidade (Se) nao tinha casa em
+# nenhuma das tabelas. O assert existe para que a pagina nunca afirme "um campo
+# nosso" apontando para outra coisa.
+NOSSO = 'Reported severity or task effect'
+assert [c['o'] for c in CAMPOS if c['campo'] == NOSSO] == [50], \
+    'o campo acrescentado no 8b saiu do lugar'
+n_tab = len(CAMPOS) - 1
+
 kpis = ''.join(
     '<div class="kpi %s"><b>%s</b><span>%s</span></div>' % (cls, v, k)
     for v, k, cls in [
         (len(EST), 'estudos com texto', 'ac'),
         (n_c1, 'sem decisao C1', 'wr'),
-        (len(CAMPOS), 'campos do protocolo', ''),
+        # "da ficha", e nao "do protocolo": desde o item 8b um dos campos e
+        # nosso, e o rotulo antigo passaria a afirmar falsidade.
+        (len(CAMPOS), 'campos da ficha', ''),
         (n_rep, 'campos repetiveis', ''),
         (n_grp, 'em grupo de repeticao', ''),
         (len(PILOTO), 'sorteados para o piloto', 'ok'),
@@ -497,7 +508,7 @@ HTML = """<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
 <div class="eyebrow">Revisao sistematica &middot; Portao C e extracao</div>
 <h1>Ficha de extracao</h1>
 <p>Um instrumento so para a decisao do Portao C e para os __N_CAMPOS__ campos de
-extracao do protocolo. Pagina autocontida: funciona offline, nao envia nada para
+extracao. Pagina autocontida: funciona offline, nao envia nada para
 lugar nenhum, e o que voce responder fica gravado neste navegador.</p>
 </header>
 
@@ -633,9 +644,9 @@ dos dez.</div>
 </section>
 
 <section id="mapa"><h2>3. Mapa dos campos</h2>
-<p>São <b>__N_CAMPOS__</b> campos, transcritos das duas tabelas do protocolo: __N_FECHADO__
-fechados, __N_ABERTO__ abertos e __N_COMP__ compostos, dos quais __N_REP__ admitem mais de
-uma ocorrencia por estudo.</p>
+<p>São <b>__N_CAMPOS__</b> campos: __N_TAB__ transcritos das duas tabelas do protocolo e
+<b>um</b> acrescentado por nos, o 50. Em tipo, __N_FECHADO__ fechados, __N_ABERTO__ abertos
+e __N_COMP__ compostos, dos quais __N_REP__ admitem mais de uma ocorrencia por estudo.</p>
 __TAB_SECOES__
 <div class="nota"><b>Esta ficha e montada a partir do codebook</b>, o arquivo
 <span class="mono">analysis/extraction/codebook_extracao.csv</span>. Nenhum campo esta
@@ -654,9 +665,27 @@ mapeamento campo a campo, embora o texto de abertura afirme que cada campo o tem
 vinculo &mdash; estender o mecanismo aos quatro foi decisao nossa, porque trata-lo so na
 SQ2 deixaria os outros tres com o mesmo defeito, silencioso. As tres sao as primeiras
 coisas que o piloto deve testar.</div>
-<div class="nota"><b>Quatro grupos, onze campos.</b> <span class="mono">MODELO</span> (11-12),
-<span class="mono">CONSTRUTO</span> (33-35), <span class="mono">INADEQUACAO</span> (46-49) e
-<span class="mono">METRICA</span> (50-51). O criterio foi estreito de proposito: entram os
+<div class="alerta"><b>O campo 50 e o unico que nao vem das tabelas do protocolo.</b>
+A l. 1601-1608 define a inadequacao como a tupla <span class="mono">&lt;Rv, Od, Cu, Se,
+Ex&gt;</span> e a l. 1616 poe a severidade como quinta dimensao da codificacao, mas nenhuma
+das duas tabelas de extracao lhe deu casa: <i>Rv</i>, <i>Od</i> e <i>Cu</i> sao os campos 48,
+47 e 49, e <i>Ex</i> sao as colunas <span class="mono">evidencia</span> e <span
+class="mono">localizacao</span>, que ja existem em <b>toda</b> linha do arquivo de extracao.
+So <i>Se</i> ficava de fora, e sem ela a tupla nao fecha.<br>
+<b>E aberto, e nao fechado, por leitura literal.</b> A l. 1616 diz que a severidade e
+<i>preserved when the study reports a severity scale or task effect</i>: <b>preservada, nao
+classificada</b>. Uma lista fechada inventaria uma escala que o estudo nao tem e
+normalizaria exatamente o que a linha manda conservar. Preencher <b>so</b> quando o estudo
+reporta, com o rotulo e a escala dele; quando nao reporta, escrever <span class="mono">not
+reported</span>.<br>
+<b>Consequencia mecanica:</b> os 15 campos seguintes desceram uma casa (50-64 passaram a
+51-65). Nao havia alternativa &mdash; a severidade e dimensao da inadequacao, entao ela tem
+de ficar <b>dentro</b> do grupo <span class="mono">INADEQUACAO</span>, e o grupo tem de ser
+contiguo. A auditoria contra o protocolo continua valendo porque a <b>ordem</b> nao mudou:
+houve uma insercao declarada, nao um rearranjo.</div>
+<div class="nota"><b>Quatro grupos, doze campos.</b> <span class="mono">MODELO</span> (11-12),
+<span class="mono">CONSTRUTO</span> (33-35), <span class="mono">INADEQUACAO</span> (46-50) e
+<span class="mono">METRICA</span> (51-52). O criterio foi estreito de proposito: entram os
 campos que descrevem <b>conjuntamente um mesmo objeto</b>. Os campos 40 e 41, embora tambem
 sejam da faceta <i>Metric</i> e repetiveis, ficaram <b>fora</b> &mdash; sao descricoes
 abertas e autonomas de procedimento, sem campo irmao com que se alinhar, e agrupa-las criaria
@@ -757,6 +786,7 @@ pg = (HTML.replace('__CSS__', CSS + EXTRA)
         .replace('__SEMENTE__', str(SEMENTE_PILOTO))
         .replace('__OPCOES__', opcoes)
         .replace('__N_CAMPOS__', str(len(CAMPOS)))
+        .replace('__N_TAB__', str(n_tab))
         .replace('__N_FECHADO__', str(n_fechado))
         .replace('__N_ABERTO__', str(n_aberto))
         .replace('__N_COMP__', str(n_comp))
