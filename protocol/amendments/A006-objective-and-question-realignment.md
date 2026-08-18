@@ -4,9 +4,10 @@
 - DecisionDate: `2026-08-18`
 - RecordedAt: `2026-08-18T00:00:00-03:00`
 - Stage: After screening, during construction of the extraction instrument and before the extraction pilot begins
-- Status: `Partly applied; Sections 4, 5 and 6 are open`
+- Status: `Sections 2, 3 and 9 applied; Sections 4, 5 and 6 are open`
 - PreviousRecordedCommit: `e2fe3ee74c75edc64f6a7697f40b6a92d2f28060`
 - RecordedCommit: `b1f4c08dda8f383dad80f72cd85ac2b8e37efe30`
+- Section9Commit: `c2f23b2`
 - ExternalSource: Barreiros, H. S. L.; Barreiros, E. S.; Farias Junior, I. H.; Rodrigues, C. M. O. *A Reference Model for Contextualized LLM Software Artifact Generation*. Manuscript, 2026-08-18, 66 pp. The designed artefact of the thesis, read in full on 2026-08-18.
 - DoesNotChange:
   - search strings
