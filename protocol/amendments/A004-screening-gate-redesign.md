@@ -295,15 +295,28 @@ formal screening; the present decision follows the completion of Gates A and B
 over 986 records, which supplied the empirical arguments of Sections 3 and 5
 that were not available in 2026-08-15.
 
-## 8. Application, still pending
+## 8. Application
 
-- Rewrite the criteria tables of the protocol appendix.
+- ~~Rewrite the criteria tables of the protocol appendix~~ **done, 2026-08-17.**
+  The appendix moves to version 1.8. It gains a screening gate structure section
+  carrying the table of Section 6; the inclusion table renumbered I1--I8 in
+  filter order with a filter column and a pairing column; the exclusion table
+  restricted to the operative codes, with E7 narrowed to its first clause and
+  E7b and E12 added; a separate table of withdrawn codes kept as declared gaps;
+  a section on attrition; and the axes and analytical subsets. Residual
+  references to I6, E5, E10 and E11 elsewhere in the appendix were also
+  corrected, including the sentence that made quality evidence an eligibility
+  matter after retrieval and the validation checklist item V04.
 - ~~Update `screening_manual_v1.md`~~ **done, 2026-08-17.** A new
   `screening_manual_v2.md` carries the structure of Section 6; v1 is preserved
   unrewritten as the record of the first pass, for the same reason the exclusion
   codes were frozen rather than renumbered.
-- Add the axis fields and the `atribuicao do resultado` attribute to the
-  extraction form.
+- ~~Add the axis fields and the `atribuicao do resultado` attribute to the
+  extraction form~~ **done, 2026-08-17.** They enter the quality-evidence
+  extraction table of the appendix as `QualityAxisL`, `QualityAxisD`,
+  `QualityAxisU` and `ResultAttribution`, and the master sheet as `eixo_L`,
+  `eixo_D`, `eixo_U` and `atribuicao_resultado`, born empty because they are
+  extraction fields and not screening fields.
 - ~~Re-examine the 22 records with outcome `B3_E7`~~ **done, 2026-08-17.** All 22
   are inverted-direction cases in which UML is the input and the output is Java,
   OCL, Rebeca models, test cases, use case descriptions or teaching exercises.

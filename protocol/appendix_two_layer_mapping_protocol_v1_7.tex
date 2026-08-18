@@ -4,7 +4,9 @@
 % graphicx, xurl, hyperref, natbib (or an equivalent citation package).
 %
 % Replace the fields marked [TO BE COMPLETED] before protocol registration.
-% Version 1.7 formalizes manual-search provenance, raw documentary inventory, and auditability controls.
+% Version 1.8 applies amendment A004: the screening gate structure, the realigned
+% eligibility criteria, the attrition stratum, and the quality-evidence extraction axes.
+% Version 1.7 formalized manual-search provenance, raw documentary inventory, and auditability controls.
 % This protocol is written for the complete study interval. Operational batching
 % does not alter the methodological scope, questions, eligibility rules, or synthesis.
 
@@ -35,7 +37,7 @@ The protocol follows the planning, search, selection, extraction, and synthesis 
 \midrule
 Review title & \reviewtitle: A Focused Systematic Mapping Study of Quality Evidence \\
 Review type & Focused systematic mapping study with structured extraction and synthesis of quality evidence \\
-Protocol version & 1.7, provenance and auditability draft \\
+Protocol version & 1.8, screening gate redesign draft (amendment A004) \\
 Protocol date & 2026-08-11 \\
 Review team & \protocolfield{Names, affiliations, and ORCID identifiers} \\
 Methodological supervisor & \protocolfield{Name and affiliation} \\
@@ -635,7 +637,7 @@ AND (generation and source terms)
 \end{minipage}
 \end{quote}
 
-The search does not require quality terms. Requiring terms such as semantic, correctness, or hallucination at retrieval time could exclude generation studies that evaluate quality under different terminology. Extractable quality evidence is therefore assessed after retrieval through the eligibility criteria and structured full-text inspection.
+The search does not require quality terms. Requiring terms such as semantic, correctness, or hallucination at retrieval time could exclude generation studies that evaluate quality under different terminology. Extractable quality evidence is therefore never used as an eligibility filter at any stage, and is instead classified after retrieval through structured full-text inspection on the axes of Section~\ref{sec:protocol_quality_axes}. Excluding studies that lack the review's evaluation vocabulary, whether at retrieval or at screening, would select on the review's own dependent variable and bias the map towards the studies that already speak the language the review exists to describe.
 
 \subsection{Generic baseline search string}
 
@@ -1201,56 +1203,118 @@ The automated search will be updated immediately before the final synthesis and 
 \section{Eligibility Criteria}
 \label{sec:protocol_eligibility}
 
+\subsection{Screening gate structure}
+\label{sec:protocol_gates}
+
+Amendment A004 restructures screening so that every decision point carries exactly one question, at most one inclusion criterion, and at most one exclusion criterion. The criteria tables that follow are read against this structure: the code records the identity of the criterion, and the gate outcome field records where it was applied.
+
+\begin{longtable}{p{0.05\textwidth} p{0.05\textwidth} p{0.46\textwidth} p{0.13\textwidth} p{0.13\textwidth}}
+\caption{Screening gate structure after amendment A004}
+\label{tab:protocol_gates}\\
+\toprule
+\textbf{Gate} & \textbf{Filter} & \textbf{Question} & \textbf{Inclusion} & \textbf{Exclusion} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Gate} & \textbf{Filter} & \textbf{Question} & \textbf{Inclusion} & \textbf{Exclusion} \\
+\midrule
+\endhead
+--- & D & Is the record a duplicate or a less complete member of a publication family? & --- & E3 \\
+A & A1 & Is the report within the temporal and language scope? & I1 & E4 \\
+A & A2 & Is the report a complete scientific report? & I2 & E1 \\
+A & A3 & Is the report a primary study? & I3 & E2 \\
+B & B0 & Does the LLM generate or alter the UML content? & I4, I5, I7 & --- \\
+B & B1 & Does the generated result include UML content? & I7 & E7 \\
+B & B2 & Is the UML content produced or altered? & I5 & E8 \\
+B & B3 & Is the source input textual? & I6 & E9 \\
+B & B4 & What is the operational role of the model? & I4 & E6 \\
+B & B5 & Is the UML content separable from other notations? & I8 & E7b \\
+C & C1 & Is there an identifiable generation instance? & I8 & E12 \\
+\bottomrule
+\end{longtable}
+
+Filter D is a corpus-level pre-pass reported as \textit{records removed before screening}, consistent with PRISMA 2020. Filter A3 routes secondary and tertiary reports to a materialized background pile rather than discarding them. Filter B0 fast-paths clear cases, but a negative answer at B0 does not by itself exclude: it forces descent to B1 through B4 so that the recorded code always originates from a named filter. Filter C1 is the only exclusion available at Gate C.
+
+Filters B1 through B4 are additionally recorded as descriptive attributes even when B0 absolves, without power to exclude. This front-loads three of the review's incommensurability dimensions, namely diagram type, source specification, and model family, at no additional reading cost. Two rules accompany the practice: screening attributes are provisional and are stored in fields separate from extraction fields, and attributes do not enter the inter-rater agreement calculation, which covers only B0 and the named criterion.
+
 \subsection{Inclusion criteria}
 
-\begin{longtable}{p{0.10\textwidth} p{0.82\textwidth}}
+Inclusion codes are numbered in filter order rather than historical order. Each inclusion criterion is the positive counterpart of exactly one exclusion criterion, with the two exceptions stated after the table.
+
+\begin{longtable}{p{0.08\textwidth} p{0.62\textwidth} p{0.08\textwidth} p{0.10\textwidth}}
 \caption{Inclusion criteria}
 \label{tab:protocol_inclusion}\\
 \toprule
-\textbf{Code} & \textbf{Criterion} \\
+\textbf{Code} & \textbf{Criterion} & \textbf{Filter} & \textbf{Pairs with} \\
 \midrule
 \endfirsthead
 \toprule
-\textbf{Code} & \textbf{Criterion} \\
+\textbf{Code} & \textbf{Criterion} & \textbf{Filter} & \textbf{Pairs with} \\
 \midrule
 \endhead
-I1 & The report is a complete primary scientific study within the temporal and language scope of the review. \\
-I2 & The study uses at least one LLM as a substantive component of the diagram generation process. \\
-I3 & The task produces, transforms, completes, repairs, refines, or revises UML diagram content. \\
-I4 & The source input includes textual software requirements, user stories, scenarios, specifications, problem statements, or explicit textual domain descriptions. \\
-I5 & The generated result includes explicit and separable UML diagram content, such as PlantUML code, another textual UML representation, XMI, a rendered UML diagram, or another representation from which UML content can be assessed. \\
-I6 & The report provides extractable evidence about the quality, validity, correctness, completeness, consistency, pragmatic adequacy, or correction of the generated UML diagram content. \\
+I1 & The report is within the temporal and language scope of the review. & A1 & E4 \\
+I2 & The report is a complete scientific report. & A2 & E1 \\
+I3 & The report is a primary study. & A3 & E2 \\
+I4 & The study uses at least one LLM as a substantive component of the diagram generation process. & B4 & E6 \\
+I5 & The task produces, transforms, completes, repairs, refines, or revises UML diagram content. & B2 & E8 \\
+I6 & The source input includes textual software requirements, user stories, scenarios, specifications, problem statements, or explicit textual domain descriptions. & B3 & E9 \\
+I7 & The generated result includes explicit UML diagram content, such as PlantUML code, another textual UML representation, XMI, a rendered UML diagram, or another representation from which UML content can be assessed. & B1 & E7 \\
+I8 & The UML diagram content is separable, both from other notations and from other generated artifacts, tasks, or outputs. & B5, C1 & E7b, E12 \\
 \bottomrule
 \end{longtable}
+
+Two structural asymmetries are deliberate. E3 has no positive counterpart, because it predicates a property of the record set rather than of the report. Filter B0 has no criterion of its own, being the conjunction of I4, I5, and I7; it absolves but does not condemn.
+
+I8 is evaluated at two moments without receiving a separate code for each: at B5 from title and abstract, against mixture with another notation, and at C1 from the full text, against mixture with other artifacts, tasks, or outputs. The moment of evaluation is recorded in the gate outcome field. Creating one code per reading moment would enlarge the table without adding discriminating power.
 
 \subsection{Exclusion criteria}
 
-\begin{longtable}{p{0.10\textwidth} p{0.82\textwidth}}
+Exclusion codes are frozen. Codes withdrawn by amendment A004 leave the operative table and remain recorded as declared gaps, so that the numbering of decisions taken before the amendment is not rewritten and the trace of the amendment is not erased.
+
+\begin{longtable}{p{0.08\textwidth} p{0.72\textwidth} p{0.08\textwidth}}
 \caption{Exclusion criteria}
 \label{tab:protocol_exclusion}\\
 \toprule
-\textbf{Code} & \textbf{Criterion} \\
+\textbf{Code} & \textbf{Criterion} & \textbf{Filter} \\
 \midrule
 \endfirsthead
 \toprule
-\textbf{Code} & \textbf{Criterion} \\
+\textbf{Code} & \textbf{Criterion} & \textbf{Filter} \\
 \midrule
 \endhead
-E1 & The item is not a complete scientific report, such as an editorial, preface, keynote, tutorial, slide deck, poster-only item, abstract-only record, thesis, book, patent, or non-scientific web content. \\
-E2 & The report is a secondary or tertiary study. \\
-E3 & The report is a duplicate or a less complete member of a publication family. \\
-E4 & The report is outside the temporal or language scope of the review. \\
-E5 & The full text cannot be obtained after documented access attempts. \\
-E6 & The study does not use an LLM as a substantive component in producing, transforming, completing, repairing, refining, or revising UML diagram content. \\
-E7 & The output is not UML, or no separable UML result is reported. This includes generic diagram generation, C4, ER, BPMN, SysML, architecture sketches, or Mermaid diagrams when no separable UML contribution is available. \\
-E8 & The task only evaluates, explains, summarizes, classifies, or discusses an existing UML diagram, without producing, transforming, completing, repairing, refining, or revising UML diagram content. \\
-E9 & The source input is code, an image, an existing UML model, logs, or another non-textual artifact without a substantive textual requirements or domain description component. \\
-E10 & UML generation results cannot be separated from other generated artifacts, tasks, or outputs. \\
-E11 & The report does not provide extractable evidence about the quality, validity, correctness, completeness, consistency, pragmatic adequacy, or correction of the generated UML diagram content. \\
+E1 & The item is not a complete scientific report, such as an editorial, preface, keynote, tutorial, slide deck, poster-only item, abstract-only record, thesis, book, patent, or non-scientific web content. This list is closed. & A2 \\
+E2 & The report is a secondary or tertiary study. & A3 \\
+E3 & The report is a duplicate or a less complete member of a publication family. & D \\
+E4 & The report is outside the temporal or language scope of the review. & A1 \\
+E6 & The study does not use an LLM as a substantive component in producing, transforming, completing, repairing, refining, or revising UML diagram content. & B4 \\
+E7 & The generated result is not UML. This includes generic diagram generation and the generation of code, metamodels, or other non-UML artifacts from a UML input. & B1 \\
+E7b & The generated result contains UML mixed with another notation, such as C4, ER, BPMN, SysML, Mermaid, or an architecture sketch, with no separable UML contribution. & B5 \\
+E8 & The task only evaluates, explains, summarizes, classifies, or discusses an existing UML diagram, without producing, transforming, completing, repairing, refining, or revising UML diagram content. & B2 \\
+E9 & The source input is code, an image, an existing UML model, logs, or another non-textual artifact without a substantive textual requirements or domain description component. & B3 \\
+E12 & There is no identifiable generation instance: the UML result cannot be separated from other artifacts, tasks, or outputs generated in the same execution, so that no reported result is attributable to the generation of UML content. & C1 \\
 \bottomrule
 \end{longtable}
 
-When more than one exclusion criterion applies, the first criterion that clearly explains the exclusion is recorded. If title and abstract are insufficient to decide whether the report involves LLM-based UML generation from textual requirements or domain descriptions, the report is retained for full-text screening. The absence of explicit syntactic or semantic terminology in the title and abstract is not sufficient for exclusion when the report plausibly evaluates the generated UML output.
+\begin{longtable}{p{0.08\textwidth} p{0.80\textwidth}}
+\caption{Exclusion criteria withdrawn by amendment A004, kept as declared gaps}
+\label{tab:protocol_exclusion_withdrawn}\\
+\toprule
+\textbf{Code} & \textbf{Disposition} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Code} & \textbf{Disposition} \\
+\midrule
+\endhead
+E5 & Withdrawn. Full-text unavailability is attrition, not ineligibility, and is handled by the stratum of Section~\ref{sec:protocol_attrition}. \\
+E10 & Withdrawn. Split into filter C1 with code E12 and the extraction attribute \textit{result attribution}. \\
+E11 & Withdrawn. Replaced by the three extraction axes of Section~\ref{sec:protocol_quality_axes}. Extractable quality evidence is no longer an eligibility requirement. \\
+\bottomrule
+\end{longtable}
+
+Bare E7 always denotes the first clause of the criterion as originally published, namely that the generated result is not UML. The sibling clause carries the suffixed code E7b, whose suffix preserves its provenance. E12 receives a new number rather than the vacated E10 because its statement changed from a negative aggregate to a positive verifiable question, and a new statement receives a new code.
+
+When more than one exclusion criterion applies, the first criterion that clearly explains the exclusion in filter order is recorded as primary, and the remaining ones are recorded in the justification. If title and abstract are insufficient to decide whether the report involves LLM-based UML generation from textual requirements or domain descriptions, the report is retained for full-text screening. The absence of explicit syntactic or semantic terminology is never sufficient for exclusion, at any gate, because the review's search was deliberately designed without quality terms and selecting on evaluation vocabulary would amount to selecting on the review's own dependent variable.
 
 \subsection{Operational boundary for substantive LLM use}
 \label{sec:substantive_llm_use_boundary}
@@ -1264,10 +1328,67 @@ Hybrid neural-symbolic pipelines are eligible when the LLM determines, proposes,
 When title and abstract do not make the role of the model clear, the report is retained for full-text screening. The exclusion decision is made only when the full text provides sufficient evidence that the language model does not have a substantive role in producing, transforming, completing, repairing, refining, or revising UML diagram content.
 
 \subsection{Quality evidence classification during extraction}
+\label{sec:protocol_quality_axes}
 
-The review does not define a second eligibility layer. All included studies satisfy the same inclusion and exclusion criteria. During data extraction, each included study is classified according to the type and strength of quality evidence that it provides for the generated UML diagram content. These classifications support synthesis without redefining the eligible corpus.
+The review does not define a second eligibility layer, and evidence of quality is not an eligibility filter. All included studies satisfy the same inclusion and exclusion criteria. During data extraction, each included study is classified according to the type and strength of quality evidence that it provides for the generated UML diagram content. These classifications support synthesis without redefining the eligible corpus.
 
-The extraction classifies whether the study provides evidence about textual validity, rendering validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, or correction effort. It also records whether syntactic and semantic evidence are reported separately and whether the report provides direct, indirect, absent, unclear, or non-assessable evidence of syntax-semantic dissonance.
+The classification is recorded on three independent axes derived from the operational definitions of Section~\ref{sec:protocol_scope} and from the model quality relations of Lindland et al. and Krogstie \cite{Lindland1994Quality,Krogstie2006Process}.
+
+\begin{longtable}{p{0.06\textwidth} p{0.16\textwidth} p{0.20\textwidth} p{0.44\textwidth}}
+\caption{Quality evidence axes recorded during extraction}
+\label{tab:protocol_quality_axes}\\
+\toprule
+\textbf{Axis} & \textbf{Name} & \textbf{Relation} & \textbf{Values} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Axis} & \textbf{Name} & \textbf{Relation} & \textbf{Values} \\
+\midrule
+\endhead
+L & Language & Model to language & Absent; textual validity; UML conformity. \\
+D & Domain & Model to domain & Absent; claimed only; source requirements; reference model; expert judgment; rubric. \\
+U & Use & Model to interpreter and use & Absent; claimed only; comprehension; engineering activity; rework. \\
+\bottomrule
+\end{longtable}
+
+The three axes are never collapsed into a single scale. Folding pragmatic adequacy into the domain axis would repeat the failure that produced an overloaded exclusion code during the first screening pass: a fused question yields a fused code, and the distinction becomes unrecoverable.
+
+A fourth field, inherited from the withdrawn E10, records \textit{result attribution} with values \textit{attributable to UML}, \textit{aggregated with other artifacts}, and \textit{not reported}. It qualifies the strength with which a reported result can be traced to the generation of UML content, in cases where filter C1 confirmed that a generation instance exists.
+
+The extraction additionally classifies whether the study provides evidence about textual validity, rendering validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, or correction effort. It records whether syntactic and semantic evidence are reported separately and whether the report provides direct, indirect, absent, unclear, or non-assessable evidence of syntax-semantic dissonance. Procedure, reliability, and validity information is recorded in the SQ5 extraction fields and never in the axes.
+
+The analytical subsets are computed from these axes rather than presumed by an eligibility filter.
+
+\begin{longtable}{p{0.24\textwidth} p{0.64\textwidth}}
+\caption{Analytical subsets derived from the quality evidence axes}
+\label{tab:protocol_analytical_subsets}\\
+\toprule
+\textbf{Questions} & \textbf{Subset} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Questions} & \textbf{Subset} \\
+\midrule
+\endhead
+MQ1 to MQ5 & The whole eligible corpus. \\
+SQ1 to SQ3 & Studies for which axis D is not absent. \\
+SQ4 & Studies for which axis L is not absent and axis D is not absent. \\
+SQ6 & Studies for which axis U is not absent. \\
+\bottomrule
+\end{longtable}
+
+SQ4 asks to what extent the reported evidence distinguishes syntactic from semantic quality. Under an eligibility filter on evidence reporting, that subset would be assumed; under the axes it is computed, which is the difference between describing the literature and describing the review's own filter. The same argument governs MQ5, which asks which combinations remain under-investigated: a gap analysis run over a corpus filtered by evidence reporting would report the filter as a gap in the literature.
+
+\subsection{Full-text unavailability as attrition}
+\label{sec:protocol_attrition}
+
+A report whose full text is not obtained after the documented access procedure is not excluded. It is placed in a stratum named \textit{identified, not retrieved}. It receives neither an exclusion flag nor an exclusion code, and its gate C outcome is recorded as not retrieved.
+
+Every eligibility criterion predicates something of the report: its year, its type, its object, the operational role of the model, the separability of its result. Full-text unavailability predicates something of the reviewer's access within a time window. Reporting it as an exclusion would read as a statement about the ineligibility of those reports, when the correct statement is that they are reports that could not be read. PRISMA 2020 already separates the two into disjoint boxes, in which \textit{reports not retrieved} precedes and does not overlap \textit{reports excluded, with reasons} \cite{Page2021PRISMA}.
+
+The decision is also empirical. Retrieval loss in this review is systematic rather than random along three dimensions, namely access model, publication type and source, and recency. An exclusion code would hide all three asymmetries, and the recency bias is the most damaging, because the object of the review is a fast-moving literature whose most recent slice is the most informative about model families and prompting strategies.
+
+Reports in the stratum are characterized rather than merely counted, using the metadata and abstracts available for them. The cut-off date for access attempts is unchanged, but its effect changes from excluding reports to closing the stratum: on that date the stratum stops receiving new texts and is counted and described. Question-level bases are stated explicitly, distinguishing the descriptive questions answerable over all retained reports from the questions that require full text, with a sensitivity check of the former against the abstracts of the non-retrieved stratum.
 
 \subsection{Ambiguity rules}
 
@@ -1289,10 +1410,13 @@ The record management log will contain the following fields.
     \item database or discovery source;
     \item database specific identifier;
     \item title, authors, year, venue, DOI, and URL;
-    \item duplicate group and publication family identifier;
-    \item screening decisions by reviewer and stage;
-    \item exclusion criterion and justification;
-    \item eligibility decision and quality-evidence classification;
+    \item duplicate group, publication family identifier, and pre-pass D outcome;
+    \item screening decisions by reviewer and stage, recorded per gate as an outcome that names the filter that decided the case;
+    \item screening attributes annotated at filters B1 to B4, stored separately from extraction fields and excluded from the agreement calculation;
+    \item uncertainty flags raised at title and abstract, which retain the record and never exclude it;
+    \item exclusion criterion and justification, with one primary code per excluded record;
+    \item full-text retrieval status, including membership of the \textit{identified, not retrieved} stratum;
+    \item eligibility decision and quality-evidence classification on axes L, D, and U;
     \item extraction and appraisal status;
     \item amendment or recoding flags.
 \end{itemize}
@@ -1300,7 +1424,7 @@ The record management log will contain the following fields.
 \section{Study Selection Process}
 \label{sec:protocol_selection}
 
-Selection comprises calibration, title and abstract screening, full text screening, quality-evidence confirmation, and publication family reconciliation.
+Selection comprises calibration, deduplication as a corpus-level pre-pass, title and abstract screening, full text screening, quality-evidence classification, and publication family reconciliation.
 
 \subsection{Reviewer calibration}
 
@@ -1314,13 +1438,15 @@ The primary reviewer screens all deduplicated records. A second reviewer indepen
 
 Every record retained after title and abstract screening is assessed independently by two reviewers. Each reviewer records one of three decisions, include, exclude, or unclear. Excluded reports receive one primary exclusion criterion and a textual justification. Disagreements are resolved through discussion. Unresolved cases are decided by an adjudicator with expertise in Software Engineering and UML or LLM based modeling.
 
-\subsection{Quality-evidence confirmation}
+\subsection{Quality-evidence classification}
 
-Extractable quality evidence is assessed independently during full-text screening under I6 and E11. When evaluation is mentioned but not sufficiently described at title and abstract, the report is retained for full-text assessment. For included reports, the type and strength of syntactic, semantic, pragmatic, and correction-related evidence are classified during extraction without creating an additional eligibility status.
+Extractable quality evidence is not assessed for eligibility at any gate. For included reports, the type and strength of syntactic, semantic, pragmatic, and correction-related evidence are classified during extraction on the three axes of Section~\ref{sec:protocol_quality_axes}, without creating an additional eligibility status and without affecting the composition of the eligible corpus. A report that evaluates the generated UML content without using the review's terminology is classified, not excluded.
 
 \subsection{Selection reporting}
 
 The final report will present a PRISMA flow diagram and a table of full text exclusions. Counts will distinguish database search, manual search, citation searching, duplicates, non research items, included studies, extraction-derived quality-evidence groupings, and unique primary studies after publication family merging \cite{Page2021PRISMA}.
+
+Two reporting boxes are kept disjoint, in accordance with Section~\ref{sec:protocol_attrition}. \textit{Records removed before screening} carries the corpus-level pre-pass D. \textit{Reports not retrieved} carries the attrition stratum and is reported with its size and with the distribution of its access model, publication type, source, and year, so that the systematic character of the loss is visible rather than absorbed into an exclusion count. \textit{Reports excluded, with reasons} carries only the eligibility criteria of Section~\ref{sec:protocol_eligibility}, each with one primary code and the filter at which it was applied.
 
 \section{Data Extraction}
 \label{sec:protocol_extraction}
@@ -1384,7 +1510,11 @@ Open science & Data, prompts, code, models, and replication package & Record ava
 \textbf{Facet} & \textbf{Field} & \textbf{Extraction rule} \\
 \midrule
 \endhead
-Construct & Original quality term & Preserve the term exactly as reported \\
+Axis & QualityAxisL & Absent; textual validity; UML conformity. Records the evidence reported about the relation between the model and its language. \\
+Axis & QualityAxisD & Absent; claimed only; source requirements; reference model; expert judgment; rubric. Records the evidence reported about the relation between the model and the relevant domain. \\
+Axis & QualityAxisU & Absent; claimed only; comprehension; engineering activity; rework. Records the evidence reported about the relation between the model and its interpreters or uses. \\
+Axis & ResultAttribution & Attributable to UML; aggregated with other artifacts; not reported. Qualifies how far a reported result can be traced to the generation of UML content. Inherited from the withdrawn E10. \\
+Construct & Original quality term & Preserve the term exactly as reported, before any mapping to the review's scheme \\
 Construct & Definition and theoretical source & Extract verbatim or near verbatim definition within copyright limits; record cited framework \\
 Construct & Normalized construct & Textual validity, UML conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, readability, clarity, or other \\
 Construct & SyntacticEvidenceAvailable & Yes; No; Unclear. \\
@@ -1665,6 +1795,7 @@ Pre registration revisions are recorded as version history. After protocol regis
 1.5, 2026-08-11 & Manual venue inspection procedure & Specify the handsearching unit, source hierarchy, census-like title and abstract inspection, candidate statuses, required record fields, positive coverage controls, cross-source merge, incremental yield, completion rules, initial operational order, and audit outputs & Makes manual coverage validation reproducible and separates discovery from formal eligibility screening; no change to review questions, eligibility criteria, or final review interval \\
 1.6, 2026-08-11 & ACM Full-Text Collection search validation & Register the ACM-specific seed denominator, interface field-prefix tests, A1--A3 controlled validation rounds, rejection of the UML-field restriction because of diagnostic false negatives, acceptance of the LLM-field restriction, cancellation of A4, and the exact ACM production query implementation & Establishes ACM Full-Text Collection search-strategy version 1.0 while preserving source-specific field behavior and the review's conceptual search architecture \\
 1.7, 2026-08-11 & Manual-search provenance and documentary-inventory controls & Formalize source roles, PRIMARY\_TOC membership, source manifests, permissible snapshots and hashes, immutable raw documentary inventories, raw-to-normalized identifier traceability, InventoryConflict reconciliation, operational unit states, and strengthened COMPLETE criteria & Makes the manual-search population and every transformation from documentary source to screening decision independently auditable; no change to research questions, eligibility criteria, analytical design, or review interval \\
+1.8, 2026-08-17 & Screening gate redesign and eligibility criteria realignment (amendment A004) & Introduce the gate structure D, A1--A3, B0--B5, C1, with one question and at most one criterion per filter; renumber inclusion criteria I1--I8 in filter order while freezing exclusion codes; add E7b and E12; withdraw E5, E10, and E11 as declared gaps; convert full-text unavailability into the \textit{identified, not retrieved} attrition stratum; replace the evidence filter with the extraction axes L, D, and U plus the result-attribution attribute; compute the analytical subsets from the axes & Removes the only eligibility filter that operated on the review's dependent variable and the only criterion requiring exhaustive reading before it could be applied; no change to research questions, search strings, information sources, temporal and language scope, or the exclusion decisions already recorded \\
 \protocolfield{Validated version and date} & Initial registered protocol & Prospective registration after completion of the validation checklist & Baseline for post registration amendments \\
 \bottomrule
 \end{longtable}
@@ -1710,7 +1841,7 @@ The final report will avoid causal or prevalence claims that exceed the designs 
 V01 & The focused systematic mapping design and quality-evidence emphasis are explicitly justified. & \protocolfield{Pending} \\
 V02 & The general objective and every research question are approved by the review team. & \protocolfield{Pending} \\
 V03 & Operational definitions resolve the principal scope ambiguities. & \protocolfield{Pending} \\
-V04 & The unified eligibility criteria and quality-evidence requirement have positive and negative examples. & \protocolfield{Pending} \\
+V04 & The unified eligibility criteria have positive and negative examples, one inclusion and one exclusion criterion per filter, and no filter operating on the review's dependent variable. & \protocolfield{Pending} \\
 V05 & Core and provisional information sources, source retention decisions, and the core and conditional manual venue sets have been validated and documented. & \protocolfield{Pending} \\
 V06 & The baseline string retrieves the complete seed set or every failure has a documented complementary route, and a source contribution matrix has been produced. & \protocolfield{Pending} \\
 V07 & Search strings for every source have been peer reviewed and preserved verbatim. & \protocolfield{Pending} \\
