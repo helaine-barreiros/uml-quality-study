@@ -19,8 +19,9 @@
   - any extraction field
   - A001, A002, A003, A004
 - Changes:
-  - the general objective (l. 73)
+  - the general objective (l. 73), twice: once in Section 2 and once in Section 9
   - expected contribution (vi) (l. 83)
+  - the overarching research question (l. 94)
   - custody of the two decisions left open by A005 sections 6 and 7
 
 ## Why this amendment exists, and why it is separate from A005
@@ -158,7 +159,7 @@ rendering is a genuine step of the technical contract, not a marginal one.
 - **The ORQ (l. 94) carries defect 1.** It still says *syntactic quality,
   semantic quality, and syntax-semantic dissonance*. The objective and the
   overarching question must not disagree; this is the next decision, and it is
-  not taken here.
+  not taken here. **Taken in Section 9, on the same day.**
 - **Contribution (v) and contribution (vi) do not overlap.** (v) is what the
   literature reported; (vi) is what the thesis can adopt.
 - **The disclaimer at l. 86 stands unchanged.**
@@ -175,3 +176,69 @@ No extraction field changes. The seven categories named in the third clause of
 the objective already exist in the instrument; the clause names them, it does not
 create them. The extraction file is still empty, so Sections 4 to 6 can be
 settled at zero recoding cost.
+
+## 9. The overarching question, and a second edit to the objective (applied)
+
+Recorded as Section 9 rather than inserted after Section 2 so that the numbering
+of the open Sections 4, 5 and 6 does not move; they are referred to by number in
+the decision log and in A005.
+
+### 9.1 The fifth occurrence of the structural pattern
+
+l. 61 already says the study *"synthesizes how they define, classify, measure,
+and validate diagram quality and inadequacies"*. l. 73 and l. 94, written later,
+say `characterize, operationalize, measure, report` and drop inadequacies
+altogether. **The older text is the correct one**; the newer text lost two verbs
+and one object. This is the same defect as the four before it, with the sign
+reversed: not two sections that disagree about a list, but two sections where the
+later one silently narrowed the earlier.
+
+### 9.2 Five defects of the ORQ
+
+| # | Defect | Evidence |
+|---|---|---|
+| 1 | two dimensions where the instrument has three | l. 94 against fields 28-30 |
+| 2 | inadequacy absent, although it is contribution (iii) and the primary product of SQ2 | l. 94 against l. 80 and l. 113 |
+| 3 | `classify` missing, so SQ2 hangs under no verb of the ORQ | l. 94 against l. 61 and l. 113 |
+| 4 | `validate` missing, so SQ5 hangs under no verb of the ORQ | l. 94 against l. 61 and l. 116 |
+| 5 | generation context only implicit, so SQ6 barely fits | l. 94 against l. 117 |
+
+The test applied was mechanical: pass all eleven questions under the ORQ and see
+which ones do not descend from it. **SQ2, SQ5 and SQ6 did not pass cleanly.**
+
+### 9.3 What deliberately did not enter the ORQ
+
+Clause (c) of the objective — establishing the constructs, categories, units,
+references, reliability practices, baselines and correction effort measures for
+the later thesis stages — is **purpose, not a question answerable from the
+corpus**. It stays in the objective and does not become part of the ORQ.
+
+This is symmetric with the rule applied in A005 section 4: MQ5 owns no extraction
+field because it is computed. An objective may state a purpose that no question
+asks, in the same way that a question may exist that no field answers directly.
+
+### 9.4 The applied text
+
+l. 94 now asks how primary studies have used LLMs on UML diagram content from
+textual requirements or explicit textual domain descriptions, **under which
+generation context**, and how they **characterize, classify, operationalize,
+measure, validate, and report** the **syntactic, semantic, and pragmatic**
+quality of that content, **its reported inadequacies**, and the evidence of
+syntax-semantic dissonance.
+
+Every element of the ORQ has an owning question, and no question is left without
+an ancestor in it: generation context to SQ6 and MQ3, `classify` to SQ2,
+`validate` to SQ5, the three dimensions to SQ1, SQ3 and SQ4, inadequacies to SQ2,
+dissonance to MQ2.
+
+### 9.5 The cost, declared
+
+l. 73 had to be edited a second time, on the same day, to carry `classify` and
+`validate`. Editing only the ORQ would have made the objective and the
+overarching question disagree — **reproducing, one day after diagnosing it, the
+very pattern this amendment documents**. The two lines were changed together, so
+l. 61, l. 73 and l. 94 now state the same verbs.
+
+No eligibility criterion, no extraction field and no screening decision changes.
+The `.tex` still has 1860 lines, so every line reference recorded anywhere
+remains valid.
