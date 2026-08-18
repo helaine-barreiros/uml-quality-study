@@ -324,11 +324,36 @@ that were not available in 2026-08-15.
   corrected above: the question predicates the **generated result**, not the mere
   presence of UML in the study, otherwise a reviewer would answer "yes" for a
   UML-to-Java study.
-- Flag as first test cases of B5 the six retained records that name UML together
-  with another notation: `051_ACM`, `769_SCOPUS`, `791_SCOPUS`, `797_SCOPUS`,
-  `825_SCOPUS`, `918_SCOPUS`.
-- Carry out the impact analysis, deliberately deferred until the redesign was
-  complete.
+- ~~Flag as first test cases of B5 the six retained records that name UML
+  together with another notation~~ **revised, 2026-08-17.** Three of the six
+  original candidates have since been decided and are no longer retained:
+  `051_ACM` was recoded to E3 as a member of publication family FAM-C-003,
+  `797_SCOPUS` became the single E7b of the corpus, and `825_SCOPUS` left at B1
+  by E7 because its generated result is not UML at all. A fresh scan of the 105
+  retained records for UML named alongside BPMN, SysML, C4, Mermaid, ER or
+  ArchiMate returns **nine** test cases: `018_ACM`, `467_IEEE`, `538_IEEE`,
+  `769_SCOPUS`, `791_SCOPUS`, `812_SCOPUS`, `866_SCOPUS`, `880_SCOPUS`,
+  `918_SCOPUS`. Six of these were absent from the original list. The gate B note
+  of `018_ACM` already states the B5 question verbatim, asking whether the
+  behaviour models it evaluates are treated by its authors as UML diagrams or as
+  exclusively SysML constructs.
+- ~~Carry out the impact analysis~~ **done, 2026-08-17.** The amendment changes
+  no recorded exclusion. No record in the corpus rests on a withdrawn code:
+  E5, E10 and E11 appear zero times in `exclusion_criteria`, which is what the
+  withdrawal predicted, since E5 was never applied, E10 only ever produced the
+  `CANDIDATO_E10` flag on retained records, and E11 was always an extraction
+  concern. The narrowing of E7 was tested against the 579 records that carry it:
+  twelve name another notation in title, abstract or keywords, and all twelve
+  remain E7 rather than E7b, because in none of them does UML appear in the
+  **generated result** — the other notation is either the sole output, as in
+  `568_IEEE` for ER and `171_ACM` for BPMN, or UML sits in the input, as in
+  `815_SCOPUS`. E7b therefore keeps the single member it was created for. The
+  ten records still flagged `CANDIDATO_E10` are rerouted to C1 and to the
+  `atribuicao_resultado` attribute rather than to an exclusion. Withdrawn codes
+  survive as narrative in notes written before the amendment — E10 in 18 records,
+  E11 in 63, I6 in 44 — which is a record of how the decision was reasoned at the
+  time and is not corrected, for the same reason the codes were frozen rather
+  than renumbered.
 
 The deliberation for each decision, with method, evidence, discussion and
 decision, is recorded in `search/automated/screening_decision_log.csv` under
