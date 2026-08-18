@@ -21,7 +21,7 @@ CSV no MESMO cabecalho de analysis/extraction/extracao.csv, e a decisao do
 Portao C sai em CSV separado, porque o desfecho de portao mora no CSV mestre e
 nao no arquivo de extracao (manual v2, secao 7.1).
 """
-import csv, html, json, os, re
+import collections, csv, hashlib, html, json, os, random, re
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
 CSV  = os.path.join(BASE, 'search/automated/custom_automated_search_collection.csv')
@@ -51,6 +51,43 @@ ret = [r for r in data if r[i['excluded']] != 'true']
 com_texto = [r for r in ret if r[i['pdf_status']].startswith('OK_')]
 com_texto.sort(key=lambda r: r[i['logical_id']])
 
+# ------------------------------------------------------------------ piloto
+# O sorteio mora AQUI, e nao numa lista fixa colada no codigo, para que a
+# amostra do piloto seja reproduzivel por quem auditar: mesma semente, mesmo
+# CSV, mesmos dez registros.
+#
+# Estratos: ano x tipo de veiculo. Sao os dois UNICOS eixos de diversidade
+# exigidos pela l. 1558 que se conhecem ANTES de extrair; os outros dois, tipo
+# de diagrama e referencial de avaliacao, so aparecem na leitura. Cada estrato
+# nao vazio recebe uma vaga, e as vagas que sobram vao para os estratos maiores.
+# A cota igual por estrato e deliberada: o piloto existe para submeter o
+# formulario a casos diferentes, nao para representar o corpus em proporcao.
+#
+# Nada aqui olha para o CONTEUDO do estudo. Escolher o piloto pelo que o titulo
+# sugere sobre avaliacao de qualidade seria selecionar pela variavel dependente,
+# que e a sexta regra de ouro do manual v2.
+SEMENTE_PILOTO = 20260818        # data em que a amostra do piloto foi sorteada
+N_PILOTO = 10                    # minimo do protocolo, l. 1558
+
+estratos = collections.OrderedDict()
+for r in com_texto:
+    estratos.setdefault((r[i['PY']].strip(), r[i['TY']].strip()), []).append(r)
+
+cota = {k: 1 for k in estratos}
+for k in sorted(estratos, key=lambda k: (-len(estratos[k]), k))[:N_PILOTO - len(cota)]:
+    cota[k] += 1
+
+PILOTO = []
+for k in sorted(estratos):
+    rnd = random.Random(SEMENTE_PILOTO
+                        + int.from_bytes(hashlib.sha256(('%s|%s' % k).encode()).digest()[:8], 'big'))
+    PILOTO += [r[i['logical_id']] for r in rnd.sample(estratos[k], min(cota[k], len(estratos[k])))]
+PILOTO = set(PILOTO)
+assert len(PILOTO) == N_PILOTO, len(PILOTO)
+
+# Os do piloto vem primeiro na fila para que as setas os percorram em sequencia.
+com_texto.sort(key=lambda r: (r[i['logical_id']] not in PILOTO, r[i['logical_id']]))
+
 # ------------------------------------------------------------------ estudos
 # Ano e tipo de veiculo viajam junto porque sao os dois eixos com que o piloto
 # do protocolo (l. 1558) pede diversidade e que ja estao disponiveis. Tipo de
@@ -68,6 +105,8 @@ for r in com_texto:
         'doi': limpa(r[i['DO']]),
         'pdf': limpa(r[i['pdf_file']]),
         'gc':  limpa(r[i['gate_c_outcome']]),
+        'p':   r[i['logical_id']] in PILOTO,
+        'st':  limpa(r[i['pdf_status']]),
     })
 
 # ------------------------------------------------------------------ campos
@@ -133,7 +172,7 @@ kpis = ''.join(
         (n_c1, 'sem decisao C1', 'wr'),
         (len(CAMPOS), 'campos do protocolo', ''),
         (n_rep, 'campos repetiveis', ''),
-        (10, 'minimo do piloto', 'ok'),
+        (len(PILOTO), 'sorteados para o piloto', 'ok'),
     ])
 
 
@@ -152,8 +191,18 @@ tab_secoes = tab(
      for sec, facs in SECOES for fac in facs])
 
 tab_est = tab(
-    ['Registro', 'Ano', 'Tipo', 'Veiculo'],
-    [(e_['id'], e_['py'], e_['ty'], e_['t2'][:78]) for e_ in EST])
+    ['Registro', 'Piloto', 'Ano', 'Tipo', 'Veiculo'],
+    [(e_['id'], 'PILOTO' if e_['p'] else '', e_['py'], e_['ty'], e_['t2'][:78])
+     for e_ in EST])
+
+tab_piloto = tab(
+    ['Registro', 'Ano', 'Tipo', 'Procedencia do texto', 'Titulo'],
+    [(e_['id'], e_['py'], e_['ty'], e_['st'], e_['ti'][:70])
+     for e_ in EST if e_['p']])
+
+tab_estratos = tab(
+    ['Ano', 'Tipo', '#Com texto', '#No piloto'],
+    [(a, t, len(estratos[(a, t)]), cota[(a, t)]) for a, t in sorted(estratos)])
 
 # ------------------------------------------------------------------ css
 EXTRA = """
@@ -387,6 +436,36 @@ Todos os campos <b>interpretativos de evidencia de qualidade</b> sao extraidos
 um revisor so, com <b>auditoria independente de ao menos 20 por cento</b>. E qualquer
 revisao material do formulario ou do codebook dispara <b>revisao retrospectiva</b> do que
 ja foi extraido &mdash; o que e mais um motivo para o piloto vir antes da producao.</div>
+
+<h3>2.1 A amostra sorteada</h3>
+<p>Estratos: <b>ano x tipo de veiculo</b>. Uma vaga por estrato nao vazio, e as vagas
+restantes para os estratos maiores. Semente fixa <span class="mono">__SEMENTE__</span>,
+portanto o sorteio e reproduzivel: mesma semente e mesmo CSV devolvem os mesmos dez.
+A cota igual por estrato e proposital &mdash; o piloto existe para submeter o formulario
+a casos <b>diferentes</b>, nao para representar o corpus em proporcao.</p>
+__TAB_ESTRATOS__
+__TAB_PILOTO__
+<div class="nota"><b>Nada na selecao olhou para o conteudo dos estudos.</b> So ano, tipo de
+veiculo e semente. Escolher o piloto pelo que o titulo sugere sobre avaliacao de qualidade
+seria selecionar pela <b>variavel dependente</b>, que e a sexta regra de ouro do manual v2.
+A procedencia do texto aparece na tabela como informacao, nao como criterio: ela nao entrou
+no sorteio.</div>
+
+<h3>2.2 Dois desvios declarados neste piloto</h3>
+<div class="alerta"><b>Desvio 1 &mdash; extrator unico.</b> O protocolo exige extracao
+independente por <b>dois</b> revisores nos campos interpretativos de qualidade. Este piloto
+roda com <b>um so</b>. A consequencia e explicita: o piloto <b>nao fecha o V10 nesta
+condicao</b>. Ou entra depois a segunda passagem, que o arquivo de extracao ja acomoda sem
+retrabalho porque a chave inclui o extrator, ou o desvio vira <b>emenda</b> e tem de constar
+do relato final. O que nao pode e a exigencia sumir em silencio.<br>
+<b>Desvio 2 &mdash; tempo medido fora da ficha.</b> Tempo de extracao e uma das cinco
+medidas que o protocolo manda o piloto avaliar, e a unica que <b>nao se reconstroi depois</b>.
+A ficha nao a captura; ela sera anotada por fora. Se a anotacao falhar, a medida se perde e
+o piloto responde quatro das cinco perguntas.</div>
+<p>As outras quatro medidas saem do proprio material exportado: <b>frequencia de dado
+ausente</b> por contagem dos codigos de ausencia, <b>sobreposicao de categorias</b> e
+<b>clareza dos campos</b> pelas notas por campo, e <b>viabilidade da extracao em nivel de
+unidade</b> pelo numero de ocorrencias que os campos repetiveis realmente receberem.</p>
 </section>
 
 <section id="mapa"><h2>3. Mapa dos campos</h2>
@@ -436,9 +515,12 @@ porque desfecho de portao mora no CSV mestre.</div>
 analysis/extraction/codebook_extracao.csv. Nenhum dado sai desta pagina.</footer>
 <script>__JS__</script></body></html>"""
 
+# Os do piloto foram postos na frente da fila, entao sao os len(PILOTO)
+# primeiros e a numeracao "1/10" e simplesmente a posicao.
 opcoes = ''.join(
-    '<option value="%d">%s &middot; %s</option>' % (n, html.escape(e_['id']),
-                                                   html.escape(e_['ti'][:88]))
+    '<option value="%d">%s%s &middot; %s</option>'
+    % (n, 'PILOTO %d/%d &middot; ' % (n + 1, len(PILOTO)) if e_['p'] else '',
+       html.escape(e_['id']), html.escape(e_['ti'][:82]))
     for n, e_ in enumerate(EST))
 
 js = (JS.replace('__EST__', json.dumps(EST, ensure_ascii=False))
@@ -451,6 +533,9 @@ pg = (HTML.replace('__CSS__', CSS + EXTRA)
         .replace('__KPIS__', kpis)
         .replace('__TAB_SECOES__', tab_secoes)
         .replace('__TAB_EST__', tab_est)
+        .replace('__TAB_PILOTO__', tab_piloto)
+        .replace('__TAB_ESTRATOS__', tab_estratos)
+        .replace('__SEMENTE__', str(SEMENTE_PILOTO))
         .replace('__OPCOES__', opcoes)
         .replace('__N_CAMPOS__', str(len(CAMPOS)))
         .replace('__N_FECHADO__', str(n_fechado))
@@ -464,3 +549,5 @@ open(OUT, 'w', encoding='utf-8').write(pg)
 print('gerado:', OUT)
 print('estudos %d | sem C1 %d | campos %d (fechado %d, aberto %d, composto %d) | repetiveis %d'
       % (len(EST), n_c1, len(CAMPOS), n_fechado, n_aberto, n_comp, n_rep))
+print('piloto %d (semente %d):' % (len(PILOTO), SEMENTE_PILOTO),
+      ' '.join(e_['id'] for e_ in EST if e_['p']))
