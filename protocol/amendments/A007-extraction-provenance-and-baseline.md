@@ -6,7 +6,7 @@
 - Stage: After screening, during construction of the extraction instrument and before the extraction pilot begins
 - Status: `Applied`
 - PreviousRecordedCommit: `b6fd0b81675218bb4c50dbd3b6f41d3a90816473`
-- RecordedCommit: `PENDING`
+- RecordedCommit: `e910189`
 - Scope: Step 5 of the six-step refinement ordered by the primary reviewer: what the review owes the thesis, objective, ORQ, subquestions, **extractions**, methods. Steps 1 to 4 closed with A006.
 - DoesNotChange:
   - search strings
