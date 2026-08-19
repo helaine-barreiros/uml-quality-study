@@ -109,7 +109,7 @@ The question is decomposed into mapping questions and synthesis questions.
 \subsection{Quality evidence and synthesis questions}
 
 \begin{description}[style=nextline,leftmargin=2.0cm,labelwidth=1.5cm]
-    \item[SQ1.] Which quality constructs are used, and how are textual validity, rendering validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, and correction effort defined or operationalized?
+    \item[SQ1.] Which quality constructs are used, how are they named and defined by the primary studies themselves, and how can the reported terms be normalized across the syntactic, semantic, and pragmatic dimensions without erasing study specific distinctions?
     \item[SQ2.] Which inadequacies are reported, how are they defined, which UML elements or relations carry them, and how can the original categories be normalized without erasing diagram specific distinctions?
     \item[SQ3.] Which metrics, rubrics, oracles, semantic references, units of assessment, scales, thresholds, aggregation rules, evaluators, automated tools, and judgment procedures are used?
     \item[SQ4.] To what extent does the reported evidence distinguish syntactic quality from semantic quality, and what direct or indirect evidence of syntax-semantic dissonance is available?
@@ -1357,7 +1357,7 @@ The three axes are never collapsed into a single scale. Folding pragmatic adequa
 
 A fourth field, inherited from the withdrawn E10, records \textit{result attribution} with values \textit{attributable to UML}, \textit{aggregated with other artifacts}, and \textit{not reported}. It qualifies the strength with which a reported result can be traced to the generation of UML content, in cases where filter C1 confirmed that a generation instance exists.
 
-The extraction additionally classifies whether the study provides evidence about textual validity, rendering validity, UML syntactic conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, or correction effort. It records whether syntactic and semantic evidence are reported separately and whether the report provides direct, indirect, absent, unclear, or non-assessable evidence of syntax-semantic dissonance. Procedure, reliability, and validity information is recorded in the SQ5 extraction fields and never in the axes.
+The extraction additionally classifies which quality constructs the study provides evidence about. That vocabulary is defined once, in the normalized construct field of the quality evidence extraction table, whose syntactic and semantic projections are the two construct fields recorded beside it; it is deliberately not repeated here, because repeating it is what allowed the two enumerations to drift apart. The extraction also records whether syntactic and semantic evidence are reported separately and whether the report provides direct, indirect, absent, unclear, or non-assessable evidence of syntax-semantic dissonance. Procedure, reliability, and validity information is recorded in the SQ5 extraction fields and never in the axes.
 
 The analytical subsets are computed from these axes rather than presumed by an eligibility filter.
 
@@ -1373,13 +1373,13 @@ The analytical subsets are computed from these axes rather than presumed by an e
 \midrule
 \endhead
 MQ1 to MQ5, and SQ6 & The whole eligible corpus. \\
-SQ1 to SQ3 & Studies for which axis D is not absent. \\
+SQ1 to SQ3 & The whole eligible corpus. \\
 SQ4 & Studies for which axis L is not absent and axis D is not absent. \\
 SQ7 & Studies for which axis U is not absent. \\
 \bottomrule
 \end{longtable}
 
-SQ4 asks to what extent the reported evidence distinguishes syntactic from semantic quality. Under an eligibility filter on evidence reporting, that subset would be assumed; under the axes it is computed, which is the difference between describing the literature and describing the review's own filter. The same argument governs MQ5, which asks which combinations remain under-investigated: a gap analysis run over a corpus filtered by evidence reporting would report the filter as a gap in the literature. SQ6 covers the whole corpus for a related reason. What knowledge is supplied as generation context is a property of every generation setting, whereas the pragmatic effects asked by SQ7 exist only where axis U is not absent; reporting the former over the latter subset would describe the supply of domain knowledge and of the UML technical contract over the minority of studies that also measured use.
+SQ4 asks to what extent the reported evidence distinguishes syntactic from semantic quality. Under an eligibility filter on evidence reporting, that subset would be assumed; under the axes it is computed, which is the difference between describing the literature and describing the review's own filter. The same argument governs MQ5, which asks which combinations remain under-investigated: a gap analysis run over a corpus filtered by evidence reporting would report the filter as a gap in the literature. SQ6 covers the whole corpus for a related reason. What knowledge is supplied as generation context is a property of every generation setting, whereas the pragmatic effects asked by SQ7 exist only where axis U is not absent; reporting the former over the latter subset would describe the supply of domain knowledge and of the UML technical contract over the minority of studies that also measured use. SQ1 to SQ3 cover the whole corpus for the strongest form of the same reason. A quality construct, an inadequacy, and a metric may be purely syntactic: a study whose only evidence is a parser run reports a construct, a definition, and an oracle, and would be silently removed from the construct matrix by a subset conditioned on the domain axis. Restricting the question that carries the constitutive function of this review to the studies that already evaluate against the domain would select on the dependent variable and would report the review's own filter as the vocabulary of the literature. The two rows above are kept separate rather than merged so that the line references recorded in the amendments and in the decision log remain valid.
 
 \subsection{Full-text unavailability as attrition}
 \label{sec:protocol_attrition}
@@ -1518,7 +1518,7 @@ Axis & QualityAxisU & Absent; claimed only; comprehension; engineering activity;
 Axis & ResultAttribution & Attributable to UML; aggregated with other artifacts; not reported. Qualifies how far a reported result can be traced to the generation of UML content. Inherited from the withdrawn E10. \\
 Construct & Original quality term & Preserve the term exactly as reported, before any mapping to the review's scheme \\
 Construct & Definition and theoretical source & Extract verbatim or near verbatim definition within copyright limits; record cited framework \\
-Construct & Normalized construct & Textual validity, UML conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, readability, clarity, or other \\
+Construct & Normalized construct & Single normalization vocabulary, partitioned by dimension. Syntactic: textual validity; rendering validity; PlantUML parseability; UML syntactic conformity; metamodel conformance; well-formedness; notation-level validity. Semantic: semantic correctness; semantic completeness; requirements coverage; domain fidelity; consistency; consistency with source requirements; omitted element; unsupported addition; incorrect relation; incorrect actor; incorrect behavior. Pragmatic: pragmatic adequacy; understandability; readability; clarity; correction effort; inspection effort. Or other. The two construct fields below are the syntactic and semantic projections of this vocabulary and admit no value absent from it. \\
 Construct & SyntacticEvidenceAvailable & Yes; No; Unclear. \\
 Construct & SemanticEvidenceAvailable & Yes; No; Unclear. \\
 Construct & SyntacticQualityConstruct & Textual validity; rendering validity; PlantUML parseability; UML syntactic conformity; metamodel conformance; well-formedness; notation-level validity; other; not reported. \\

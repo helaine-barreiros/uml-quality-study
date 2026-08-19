@@ -774,8 +774,11 @@ SQ2 deixaria os outros tres com o mesmo defeito, silencioso. A quarta,
 diferentes: <i>e dado de</i> (l. 133-145) e <i>define o subconjunto de</i> (l. 1375-1378).
 A confusao era visivel dentro de <b>uma unica linha</b> &mdash; no eixo D a coluna
 <span class="mono">questoes</span> dizia <span class="mono">SQ1;SQ4</span> enquanto a regra
-de extracao, ao lado, dizia que ele <i>define os subconjuntos de SQ1 a SQ3</i>. As quatro
-sao as primeiras coisas que o piloto deve testar.</div>
+de extracao, ao lado, dizia que ele <i>define os subconjuntos de SQ1 a SQ3</i>. Hoje o eixo D
+define <b>apenas</b> o subconjunto da SQ4: a A006 secao 4 devolveu SQ1 a SQ3 ao corpus
+inteiro, porque construto, inadequacao e metrica podem ser puramente sintaticos e um
+denominador de dominio os apagaria. As quatro colunas sao as primeiras coisas que o piloto
+deve testar.</div>
 <div class="alerta"><b>O campo __O_SEV__ e o unico que nao vem das tabelas do protocolo.</b>
 A l. 1601-1608 define a inadequacao como a tupla <span class="mono">&lt;Rv, Od, Cu, Se,
 Ex&gt;</span> e a l. 1616 poe a severidade como quinta dimensao da codificacao, mas nenhuma

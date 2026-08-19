@@ -4,7 +4,7 @@
 - DecisionDate: `2026-08-18`
 - RecordedAt: `2026-08-18T00:00:00-03:00`
 - Stage: After screening, during construction of the extraction instrument and before the extraction pilot begins
-- Status: `Sections 2, 3, 9 and 10 applied; Section 5 settled by Section 10; Sections 4 and 6 are open`
+- Status: `Sections 2, 3, 4, 9 and 10 applied; Section 5 settled by Section 10; Section 6 is open`
 - PreviousRecordedCommit: `e2fe3ee74c75edc64f6a7697f40b6a92d2f28060`
 - RecordedCommit: `b1f4c08dda8f383dad80f72cd85ac2b8e37efe30`
 - Section9Commit: `c2f23b2`
@@ -23,6 +23,9 @@
   - the general objective (l. 73), twice: once in Section 2 and once in Section 9
   - expected contribution (vi) (l. 83)
   - the overarching research question (l. 94)
+  - SQ6, split into SQ6 and SQ7 (l. 117-118)
+  - SQ1, which loses its construct enumeration (l. 112)
+  - the normalized construct vocabulary (l. 1521) and the analytical subset of SQ1 to SQ3 (l. 1376)
   - custody of the two decisions left open by A005 sections 6 and 7
 
 ## Why this amendment exists, and why it is separate from A005
@@ -97,23 +100,89 @@ turns out to have no precedent for measuring correction effort on UML, that is a
 finding of the review and a direct warrant for the design of the next study, not
 a hole in it.
 
-## 4. Open: the SQ1 construct list
+## 4. The SQ1 construct list (applied)
 
 Transferred from A005 section 6, where it was recorded without a decision.
+**A005 section 6 compared the wrong pair of lists**, and underneath the mismatch
+there was a denominator defect of the same kind that nearly spoiled SQ6.
 
-The construct list in the SQ1 question (l. 112, l. 1358) does not match the list
-in the field that normalizes constructs (l. 1519): `rendering validity` and
-`correction effort` are missing from the field, `understandability / readability
-/ clarity` is missing from the question, and the question says `UML conformity`
-where the field says `UML syntactic conformity`.
+### 4.1 Four enumerations of the same object, not two
 
-**The reference model changes the argument.** The two constructs missing from the
-field are the two the thesis will most need: the model's demonstration emits
-**PlantUML** that is rendered, and RM section 8 names **correction effort** as
-the measure that later work must take. Losing them at extraction would lose the
-two measures the empirical stage depends on. This favours the union, which is
-option 1 in A005 section 6; option 2, removing the enumeration from the question,
-remains open on its own merits and is not settled here.
+| # | Where | List |
+|---|---|---|
+| 1 | SQ1, l. 112 | textual validity, rendering validity, UML **syntactic** conformity, semantic correctness, semantic completeness, consistency, pragmatic adequacy, correction effort |
+| 2 | prose, l. 1360 | identical to 1 |
+| 3 | field 34 `Normalized construct`, l. 1521 | textual validity, **UML conformity**, semantic correctness, semantic completeness, consistency, pragmatic adequacy, understandability, readability, clarity, other |
+| 4 | fields 37 `SyntacticQualityConstruct` and 38 `SemanticQualityConstruct` | seven syntactic values, **including `rendering validity`, `PlantUML parseability` and `metamodel conformance`**, and ten semantic values |
+
+SQ1 owns fields 32, 33, 34, 37 and 38.
+
+### 4.2 Three defects, in increasing severity
+
+**(a) The premise recorded here on 2026-08-18 was itself wrong.** It stated that
+`rendering validity` was missing from *the field*. It is missing from field 34,
+but **field 37 already carries it**. The union as A005 section 6 proposed it would
+have put into 34 a value that 37 already holds, leaving two fields able to record
+the same construct with no rule for which to use. That is the fusion l. 1356
+forbids. `correction effort` is the genuine absence: it exists nowhere as a
+construct label, since field 60 records the *measure*, not the term.
+
+**(b) SQ1 enumerated answers it cannot read.** Of the eight constructs at old
+l. 112, `pragmatic adequacy` and `correction effort` are operationalized by fields
+56 to 60, which section 10 moved to SQ7. This is the old SQ6 defect, on the same
+day, in the neighbouring question.
+
+**(c) The denominator was wrong, and this is the serious one.** Old l. 1376 gave
+SQ1 to SQ3 the subset *studies for which axis D is not absent*. But SQ1 owns field
+37, whose values are all axis L. A study whose only evidence is a parser run has a
+quality vocabulary, a construct and a definition, and fell outside SQ1 anyway:
+*which quality constructs are used* answered only over studies that already use a
+construct of one particular kind. That is golden rule 6, selection on the
+dependent variable, inside the question that carries the **constitutive** function
+of the review (l. 63). Field 37 already offers `not reported`; the instrument had
+foreseen the empty case, the denominator had not. The same table row covered SQ2
+and SQ3, and an inadequacy may be syntactic while a parser is an SQ3 oracle.
+
+### 4.3 What was applied
+
+1. **SQ1 loses the enumeration**, the same remedy and the same ground as SQ6 in
+   section 10. It now asks which constructs are used, how the primary studies
+   themselves name and define them, and how the reported terms can be normalized
+   across the syntactic, semantic and pragmatic dimensions without erasing
+   study-specific distinctions. This copies the form SQ2 already uses.
+2. **l. 1360 stops repeating the list** and points to the field that defines it.
+3. **One vocabulary, partitioned by dimension.** Field 34 receives the union of
+   37 and 38 plus the pragmatic terms, including `correction effort` and
+   `inspection effort`, and becomes the single target of normalization by term;
+   37 and 38 are declared its **syntactic and semantic projections** and admit no
+   value absent from it. One list, three sections, not two competing lists. The
+   study-level roll-up for the pragmatic dimension already exists and is axis U,
+   so no field was created. `UML conformity` was dropped from 34 in favour of
+   `UML syntactic conformity`; the axis L value keeps its own name, because the
+   axis and the construct are different objects.
+4. **SQ1 to SQ3 move to the whole eligible corpus.** Decided explicitly, since it
+   changes the denominator of three questions at once. The two alternatives
+   offered were *at least one axis not absent* and *keep it and declare the
+   circularity as a limitation*; the whole corpus was chosen.
+
+### 4.4 Costs and one observation, declared
+
+- **The `.tex` stays at 1862 lines.** Every edit is an in-place replacement. The
+  two whole-corpus rows of the subset table were deliberately **not merged**, so
+  that no line reference recorded in the amendments or in the decision log moves;
+  the protocol says so at l. 1382.
+- **Axis D now defines only the SQ4 subset.** The codebook field
+  `QualityAxisD.define_subconjunto` went from `SQ1;SQ2;SQ3;SQ4` to `SQ4`. The axes
+  remain computed rather than presumed, which is what l. 1362 asserts.
+- **Observation, not decided here.** Five values of field 38 (`omitted element`,
+  `unsupported addition`, `incorrect relation`, `incorrect actor`,
+  `incorrect behavior`) read as **deviation types rather than constructs**, and
+  they overlap the SQ2 taxonomy. They entered field 34 because the projection rule
+  requires it: 37 and 38 cannot project onto a vocabulary that lacks their values.
+  This is the first thing the pilot must test on SQ1, and it is recorded rather
+  than silently resolved.
+- No eligibility criterion, no screening decision, and no recoding: two extraction
+  fields changed their admissible values while the extraction file is still empty.
 
 ## 5. Open: the reach of SQ6, with the sign reversed
 
