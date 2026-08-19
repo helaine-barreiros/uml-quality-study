@@ -154,6 +154,11 @@ for c in codebook:
         # Duas relacoes diferentes, que a coluna questoes fundia ate o item F:
         # "e dado de" (l. 133-145) e "define o subconjunto de" (l. 1375-1378).
         'sub':   c['define_subconjunto'],
+        # Procedencia do valor (A006 passo 5): "lido" no artigo, "conferido"
+        # contra dado ja registrado no CSV mestre ou no Portao B, "derivado" de
+        # outro campo. Oito campos nao sao busca no artigo, e a ficha precisa
+        # dizer isso ANTES do extrator gastar leitura com eles.
+        'orig':  c['origem'],
         'regra': c['regra_extracao'],
         # exemplos nao viram opcao: em campo aberto a lista do protocolo e
         # ilustrativa, e transforma-la em menu induziria a escolher da lista em
@@ -251,7 +256,7 @@ assert SEM_CAMPO == ['MQ5'], SEM_CAMPO   # a MQ5 e computada (l. 137, l. 1382)
 # A correspondencia com as tabelas do protocolo, derivada e nao escrita: a
 # insercao da severidade e a fusao do campo de envolvimento humano se cancelam
 # depois da severidade.
-O_ULT_IGUAL = ORD['Dimensions and baselines']
+O_ULT_IGUAL = ORD['BaselineCondition']   # ex-'Dimensions and baselines' (A006 passo 5)
 
 
 def faixa(g):
@@ -353,6 +358,8 @@ EXTRA = """
 .cp .nm{font-weight:600;font-size:14px}
 .cp .tg{font-size:10.5px;padding:1px 7px;border-radius:5px;border:1px solid var(--ln);color:var(--dim)}
 .cp .rg{color:var(--dim);font-size:12.5px;margin:5px 0 9px;max-width:96ch}
+.cp .tg.pr{border-color:#b4881f;color:#b4881f}
+.cp .pv{font-size:12.5px;margin:6px 0 0;padding:5px 9px;border-left:3px solid #b4881f;background:rgba(180,136,31,.08);max-width:96ch}
 .oc{border-left:2px solid var(--ln);padding-left:11px;margin:9px 0}
 .oc .lin{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
 .oc select,.oc input,.oc textarea{font:inherit;font-size:13px;background:var(--pan2);color:var(--tx);border:1px solid var(--ln);border-radius:8px;padding:5px 10px}
@@ -416,7 +423,14 @@ function cartao(c,lst,extra){
   var h='<div class="cp'+(lst.some(preenchido)?' on':'')+'" data-o="'+c.o+'"'+extra+'>'
     +'<div class="top"><span class="nm">'+esc(c.campo)+'</span>'
     +'<span class="tg">'+esc(c.tipo)+'</span>'+(c.rep?'<span class="tg">repetivel</span>':'')
-    +'<span class="tg">'+esc(c.q)+'</span></div>';
+    +'<span class="tg">'+esc(c.q)+'</span>'
+    +(c.orig!=='lido'?'<span class="tg pr">'+esc(c.orig)+'</span>':'')+'</div>';
+  /* A procedencia vem ANTES da regra: se o campo nao e busca no artigo, o
+     extrator precisa saber disso antes de ler qualquer instrucao de leitura. */
+  if(c.orig==='conferido')
+    h+='<div class="pv">Nao buscar no artigo. O valor ja existe: confira e corrija se divergir.</div>';
+  if(c.orig==='derivado')
+    h+='<div class="pv">Nao buscar no artigo. O valor sai de outro campo desta ficha; so "unclear" e posto a mao.</div>';
   if(c.regra)h+='<div class="rg">'+esc(c.regra)+'</div>';
   if(c.ex.length)h+='<div class="rg"><i>exemplos do protocolo:</i> '+esc(c.ex.join('; '))+'</div>';
   lst.forEach(function(r,n){
@@ -537,7 +551,7 @@ document.getElementById('exp').onclick=function(){
         var c=b.cs[0];
         ((e.f||{})[c.o]||[]).forEach(function(r,n){
           if(!preenchido(r))return;
-          out.push([x.id,c.campo,'',n+1,r.v||'',r.nat||'',r.ev||'',r.loc||'',quem,ts,r.nt||'']);
+          out.push([x.id,c.campo,'',n+1,r.v||'',r.nat||'',r.ev||'',r.loc||'',quem,ts,r.nt||'',c.orig]);
         });
         return;
       }
@@ -546,7 +560,7 @@ document.getElementById('exp').onclick=function(){
         b.cs.forEach(function(c){
           (it[c.o]||[]).forEach(function(r,n){
             if(!preenchido(r))return;
-            out.push([x.id,c.campo,inst,n+1,r.v||'',r.nat||'',r.ev||'',r.loc||'',quem,ts,r.nt||'']);
+            out.push([x.id,c.campo,inst,n+1,r.v||'',r.nat||'',r.ev||'',r.loc||'',quem,ts,r.nt||'',c.orig]);
           });
         });
       });
