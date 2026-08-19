@@ -4,7 +4,7 @@
 - DecisionDate: `2026-08-18`
 - RecordedAt: `2026-08-18T00:00:00-03:00`
 - Stage: After screening, during construction of the extraction instrument and before the extraction pilot begins
-- Status: `Sections 2, 3, 4, 9 and 10 applied; Section 5 settled by Section 10; Section 6 is open`
+- Status: `Closed. Sections 2, 3, 4, 6, 9 and 10 applied; Section 5 settled by Section 10; the Section 6 proposal was examined and rejected`
 - PreviousRecordedCommit: `e2fe3ee74c75edc64f6a7697f40b6a92d2f28060`
 - RecordedCommit: `b1f4c08dda8f383dad80f72cd85ac2b8e37efe30`
 - Section9Commit: `c2f23b2`
@@ -26,6 +26,7 @@
   - SQ6, split into SQ6 and SQ7 (l. 117-118)
   - SQ1, which loses its construct enumeration (l. 112)
   - the normalized construct vocabulary (l. 1521) and the analytical subset of SQ1 to SQ3 (l. 1376)
+  - the projection of the syntactic construct field onto axis L, and the ladder rule (l. 1360)
   - custody of the two decisions left open by A005 sections 6 and 7
 
 ## Why this amendment exists, and why it is separate from A005
@@ -219,14 +220,74 @@ after the questions are settled.
 two fields into SQ6 would have made them inherit the SQ6 subset. The defect was
 one level up: SQ6 was two questions welded together.
 
-## 6. Open: the values of axis L
+## 6. The values of axis L (applied; the proposal is rejected)
 
-Transferred from A005 section 7. l. 1348 gives the axis three values while the
-corresponding field has nine, so a study whose only evidence is a renderer run or
-PlantUML parseability has no axis L value to record. The proposal is to add
-`rendering validity` to the axis. The reference model strengthens it for the same
-reason as Section 4: its generated artefact is PlantUML code that is rendered, so
-rendering is a genuine step of the technical contract, not a marginal one.
+Transferred from A005 section 7, which proposed adding `rendering validity` to
+axis L because the axis has three values while the syntactic construct field has
+nine, so that a study whose only evidence is a renderer run would have no value to
+record. **The premise is false, and it was never checked against the glossary.**
+
+### 6.1 Evidence
+
+| Where | What it says |
+|---|---|
+| l. 182, glossary | *Textual validity*: conformance of the concrete output string to the grammar accepted by the selected representation **or rendering tool**; it does not by itself establish UML conformity |
+| l. 183, glossary | *UML syntactic conformity*: conformance to the **abstract syntax**, admissible constructs, relations, **and well-formedness constraints** |
+| l. 1685, synthesis | already groups `parseability, renderability, textual validity` on one side and `UML syntactic conformity` on the other |
+| field 28 | closed, **not repeatable**: one value per study |
+
+### 6.2 Why the proposal is rejected
+
+`rendering validity` is already inside `textual validity` by definition. Adding it
+would split the textual level in two and place a **tool-specific label** beside a
+**level name**, mixing categories in the one axis that exists to keep concrete
+representation apart from abstract syntax, which is the distinction the thesis is
+built on.
+
+**Three against nine was never a mismatch.** The axis records a *level*; the field
+records the *construct label used by the study*. They are different objects, and
+the nine project onto the two without remainder:
+
+| textual level (l. 182) | UML level (l. 183) |
+|---|---|
+| textual validity, rendering validity, PlantUML parseability, notation-level validity | UML syntactic conformity, metamodel conformance, well-formedness |
+
+### 6.3 A different failure mode, and what was applied
+
+This is **not** a sixth occurrence of the duplication pattern. It is two correct
+lists with **no stated relation between them**: a missing projection. Nothing in
+the protocol said how the construct field maps onto the axis, so two extractors
+would code the same renderer-only study as `textual validity` and as `absent`.
+Two rules were therefore written into l. 1360, in an existing line:
+
+1. **The projection above**, with the reason for each half taken from the glossary,
+   and the explicit statement that a renderer or parser run is not `absent`.
+2. **The ladder rule.** The axis carries one value per study while the construct
+   field is repeatable, so the axis records the **most demanding level for which
+   the study reports evidence**. This asserts which level was assessed, not that
+   one level implies the other; the inventory of what was assessed stays in the
+   construct field. The axis only feeds the SQ4 subset, which needs `absent`
+   against `not absent`, so the ladder is sufficient for its declared use.
+
+The axis value `UML conformity` was **not** renamed to `UML syntactic conformity`.
+Section 4 decided hours earlier that the axis and the construct are different
+objects, and no new evidence contradicts it; renaming now would be churn.
+
+### 6.4 Two stale cells corrected in passing
+
+Found while reading `regra_extracao` for the three axes, and not left masked:
+
+| Field | Said | Says now |
+|---|---|---|
+| 29 `QualityAxisD` | defines the subsets of SQ1 to SQ3 | defines the SQ4 subset together with axis L; Section 4 sent SQ1 to SQ3 to the whole corpus |
+| 30 `QualityAxisU` | defines the SQ6 subset | defines the SQ7 subset, since the Section 10 split |
+
+Both are prose left behind by earlier sections of this amendment, which updated
+`define_subconjunto` but not the extraction rule beside it. The verifier now also
+checks that the projection covers every substantive value of the construct field,
+and that axis L did **not** gain a value.
+
+The `.tex` stays at 1862 lines: every edit is an in-place replacement.
 
 ## 7. Consequences declared, not left to be discovered
 
