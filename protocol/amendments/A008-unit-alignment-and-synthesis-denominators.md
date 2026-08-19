@@ -6,7 +6,7 @@
 - Stage: After the extraction instrument was closed by A007, and before the extraction pilot begins
 - Status: `Applied`
 - PreviousRecordedCommit: `76a764a29a2f1d0b45c3b2e7f8a1d6c4e9b03571`
-- RecordedCommit: `(to be filled by the commit that introduces this file)`
+- RecordedCommit: `e908ba0`
 - Scope: Step 6 of the six-step refinement ordered by the primary reviewer: what the review owes the thesis, objective, ORQ, subquestions, extractions, **methods**. Steps 1 to 5 closed with A006 and A007. This amendment closes the sequence.
 - DoesNotChange:
   - search strings, information sources, review interval, temporal and language scope
