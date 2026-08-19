@@ -1637,7 +1637,11 @@ The codebook is versioned. Each code contains a definition, inclusion rule, excl
 
 \subsection{Coding reliability}
 
-Two reviewers independently code all inadequacy data from included studies. Agreement is assessed at the normalized category level and at the principal dimensions of the tuple in Equation~\ref{eq:protocol_inadequacy_tuple}. Cohen kappa is used for binary and mutually exclusive nominal decisions \cite{Cohen1960Kappa}. Krippendorff alpha is preferred when categories are multiple, data are missing, or more than two coders are involved \cite{Krippendorff2018Content}. Reliability values are interpreted together with confusion matrices, category prevalence, and documented disagreement patterns. Disagreements are resolved by discussion and adjudication, and the consensus code is stored separately from the original reviewer codes.
+Coding an inadequacy is two operations, and only the second carries an agreement coefficient. The first is unitization. The inadequacies reported by a study are enumerated in the study's own vocabulary before any normalized label is applied, and two reviewers may enumerate different numbers of them from the same study. The enumerated lists are therefore reconciled by discussion and adjudication before classification begins, and the reconciliation is recorded as the count of items added, removed, and merged on each side. Enumeration disagreement is reported as that count and is never absorbed into a coefficient computed over classification.
+
+The second operation is classification. Two reviewers independently classify every item of the reconciled list, for every included study. Agreement is assessed at the normalized category level and at the principal dimensions of the tuple in Equation~\ref{eq:protocol_inadequacy_tuple}. Cohen kappa is used for binary and mutually exclusive nominal decisions \cite{Cohen1960Kappa}. Krippendorff alpha is preferred when categories are multiple, data are missing, or more than two coders are involved \cite{Krippendorff2018Content}. Reliability values are interpreted together with confusion matrices, category prevalence, and documented disagreement patterns. Disagreements are resolved by discussion and adjudication, and the consensus code is stored separately from the original reviewer codes.
+
+Reconciling the units before classifying them is what makes a contingency table exist. An inadequacy is a repeatable field of free enumeration, so without a shared list of items there is no pairing between the two reviewers' codes, and a coefficient computed over unpaired enumerations would report how much each reviewer found rather than how far they agree on category boundaries. The rule is fixed here, before the two independent passes, because aligning the units afterwards would let each reviewer's classification decide which items are held to have been reported at all.
 
 \section{Synthesis Plan}
 \label{sec:protocol_synthesis}
@@ -1653,7 +1657,7 @@ The included studies are mapped through frequencies, proportions, temporal distr
     \item model family and version by year;
     \item context strategy by diagram type and task;
     \item study design by contribution type;
-    \item evaluation dimension by diagram type;
+    \item quality dimension assessed, as given by the three evidence axes and by the dimension partition of the normalized construct, by diagram type;
     \item baseline and human involvement by study design;
     \item replication material availability by year and venue;
     \item publication status and methodological characteristics.
@@ -1686,9 +1690,13 @@ Syntax-semantic dissonance is analyzed from the explicit extraction fields for s
 
 Analytical subsets include studies with syntactic evidence only; studies with semantic evidence only; studies with both syntactic and semantic evidence; studies with direct syntax-semantic dissonance evidence; studies with indirect or non-assessable dissonance evidence; and studies generating PlantUML code. These subsets are derived during extraction and are not eligibility layers.
 
-\subsection{Generation context, pragmatic adequacy, and rework synthesis}
+\subsection{Generation context knowledge synthesis}
 
-Reported context factors are classified as merely described, experimentally manipulated, statistically associated, or proposed without empirical evaluation. The synthesis examines how requirements, technical specifications, domain knowledge, UML technical instructions, prompts, examples, retrieval, tools, parser or renderer feedback, and iterative workflows are provided as generation context. Causal language is used only when the original design supports it. Pragmatic and rework evidence is synthesized by task, actor, diagram type, outcome, and measure. A study that reports comprehensibility without an engineering task is not automatically coded as evidence of pragmatic adequacy.
+This synthesis covers the whole eligible corpus, because what knowledge is supplied as generation context is a property of every generation setting and not only of the studies that also measured use. The synthesis examines how requirements, technical specifications, domain knowledge, UML technical instructions, prompts, examples, retrieval, tools, parser or renderer feedback, and iterative workflows are provided as generation context, and reports the supply of domain knowledge and the supply of the UML technical contract as the two axes of the resulting map.
+
+\subsection{Pragmatic adequacy and rework synthesis}
+
+This synthesis covers only the studies for which axis U is not absent, because a pragmatic or rework effect exists only where use was assessed, and running it over the whole corpus would read the silence of the studies that never measured use as an absence of effect. Reported context factors are classified as merely described, experimentally manipulated, statistically associated, or proposed without empirical evaluation, and causal language is used only when the original design supports it. Pragmatic and rework evidence is synthesized by task, actor, diagram type, outcome, and measure. A study that reports comprehensibility without an engineering task is not automatically coded as evidence of pragmatic adequacy.
 
 \subsection{Heterogeneity and sensitivity analysis}
 
