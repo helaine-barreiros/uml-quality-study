@@ -1,39 +1,23 @@
 #!/usr/bin/env bash
-# Renderiza o protocolo em PDF e em HTML a partir do proprio .tex, sem editar o .tex.
+# Despachante. Cada versao do protocolo tem a sua propria pasta autocontida, com
+# .tex, .bib, embrulho de render e verificador:
 #
-# O .tex e um APENDICE (comeca em \chapter, nao tem \documentclass), entao a
-# renderizacao usa o embrulho protocol/build/protocol_standalone.tex, que so
-# reproduz o preambulo declarado nas linhas 1-4 do proprio apendice e o inclui
-# com \input. Nada do protocolo e alterado para gerar a saida.
+#   protocol/<versao>/appendix_two_layer_mapping_protocol_<versao>.{tex,bib,pdf,html,css}
+#   protocol/<versao>/build/protocol_standalone.tex
+#   protocol/<versao>/analysis/scripts/{gera_pdf_protocolo.sh,verifica_protocolo.py}
 #
-# Uso: bash analysis/scripts/gera_pdf_protocolo.sh
+# Este arquivo existe para que o comando memorizado continue valendo. Ele so
+# encaminha para o script da versao pedida, que e quem de fato renderiza.
+#
+# Uso: bash analysis/scripts/gera_pdf_protocolo.sh [versao]   (default: v3_0)
 set -euo pipefail
-
 RAIZ="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-PROTO="$RAIZ/protocol"
-BUILD="$PROTO/build"
-BASE="appendix_two_layer_mapping_protocol_v1_7"
-
-cd "$BUILD"
-
-latexmk -pdf -interaction=nonstopmode -halt-on-error protocol_standalone.tex >/dev/null
-
-# Falha ruidosa: referencia ou citacao nao resolvida invalida o artefato.
-# Tem de ser conferido AQUI: o make4ht sobrescreve o .log com o log dele.
-if grep -qE "Undefined control sequence|Warning: Citation|Warning: Reference" protocol_standalone.log; then
-  echo "ERRO: referencia ou citacao nao resolvida. Ver $BUILD/protocol_standalone.log" >&2
-  grep -nE "Undefined control sequence|Warning: Citation|Warning: Reference" protocol_standalone.log >&2
+VER="${1:-v3_0}"
+VER="${VER#appendix_two_layer_mapping_protocol_}"   # aceita a base antiga como argumento
+ALVO="$RAIZ/protocol/$VER/analysis/scripts/gera_pdf_protocolo.sh"
+if [ ! -x "$ALVO" ]; then
+  echo "ERRO: versao '$VER' nao existe. Disponiveis:" >&2
+  ls -1 "$RAIZ/protocol" | grep -E '^v[0-9]' >&2
   exit 1
 fi
-PAGS=$(grep -oP 'Output written on protocol_standalone\.pdf \(\K[0-9]+' protocol_standalone.log | tail -1)
-
-make4ht -u -m draft protocol_standalone.tex "0,fn-in" >/dev/null 2>&1
-
-cp protocol_standalone.pdf "$PROTO/$BASE.pdf"
-cp protocol_standalone.css "$PROTO/$BASE.css"
-sed 's/protocol_standalone\.css/'"$BASE"'.css/g' protocol_standalone.html > "$PROTO/$BASE.html"
-
-LINHAS=$(wc -l < "$PROTO/$BASE.tex")
-echo "OK  $LINHAS linhas do .tex  ->  $PAGS paginas"
-echo "    $PROTO/$BASE.pdf"
-echo "    $PROTO/$BASE.html"
+exec bash "$ALVO"

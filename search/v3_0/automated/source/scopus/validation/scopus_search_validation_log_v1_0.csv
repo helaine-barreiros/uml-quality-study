@@ -1,0 +1,5 @@
+round,controlled_modification,scopus_count,diagnostic_unique_count,seed_recovery,decision,interpretation
+S1,Baseline: all three blocks in TITLE-ABS-KEY; included foundation model*,376,372,5/5,Not accepted,High seed recovery; noise from foundation model* and Scopus index terms
+S2,Removed foundation model* only,371,367,5/5,Accepted modification,Five exclusive removals; all outside scope
+S3,UML block changed to TITLE-ABS OR AUTHKEY only; foundation model* restored,250,246,5/5,Accepted modification,Large index-term noise reduction; author-keyword-relevant records preserved
+S4,Combined S2 and S3,249,245,5/5,Accepted as Scopus v1.0,Exact unique-record intersection of S2 and S3; only FMCO 2002 removed relative to S3

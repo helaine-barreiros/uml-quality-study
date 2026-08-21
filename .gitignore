@@ -27,14 +27,17 @@ env/
 **/papers/**/*.pdf
 **/articles/**/*.pdf
 **/literature/**/*.pdf
-search/automated/pdfs/
+search/material/pdfs/
+# Pacotes dos PDFs: a regra acima cobre a PASTA, nao um .zip ao lado dela.
+# 1,2 GB de texto completo sob licenca de editora entrariam num `git add -A`.
+search/material/*.zip
 
 # Dated snapshots of the master CSV; git itself is the version history
-search/automated/backups/
+search/material/backups/
 
 # LaTeX build intermediates of the protocol rendering; the .tex is the source
-protocol/build/*
-!protocol/build/protocol_standalone.tex
+protocol/*/build/*
+!protocol/*/build/protocol_standalone.tex
 
 # Credentials and secrets
 .env

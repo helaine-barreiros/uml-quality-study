@@ -1,0 +1,12 @@
+Verification search for an existing secondary study
+Engine: OpenAlex REST API (https://api.openalex.org/works)
+Run date: 2026-08-20
+Filter: title_and_abstract.search + from_publication_date:2022-01-01
+
+("large language model" OR "large language models" OR LLM OR LLMs OR "generative AI" OR ChatGPT OR GPT) AND (UML OR "unified modeling language" OR PlantUML OR "class diagram" OR "use case diagram" OR "sequence diagram" OR "activity diagram" OR "state machine diagram" OR "model-driven engineering") AND ("systematic review" OR "systematic literature review" OR "systematic mapping" OR "mapping study" OR "literature review" OR "secondary study" OR "tertiary study" OR survey OR "state of the art")
+
+Records returned: 111
+Distinct titles after normalising and grouping versions: 79
+
+Full request URL:
+https://api.openalex.org/works?filter=title_and_abstract.search:%28%22large%20language%20model%22%20OR%20%22large%20language%20models%22%20OR%20LLM%20OR%20LLMs%20OR%20%22generative%20AI%22%20OR%20ChatGPT%20OR%20GPT%29%20AND%20%28UML%20OR%20%22unified%20modeling%20language%22%20OR%20PlantUML%20OR%20%22class%20diagram%22%20OR%20%22use%20case%20diagram%22%20OR%20%22sequence%20diagram%22%20OR%20%22activity%20diagram%22%20OR%20%22state%20machine%20diagram%22%20OR%20%22model-driven%20engineering%22%29%20AND%20%28%22systematic%20review%22%20OR%20%22systematic%20literature%20review%22%20OR%20%22systematic%20mapping%22%20OR%20%22mapping%20study%22%20OR%20%22literature%20review%22%20OR%20%22secondary%20study%22%20OR%20%22tertiary%20study%22%20OR%20survey%20OR%20%22state%20of%20the%20art%22%29,from_publication_date:2022-01-01&per-page=200&mailto=helaine.lins@upe.br&select=id,doi,title,publication_year,type,primary_location,authorships
