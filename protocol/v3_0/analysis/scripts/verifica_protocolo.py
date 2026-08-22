@@ -25,7 +25,7 @@ BASE = ('/home/helaine-barreiros/Development/doutorado-workspace/'
 TEX = os.path.join(BASE, 'protocol/v3_0/appendix_two_layer_mapping_protocol_v3_0.tex')
 CODEBOOK = os.path.join(BASE, 'analysis/v3_0/extraction/codebook_extracao.csv')
 
-LINHAS_ESPERADAS = 1227
+LINHAS_ESPERADAS = 1230
 LACUNA_ESPERADA = {'MQ5', 'SQ5'}
 
 MARCADOR = {
@@ -36,7 +36,7 @@ MARCADOR = {
     'MQ5': 'gap analysis',
     'SQ1': 'construct matrix',
     'SQ2': 'Taxonomy of reported UML inadequacies',
-    'SQ3': 'Metric and evaluation-reference catalogue',
+    'SQ3': 'Measure and evaluation-reference catalogue',
     'SQ4': 'Syntax-semantic dissonance synthesis',
     'SQ5': 'credibility',
     'SQ6': 'Generation context knowledge synthesis',

@@ -833,7 +833,7 @@ um</b>, porque o campo 27 do protocolo foi fundido;
 <span class="mono">__O_PRIM_IGUAL__</span> em diante a posicao volta a coincidir.</div>
 <div class="nota"><b>Quatro grupos, doze campos.</b> <span class="mono">MODELO</span> (__G_MODELO__),
 <span class="mono">CONSTRUTO</span> (__G_CONSTRUTO__), <span class="mono">INADEQUACAO</span> (__G_INADEQUACAO__) e
-<span class="mono">METRICA</span> (__G_METRICA__). O criterio foi estreito de proposito: entram os
+<span class="mono">MEDIDA</span> (__G_MEDIDA__). O criterio foi estreito de proposito: entram os
 campos que descrevem <b>conjuntamente um mesmo objeto</b>. Os campos __O_MET1__ e __O_MET2__, embora tambem
 sejam da faceta <i>Metric</i> e repetiveis, ficaram <b>fora</b> &mdash; sao descricoes
 abertas e autonomas de procedimento, sem campo irmao com que se alinhar, e agrupa-las criaria
@@ -968,7 +968,7 @@ pg = (HTML.replace('__CSS__', CSS + EXTRA)
         .replace('__G_MODELO__', faixa('MODELO'))
         .replace('__G_CONSTRUTO__', faixa('CONSTRUTO'))
         .replace('__G_INADEQUACAO__', faixa('INADEQUACAO'))
-        .replace('__G_METRICA__', faixa('METRICA'))
+        .replace('__G_MEDIDA__', faixa('MEDIDA'))
         .replace('__O_SEV__', str(ORD[NOSSO]))
         .replace('__O_OPER__', str(ORD[OPER]))
         .replace('__O_REF__', str(ORD[REF]))

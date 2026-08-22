@@ -44,10 +44,10 @@ for c in camp:
     if c['grp']:
         grp.setdefault(c['grp'], []).append(c['o'])
 ok(grp == {'MODELO': [11, 12], 'CONSTRUTO': [32, 33, 34],
-           'INADEQUACAO': [45, 46, 47, 48, 49], 'METRICA': [50, 51]},
+           'INADEQUACAO': [45, 46, 47, 48, 49], 'MEDIDA': [50, 51]},
    'os quatro grupos: %s' % grp)
 ok(all(c['rep'] for c in camp if c['grp']), 'todo campo de grupo e repetivel')
-ok(not any(c['grp'] for c in camp if c['o'] in (39, 40)), '39 e 40 ficaram FORA do grupo METRICA')
+ok(not any(c['grp'] for c in camp if c['o'] in (39, 40)), '39 e 40 ficaram FORA do grupo MEDIDA')
 
 print('== E: fusao do 27 no papel do avaliador ==')
 ok(not any(c['campo'] == 'Human involvement' for c in camp), 'o antigo campo 27 nao existe mais')
