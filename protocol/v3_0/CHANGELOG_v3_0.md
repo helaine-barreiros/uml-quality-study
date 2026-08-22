@@ -102,3 +102,23 @@ adopt one of the two boundaries for no gain.
 The review does not deny the causal link between the model's failure and the artifact's deviation,
 which other studies investigate. It declines to assert that link from artifact evidence, which is
 the attribution `ResultAttribution` exists to qualify.
+
+## Anchors added, 2026-08-22
+
+Ten references, each attached to a claim that previously carried none. Metadata was fetched from
+CrossRef and arXiv rather than written from memory, and where a preprint had a published version
+the published one is cited.
+
+| Claim in the protocol | Anchor |
+| --- | --- |
+| Faithfulness and completeness are complementary, so omission is not hallucination in NLG evaluation | Ji et al. 2023, ACM Computing Surveys; Maynez et al. 2020, ACL |
+| Missing functionality is classified as hallucination under task requirement conflict, and is the most prevalent category | Zhang et al. 2025, PACMSE/ISSTA; Liu et al. 2024; Lee et al. 2025 |
+| Software engineering classifies hallucination by what was violated, which is the cut the violated reference field already carries | Zhang et al. 2025; Lee et al. 2025 |
+| `adequacy` names the semantic axis in natural language generation evaluation | Ji et al. 2023 |
+| `defect` and `fault` carry the fault to failure chain of systems in operation | Avizìienis et al. 2004, IEEE TDSC |
+| `nonconformity` is non-fulfilment of a requirement | ISO 9000:2015 |
+| SQuaRE replaced `metric` with `measure` when it superseded ISO/IEC 9126 | ISO/IEC 25000:2014 with ISO/IEC 25020:2019 |
+| Keeping the property apart from the procedure that assigns it a value is a long-standing requirement, not a distinction introduced here | Moody 2005, Data & Knowledge Engineering |
+| `cross diagram consistency` in the sense of the UML consistency-management literature | Lucas, Molina and Toval 2009, IST |
+
+The bibliography of v3.0 now holds 43 entries, every one of them cited and every citation resolved.

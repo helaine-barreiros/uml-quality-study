@@ -540,7 +540,8 @@ snowballing.
   the defined engineering activity for a specified actor and context.
   It is the negative pole of <span class='ec-lmri-10x-x-109'>pragmatic adequacy </span>above. It is not the
   umbrella for the other two axes, and not the <span class='ec-lmri-10x-x-109'>adequacy </span>of natural
-  language generation evaluation, which names the semantic axis.     </p></td>
+  language generation evaluation, which names the semantic axis <a href='#XJi2023Hallucination'>Ji
+  et al.</a> [<a href='#XJi2023Hallucination'>2023</a>].                                                                        </p></td>
 </tr><tr id='TBL-10-27-' style='vertical-align:baseline;'><td class='td11' id='TBL-10-27-1' style='white-space:normal; text-align:left;'>
  <!-- l. 175 --><p class='noindent'>Hallucination            </p></td><td class='td11' id='TBL-10-27-2' style='white-space:normal; text-align:left;'>
  <!-- l. 175 --><p class='noindent'>A failure of the generating model, reported by a study under that
@@ -580,18 +581,20 @@ snowballing.
    <h4 class='subsectionHead' id='attributes-deviations-and-measures'><span class='titlemark'>1.5.1   </span> <a id='x1-80001.5.1'></a>Attributes, deviations, and measures</h4>
 <!-- l. 186 --><p class='noindent'>The three synthesis questions that carry the constitutive function of this review operate
 at three different levels, and those levels are the ones of the measurement vocabulary of
-systems and software engineering rather than a distinction introduced here. An <span class='ec-lmri-10x-x-109'>attribute</span>
-is a property of an entity that can be distinguished quantitatively or qualitatively. This
+systems and software engineering rather than a distinction introduced here. An <span class='ec-lmri-10x-x-109'>attribute </span>is a
+property of an entity that can be distinguished quantitatively or qualitatively. Keeping the
+property apart from the procedure that assigns it a value is a long-standing requirement of
+conceptual model quality evaluation, not a distinction this review introduces <a href='#XMoody2005ConceptualQuality'>Moody</a> [<a href='#XMoody2005ConceptualQuality'>2005</a>]. This
 review calls the attributes it extracts <span class='ec-lmri-10x-x-109'>quality constructs</span>, which is the term of empirical
 Software Engineering for a property as a study names and operationalizes it; <span class='ec-lmri-10x-x-109'>attribute</span>
 is the term of the measurement standards for the same level. The two are used as one,
 and <span class='ec-lmri-10x-x-109'>dimension </span>is not a third name for it: a dimension here is one of the three axes, and
 nothing else. A <span class='ec-lmri-10x-x-109'>measure </span>assigns a value to an attribute through a stated measurement
 method, and an <span class='ec-lmri-10x-x-109'>indicator </span>is a measure that supports interpretation against decision criteria
-<a href='#XISO15939'>ISO/IEC/IEEE</a> [<a href='#XISO15939'>2017b</a>], <a href='#XISO25020'>ISO/IEC</a> [<a href='#XISO25020'>2019</a>], <a href='#XSWEBOK2024'>Washizaki</a> [<a href='#XSWEBOK2024'>2024</a>]. A <span class='ec-lmri-10x-x-109'>deviation </span>is a departure of
-the entity from an explicitly identified reference. The normalized level is named <span class='ec-lmri-10x-x-109'>measure</span>
-and not <span class='ec-lmri-10x-x-109'>metric</span>, following the standard cited here, which replaced the older term when it
-superseded ISO/IEC 9126. <span class='ec-lmri-10x-x-109'>Metric </span>is nevertheless kept in every field that records what a
+<a href='#XISO15939'>ISO/IEC/IEEE</a> [<a href='#XISO15939'>2017b</a>], <a href='#XISO25020'>ISO/IEC</a> [<a href='#XISO25020'>2019</a>], <a href='#XSWEBOK2024'>Washizaki</a> [<a href='#XSWEBOK2024'>2024</a>]. A <span class='ec-lmri-10x-x-109'>deviation </span>is a departure of the entity
+from an explicitly identified reference. The normalized level is named <span class='ec-lmri-10x-x-109'>measure </span>and not <span class='ec-lmri-10x-x-109'>metric</span>,
+following the standard cited here, which replaced the older term when the SQuaRE series superseded
+ISO/IEC 9126 <a href='#XISO25000'>ISO/IEC</a> [<a href='#XISO25000'>2014</a>, <a href='#XISO25020'>2019</a>]. <span class='ec-lmri-10x-x-109'>Metric </span>is nevertheless kept in every field that records what a
 primary study reported, because that is the word the studies use and this review registers
 native vocabulary before normalizing it. Where the two appear together, <span class='ec-lmri-10x-x-109'>metric </span>is the study
 speaking and <span class='ec-lmri-10x-x-109'>measure </span>is the review. The review records, for every included study, a single
@@ -615,9 +618,9 @@ value of the normalized construct field names an attribute, and every value of t
 discrepancy operation field names a departure from one. The correspondences are semantic
 completeness with omission; semantic correctness with unsupported addition, incorrect representation,
 and incorrect classification; consistency with inconsistency; and textual validity and UML syntactic
-conformity with the corresponding nonconformity, which the violated reference field records at the
-level at which it occurred. A deviation that decomposes into an operation and a carrier,
-such as an incorrect relation or an incorrect actor, is recorded as that pair and never as a
+conformity with the corresponding nonconformity in the sense of <a href='#XISO9000'>ISO</a> [<a href='#XISO9000'>2015</a>], which the violated
+reference field records at the level at which it occurred. A deviation that decomposes into an operation
+and a carrier, such as an incorrect relation or an incorrect actor, is recorded as that pair and never as a
 construct label, because storing it in both vocabularies would report a deviation type as a
 quality construct in the construct matrix of SQ1. Effort quantities such as correction effort
 and inspection effort are measures and are recorded in the rework fields, not as construct
@@ -655,9 +658,10 @@ determine.
 </p><!-- l. 201 --><p class='indent'>   The word <span class='ec-lmri-10x-x-109'>hallucination </span>is the established name for a failure of the generating model, and the two
 literatures this review draws on disagree about where that failure ends. In natural language
 generation evaluation, <span class='ec-lmri-10x-x-109'>faithfulness </span>and <span class='ec-lmri-10x-x-109'>completeness </span>are complementary criteria and an
-omission is incompleteness rather than hallucination. In software engineering taxonomies of
-code-generation hallucination, missing functionality is classified as hallucination under
-task requirement conflict, and that category is reported as the most prevalent one. <span class='ec-lmbx-10x-x-109'>This
+omission is incompleteness rather than hallucination <a href='#XJi2023Hallucination'>Ji et al.</a> [<a href='#XJi2023Hallucination'>2023</a>], <a href='#XMaynez2020Faithfulness'>Maynez et al.</a> [<a href='#XMaynez2020Faithfulness'>2020</a>]. In
+software engineering taxonomies of code-generation hallucination, missing functionality is
+classified as hallucination under task requirement conflict, and that category is reported as
+the most prevalent one <a href='#XLiu2024CodeHallucination'>Liu et al.</a> [<a href='#XLiu2024CodeHallucination'>2024</a>], <a href='#XZhang2025CodeHallucination'>Zhang et al.</a> [<a href='#XZhang2025CodeHallucination'>2025</a>], <a href='#XLee2025HallucinationTaxonomy'>Lee et al.</a> [<a href='#XLee2025HallucinationTaxonomy'>2025</a>]. <span class='ec-lmbx-10x-x-109'>This
 review does not resolve the disagreement, and it must not: a terminological
 fault line between two literatures that both describe this phenomenon is one of
 the findings the review exists to record, not an assumption it may settle in
@@ -673,19 +677,20 @@ label and the normalized operation is therefore data and not error, and it is re
 such.
 </p><!-- l. 205 --><p class='indent'>   Hallucination is not made a normalized value. Classifying by it would require this review to adopt
 one of the two boundaries, and the classification it needs is already available on an axis its own field
-provides: what the deviation violates, recorded in the violated reference field, which is the cut
-software engineering taxonomies themselves use. A second reason keeps the word off the
-umbrella. It predicates the generation process, whereas the axes predicate the artifact against a
-reference, and most reports observe the artifact rather than the model. The review does not
+provides: what the deviation violates, recorded in the violated reference field, which is the cut software
+engineering taxonomies themselves use <a href='#XZhang2025CodeHallucination'>Zhang et al.</a> [<a href='#XZhang2025CodeHallucination'>2025</a>], <a href='#XLee2025HallucinationTaxonomy'>Lee et al.</a> [<a href='#XLee2025HallucinationTaxonomy'>2025</a>]. A second reason keeps
+the word off the umbrella. It predicates the generation process, whereas the axes predicate the artifact
+against a reference, and most reports observe the artifact rather than the model. The review does not
 deny the causal link between the two, which other studies investigate; it declines to assert
 it from artifact evidence, which is the attribution that field <span class='ec-lmri-10x-x-109'>ResultAttribution </span>exists to
 qualify.
-</p><!-- l. 207 --><p class='indent'>   The umbrella term is stipulated rather than borrowed, and the alternatives are declined for stated
-reasons. <span class='ec-lmri-10x-x-109'>Defect </span>and <span class='ec-lmri-10x-x-109'>fault </span>presuppose a specification that the generated diagram is not required to have,
-commit to repair, and carry the fault to failure chain of systems in operation. <span class='ec-lmri-10x-x-109'>Anomaly </span>is tied to a
-reporting and disposition process that this review does not run. <span class='ec-lmri-10x-x-109'>Nonconformity </span>is exact on axis L and
-wrong on the other two <a href='#XISO24765'>ISO/IEC/IEEE</a> [<a href='#XISO24765'>2017c</a>], <a href='#XIEEE1044'>IEEE</a> [<a href='#XIEEE1044'>2010</a>]. The product quality models of the
-SQuaRE series characterize a software product in operation, and do not supply the constructs at
+</p><!-- l. 207 --><p class='indent'>   The umbrella term is stipulated rather than borrowed, and the alternatives are declined for
+stated reasons. <span class='ec-lmri-10x-x-109'>Defect </span>and <span class='ec-lmri-10x-x-109'>fault </span>presuppose a specification that the generated diagram is
+not required to have, commit to repair, and carry the fault to failure chain of systems in
+operation <a href='#XAvizienis2004Dependability'>Avizǐenis et al.</a> [<a href='#XAvizienis2004Dependability'>2004</a>]. <span class='ec-lmri-10x-x-109'>Anomaly </span>is tied to a reporting and disposition process
+that this review does not run. <span class='ec-lmri-10x-x-109'>Nonconformity </span>is exact on axis L and wrong on the other
+two <a href='#XISO24765'>ISO/IEC/IEEE</a> [<a href='#XISO24765'>2017c</a>], <a href='#XIEEE1044'>IEEE</a> [<a href='#XIEEE1044'>2010</a>]. The product quality models of the SQuaRE
+series characterize a software product in operation, and do not supply the constructs at
 issue here, which concern a specification artifact evaluated against a domain reference;
 they are cited for the measurement framework and not as the quality model of this review
 <a href='#XISO25010'>ISO/IEC</a> [<a href='#XISO25010'>2023</a>, <a href='#XISO25020'>2019</a>].
@@ -697,10 +702,10 @@ refine, or revise UML diagram content from textual software requirements or expl
 domain descriptions, to synthesize how these studies characterize, classify, operationalize,
 measure, validate, and report the syntactic, semantic, and pragmatic quality of the generated
 UML content, the deviations they report, and the evidence of hallucination that passes
+                                                                                       
+                                                                                       
 syntactic validation, and to establish the quality constructs, deviation categories, units of
 assessment, evaluation references, reliability practices, baselines, and correction effort measures
-                                                                                       
-                                                                                       
 required to formulate the empirical questions and instruments of the subsequent thesis
 stages.
 </p><!-- l. 215 --><p class='indent'>   The study is expected to produce six integrated contributions.
@@ -737,10 +742,10 @@ stages.
      deviations, and the evidence of hallucination that passes syntactic validation?</p></blockquote>
 <!-- l. 233 --><p class='noindent'>The question is decomposed into mapping questions and synthesis questions.
    
+                                                                                       
+                                                                                       
 </p>
    <h4 class='subsectionHead' id='mapping-questions'><span class='titlemark'>1.7.1   </span> <a id='x1-110001.7.1'></a>Mapping questions</h4>
-                                                                                       
-                                                                                       
            <dl class='description'><dt class='description'>
   <span class='ec-lmbx-10x-x-109'>MQ1.</span>   </dt><dd class='description'>
            <!-- l. 238 --><p class='noindent'>How is the research landscape distributed by publication year, venue, publication
@@ -3277,10 +3282,13 @@ do not alter eligibility.
 </tr><tr id='TBL-26-29-' style='vertical-align:baseline;'><td class='td11' id='TBL-26-29-1' style='white-space:normal; text-align:left;'>
  <!-- l. 946 --><p class='noindent'>Deviation          </p></td><td class='td11' id='TBL-26-29-2' style='white-space:normal; text-align:left;'>
  <!-- l. 946 --><p class='noindent'>Violated reference            </p></td><td class='td11' id='TBL-26-29-3' style='white-space:normal; text-align:left;'>
- <!-- l. 946 --><p class='noindent'>Concrete    representation,    UML    abstract
-  syntax,  UML  construct  semantics,  domain
-  or  requirements  semantics,  cross  diagram
-  consistency, or intended engineering task        </p></td>
+ <!-- l. 946 --><p class='noindent'>Concrete
+  representation,  UML  abstract  syntax,  UML
+  construct semantics, domain or requirements
+  semantics,  cross  diagram  consistency  in  the
+  sense  of  the  UML  consistency-management
+  literature  <a href='#XLucas2009UMLConsistency'>Lucas  et al.</a> [<a href='#XLucas2009UMLConsistency'>2009</a>],  or  intended
+  engineering task                                        </p></td>
 </tr><tr id='TBL-26-30-' style='vertical-align:baseline;'><td class='td11' id='TBL-26-30-1' style='white-space:normal; text-align:left;'>
  <!-- l. 947 --><p class='noindent'>Deviation          </p></td><td class='td11' id='TBL-26-30-2' style='white-space:normal; text-align:left;'>
  <!-- l. 947 --><p class='noindent'>UML carrier                   </p></td><td class='td11' id='TBL-26-30-3' style='white-space:normal; text-align:left;'>
@@ -3297,6 +3305,8 @@ do not alter eligibility.
   the fourth dimension of the coding tuple; it is
   left empty when the study reports none, and
   emptiness is not imputed                            </p></td>
+                                                                                       
+                                                                                       
 </tr><tr id='TBL-26-32-' style='vertical-align:baseline;'><td class='td11' id='TBL-26-32-1' style='white-space:normal; text-align:left;'>
  <!-- l. 949 --><p class='noindent'>Measure            </p></td><td class='td11' id='TBL-26-32-2' style='white-space:normal; text-align:left;'>
  <!-- l. 949 --><p class='noindent'>Metric name and formula  </p></td><td class='td11' id='TBL-26-32-3' style='white-space:normal; text-align:left;'>
@@ -3308,8 +3318,6 @@ do not alter eligibility.
  <!-- l. 950 --><p class='noindent'>Automation level             </p></td><td class='td11' id='TBL-26-33-3' style='white-space:normal; text-align:left;'>
  <!-- l. 950 --><p class='noindent'>Fully automated, tool assisted, human coded,
   LLM assessed, or mixed                              </p></td>
-                                                                                       
-                                                                                       
 </tr><tr id='TBL-26-34-' style='vertical-align:baseline;'><td class='td11' id='TBL-26-34-1' style='white-space:normal; text-align:left;'>
  <!-- l. 951 --><p class='noindent'>Evaluation         </p></td><td class='td11' id='TBL-26-34-2' style='white-space:normal; text-align:left;'>
  <!-- l. 951 --><p class='noindent'>HumanEvaluatorRole       </p></td><td class='td11' id='TBL-26-34-3' style='white-space:normal; text-align:left;'>
@@ -3387,6 +3395,8 @@ do not alter eligibility.
  <!-- l. 962 --><p class='noindent'>DissonanceEvidenceBasis  </p></td><td class='td11' id='TBL-26-45-3' style='white-space:normal; text-align:left;'>
  <!-- l. 962 --><p class='noindent'>Short  textual  explanation  of  the  evidence
   supporting the classification.                        </p></td>
+                                                                                       
+                                                                                       
 </tr><tr id='TBL-26-46-' style='vertical-align:baseline;'><td class='td11' id='TBL-26-46-1' style='white-space:normal; text-align:left;'>
  <!-- l. 963 --><p class='noindent'>Limitations        </p></td><td class='td11' id='TBL-26-46-2' style='white-space:normal; text-align:left;'>
  <!-- l. 963 --><p class='noindent'>Construct and evaluation
@@ -4224,6 +4234,11 @@ screening begins, and items V10 to V14 before extraction begins.
 <a class='url' href='https://doi.org/10.1109/SERA54885.2022.9806783'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1109/SERA54885.2022.9806783</span></a>.
   </p>
   <p class='bibitem'><span class='biblabel'>
+<a id='XAvizienis2004Dependability'></a><span class='bibsp'>   </span></span>Algirdas Avizǐenis, Jean-Claude Laprie, Brian Randell, and Carl Landwehr. Basic concepts
+  and taxonomy of dependable and secure computing.  <span class='ec-lmri-10x-x-109'>IEEE Transactions on Dependable and
+  Secure Computing</span>, 1(1):11–33, 2004. doi: 10.1109/TDSC.2004.2.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
 <a id='XBrereton2007Lessons'></a><span class='bibsp'>   </span></span>Pearl Brereton, Barbara A. Kitchenham, David Budgen, Mark Turner, and Mohamed Khalil.
   Lessons from applying the systematic literature review process within the software engineering
   domain. <span class='ec-lmri-10x-x-109'>Journal of Systems and Software</span>, 80(4):571–583, 2007. doi: 10.1016/j.jss.2006.07
@@ -4249,12 +4264,12 @@ screening begins, and items V10 to V14 before extraction begins.
   </p>
   <p class='bibitem'><span class='biblabel'>
 <a id='XFerrari2024Sequence'></a><span class='bibsp'>   </span></span>Alessio Ferrari, Sallam Abualhaija, and Chetan Arora. Model generation with LLMs: From
+                                                                                       
+                                                                                       
   requirements to UML sequence diagrams.  In <span class='ec-lmri-10x-x-109'>2024 IEEE 32nd International Requirements
   Engineering Conference Workshops</span>, pages 291–300. IEEE, 2024.  doi: 10.1109/REW6169
   2.2024.00044. URL <a class='url' href='https://doi.org/10.1109/REW61692.2024.00044'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1109/REW61692.2024.00044</span></a>.
   </p>
-                                                                                       
-                                                                                       
   <p class='bibitem'><span class='biblabel'>
 <a id='XGaraccione2025Class'></a><span class='bibsp'>   </span></span>Giacomo  Garaccione,  Diego Maria  Calabrese,  Riccardo  Coppola,  and  Luca  Ardito.   A
   comparison of different large language models for the generation of UML class diagrams.  In
@@ -4285,6 +4300,19 @@ screening begins, and items V10 to V14 before extraction begins.
   USA, 2010.
   </p>
   <p class='bibitem'><span class='biblabel'>
+<a id='XISO9000'></a><span class='bibsp'>   </span></span>ISO.    ISO  9000:2015,  quality  management  systems  —  fundamentals  and  vocabulary.
+  Technical Report ISO 9000:2015, International Organization for Standardization, Geneva,
+  Switzerland, 2015.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='XISO25000'></a><span class='bibsp'>   </span></span>ISO/IEC. ISO/IEC 25000:2014, systems and software engineering — systems and software
+  quality  requirements  and  evaluation  (SQuaRE)  —  guide  to  SQuaRE.   Technical  Report
+  ISO/IEC 25000:2014, International Organization for Standardization, Geneva, Switzerland,
+  2014.
+  </p>
+                                                                                       
+                                                                                       
+  <p class='bibitem'><span class='biblabel'>
 <a id='XISO25020'></a><span class='bibsp'>   </span></span>ISO/IEC.     ISO/IEC  25020:2019,  systems  and  software  engineering  —  systems  and
   software quality requirements and evaluation (SQuaRE) — quality measurement framework.
   Technical  Report  ISO/IEC  25020:2019,  International  Organization  for  Standardization,
@@ -4301,8 +4329,6 @@ screening begins, and items V10 to V14 before extraction begins.
   life cycle processes. Technical Report ISO/IEC/IEEE 12207:2017, International Organization
   for Standardization, Geneva, Switzerland, 2017a.
   </p>
-                                                                                       
-                                                                                       
   <p class='bibitem'><span class='biblabel'>
 <a id='XISO15939'></a><span class='bibsp'>   </span></span>ISO/IEC/IEEE.     ISO/IEC/IEEE  15939:2017,  systems  and  software  engineering  —
   measurement   process.      Technical   Report   ISO/IEC/IEEE   15939:2017,   International
@@ -4312,6 +4338,11 @@ screening begins, and items V10 to V14 before extraction begins.
 <a id='XISO24765'></a><span class='bibsp'>   </span></span>ISO/IEC/IEEE.     ISO/IEC/IEEE  24765:2017,  systems  and  software  engineering  —
   vocabulary.   Technical  Report  ISO/IEC/IEEE  24765:2017,  International  Organization  for
   Standardization, Geneva, Switzerland, 2017c.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='XJi2023Hallucination'></a><span class='bibsp'>   </span></span>Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang,
+  Andrea Madotto, and Pascale Fung. Survey of hallucination in natural language generation.
+  <span class='ec-lmri-10x-x-109'>ACM Computing Surveys</span>, 55(12):1–38, 2023. doi: 10.1145/3571730.
   </p>
   <p class='bibitem'><span class='biblabel'>
 <a id='XKitchenham2007Guidelines'></a><span class='bibsp'>   </span></span>Barbara A.    Kitchenham    and    Stuart    Charters.         Guidelines    for    performing
@@ -4328,6 +4359,8 @@ screening begins, and items V10 to V14 before extraction begins.
   <p class='bibitem'><span class='biblabel'>
 <a id='XKrippendorff2018Content'></a><span class='bibsp'>   </span></span>Klaus  Krippendorff.    <span class='ec-lmri-10x-x-109'>Content  Analysis:  An  Introduction  to  Its  Methodology</span>.    SAGE
   Publications, Thousand Oaks, CA, 4 edition, 2018. ISBN 9781506395661.
+                                                                                       
+                                                                                       
   </p>
   <p class='bibitem'><span class='biblabel'>
 <a id='XKrogstie2006Process'></a><span class='bibsp'>   </span></span>John  Krogstie,  Guttorm  Sindre,  and  Håvard  Jørgensen.    Process  models  representing
@@ -4336,9 +4369,36 @@ screening begins, and items V10 to V14 before extraction begins.
 <a class='url' href='https://doi.org/10.1057/palgrave.ejis.3000598'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1057/palgrave.ejis.3000598</span></a>.
   </p>
   <p class='bibitem'><span class='biblabel'>
+<a id='XLee2025HallucinationTaxonomy'></a><span class='bibsp'>   </span></span>Yunseo  Lee,  John Youngeun  Song,  Dongsun  Kim,  Jindae  Kim,  Mijung  Kim,  and
+  Jaechang  Nam.      Hallucination  by  code  generation  LLMs:  Taxonomy,  benchmarks,
+  mitigation,   and   challenges.        arXiv   preprint   arXiv:2504.20799,   2025.        URL   
+<a class='url' href='https://arxiv.org/abs/2504.20799'><span class='ec-lmtt-10x-x-109'>https://arxiv.org/abs/2504.20799</span></a>.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
 <a id='XLindland1994Quality'></a><span class='bibsp'>   </span></span>Odd Ivar  Lindland,  Guttorm  Sindre,  and  Arne  Sølvberg.    Understanding  quality  in
   conceptual modeling.  <span class='ec-lmri-10x-x-109'>IEEE Software</span>, 11(2):42–49, 1994.  doi: 10.1109/52.268955.  URL 
 <a class='url' href='https://doi.org/10.1109/52.268955'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1109/52.268955</span></a>.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='XLiu2024CodeHallucination'></a><span class='bibsp'>   </span></span>Fang Liu, Yang Liu, Lin Shi, Zhen Yang, Li Zhang, Xiaoli Lian, Zhongqi Li, and Yuchi
+  Ma.  Beyond functional correctness: Exploring hallucinations in LLM-generated code.  arXiv
+  preprint arXiv:2404.00971, 2024. URL <a class='url' href='https://arxiv.org/abs/2404.00971'><span class='ec-lmtt-10x-x-109'>https://arxiv.org/abs/2404.00971</span></a>.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='XLucas2009UMLConsistency'></a><span class='bibsp'>   </span></span>Francisco J. Lucas, Fernando Molina, and Ambrosio Toval.  A systematic review of UML
+  model consistency management.   <span class='ec-lmri-10x-x-109'>Information and Software Technology</span>, 51(12):1631–1645,
+  2009. doi: 10.1016/j.infsof.2009.04.009.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='XMaynez2020Faithfulness'></a><span class='bibsp'>   </span></span>Joshua Maynez, Shashi Narayan, Bernd Bohnet, and Ryan McDonald. On faithfulness and
+  factuality in abstractive summarization.  In <span class='ec-lmri-10x-x-109'>Proceedings of the 58th Annual Meeting of the
+  Association for Computational Linguistics</span>, pages 1906–1919. Association for Computational
+  Linguistics, 2020. doi: 10.18653/v1/2020.acl-main.173.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='XMoody2005ConceptualQuality'></a><span class='bibsp'>   </span></span>Daniel L. Moody.  Theoretical and practical issues in evaluating the quality of conceptual
+  models: Current state and future directions. <span class='ec-lmri-10x-x-109'>Data &amp; Knowledge Engineering</span>, 55(3):243–276,
+  2005. doi: 10.1016/j.datak.2004.12.005.
   </p>
   <p class='bibitem'><span class='biblabel'>
 <a id='XOMG2017UML'></a><span class='bibsp'>   </span></span>Object   Management   Group.       OMG   Unified   Modeling   Language,   version   2.5.1.
@@ -4347,10 +4407,10 @@ screening begins, and items V10 to V14 before extraction begins.
   </p>
   <p class='bibitem'><span class='biblabel'>
 <a id='XPage2021PRISMA'></a><span class='bibsp'>   </span></span>Matthew J. Page, Joanne E. McKenzie, Patrick M. Bossuyt, Isabelle Boutron, Tammy C.
+                                                                                       
+                                                                                       
   Hoffmann,  Cynthia D.  Mulrow,  Larissa  Shamseer,  Jennifer M.  Tetzlaff,  Elie A.  Akl,
   Sue E. Brennan, Roger Chou, Julie Glanville, Jeremy M. Grimshaw, Asbjørn Hróbjartsson,
-                                                                                       
-                                                                                       
   Manoj M.  Lalu,  Tianjing  Li,  Elizabeth W.  Loder,  Evan  Mayo-Wilson,  Steve  McDonald,
   Luke A.  McGuinness,  Lesley A.  Stewart,  James  Thomas,  Andrea C.  Tricco,  Vivian A.
   Welch, Penny Whiting, and David Moher. The PRISMA 2020 statement: An updated guideline
@@ -4396,11 +4456,11 @@ screening begins, and items V10 to V14 before extraction begins.
   <p class='bibitem'><span class='biblabel'>
 <a id='XXiao2025Sequence'></a><span class='bibsp'>   </span></span>Chi   Xiao,   Daniel   Ståhl,   and   Jan   Bosch.      UML   sequence   diagram   generation:
   A   multi-model,   multi-domain   evaluation.      In   <span class='ec-lmri-10x-x-109'>2025  IEEE/ACM  47th  International
+                                                                                       
+                                                                                       
   Conference  on  Software  Engineering:  Software  Engineering  in  Practice</span>,  pages  272–283.
   IEEE,   2025.      doi:    1 0 . 1 1 0 9 / I C S E- S E I P 6 6 3 5 4 . 2 0 2 5 . 0 0 0 3 0.      URL   
 <a class='url' href='https://doi.org/10.1109/ICSE-SEIP66354.2025.00030'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1109/ICSE-SEIP66354.2025.00030</span></a>.
-                                                                                       
-                                                                                       
   </p>
   <p class='bibitem'><span class='biblabel'>
 <a id='XYang2024MultiStepDomainModeling'></a><span class='bibsp'>   </span></span>Yujing Yang, Boqi Chen, Kua Chen, Gunter Mussbacher, and Dániel Varró.  Multi-step
@@ -4421,6 +4481,12 @@ screening begins, and items V10 to V14 before extraction begins.
   mapping study. <span class='ec-lmri-10x-x-109'>Empirical Software Engineering</span>, 32(3), 2027. doi: 10.1007/s10664-026-109
   21-4.  URL <a class='url' href='https://doi.org/10.1007/s10664-026-10921-4'><span class='ec-lmtt-10x-x-109'>https://doi.org/10.1007/s10664-026-10921-4</span></a>.  Published online 16 July
   2026.
+  </p>
+  <p class='bibitem'><span class='biblabel'>
+<a id='XZhang2025CodeHallucination'></a><span class='bibsp'>   </span></span>Ziyao Zhang, Chong Wang, Yanlin Wang, Ensheng Shi, Yuchi Ma, Wanjun Zhong, Jiachi
+  Chen, Mingzhi Mao, and Zibin Zheng.   LLM hallucinations in practical code generation:
+  Phenomena, mechanism, and mitigation. <span class='ec-lmri-10x-x-109'>Proceedings of the ACM on Software Engineering</span>, 2
+  (ISSTA):481–503, 2025. doi: 10.1145/3728894.
 </p>
   </div>
     
