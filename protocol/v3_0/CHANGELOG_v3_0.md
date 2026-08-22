@@ -71,3 +71,34 @@ software engineering quality vocabulary found five residues of the same family, 
 
 The `LACUNA` lock broke on the renamed SQ3 subsection and was updated, which is the behaviour it
 exists for.
+
+## Hallucination: an overclaim corrected, 2026-08-22
+
+The protocol had stated that omission is not hallucination, anchoring on the natural language
+generation split between faithfulness and completeness. That is true of that literature and false
+of this corpus. Software engineering taxonomies of code-generation hallucination classify missing
+functionality as hallucination under task requirement conflict, and report that category as the
+most prevalent one across models. The claim was withdrawn.
+
+What replaced it is not the opposite claim. The two literatures disagree about where hallucination
+ends, and a terminological fault line between two bodies of work that both describe this phenomenon
+is one of the findings this review exists to record, not an assumption it may settle in advance.
+The protocol now states the disagreement and declines to resolve it.
+
+The instrument separates the layers it separates everywhere else. A study that calls an omission a
+hallucination has that label recorded verbatim in the original label field, and disagreement
+between the native label and the normalized operation is data rather than error. The normalized
+operation keeps `omission` apart from `unsupported addition` for a reason independent of the
+dispute: an addition is counted against what was generated and an omission against what the
+reference contains, so merging them would destroy the denominator this review exists to
+reconstruct.
+
+`intrinsic hallucination` and `extrinsic hallucination` were withdrawn as normalized values, and
+their two taxonomy entries with them. That pair is the natural language generation cut. The cut
+software engineering itself uses is what the deviation violates, and the instrument already carries
+it in the violated reference field, so classifying by hallucination would have forced the review to
+adopt one of the two boundaries for no gain.
+
+The review does not deny the causal link between the model's failure and the artifact's deviation,
+which other studies investigate. It declines to assert that link from artifact evidence, which is
+the attribution `ResultAttribution` exists to qualify.

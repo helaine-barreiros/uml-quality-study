@@ -25,7 +25,7 @@ BASE = ('/home/helaine-barreiros/Development/doutorado-workspace/'
 TEX = os.path.join(BASE, 'protocol/v3_0/appendix_two_layer_mapping_protocol_v3_0.tex')
 CODEBOOK = os.path.join(BASE, 'analysis/v3_0/extraction/codebook_extracao.csv')
 
-LINHAS_ESPERADAS = 1235
+LINHAS_ESPERADAS = 1239
 LACUNA_ESPERADA = {'MQ5', 'SQ5'}
 
 MARCADOR = {
