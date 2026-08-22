@@ -17,7 +17,7 @@ crit.exige(CRIT, filtros={'A1', 'A2', 'A3', 'B0', 'B1', 'B2', 'B3', 'B4', 'B5'},
 import csv, hashlib, html, math, os, random, re
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
-CSV  = os.path.join(BASE, 'search/v1_7/automated/records/custom_automated_search_collection.csv')
+CSV  = os.path.join(BASE, 'search/v3_0/automated/records/custom_automated_search_collection.csv')
 OUT  = os.path.join(BASE, 'search/v3_0/manual_revisor2.html')
 CSS  = open(os.path.join(BASE, 'search/v3_0/scripts/css_gate.css'), encoding='utf-8').read()
 

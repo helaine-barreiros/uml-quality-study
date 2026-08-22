@@ -50,9 +50,15 @@ Screening was executed once, under `v1_7`. The unified starting list, pre-pass D
 and C all produced their outcome there, and `search/v1_7/` is the only place that outcome exists:
 the worked list, the decision log, and the rendered gate pages the reviewers actually answered.
 
-`v2_0` and `v3_0` hold their own copy of the **origin** and none of the **result**. Their
-`automated/records/` carries an `INHERITED.md` instead of a worked list. A version that did not run
-the gates must not appear to have produced 986 outcomes.
+`v2_0` is frozen and holds its own copy of the **origin** and none of the **result**: its
+`automated/records/` carries an `INHERITED.md` instead of a worked list, because a version that did
+not run the gates must not appear to have produced 986 outcomes.
+
+`v3_0` is live, and a live version needs somewhere to write. Its `automated/records/` carries a
+worked list seeded from v1_7's, in which every gate A and gate B outcome is inherited and every
+decision taken after v1_7 closed is its own. The first of those is the filter C1 of `018_ACM`.
+Reading is what inheritance permits; writing into `v1_7` is what it forbids, since that list must
+keep saying what v1_7 produced. Diffing the two lists shows exactly what was decided since.
 
 Inheritance is proved, not asserted. Screening decisions transfer between two versions only when
 neither the eligibility criteria nor the gate structure differ, and against `v1_7` that is

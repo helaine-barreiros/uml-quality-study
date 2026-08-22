@@ -5,7 +5,7 @@ import csv, re, html, os
 from urllib.parse import quote
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
-CSV = os.path.join(BASE, 'search/v1_7/automated/records/custom_automated_search_collection.csv')
+CSV = os.path.join(BASE, 'search/v3_0/automated/records/custom_automated_search_collection.csv')
 OUT = os.path.join(BASE, 'search/v3_0/gate_c_busca_manual.html')
 CSS = open(os.path.join(BASE, 'search/v3_0/scripts/css_gate.css'), encoding='utf-8').read()
 

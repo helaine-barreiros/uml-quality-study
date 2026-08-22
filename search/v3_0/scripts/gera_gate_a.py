@@ -5,7 +5,7 @@ import csv, re, html, os
 from collections import Counter, defaultdict
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
-CSV = os.path.join(BASE, 'search/v1_7/automated/records/custom_automated_search_collection.csv')
+CSV = os.path.join(BASE, 'search/v3_0/automated/records/custom_automated_search_collection.csv')
 OUT = os.path.join(BASE, 'search/v3_0/gate_a.html')
 
 rows = list(csv.reader(open(CSV, encoding='utf-8')))
@@ -521,7 +521,7 @@ __LICOES__
 
 </main>
 <footer>
-Pagina gerada a partir de <code>search/v1_7/automated/records/custom_automated_search_collection.csv</code>
+Pagina gerada a partir de <code>search/v3_0/automated/records/custom_automated_search_collection.csv</code>
 (__TOT__ registros, __NCOL__ colunas) e da redacao literal de
 <code>protocol/appendix_two_layer_mapping_protocol_v1_7.tex</code> e
 <code>protocol/screening_manual_v2.md</code> (a primeira passagem foi triada sob o v1; os rotulos de desfecho foram migrados para a ordem de filtro da emenda A004). Todos os numeros sao calculados no momento da

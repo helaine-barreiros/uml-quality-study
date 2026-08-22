@@ -4,7 +4,7 @@ import csv, re, html, os
 from collections import Counter, defaultdict
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
-CSVF = os.path.join(BASE, 'search/v1_7/automated/records/custom_automated_search_collection.csv')
+CSVF = os.path.join(BASE, 'search/v3_0/automated/records/custom_automated_search_collection.csv')
 OUT = os.path.join(BASE, 'search/v3_0/gate_b.html')
 
 rows = list(csv.reader(open(CSVF, encoding='utf-8')))
@@ -601,7 +601,7 @@ __LICOES__
 
 </main>
 <footer>
-Pagina gerada a partir de <code>search/v1_7/automated/records/custom_automated_search_collection.csv</code> e da
+Pagina gerada a partir de <code>search/v3_0/automated/records/custom_automated_search_collection.csv</code> e da
 redacao lida de <code>protocol/__PROTO__/</code> no momento da geracao, nao transcrita. As notas de decisao do Portao B
 somam em media __MEDNOTA__ caracteres por registro. Todos os numeros sao calculados na geracao.
 Passe o mouse sobre os graficos para ver os valores exatos.

@@ -10,7 +10,7 @@ from urllib.parse import quote
 from collections import Counter
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
-CSV = os.path.join(BASE, 'search/v1_7/automated/records/custom_automated_search_collection.csv')
+CSV = os.path.join(BASE, 'search/v3_0/automated/records/custom_automated_search_collection.csv')
 OUT = os.path.join(BASE, 'search/v3_0/gate_c_recuperacao.html')
 
 rows = list(csv.reader(open(CSV, encoding='utf-8')))
@@ -759,7 +759,7 @@ academicos expiram quando o autor troca de instituicao.
 %(semmail)s
 </main>
 <footer>
-Gerado a partir de <code>search/v1_7/automated/records/custom_automated_search_collection.csv</code>.
+Gerado a partir de <code>search/v3_0/automated/records/custom_automated_search_collection.csv</code>.
 Cada numero desta pagina sai do CSV; nada foi digitado a mao. O estado das caixas de selecao fica
 apenas no seu navegador (localStorage) e nao altera o CSV.
 </footer>

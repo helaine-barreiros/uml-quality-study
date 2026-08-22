@@ -32,7 +32,7 @@ ok(len(sev) == 1 and sev[0]['o'] == 49,
    'a severidade e o campo %s (era 50 antes do E)' % (sev[0]['o'] if sev else '-'))
 ok(bool(sev) and sev[0]['tipo'] == 'aberto' and not sev[0]['vals'],
    'a severidade e ABERTA e nao oferece menu (l. 1616: preserved)')
-ok(bool(sev) and sev[0]['grp'] == 'INADEQUACAO', 'a severidade esta DENTRO do grupo INADEQUACAO')
+ok(bool(sev) and sev[0]['grp'] == 'DESVIO', 'a severidade esta DENTRO do grupo DESVIO')
 ok([c['campo'] for c in camp if c['o'] in (50, 51)]
    == ['Metric name and formula', 'Automation level'],
    'os campos seguintes desceram uma casa, sem rearranjo')
@@ -44,7 +44,7 @@ for c in camp:
     if c['grp']:
         grp.setdefault(c['grp'], []).append(c['o'])
 ok(grp == {'MODELO': [11, 12], 'CONSTRUTO': [32, 33, 34],
-           'INADEQUACAO': [45, 46, 47, 48, 49], 'MEDIDA': [50, 51]},
+           'DESVIO': [45, 46, 47, 48, 49], 'MEDIDA': [50, 51]},
    'os quatro grupos: %s' % grp)
 ok(all(c['rep'] for c in camp if c['grp']), 'todo campo de grupo e repetivel')
 ok(not any(c['grp'] for c in camp if c['o'] in (39, 40)), '39 e 40 ficaram FORA do grupo MEDIDA')
@@ -112,7 +112,7 @@ ok(not re.findall(r'__[A-Z_]+__', H), 'zero marcadores de substituicao pendentes
 ancoras = set(re.findall(r'id="([a-z0-9_-]+)"', H))
 links = set(re.findall(r'href="#([a-z0-9_-]+)"', H))
 ok(links <= ancoras, 'ancoras do menu resolvem: %s' % (links - ancoras))
-for t in ('instancia', 'INADEQUACAO', '1601-1608', 'l. 157', 'grupo_repeticao'):
+for t in ('instancia', 'DESVIO', '1601-1608', 'l. 157', 'grupo_repeticao'):
     ok(t in H, 'a pagina declara %r' % t)
 ids = {e['id'] for e in est}
 pil = {e['id'] for e in est if e['p']}
@@ -120,7 +120,7 @@ ok(pil == {'018_ACM', '521_IEEE', '751_SCOPUS', '762_SCOPUS', '801_SCOPUS',
            '859_SCOPUS', '892_SCOPUS', '909_SCOPUS', '958_SCOPUS', '976_SCOPUS'},
    'piloto inalterado')
 ok([e['id'] for e in est[:10]] == sorted(pil), 'os dez seguem na frente da fila')
-mestre = list(csv.reader(open(os.path.join(BASE, 'search/v1_7/automated/records/custom_automated_search_collection.csv'),
+mestre = list(csv.reader(open(os.path.join(BASE, 'search/v3_0/automated/records/custom_automated_search_collection.csv'),
                               encoding='utf-8')))
 im = {c: n for n, c in enumerate(mestre[0])}
 esperado = {r[im['logical_id']] for r in mestre[1:]
@@ -153,16 +153,16 @@ globalThis.__t={setBaixar:function(f){baixar=f;},S:S,exp:_els['exp'].onclick,
 var t=globalThis.__t,id=EST[0].id;
 // duas inadequacoes; a SEGUNDA com DOIS portadores; a primeira com o campo 47 VAZIO,
 // que e exatamente o caso que deslocava as listas paralelas na v1.
-var I=t.insts(id,'INADEQUACAO');I.push({});
-t.gocs(id,'INADEQUACAO',0,45)[0].v='wrong multiplicity';
-t.gocs(id,'INADEQUACAO',0,47)[0].v='UML construct semantics';
-t.gocs(id,'INADEQUACAO',0,48)[0].v='relation';
-t.gocs(id,'INADEQUACAO',1,45)[0].v='missing actor';
-t.gocs(id,'INADEQUACAO',1,46)[0].v='omission';
-t.gocs(id,'INADEQUACAO',1,47)[0].v='domain or requirements semantics';
-t.gocs(id,'INADEQUACAO',1,48)[0].v='element';
-t.gocs(id,'INADEQUACAO',1,48).push({v:'behavior'});
-t.gocs(id,'INADEQUACAO',1,49)[0].v='major (escala de 3 pontos do proprio estudo)';
+var I=t.insts(id,'DESVIO');I.push({});
+t.gocs(id,'DESVIO',0,45)[0].v='wrong multiplicity';
+t.gocs(id,'DESVIO',0,47)[0].v='UML construct semantics';
+t.gocs(id,'DESVIO',0,48)[0].v='relation';
+t.gocs(id,'DESVIO',1,45)[0].v='missing actor';
+t.gocs(id,'DESVIO',1,46)[0].v='omission';
+t.gocs(id,'DESVIO',1,47)[0].v='domain or requirements semantics';
+t.gocs(id,'DESVIO',1,48)[0].v='element';
+t.gocs(id,'DESVIO',1,48).push({v:'behavior'});
+t.gocs(id,'DESVIO',1,49)[0].v='major (escala de 3 pontos do proprio estudo)';
 t.ocs(id,6)[0].v='class diagram';           // fora de grupo
 _els['quem'].value='TESTE';
 var cap='';t.setBaixar(function(n,txt){cap=txt;});
@@ -182,11 +182,11 @@ console.log(cap);
         # 1 fora de grupo + 3 da tupla 1 (sem o 47 e sem o 50) + 6 da tupla 2
         # (o 49 repete e o 50 esta preenchido)
         ok(len(linhas) == 10, 'linhas exportadas: %d' % len(linhas))
-        i1 = [l for l in linhas if l['instancia'] == 'INADEQUACAO-1']
-        i2 = [l for l in linhas if l['instancia'] == 'INADEQUACAO-2']
+        i1 = [l for l in linhas if l['instancia'] == 'DESVIO-1']
+        i2 = [l for l in linhas if l['instancia'] == 'DESVIO-2']
         ok(len(i1) == 3 and len(i2) == 6, 'tupla 1 com 3 linhas, tupla 2 com 6')
         ok([l['instancia'] for l in linhas
-            if l['campo'] == 'Reported severity or task effect'] == ['INADEQUACAO-2'],
+            if l['campo'] == 'Reported severity or task effect'] == ['DESVIO-2'],
            'a severidade so sai na tupla que a reporta, amarrada a ela')
         ok({l['campo'] for l in i1} == {'Original label and definition', 'Violated reference', 'UML carrier'},
            'a tupla 1 sai SEM o campo 47, e continua sendo a tupla 1')
@@ -195,7 +195,7 @@ console.log(cap);
         ok([l['ocorrencia'] for l in i2 if l['campo'] == 'UML carrier'] == ['1', '2'],
            'ocorrencia reinicia em 1 dentro de cada instancia')
         omi = [l for l in linhas if l['valor'] == 'omission']
-        ok(len(omi) == 1 and omi[0]['instancia'] == 'INADEQUACAO-2',
+        ok(len(omi) == 1 and omi[0]['instancia'] == 'DESVIO-2',
            'o unico "omission" esta amarrado a instancia 2, nao deslocado para a 1')
         fora = [l for l in linhas if l['campo'] == 'DiagramType']
         ok(len(fora) == 1 and fora[0]['instancia'] == '', 'campo fora de grupo: instancia VAZIA')

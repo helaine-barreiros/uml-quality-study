@@ -17,7 +17,9 @@
 .ec-lmtt-12{ font-family: monospace,monospace;}
 .ec-lmtt-12{ font-family: monospace,monospace;}
 .ec-lmtt-12{ font-family: monospace,monospace;}
+.ec-lmtt-12{ font-family: monospace,monospace;}
 .lmmi-8{font-size:72%;}
+.ec-lmtt-10x-x-109{ font-family: monospace,monospace;}
 .ec-lmtt-10x-x-109{ font-family: monospace,monospace;}
 .ec-lmtt-10x-x-109{ font-family: monospace,monospace;}
 .ec-lmtt-10x-x-109{ font-family: monospace,monospace;}
@@ -47,6 +49,7 @@
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmtt-10{ font-family: monospace,monospace;}
+.ec-lmtt-10{ font-family: monospace,monospace;}
 .ec-lmbx-10{font-size:90%; font-weight: bold;}
 .ec-lmbx-10{ font-weight: bold;}
 .ec-lmbx-10{ font-weight: bold;}
@@ -61,6 +64,8 @@
 .ec-lmbx-10{ font-weight: bold;}
 .ec-lmbx-10{ font-weight: bold;}
 .ec-lmbx-10{ font-weight: bold;}
+.ec-lmbx-10{ font-weight: bold;}
+.ec-lmri-10x-x-109{ font-style:italic;}
 .ec-lmri-10x-x-109{ font-style:italic;}
 .ec-lmri-10x-x-109{ font-style:italic;}
 .ec-lmri-10x-x-109{ font-style:italic;}
@@ -93,6 +98,7 @@
 .ec-lmtt-8{ font-family: monospace,monospace;}
 .ec-lmtt-8{ font-family: monospace,monospace;}
 .ec-lmtt-8{ font-family: monospace,monospace;}
+.ec-lmtt-8{ font-family: monospace,monospace;}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
@@ -107,6 +113,22 @@
 .ec-lmbx-10x-x-109{ font-weight: bold;}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
 .ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbx-10x-x-109{ font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
+.ec-lmbxi-10x-x-109{ font-style:italic; font-weight: bold;}
 .ec-lmbx-8{font-size:72%; font-weight: bold;}
 .ec-lmbx-8{ font-weight: bold;}
 .ec-lmbx-8{ font-weight: bold;}
@@ -121,7 +143,9 @@
 .ec-lmbx-8{ font-weight: bold;}
 .ec-lmbx-8{ font-weight: bold;}
 .ec-lmbx-8{ font-weight: bold;}
+.ec-lmbx-8{ font-weight: bold;}
 .ec-lmri-8{font-size:72%; font-style:italic;}
+.ec-lmri-8{ font-style:italic;}
 .ec-lmri-8{ font-style:italic;}
 .ec-lmri-8{ font-style:italic;}
 .ec-lmri-8{ font-style:italic;}
@@ -329,7 +353,7 @@ td#TBL-9-4-1{border-bottom:0.07622em solid #000}
 td#TBL-9-15-1{border-bottom:0.12193em solid #000}
 td#TBL-10-2-1{border-bottom:0.12193em solid #000}
 td#TBL-10-4-1{border-bottom:0.07622em solid #000}
-td#TBL-10-29-1{border-bottom:0.12193em solid #000}
+td#TBL-10-32-2{border-bottom:0.12193em solid #000}
 td#TBL-11-2-1{border-bottom:0.12193em solid #000}
 td#TBL-11-4-1{border-bottom:0.07622em solid #000}
 td#TBL-11-24-1{border-bottom:0.12193em solid #000}

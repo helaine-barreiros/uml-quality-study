@@ -24,7 +24,7 @@ nao no arquivo de extracao (manual v2, secao 7.1).
 import collections, csv, html, json, os, re
 
 BASE = '/home/helaine-barreiros/Development/doutorado-workspace/estudo_sistematico/uml-quality-study'
-CSV  = os.path.join(BASE, 'search/v1_7/automated/records/custom_automated_search_collection.csv')
+CSV  = os.path.join(BASE, 'search/v3_0/automated/records/custom_automated_search_collection.csv')
 COD  = os.path.join(BASE, 'analysis/v3_0/extraction/codebook_extracao.csv')
 DADOS = os.path.join(BASE, 'analysis/v3_0/extraction/extracao.csv')
 OUT  = os.path.join(BASE, 'analysis/v3_0/ficha_extracao.html')
@@ -237,8 +237,8 @@ n_grp = sum(len(oo) for oo in GRUPOS.values())
 # nenhuma das tabelas. O assert existe para que a pagina nunca afirme "um campo
 # nosso" apontando para outra coisa.
 NOSSO = 'Reported severity or task effect'
-assert ORD[NOSSO] in GRUPOS['INADEQUACAO'], \
-    'o campo acrescentado no 8b saiu de dentro do grupo INADEQUACAO'
+assert ORD[NOSSO] in GRUPOS['DESVIO'], \
+    'o campo acrescentado no 8b saiu de dentro do grupo DESVIO'
 n_tab = len(CAMPOS) - 1
 
 # Perguntas: quem e dono de que. Vazio em questoes significa INSTRUMENTO da
@@ -545,8 +545,8 @@ document.getElementById('exp').onclick=function(){
   var quem=document.getElementById('quem').value.trim()||'SEM_NOME';
   var ts=new Date().toISOString();
   var out=[__CAB__];
-  /* instancia e o que amarra a tupla: INADEQUACAO-2 num campo do grupo e a MESMA
-     inadequacao que INADEQUACAO-2 no campo vizinho. Vazio fora de grupo. A ordem de
+  /* instancia e o que amarra a tupla: DESVIO-2 num campo do grupo e a MESMA
+     inadequacao que DESVIO-2 no campo vizinho. Vazio fora de grupo. A ordem de
      BLOCOS preserva a ordem do codebook. */
   EST.forEach(function(x){
     var e=S[x.id];if(!e)return;
@@ -723,8 +723,8 @@ pede dois extratores nos campos interpretativos <b>do piloto</b>; a l. 1638 abre
 &mdash; e do <b>corpus inteiro</b>, nao de dez estudos. Hoje o plano em execucao cobre
 <b>zero</b> disso.<br>
 <b>O que a exigencia NAO e:</b> ela nao pede dupla codificacao dos 65 campos. Ela diz
-<i>inadequacy data</i>, que sao os campos <b>__G_INADEQUACAO__</b>, o grupo <span
-class="mono">INADEQUACAO</span>. Isso e o que torna a exigencia praticavel, e vale registrar
+<i>inadequacy data</i>, que sao os campos <b>__G_DESVIO__</b>, o grupo <span
+class="mono">DESVIO</span>. Isso e o que torna a exigencia praticavel, e vale registrar
 antes que ela seja lida como grande demais para caber.</div>
 <div class="nota"><b>Consequencia operacional, ja acomodada:</b> a l. 1638 termina exigindo
 que <i>the consensus code is stored <b>separately</b> from the original reviewer codes</i>.
@@ -818,7 +818,7 @@ reporta, com o rotulo e a escala dele; quando nao reporta, escrever <span class=
 reported</span>.<br>
 <b>Consequencia mecanica:</b> os campos seguintes desceram uma casa. Nao havia alternativa
 &mdash; a severidade e dimensao da inadequacao, entao ela tem de ficar <b>dentro</b> do
-grupo <span class="mono">INADEQUACAO</span>, e o grupo tem de ser contiguo. A auditoria
+grupo <span class="mono">DESVIO</span>, e o grupo tem de ser contiguo. A auditoria
 contra o protocolo continua valendo porque a <b>ordem</b> nao mudou: houve uma insercao
 declarada, nao um rearranjo.</div>
 <div class="nota"><b>A numeracao e nossa, e a correspondencia com as tabelas do protocolo
@@ -832,7 +832,7 @@ um</b>, porque o campo 27 do protocolo foi fundido;
 <span class="mono">__O_SEV__</span> e nosso e nao tem posicao no protocolo; e de
 <span class="mono">__O_PRIM_IGUAL__</span> em diante a posicao volta a coincidir.</div>
 <div class="nota"><b>Quatro grupos, doze campos.</b> <span class="mono">MODELO</span> (__G_MODELO__),
-<span class="mono">CONSTRUTO</span> (__G_CONSTRUTO__), <span class="mono">INADEQUACAO</span> (__G_INADEQUACAO__) e
+<span class="mono">CONSTRUTO</span> (__G_CONSTRUTO__), <span class="mono">DESVIO</span> (__G_DESVIO__) e
 <span class="mono">MEDIDA</span> (__G_MEDIDA__). O criterio foi estreito de proposito: entram os
 campos que descrevem <b>conjuntamente um mesmo objeto</b>. Os campos __O_MET1__ e __O_MET2__, embora tambem
 sejam da faceta <i>Metric</i> e repetiveis, ficaram <b>fora</b> &mdash; sao descricoes
@@ -930,7 +930,7 @@ de atricao, que nao e exclusao, e cujo prazo ainda corre.</p>
 meio, e exporte os dois CSV ao terminar. Limpar os dados do site apaga o trabalho. A
 exportacao da extracao sai no formato longo de
 <span class="mono">analysis/v3_0/extraction/extracao.csv</span>, agora com a coluna
-<span class="mono">instancia</span> no formato <span class="mono">INADEQUACAO-2</span>,
+<span class="mono">instancia</span> no formato <span class="mono">DESVIO-2</span>,
 vazia fora dos grupos; a do Portao C sai separada, porque desfecho de portao mora no CSV
 mestre. A chave de gravacao no navegador passou a <span class="mono">extracao.v2</span>:
 a forma guardada mudou, e reaproveitar a v1 misturaria dois formatos no mesmo export.</div>
@@ -967,7 +967,7 @@ pg = (HTML.replace('__CSS__', CSS + EXTRA)
         .replace('__N_TAB__', str(n_tab))
         .replace('__G_MODELO__', faixa('MODELO'))
         .replace('__G_CONSTRUTO__', faixa('CONSTRUTO'))
-        .replace('__G_INADEQUACAO__', faixa('INADEQUACAO'))
+        .replace('__G_DESVIO__', faixa('DESVIO'))
         .replace('__G_MEDIDA__', faixa('MEDIDA'))
         .replace('__O_SEV__', str(ORD[NOSSO]))
         .replace('__O_OPER__', str(ORD[OPER]))
